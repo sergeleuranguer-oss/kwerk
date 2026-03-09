@@ -19,12 +19,9 @@ f.parentNode.insertBefore(j, f);
 })(window, document, 'script', 'dataLayer', 'GTM-MK4BS4GL');
 	</script>
 	<!-- End Google Tag Manager -->
-
-	<!-- Import Google Fonts (Roboto) -->
 	<link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
 	<link href="../unpkg.com/aos%402.3.1/dist/aos.css" rel="stylesheet">
 	<link rel="icon" type="image/svg+xml" href="favicon.ico">
-
 	<link rel="stylesheet" href="css/navbar.css">
 	<link rel="stylesheet" href="css/styles.css">
 	<link rel="stylesheet" href="css/footer.css">
@@ -51,8 +48,9 @@ f.parentNode.insertBefore(j, f);
 	</noscript>
 	<!-- End Google Tag Manager (noscript) -->
 
+	<!-- HERO — même slideshow que la home -->
 	<header class="hero" style="height: 100vh; background-color: #000;">
-		<div class="hero-video hero-slideshow" style="background-image: url('images/content/Lobby_Mes_1.jpg');"></div>
+		<div class="hero-video hero-slideshow" style="background-image: url('images/content/Salle_de_reunion_Mes_1.jpg');" data-hero-slides="images/content/Salle_de_reunion_Mes_1.jpg,images/content/Rooftop_Mes_1.jpg,images/Bureau_header.png,images/content/Sport_Mes_1.jpg,images/content/Rooftop_Sho_2.jpg,images/content/Dome_Lobby_Mes_1.jpg"></div>
 	<div class='hero-center-tagline'>BUREAUX DE CLAUDE</div>
 
 	<nav class="navbar">
@@ -67,193 +65,322 @@ f.parentNode.insertBefore(j, f);
 		</div>
 		<a href="contact.html" class="contact-btn">NOUS CONTACTER</a>
 	</nav>
-
-		<div class="hero-text hero-text--desktop-title-center hero-text--mobile-center">
-			<a href="contact.html" class="btn">NOUS ÉCRIRE</a>
-		</div>
 	</header>
 
-<!-- MENU -->
-<div class="side-menu" id="sideMenu">
-	<div class="side-menu-header">
-		<a href="index.html"><img src="images/logo-kwerk-noir.png" alt="Logo"></a>
-		<span class="close-btn" id="closeMenu"><img src="images/close_cross.svg" alt="close"></span>
-	</div>
-	<ul class="side-menu-links">
-		<li data-submenu="submenuPRAdresses">LOCALISATIONS
-			<span>&rsaquo;</span>
-		</li>
-		<li>
-			<a href="espaces.html">BUREAUX</a>
-		</li>
-		<li>
-			<a href="services.html">EXPÉRIENCES</a>
-		</li>
-		<li>
-			<a href="event.html">ÉVÉNEMENTS</a>
-		</li>
-		<li>
-			<a href="club.html">CLUB</a>
-		</li>
-		<li>
-			<a href="galerie.html">GALERIE</a>
-		</li>
-		<li>
-			<a href="contact.html">CONTACTEZ-NOUS</a>
-		</li>
-	</ul>
-</div>
-
-<!--SOUS MENU ADRESSES-->
-<div class="submenu-panel" id="submenuPRAdresses">
-	<div class="submenu-header">
-		<span class="close-submenu" data-back="true">
-			<img src="images/close_cross.svg" alt="close">
-		</span>
-	</div>
-	<img src="images/adresses.png" alt="Image PR Produit" class="submenu-img">
-	<div class="submenu-content">
-		<a href="adresses.html">
-			<h4>NOS LOCALISATIONS</h4>
-		</a>
-		<ul>
-			<li><a href="adresses/messine.html">MESSINE</a></li>
-			<li><a href="adresses/saint-honore.html">SAINT-HONORÉ</a></li>
-			<li><a href="adresses/madeleine.html">MADELEINE</a></li>
-			<li><a href="adresses/haussmann.html">HAUSSMANN</a></li>
+	<!-- MENU -->
+	<div class="side-menu" id="sideMenu">
+		<div class="side-menu-header">
+			<a href="index.html"><img src="images/logo-kwerk-noir.png" alt="Logo"></a>
+			<span class="close-btn" id="closeMenu"><img src="images/close_cross.svg" alt="close"></span>
+		</div>
+		<ul class="side-menu-links">
+			<li data-submenu="submenuPRAdresses">LOCALISATIONS
+				<span>&rsaquo;</span>
+			</li>
+			<li>
+				<a href="espaces.html">BUREAUX</a>
+			</li>
+			<li>
+				<a href="services.html">EXPÉRIENCES</a>
+			</li>
+			<li>
+				<a href="event.html">ÉVÉNEMENTS</a>
+			</li>
+			<li>
+				<a href="club.html">CLUB</a>
+			</li>
+			<li>
+				<a href="galerie.html">GALERIE</a>
+			</li>
+			<li>
+				<a href="contact.html">CONTACTEZ-NOUS</a>
+			</li>
 		</ul>
 	</div>
-</div>
 
-<!-- SIDE CONTACT FORM -->
-<div class="side-contact-form" id="sideContactForm">
-	<div class="contact-form-header">
-		<span>CONTACTEZ-NOUS</span>
-		<span class="close-contact-form" id="closeContactForm">
-			<img src="images/close_cross.svg" alt="close">
-		</span>
+	<!-- SOUS MENU LOCALISATIONS -->
+	<div class="submenu-panel" id="submenuPRAdresses">
+		<div class="submenu-header">
+			<span class="close-submenu" data-back="true">
+				<img src="images/close_cross.svg" alt="close">
+			</span>
+		</div>
+		<img src="images/adresses.png" alt="Image PR Produit" class="submenu-img">
+		<div class="submenu-content">
+			<a href="adresses.html">
+				<h4>NOS LOCALISATIONS</h4>
+			</a>
+			<ul>
+				<li><a href="adresses/messine.html">MESSINE</a></li>
+				<li><a href="adresses/saint-honore.html">SAINT-HONORÉ</a></li>
+				<li><a href="adresses/madeleine.html">MADELEINE</a></li>
+				<li><a href="adresses/haussmann.html">HAUSSMANN</a></li>
+			</ul>
+		</div>
 	</div>
-	<form class="contact-form-fields">
-		<div class="row">
-			<div class="field">
-				<label>PRÉNOM*</label>
-				<input type="text" name="firstname" required>
-				<div class="error"></div>
-			</div>
-		</div>
-		<div class="row">
-			<div class="field">
-				<label>NOM*</label>
-				<input type="text" required name="lastname">
-				<div class="error"></div>
-			</div>
-		</div>
-		<div class="row">
-			<div class="field">
-				<label>EMAIL*</label>
-				<input type="email" required name="email">
-				<div class="error"></div>
-			</div>
-		</div>
-		<div class="row">
-			<div class="field">
-				<label>TÉLÉPHONE*</label>
-				<input type="text" name="phone" required>
-				<div class="error"></div>
-			</div>
-		</div>
-		<div class="row">
-			<div class="field">
-				<label>SOCIÉTÉ*</label>
-				<input type="text" required name="company">
-				<div class="error"></div>
-			</div>
-		</div>
-		<div class="row">
-			<div class="field">
-				<label>NOMBRE DE POSTES*</label>
-				<input type="number" name="desk" required>
-				<div class="error"></div>
-			</div>
-		</div>
-		<div class="row">
-			<div class="field">
-				<label>QUE RECHERCHEZ VOUS ?</label>
-				<select name="produit">
-					<option>Bureau exécutif</option>
-					<option>Suite Signature</option>
-					<option>Étages privatifs</option>
-					<option>Événements/Espaces de réunion</option>
-				</select>
-				<div class="error"></div>
-			</div>
-		</div>
-		<div class="row row-full">
-			<div class="field">
-				<label>PARLEZ-NOUS DE VOTRE PROJET</label>
-				<textarea rows="4" name="description_de_la_transaction" placeholder="Exemple: Bonjour, nous sommes à la recherche de bureaux privatifs afin d&#039;accompagner la croissance"></textarea>
-				<div class="error"></div>
-			</div>
-		</div>
-		<div class="form-footer">
-			<button type="submit" class="submit-btn">ENVOYER MA DEMANDE</button>
-			<div class="success" id="successMessage"></div>
-			<span class="contact-phone">07 83 48 94 57</span>
-		</div>
-	</form>
-</div>
 
-	<section class="exceptional-section">
-		<div class="exceptional-container" data-aos="zoom-in">
-			<p class="exceptional-desc">
-				Le Club Kwerk — un espace de vie et de réseau exclusif, réservé à ses membres au cœur de Paris.
-			</p>
+	<!-- SIDE CONTACT FORM -->
+	<div class="side-contact-form" id="sideContactForm">
+		<div class="contact-form-header">
+			<span>CONTACTEZ-NOUS</span>
+			<span class="close-contact-form" id="closeContactForm">
+				<img src="images/close_cross.svg" alt="close">
+			</span>
+		</div>
+		<form class="contact-form-fields">
+			<div class="row">
+				<div class="field">
+					<label>PRÉNOM*</label>
+					<input type="text" name="firstname" required>
+					<div class="error"></div>
+				</div>
+			</div>
+			<div class="row">
+				<div class="field">
+					<label>NOM*</label>
+					<input type="text" required name="lastname">
+					<div class="error"></div>
+				</div>
+			</div>
+			<div class="row">
+				<div class="field">
+					<label>EMAIL*</label>
+					<input type="email" required name="email">
+					<div class="error"></div>
+				</div>
+			</div>
+			<div class="row">
+				<div class="field">
+					<label>TÉLÉPHONE*</label>
+					<input type="text" name="phone" required>
+					<div class="error"></div>
+				</div>
+			</div>
+			<div class="row">
+				<div class="field">
+					<label>SOCIÉTÉ*</label>
+					<input type="text" required name="company">
+					<div class="error"></div>
+				</div>
+			</div>
+			<div class="row">
+				<div class="field">
+					<label>NOMBRE DE POSTES*</label>
+					<input type="number" name="desk" required>
+					<div class="error"></div>
+				</div>
+			</div>
+			<div class="row">
+				<div class="field">
+					<label>QUE RECHERCHEZ VOUS ?</label>
+					<select name="produit">
+						<option>Bureau exécutif</option>
+						<option>Suite Signature</option>
+						<option>Étages privatifs</option>
+						<option>Événements/Espaces de réunion</option>
+					</select>
+					<div class="error"></div>
+				</div>
+			</div>
+			<div class="row row-full">
+				<div class="field">
+					<label>PARLEZ-NOUS DE VOTRE PROJET</label>
+					<textarea rows="4" name="description_de_la_transaction" placeholder="Exemple: Bonjour, nous sommes à la recherche de bureaux privatifs afin d&#039;accompagner la croissance"></textarea>
+					<div class="error"></div>
+				</div>
+			</div>
+			<div class="form-footer">
+				<button type="submit" class="submit-btn">ENVOYER MA DEMANDE</button>
+				<div class="success" id="successMessage"></div>
+				<span class="contact-phone">07 83 48 94 57</span>
+			</div>
+		</form>
+	</div>
+
+	<!-- BLOC 1 : SAINT-HONORÉ (depuis NOS LOCALISATIONS) -->
+	<section class="adresse-details-section">
+		<div class="adresse-details-block reverse">
+			<div class="adresse-details-text" data-aos="fade-right">
+				<div class="adresse-details-street">18 RUE DE COURCELLES, 75008 PARIS</div>
+				<h2 class="adresse-details-title">SAINT-HONORÉ</h2>
+				<p class="adresse-details-desc">
+					À la fois contemporaine et élégante, notre adresse située en face de l&#039;Église Saint-Philippe-Du-Roule, se distingue des immeubles haussmannien du quartier. Une fois la porte passée, le visiteur se retrouve sous un ouvrage d&#039;exception à couper le souffle : « la canopée de bambou », haute de plus de 10 mètres.
+				</p>
+				<a href="adresses/saint-honore.html" class="adresse-details-btn">DÉCOUVRIR L&#039;ADRESSE</a>
+			</div>
+			<div class="adresse-details-img" data-aos="fade-left">
+				<img src="images/content/Escalier_SHO_1.jpg" alt="Adresse Saint-Honoré"/>
+			</div>
 		</div>
 	</section>
 
+	<!-- BLOC 2 : UNE EXPÉRIENCE UNIQUE ET MÉMORABLE (depuis event) -->
 	<section class="barista-section">
 		<div class="barista-grid" data-aos="fade-left">
-			<div class="barista-img"><img src="images/content/Lobby_Mes_1.jpg" alt="Club 1"></div>
-			<div class="barista-img"><img src="images/content/Rooftop_Mes_1.jpg" alt="Club 2"></div>
-			<div class="barista-img"><img src="images/content/Sport_Mes_1.jpg" alt="Club 3"></div>
+			<div class="barista-img"><img src="images/galerie/saint-honore/SHO_8EME.jpg" alt="Club 1"></div>
+			<div class="barista-img"><img src="images/event/Terrasse_MAD.png" alt="Club 2"></div>
+			<div class="barista-img"><img src="images/galerie/saint-honore/Traiteur.jpg" alt="Club 3"></div>
 		</div>
-		<div class="barista-header" data-aos="zoom-in">
-			<h2 class="barista-title">UN CLUB D'EXCEPTION</h2>
+		<div class="barista-header barista-header--event" data-aos="zoom-in">
+			<h2 class="barista-title">UNE EXPÉRIENCE UNIQUE ET MÉMORABLE</h2>
 			<p class="barista-desc">
-				Rejoignez un réseau d'entrepreneurs et de dirigeants qui partagent les mêmes valeurs d'excellence et de discrétion. Accédez à des espaces privatifs, des événements exclusifs et des services sur-mesure, dans un cadre unique au cœur de Paris.
+				Pour enrichir vos moments, nous proposons des expériences culinaires inédites (ice rolls, show cooking, bars à cocktails) et des animations variées: team building, ateliers créatifs, DJ, spectacles ou stands photo. Avec un accompagnement global en scénographie, technique et animations, nous faisons de votre événement une expérience unique et mémorable.
 			</p>
 		</div>
 	</section>
 
-	<section class="details-section bg-grey">
+	<!-- BLOC 3 : FORMULAIRE (depuis contact) -->
+	<section class="contact-page">
+		<div class="contact-panel">
+			<h2 class="contact-title">Parlez-nous de votre projet</h2>
+			<p class="contact-subtitle">Planifiez votre espace, vos services et votre timing avec notre équipe.</p>
+			<form class="contact-form">
+				<div class="field-row">
+					<div class="field">
+						<label>PRÉNOM</label>
+						<input type="text" name="firstname" required>
+						<div class="error"></div>
+					</div>
+					<div class="field">
+						<label>NOM</label>
+						<input type="text" name="lastname" required>
+						<div class="error"></div>
+					</div>
+				</div>
+				<div class="field-row">
+					<div class="field">
+						<label>EMAIL</label>
+						<input type="email" name="email" required>
+						<div class="error"></div>
+					</div>
+					<div class="field">
+						<label>TÉLÉPHONE</label>
+						<input type="text" name="phone" required>
+						<div class="error"></div>
+					</div>
+				</div>
+				<div class="field-row">
+					<div class="field">
+						<label>SOCIÉTÉ</label>
+						<input type="text" name="company" required>
+						<div class="error"></div>
+					</div>
+					<div class="field">
+						<label>NOMBRE DE POSTES</label>
+						<input type="number" name="desk" min="1" required>
+						<div class="error"></div>
+					</div>
+				</div>
+				<div class="field-row">
+					<div class="field">
+						<label>QUE RECHERCHEZ VOUS ?</label>
+						<select name="produit" required>
+							<option>Bureau exécutif</option>
+							<option>Suite Signature</option>
+							<option>Étages privatifs</option>
+						</select>
+						<div class="error"></div>
+					</div>
+					<div class="field">
+						<label>COMMENT AVEZ-VOUS CONNU KWERK ?</label>
+						<select name="origine_de_la_piste" required>
+							<option>Recommandation par mon réseau</option>
+							<option>Recherche internet</option>
+							<option>Recommandation par un membre Kwerk</option>
+							<option>Mis en relation par un broker</option>
+							<option>Sur les réseaux sociaux</option>
+							<option>Rendez-vous professionnel chez Kwerk</option>
+							<option>Dans la presse</option>
+							<option>Lors d&#039;un événement chez Kwerk</option>
+							<option>Au cours d&#039;un déjeuner au restaurant Dana</option>
+						</select>
+						<div class="error"></div>
+					</div>
+				</div>
+				<div class="field">
+					<label>PARLEZ-NOUS DE VOTRE PROJET</label>
+					<textarea rows="5" name="description" placeholder="Parlez-nous de votre projet" required></textarea>
+					<div class="error"></div>
+				</div>
+				<div class="contact-actions">
+					<button type="submit" class="contact-submit">ENVOYER MA DEMANDE</button>
+					<div class="success" id="successMessage"></div>
+					<span class="contact-phone">07 83 48 94 57</span>
+				</div>
+				<div class="field" style="margin-top: 10px;">
+					<input type="hidden" name="general">
+					<div class="error"></div>
+				</div>
+			</form>
+		</div>
+		<div class="contact-media carousel-img">
+			<img src="images/galerie/messine/SalledereunionMes1.jpg" alt="Bureaux Kwerk">
+			<img src="images/galerie/messine/RooftopMes1.jpg" alt="Espace de travail">
+			<img src="images/content/bureau_header.png" alt="Salle de réunion">
+		</div>
+	</section>
+
+	<!-- BLOC 4 : CARACTÉRISTIQUES DÉTAILLÉES (depuis saint-honoré) -->
+	<section class="details-section">
 		<div class="details-container">
-			<div class="details-images" data-aos="fade-right">
+			<div class="details-images" data-aos="fade-left">
 				<div class="image-large">
-					<img src="images/content/Lobby_Mes_2.jpg" alt="Grande Image">
+					<img src="images/content/SHO_privatifs.png" alt="Saint-Honoré privatifs">
 				</div>
 				<div class="image-small">
-					<img src="images/content/Lobby_Mes_Fauteuils_3.jpg" alt="Petite Image 1">
+					<img src="images/content/KWERK-ST_HONORE-JUILLET-22_006_FA.jpg" alt="Kwerk Saint-Honoré">
 				</div>
 				<div class="image-small">
-					<img src="images/content/Dome_Lobby_Mes_1.jpg" alt="Petite Image 2">
+					<img src="images/content/Rooftop_SHO_TE.jpg" alt="Rooftop Saint-Honoré">
 				</div>
 			</div>
-			<div class="details-text" data-aos="fade-left">
-				<h3 class="details-title">LES AVANTAGES DU CLUB</h3>
+			<div class="details-text" data-aos="fade-right">
+				<h3 class="details-title">SAINT-HONORÉ</h3>
 				<p class="details-description">
-					En tant que membre du Club Kwerk, bénéficiez d'un accès prioritaire à l'ensemble de nos adresses parisiennes, à des événements privés et à un réseau d'affaires soigneusement sélectionné.
+					À la fois contemporaine et élégante, notre adresse située en face de l&#039;Église Saint-Philippe-Du-Roule, se distingue des immeubles haussmannien du quartier. Sa façade vitrée dévoile le lobby depuis l'extérieur, dans l'esprit des grands hôtels.
 				</p>
 				<div class="details-list">
-					<h4>VOS PRIVILÈGES</h4>
+					<h4>L&#039;ADRESSE</h4>
 					<ul>
-						<li>Accès à toutes les adresses Kwerk.</li>
-						<li>Invitations aux événements membres exclusifs.</li>
-						<li>Services de conciergerie dédiés.</li>
-						<li>Réseau de dirigeants et d'entrepreneurs.</li>
+						<li>18 rue de Courcelles, 75008 Paris</li>
+						<li>Immeuble de 6 100 m²</li>
+						<li>Parking voitures, 2-roues et vélos</li>
+					</ul>
+					<h4>LES ESPACES EXTÉRIEURS</h4>
+					<ul>
+						<li>Espaces extérieurs de 880 m²</li>
+						<li>1 rooftop à 360°, jusqu&#039;à 150 personnes</li>
+					</ul>
+					<h4>LES ESPACES DE RÉCEPTION</h4>
+					<ul>
+						<li>Espaces de réception de 1 500 m²</li>
+						<li>1 grande salle de réunion, jusqu'à 30 personnes</li>
+						<li>3 studios dédiés au sport, 8 salles de bain privatives</li>
+						<li>1 restaurant semi-gastronomique, le Dana et sa terrasse</li>
+						<li>1 bistro (espace déjeuner, privatisation, formats multiples)</li>
+						<li>1 barista aux cafés de spécialités</li>
+					</ul>
+					<h4>MÉTRO</h4>
+					<ul>
+						<li>9 - Saint-Philippe du Roule</li>
+						<li>9 &amp; 13 - Miromesnil</li>
 					</ul>
 				</div>
-				<a href="contact.html" class="details-btn">REJOINDRE LE CLUB</a>
 			</div>
+		</div>
+	</section>
+
+	<!-- BLOC 5 : CAROUSEL D'IMAGES DÉFILANT (depuis home) -->
+	<section class="univers-section">
+		<div class="univers-carousel" id="univers-carousel">
+			<div class="univers-slide"><img src="images/content/Dana_1.jpg" alt=""></div>
+			<div class="univers-slide"><img src="images/content/Sport_Sho_1.jpg" alt=""></div>
+			<div class="univers-slide"><img src="images/content/Rooftop_Sho_IA_1.png" alt=""></div>
+			<div class="univers-slide"><img src="images/content/BARISTA_MESSINE(2).jpg" alt=""></div>
+			<div class="univers-slide"><img src="images/content/ESPACE_WELLNESS_MESSINE(5).jpg" alt=""></div>
+			<div class="univers-slide"><img src="images/content/Rooftop_Madeleine_IA_1.png" alt=""></div>
+			<div class="univers-slide"><img src="images/content/SALLE_DE_R%c3%89UNION_MESSINE(10).jpg" alt=""></div>
+			<div class="univers-slide"><img src="images/content/SHO_privatifs.png" alt=""></div>
 		</div>
 	</section>
 
@@ -261,61 +388,61 @@ f.parentNode.insertBefore(j, f);
 		<a href="contact.html" class="contact-btn-mobile-sticky">NOUS CONTACTER</a>
 	</div>
 
-<footer class="footer">
-	<div class="footer-container">
-		<div class="footer-left">
-			<img src="images/logo-kwerk-noir.png" alt="Kwerk" class="footer-logo"/>
-			<a href="contact.html" class="footer-contact-btn">NOUS CONTACTER</a>
-			<div class="footer-socials">
-				<a href="https://www.instagram.com/kwerkparis/" target="_blank" rel="noreferrer noopener" aria-label="Instagram"><img src="images/footer_social/instagram.svg"/></a>
-				<a href="https://www.linkedin.com/company/kwerk/" target="_blank" rel="noreferrer noopener" aria-label="LinkedIn"><img src="images/footer_social/linkedin.svg"/></a>
+	<footer class="footer">
+		<div class="footer-container">
+			<div class="footer-left">
+				<img src="images/logo-kwerk-noir.png" alt="Kwerk" class="footer-logo"/>
+				<a href="contact.html" class="footer-contact-btn">NOUS CONTACTER</a>
+				<div class="footer-socials">
+					<a href="https://www.instagram.com/kwerkparis/" target="_blank" rel="noreferrer noopener" aria-label="Instagram"><img src="images/footer_social/instagram.svg"/></a>
+					<a href="https://www.linkedin.com/company/kwerk/" target="_blank" rel="noreferrer noopener" aria-label="LinkedIn"><img src="images/footer_social/linkedin.svg"/></a>
+				</div>
+			</div>
+			<div class="footer-right">
+				<nav class="footer-nav">
+					<div class="footer-nav-col" data-links="adresses">
+						<div class="footer-nav-title active">LOCALISATIONS</div>
+						<ul class="footer-nav-links show">
+							<a href="adresses/messine.html"><li>MESSINE</li></a>
+							<a href="adresses/saint-honore.html"><li>SAINT-HONORÉ</li></a>
+							<a href="adresses/madeleine.html"><li>MADELEINE</li></a>
+							<a href="adresses/haussmann.html"><li>HAUSSMANN</li></a>
+						</ul>
+					</div>
+					<div class="footer-nav-col" data-links="produits">
+						<div class="footer-nav-title">BUREAUX</div>
+						<ul class="footer-nav-links">
+							<a href="espaces.html"><li>BUREAUX EXÉCUTIFS</li></a>
+							<a href="espaces.html"><li>SUITES SIGNATURES</li></a>
+							<a href="espaces.html"><li>ÉTAGES PRIVATIFS</li></a>
+						</ul>
+					</div>
+					<div class="footer-nav-col" data-links="services">
+						<div class="footer-nav-title"><a href="services.html">EXPÉRIENCES</a></div>
+					</div>
+					<div class="footer-nav-col">
+						<div class="footer-nav-title">
+							<a href="event.html">ÉVÉNEMENTS</a>
+						</div>
+					</div>
+					<div class="footer-nav-col">
+						<div class="footer-nav-title">
+							<a href="club.html">CLUB</a>
+						</div>
+					</div>
+					<div class="footer-nav-col">
+						<div class="footer-nav-title">
+							<a href="galerie.html">GALERIE</a>
+						</div>
+					</div>
+				</nav>
 			</div>
 		</div>
-		<div class="footer-right">
-			<nav class="footer-nav">
-				<div class="footer-nav-col" data-links="adresses">
-					<div class="footer-nav-title active">LOCALISATIONS</div>
-					<ul class="footer-nav-links show">
-						<a href="adresses/messine.html"><li>MESSINE</li></a>
-						<a href="adresses/saint-honore.html"><li>SAINT-HONORÉ</li></a>
-						<a href="adresses/madeleine.html"><li>MADELEINE</li></a>
-						<a href="adresses/haussmann.html"><li>HAUSSMANN</li></a>
-					</ul>
-				</div>
-				<div class="footer-nav-col" data-links="produits">
-					<div class="footer-nav-title">BUREAUX</div>
-					<ul class="footer-nav-links">
-						<a href="espaces.html"><li>BUREAUX EXÉCUTIFS</li></a>
-						<a href="espaces.html"><li>SUITES SIGNATURES</li></a>
-						<a href="espaces.html"><li>ÉTAGES PRIVATIFS</li></a>
-					</ul>
-				</div>
-				<div class="footer-nav-col" data-links="services">
-					<div class="footer-nav-title"><a href="services.html">EXPÉRIENCES</a></div>
-				</div>
-				<div class="footer-nav-col">
-					<div class="footer-nav-title">
-						<a href="event.html">ÉVÉNEMENTS</a>
-					</div>
-				</div>
-				<div class="footer-nav-col">
-					<div class="footer-nav-title">
-						<a href="club.html">CLUB</a>
-					</div>
-				</div>
-				<div class="footer-nav-col">
-					<div class="footer-nav-title">
-						<a href="galerie.html">GALERIE</a>
-					</div>
-				</div>
-			</nav>
+		<div class="footer-bottom">
+			<a href="cgu.html">Conditions générales d'utilisation</a>
+			<a href="mentions-legales.html">Mentions légales</a>
 		</div>
-	</div>
-	<div class="footer-bottom">
-		<a href="cgu.html">Conditions générales d'utilisation</a>
-		<a href="mentions-legales.html">Mentions légales</a>
-	</div>
-</footer>
+	</footer>
 
 	<script src="../unpkg.com/aos%402.3.1/dist/aos.js"></script>
 	<script>
@@ -330,6 +457,7 @@ f.parentNode.insertBefore(j, f);
 	<script src="js/footer.js"></script>
 	<script src="js/script.js"></script>
 	<script src="js/loader.js"></script>
+	<script src="js/univers.js"></script>
 
 </body>
 </html>
