@@ -25,6 +25,154 @@ f.parentNode.insertBefore(j, f);
 	<link rel="stylesheet" href="css/navbar.css">
 	<link rel="stylesheet" href="css/styles.css">
 	<link rel="stylesheet" href="css/footer.css">
+	<style>
+		.error {
+			color: #d00000;
+			font-size: 12px;
+			margin-top: 4px;
+			display: none;
+		}
+		.field input.error-field,
+		.field textarea.error-field,
+		.field select.error-field {
+			border-bottom-color: #d00000;
+		}
+		.contact-page {
+			display: flex;
+			gap: 24px;
+			padding-left: 60px;
+			padding-right: 60px;
+			background: #fff;
+			min-height: calc(100vh - 120px);
+			align-items: stretch;
+			font-family: "Helvetica Neue", HelveticaNeue, sans-serif;
+		}
+		.contact-panel {
+			flex: 1;
+			background: #fff;
+			border-radius: 0;
+			padding: 48px;
+			box-shadow: none;
+			display: flex;
+			flex-direction: column;
+			gap: 10px;
+		}
+		.contact-media {
+			flex: 1;
+			min-height: 520px;
+			border-radius: 0;
+			overflow: hidden;
+			position: relative;
+			box-shadow: none;
+		}
+		.contact-title {
+			font-size: 24px;
+			letter-spacing: 1px;
+			text-transform: uppercase;
+			margin-bottom: 8px;
+			color: #111;
+		}
+		.contact-subtitle {
+			font-size: 14px;
+			color: #444;
+			margin-bottom: 24px;
+			line-height: 1.6;
+		}
+		.contact-form {
+			display: flex;
+			flex-direction: column;
+			gap: 14px;
+		}
+		.field-row {
+			display: grid;
+			grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+			gap: 18px;
+		}
+		.field label {
+			font-size: 13px;
+			letter-spacing: 2px;
+			text-transform: uppercase;
+			font-weight: 500;
+			margin-bottom: 4px;
+			color: #333;
+		}
+		.field input,
+		.field textarea,
+		.field select {
+			border: none;
+			border-bottom: 1px solid #222;
+			padding: 8px 6px;
+			font-size: 15px;
+			background: transparent;
+			outline: none;
+			color: #222;
+			margin: 6px 0;
+			transition: border-color 0.2s;
+		}
+		.field textarea {
+			resize: vertical;
+			min-height: 120px;
+		}
+		.field input:focus,
+		.field textarea:focus,
+		.field select:focus {
+			border-bottom: 1.5px solid #111;
+		}
+		.field input[type="number"] {
+			-moz-appearance: textfield;
+		}
+		.field input[type="number"]::-webkit-inner-spin-button,
+		.field input[type="number"]::-webkit-outer-spin-button {
+			-webkit-appearance: none;
+			margin: 0;
+		}
+		.contact-actions {
+			display: flex;
+			align-items: center;
+			gap: 18px;
+			margin-top: 10px;
+			flex-wrap: wrap;
+		}
+		.contact-submit {
+			background: #111;
+			color: #fff;
+			text-transform: uppercase;
+			padding: 14px 30px;
+			border: none;
+			font-size: 15px;
+			letter-spacing: 1px;
+			cursor: pointer;
+			transition: background 0.2s;
+		}
+		.contact-submit:hover {
+			background: #333;
+		}
+		.contact-phone {
+			border: 1px solid #222;
+			padding: 12px 26px;
+			font-size: 14px;
+			background: transparent;
+			color: #222;
+			letter-spacing: 1px;
+			border-radius: 2px;
+			text-transform: uppercase;
+		}
+		@media(max-width: 900px) {
+			.contact-page {
+				flex-direction: column;
+				padding-left: 24px;
+				padding-right: 24px;
+			}
+			.contact-panel {
+				padding: 32px;
+			}
+		}
+		@media(max-width: 600px) {
+			.contact-panel {
+				padding: 24px;
+			}
+		}
+	</style>
 </head>
 <body>
 	<div id="pageLoader" class="page-loader">
