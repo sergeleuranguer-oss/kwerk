@@ -1,0 +1,5 @@
+# HTTrack Website Copier Cookie File
+# This file format is compatible with Netscape cookies
+www.kwerk.fr	TRUE	/	FALSE	1999999999	PHPSESSID	nvduun98h86kodg4j8ahcuji4l
+www.kwerk.fr	TRUE	/	FALSE	1999999999	samesite	lax
+

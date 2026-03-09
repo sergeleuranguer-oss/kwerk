@@ -1,0 +1,544 @@
+﻿<!DOCTYPE html>
+<html lang="fr">
+	
+<!-- Mirrored from www.kwerk.fr/contact by HTTrack Website Copier/3.x [XR&CO'2014], Mon, 09 Mar 2026 14:52:09 GMT -->
+<!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=UTF-8" /><!-- /Added by HTTrack -->
+<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<title>
+				Kwerk - Contact
+		</title>
+				<!-- Google Tag Manager -->
+		<script>
+			(function (w, d, s, l, i) {
+w[l] = w[l] || [];
+w[l].push({'gtm.start': new Date().getTime(), event: 'gtm.js'});
+var f = d.getElementsByTagName(s)[0],
+j = d.createElement(s),
+dl = l != 'dataLayer' ? '&l=' + l : '';
+j.async = true;
+j.src = '../www.googletagmanager.com/gtm5445.html?id=' + i + dl;
+f.parentNode.insertBefore(j, f);
+})(window, document, 'script', 'dataLayer', 'GTM-MK4BS4GL');
+		</script>
+		<!-- End Google Tag Manager -->
+
+		<!-- Import Google Fonts (Roboto) -->
+		<link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&amp;display=swap" rel="stylesheet">
+		<link href="../unpkg.com/aos%402.3.1/dist/aos.css" rel="stylesheet">
+		<link rel="icon" type="image/svg+xml" href="favicon.ico">
+		
+										<link rel="stylesheet" href="css/navbar_galerie.css">
+					
+	<style>
+
+		.error {
+			color: #d00000;
+			font-size: 12px;
+			margin-top: 4px;
+			display: none; /* affiché par le JS */
+		}
+
+		.field input.error-field,
+		.field textarea.error-field,
+		.field select.error-field {
+			border-bottom-color: #d00000;
+		}
+
+		.contact-page {
+			display: flex;
+			gap: 24px;
+			padding-left: 60px;
+			padding-right: 60px;
+			background: #fff;
+			min-height: calc(100vh - 120px);
+			align-items: stretch;
+			font-family: "Helvetica Neue", HelveticaNeue, sans-serif;
+		}
+		.contact-panel {
+			flex: 1;
+			background: #fff;
+			border-radius: 0;
+			padding: 48px;
+			box-shadow: none;
+			display: flex;
+			flex-direction: column;
+			gap: 10px;
+		}
+		.contact-media {
+			flex: 1;
+			min-height: 520px;
+			border-radius: 0;
+			overflow: hidden;
+			position: relative;
+			box-shadow: none;
+		}
+		.contact-title {
+			font-size: 24px;
+			letter-spacing: 1px;
+			text-transform: uppercase;
+			margin-bottom: 8px;
+			color: #111;
+		}
+		.contact-subtitle {
+			font-size: 14px;
+			color: #444;
+			margin-bottom: 24px;
+			line-height: 1.6;
+		}
+		.contact-form {
+			display: flex;
+			flex-direction: column;
+			gap: 14px;
+		}
+		.field-row {
+			display: grid;
+			grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+			gap: 18px;
+		}
+		.field label {
+			font-size: 13px;
+			letter-spacing: 2px;
+			text-transform: uppercase;
+			font-weight: 500;
+			margin-bottom: 4px;
+			color: #333;
+		}
+		.field input,
+		.field textarea,
+		.field select {
+			border: none;
+			border-bottom: 1px solid #222;
+			padding: 8px 6px;
+			font-size: 15px;
+			background: transparent;
+			outline: none;
+			color: #222;
+			margin: 6px 0;
+			transition: border-color 0.2s;
+		}
+		.field textarea {
+			resize: vertical;
+			min-height: 120px;
+		}
+		.field input:focus,
+		.field textarea:focus,
+		.field select:focus {
+			border-bottom: 1.5px solid #111;
+		}
+		.field input[type="number"] {
+			-moz-appearance: textfield;
+		}
+		.field input[type="number"]::-webkit-inner-spin-button,
+		.field input[type="number"]::-webkit-outer-spin-button {
+			-webkit-appearance: none;
+			margin: 0;
+		}
+		.contact-actions {
+			display: flex;
+			align-items: center;
+			gap: 18px;
+			margin-top: 10px;
+			flex-wrap: wrap;
+		}
+		.contact-submit {
+			background: #111;
+			color: #fff;
+			text-transform: uppercase;
+			padding: 14px 30px;
+			border: none;
+			font-size: 15px;
+			letter-spacing: 1px;
+			cursor: pointer;
+			transition: background 0.2s;
+		}
+		.contact-submit:hover {
+			background: #333;
+		}
+		.contact-phone {
+			border: 1px solid #222;
+			padding: 12px 26px;
+			font-size: 14px;
+			background: transparent;
+			color: #222;
+			letter-spacing: 1px;
+			border-radius: 2px;
+			text-transform: uppercase;
+		}
+		.contact-note {
+			font-size: 13px;
+			color: #555;
+			margin-top: 4px;
+		}
+		@media(max-width: 900px) {
+			.contact-page {
+				flex-direction: column;
+				padding-left: 24px;
+				padding-right: 24px;
+			}
+			.contact-panel {
+				padding: 32px;
+			}
+		}
+		@media(max-width: 600px) {
+
+			.contact-panel {
+				padding: 24px;
+			}
+		}
+	</style>
+		<!-- Votre fichier CSS “pixel-perfect” -->
+		<link rel="stylesheet" href="css/styles.css">
+
+		<link rel="stylesheet" href="css/footer.css">
+	</head>
+	<body>
+		<div id="pageLoader" class="page-loader">
+			<div class="loader-content">
+				<div class="loader-logo">
+					<img src="images/logo_kwerk.png" alt="Kwerk" class="loader-logo-img">
+				</div>
+				<div class="loader-animation">
+					<div class="loader-circle">
+						<div class="loader-path"></div>
+					</div>
+				</div>
+				<div class="loader-progress">
+					<div class="progress-bar" id="progressBar"></div>
+				</div>
+			</div>
+		</div>
+		<!-- Google Tag Manager (noscript) -->
+		<noscript>
+			<iframe src="https://www.googletagmanager.com/ns.html?id=GTM-MK4BS4GL" height="0" width="0" style="display:none;visibility:hidden"></iframe>
+		</noscript>
+		<!-- End Google Tag Manager (noscript) -->
+
+					<header class="hero">
+
+	<nav class="navbar">
+		<div class="menu-icon"><img src="images/menu_burger_noir.svg"></div>
+		<div class="logo">
+			<a href="index.html"><img src="images/logo-kwerk-noir.png"></a>
+		</div>
+		<div class="nav-lang-switch">
+			<a href="contact.html" class="active">FR</a>
+			<span class="lang-sep">/</span>
+			<a href="en/contact.html" >EN</a>
+		</div>
+		<a href="contact.html" class="contact-btn hide-on-contact">NOUS CONTACTER</a>
+	</nav>
+
+</header>
+
+<!-- MENU---------------------------->
+<div class="side-menu" id="sideMenu">
+	<div class="side-menu-header">
+		<a href="index.html"><img src="images/logo-kwerk-noir.png" alt="Logo"></a>
+		<span class="close-btn" id="closeMenu"><img src="images/close_cross.svg" alt="close"></span>
+	</div>
+	<ul class="side-menu-links">
+		<li data-submenu="submenuPRAdresses">ADRESSES
+			<span>&rsaquo;</span>
+		</li>
+		<li>
+			<a href="espaces.html">BUREAUX</a>
+		</li>
+		<li>
+			<a href="services.html">EXPÉRIENCES</a>
+		</li>
+		<li>
+			<a href="event.html">ÉVÉNEMENTS</a>
+		</li>
+		<li>
+			<a href="galerie.html">GALERIE</a>
+		</li>
+		<li>
+			<a href="contact.html">CONTACTEZ-NOUS</a>
+		</li>
+	</ul>
+
+</div>
+
+<!--SOUS MENU ADRESSES-->
+<div class="submenu-panel" id="submenuPRAdresses">
+	<div class="submenu-header">
+		<span class="close-submenu" data-back="true">
+			<img src="images/close_cross.svg" alt="close">
+		</span>
+	</div>
+	<img src="images/adresses.png" alt="Image PR Produit" class="submenu-img">
+	<div class="submenu-content">
+		<a href="adresses.html">
+			<h4>NOS ADRESSES</h4>
+		</a>
+		<ul>
+			<li><a href="adresses/messine.html">MESSINE</a></li>
+			<li><a href="adresses/saint-honore.html">SAINT-HONORÉ</a></li>
+			<li><a href="adresses/madeleine.html">MADELEINE</a></li>
+			<li><a href="adresses/haussmann.html">HAUSSMANN</a></li>
+		</ul>
+	</div>
+</div>
+
+<!-- SIDE CONTACT FORM -->
+<div class="side-contact-form" id="sideContactForm">
+
+	<div class="contact-form-header">
+		<span>CONTACTEZ-NOUS</span>
+		<span class="close-contact-form" id="closeContactForm">
+			<img src="images/close_cross.svg" alt="close">
+		</span>
+	</div>
+	<form class="contact-form-fields">
+		<div class="row">
+			<div class="field">
+				<label>PRÉNOM*</label>
+				<input type="text" name="firstname" required>
+				<div class="error"></div>
+			</div>
+		</div>
+		<div class="row">
+			<div class="field">
+				<label>NOM*</label>
+				<input type="text" required name="lastname">
+				<div class="error"></div>
+			</div>
+		</div>
+		<div class="row">
+			<div class="field">
+				<label>EMAIL*</label>
+				<input type="email" required name="email">
+				<div class="error"></div>
+			</div>
+		</div>
+		<div class="row">
+			<div class="field">
+				<label>TÉLÉPHONE*</label>
+				<input type="text" name="phone" required>
+				<div class="error"></div>
+			</div>
+		</div>
+		<div class="row">
+			<div class="field">
+				<label>SOCIÉTÉ*</label>
+				<input type="text" required name="company">
+				<div class="error"></div>
+			</div>
+		</div>
+		<div class="row">
+			<div class="field">
+				<label>NOMBRE DE POSTES*</label>
+				<input type="number" name="desk" required>
+				<div class="error"></div>
+			</div>
+		</div>
+		<div class="row">
+			<div class="field">
+				<label>QUE RECHERCHEZ VOUS ?</label>
+				<select name="produit">
+					<option>Bureau exécutif</option>
+					<option>Suite Signature</option>
+					<option>Étages privatifs</option>
+					<option>Événements/Espaces de réunion</option>
+				</select>
+				<div class="error"></div>
+			</div>
+		</div>
+		<div class="row">
+			<div class="field">
+				<label>COMMENT AVEZ VOUS CONNU KWERK ?*</label>
+				<select name="origine_de_la_piste">
+					<option>Recommandation par mon réseau</option>
+					<option>Recherche internet</option>
+					<option>Recommandation par un membre Kwerk</option>
+					<option>Mis en relation par un broker</option>
+					<option>Sur les réseaux sociaux</option>
+					<option>Rendez-vous professionnel chez Kwerk</option>
+					<option>Dans la presse</option>
+					<option>Lors d&#039;un événement chez Kwerk</option>
+					<option>Au cours d&#039;un déjeuner au restaurant Dana</option>
+				</select>
+				<div class="error"></div>
+			</div>
+		</div>
+		<div class="row row-full">
+			<div class="field">
+				<label>PARLEZ-NOUS DE VOTRE PROJET</label>
+				<textarea rows="4" name="description_de_la_transaction" placeholder="Exemple: Bonjour, nous sommes à la recherche de bureaux privatifs afin d&#039;accompagner la croissance"></textarea>
+				<div class="error"></div>
+			</div>
+		</div>
+		<div class="form-footer">
+			<button type="submit" class="submit-btn">ENVOYER MA DEMANDE</button>
+			<div class="success" id="successMessage"></div>
+			<span class="contact-phone">07 83 48 94 57</span>
+		</div>
+	</form>
+</div>
+					<section class="contact-page">
+		<div class="contact-panel">
+			<h2 class="contact-title">Parlez-nous de votre projet</h2>
+			<p class="contact-subtitle">Planifiez votre espace, vos services et votre timing avec notre équipe.</p>
+			<form class="contact-form">
+				<div class="field-row">
+					<div class="field">
+						<label>PRÉNOM</label>
+						<input type="text" name="firstname" required>
+						<div class="error"></div>
+					</div>
+					<div class="field">
+						<label>NOM</label>
+						<input type="text" name="lastname" required>
+						<div class="error"></div>
+					</div>
+				</div>
+				<div class="field-row">
+					<div class="field">
+						<label>EMAIL</label>
+						<input type="email" name="email" required>
+						<div class="error"></div>
+					</div>
+					<div class="field">
+						<label>TÉLÉPHONE</label>
+						<input type="text" name="phone" required>
+						<div class="error"></div>
+					</div>
+				</div>
+				<div class="field-row">
+					<div class="field">
+						<label>SOCIÉTÉ</label>
+						<input type="text" name="company" required>
+						<div class="error"></div>
+					</div>
+					<div class="field">
+						<label>NOMBRE DE POSTES</label>
+						<input type="number" name="desk" min="1" required>
+						<div class="error"></div>
+					</div>
+				</div>
+				<div class="field-row">
+					<div class="field">
+						<label>QUE RECHERCHEZ VOUS ?</label>
+						<select name="produit" required>
+							<option>Bureau exécutif</option>
+							<option>Suite Signature</option>
+							<option>Étages privatifs</option>
+						</select>
+						<div class="error"></div>
+					</div>
+					<div class="field">
+						<label>COMMENT AVEZ-VOUS CONNU KWERK ?</label>
+						<select name="origine_de_la_piste" required>
+							<option>Recommandation par mon réseau</option>
+							<option>Recherche internet</option>
+							<option>Recommandation par un membre Kwerk</option>
+							<option>Mis en relation par un broker</option>
+							<option>Sur les réseaux sociaux</option>
+							<option>Rendez-vous professionnel chez Kwerk</option>
+							<option>Dans la presse</option>
+							<option>Lors d&#039;un événement chez Kwerk</option>
+							<option>Au cours d&#039;un déjeuner au restaurant Dana</option>
+						</select>
+						<div class="error"></div>
+					</div>
+				</div>
+				<div class="field">
+					<label>PARLEZ-NOUS DE VOTRE PROJET</label>
+					<textarea rows="5" name="description" placeholder="Parlez-nous de votre projet" required></textarea>
+					<div class="error"></div>
+				</div>
+				<div class="contact-actions">
+					<button type="submit" class="contact-submit">ENVOYER MA DEMANDE</button>
+					<div class="success" id="successMessage"></div>
+					<span class="contact-phone">07 83 48 94 57</span>
+				</div>
+				<div class="field" style="margin-top: 10px;">
+					<input type="hidden" name="general">
+					<div class="error"></div>
+				</div>
+
+			</form>
+		</div>
+		<div class="contact-media carousel-img">
+			<img src="images/galerie/messine/SalledereunionMes1.jpg" alt="Bureaux Prana">
+			<img src="images/galerie/messine/RooftopMes1.jpg" alt="Espace de travail">
+			<img src="images/content/bureau_header.png" alt="Salle de r&eacute;union">
+		</div>
+	</section>
+
+		<div class="sticky-btn-contact">
+	<a href="contact.html" class="contact-btn-mobile-sticky">NOUS CONTACTER</a>
+</div>
+
+<footer class="footer">
+	<div class="footer-container">
+		<div class="footer-left">
+			<img src="images/logo-kwerk-noir.png" alt="Kwerk" class="footer-logo"/>
+			<a href="contact.html" class="footer-contact-btn">NOUS CONTACTER</a>
+			<div class="footer-socials">
+				<a href="https://www.instagram.com/kwerkparis/" target="_blank" rel="noreferrer noopener" aria-label="Instagram"><img src="images/footer_social/instagram.svg"/></a>
+				<a href="https://www.linkedin.com/company/kwerk/" target="_blank" rel="noreferrer noopener" aria-label="LinkedIn"><img src="images/footer_social/linkedin.svg"/></a>
+			</div>
+		</div>
+
+		<div class="footer-right">
+			<nav class="footer-nav">
+				<div class="footer-nav-col" data-links="adresses">
+					<div class="footer-nav-title active">ADRESSES</div>
+					<ul class="footer-nav-links show">
+						<a href="adresses/messine.html"><li>MESSINE</li></a>
+						<a href="adresses/saint-honore.html"><li>SAINT-HONORÉ</li></a>
+						<a href="adresses/madeleine.html"><li>MADELEINE</li></a>
+						<a href="adresses/haussmann.html"><li>HAUSSMANN</li></a>
+					</ul>
+				</div>
+				<div class="footer-nav-col" data-links="produits">
+					<div class="footer-nav-title">BUREAUX</div>
+					<ul class="footer-nav-links">
+						<a href="espaces.html"><li>BUREAUX EXÉCUTIFS</li></a>
+						<a href="espaces.html"><li>SUITES SIGNATURES</li></a>
+						<a href="espaces.html"><li>ÉTAGES PRIVATIFS</li></a>
+					</ul>
+				</div>
+				<div class="footer-nav-col" data-links="services">
+					<div class="footer-nav-title"><a href="services.html">EXPÉRIENCES</a></div>
+				</div>
+				<div class="footer-nav-col">
+					<div class="footer-nav-title">
+						<a href="event.html">ÉVÉNEMENTS</a>
+					</div>
+				</div>
+				<div class="footer-nav-col">
+					<div class="footer-nav-title">
+						<a href="galerie.html">GALERIE</a>
+					</div>
+				</div>
+			</nav>
+		</div>
+	</div>
+	<div class="footer-bottom">
+		<a href="cgu.html">Conditions générales d'utilisation</a>
+		<a href="mentions-legales.html">Mentions légales</a>
+	</div>
+</footer>
+		<script src="../unpkg.com/aos%402.3.1/dist/aos.js"></script>
+		<script>
+			AOS.init({delay: 200, duration: 1500, anchorPlacement: 'center-center', once: true});
+		</script>
+		<!-- Start of HubSpot Embed Code -->
+		<script type="text/javascript" id="hs-script-loader" async defer src="../js-eu1.hs-scripts.com/26225487.js"></script>
+		<!-- End of HubSpot Embed Code -->
+		<script src="js/sticky.js"></script>
+		<script src="js/contact.js"></script>
+		<script src="js/form.js"></script>
+		<script src="js/footer.js"></script>
+		<script src="js/script.js"></script>
+		<script src="js/loader.js"></script>
+
+
+	</body>
+
+<!-- Mirrored from www.kwerk.fr/contact by HTTrack Website Copier/3.x [XR&CO'2014], Mon, 09 Mar 2026 14:52:10 GMT -->
+</html></body></html>

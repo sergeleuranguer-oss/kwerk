@@ -1,0 +1,312 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<title>
+			Kwerk
+					</title>
+				<!-- Google Tag Manager -->
+		<script>
+			(function (w, d, s, l, i) {
+w[l] = w[l] || [];
+w[l].push({'gtm.start': new Date().getTime(), event: 'gtm.js'});
+var f = d.getElementsByTagName(s)[0],
+j = d.createElement(s),
+dl = l != 'dataLayer' ? '&l=' + l : '';
+j.async = true;
+j.src = 'https://www.googletagmanager.com/gtm.js?id=' + i + dl;
+f.parentNode.insertBefore(j, f);
+})(window, document, 'script', 'dataLayer', 'GTM-MK4BS4GL');
+		</script>
+		<!-- End Google Tag Manager -->
+
+		<!-- Import Google Fonts (Roboto) -->
+		<link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+		<link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+		<link rel="icon" type="image/svg+xml" href="/favicon.ico">
+		
+									<link rel="stylesheet" href="/css/navbar.css">
+							<!-- Votre fichier CSS “pixel-perfect” -->
+		<link rel="stylesheet" href="/css/styles.css">
+
+		<link rel="stylesheet" href="/css/footer.css">
+	</head>
+	<body>
+		<div id="pageLoader" class="page-loader">
+			<div class="loader-content">
+				<div class="loader-logo">
+					<img src="/images/logo_kwerk.png" alt="Kwerk" class="loader-logo-img">
+				</div>
+				<div class="loader-animation">
+					<div class="loader-circle">
+						<div class="loader-path"></div>
+					</div>
+				</div>
+				<div class="loader-progress">
+					<div class="progress-bar" id="progressBar"></div>
+				</div>
+			</div>
+		</div>
+		<!-- Google Tag Manager (noscript) -->
+		<noscript>
+			<iframe src="https://www.googletagmanager.com/ns.html?id=GTM-MK4BS4GL" height="0" width="0" style="display:none;visibility:hidden"></iframe>
+		</noscript>
+		<!-- End Google Tag Manager (noscript) -->
+
+					<header class="hero" style="height: 100vh; background-color: #000;">
+			<div class="hero-video hero-slideshow" style="background-image: url('/images/restaurant/dana.png');" ></div>
+	<div class='hero-center-tagline'>BUREAUX DE CLAUDE</div>
+		
+	<nav class="navbar">
+		<div class="menu-icon"><img src="/images/menu_burger.svg"></div>
+		<a href="/en/" class="logo-wrapper">
+			<div class="logo"><img src="/images/logo-sans-bureaux.png"></div>
+		</a>
+		<div class="nav-lang-switch">
+			<a href="/mentions-legales">FR</a>
+			<span class="lang-sep">/</span>
+			<a href="/en/mentions-legales">EN</a>
+		</div>
+		<a href="/en/contact" class="contact-btn ">CONTACT US</a>
+	</nav>
+
+			<div class="hero-text">
+			
+
+                        <p class="subtitle">ERREUR 404</p>
+
+                        <h1 class="title">PAGE NON TROUVÉE</h1>
+
+                        <p class="description">
+
+                            La page que vous recherchez n'existe pas ou a été déplacée.<br>
+
+                            Retournez à l'accueil pour découvrir nos espaces d'exception.
+
+                        </p>
+
+                        <a href="/" class="btn">RETOUR À L'ACCUEIL</a>
+
+                    
+		</div>
+	</header>
+
+<!-- MENU---------------------------->
+<div class="side-menu" id="sideMenu">
+	<div class="side-menu-header">
+		<a href="/en/"><img src="/images/logo-kwerk-noir.png" alt="Logo"></a>
+		<span class="close-btn" id="closeMenu"><img src="/images/close_cross.svg" alt="close"></span>
+	</div>
+	<ul class="side-menu-links">
+		<li data-submenu="submenuPRAdresses">LOCATIONS
+			<span>&rsaquo;</span>
+		</li>
+		<li>
+			<a href="/en/espaces">WORKSPACES</a>
+		</li>
+		<li>
+			<a href="/en/services">SERVICES</a>
+		</li>
+		<li>
+			<a href="/en/event">EVENTS</a>
+		</li>
+		<li>
+			<a href="/en/galerie">GALLERY</a>
+		</li>
+		<li>
+			<a href="/en/contact">CONTACT US</a>
+		</li>
+	</ul>
+
+</div>
+
+<!--SOUS MENU ADRESSES-->
+<div class="submenu-panel" id="submenuPRAdresses">
+	<div class="submenu-header">
+		<span class="close-submenu" data-back="true">
+			<img src="/images/close_cross.svg" alt="close">
+		</span>
+	</div>
+	<img src="/images/adresses.png" alt="Image PR Produit" class="submenu-img">
+	<div class="submenu-content">
+		<a href="/en/adresses">
+			<h4>OUR LOCATIONS</h4>
+		</a>
+		<ul>
+			<li><a href="/en/adresses/messine">MESSINE</a></li>
+			<li><a href="/en/adresses/saint-honore">SAINT-HONORÉ</a></li>
+			<li><a href="/en/adresses/madeleine">MADELEINE</a></li>
+			<li><a href="/en/adresses/haussmann">HAUSSMANN</a></li>
+		</ul>
+	</div>
+</div>
+
+<!-- SIDE CONTACT FORM -->
+<div class="side-contact-form" id="sideContactForm">
+
+	<div class="contact-form-header">
+		<span>CONTACT US</span>
+		<span class="close-contact-form" id="closeContactForm">
+			<img src="/images/close_cross.svg" alt="close">
+		</span>
+	</div>
+	<form class="contact-form-fields">
+		<div class="row">
+			<div class="field">
+				<label>FIRST NAME*</label>
+				<input type="text" name="firstname" required>
+				<div class="error"></div>
+			</div>
+		</div>
+		<div class="row">
+			<div class="field">
+				<label>LAST NAME*</label>
+				<input type="text" required name="lastname">
+				<div class="error"></div>
+			</div>
+		</div>
+		<div class="row">
+			<div class="field">
+				<label>EMAIL*</label>
+				<input type="email" required name="email">
+				<div class="error"></div>
+			</div>
+		</div>
+		<div class="row">
+			<div class="field">
+				<label>PHONE*</label>
+				<input type="text" name="phone" required>
+				<div class="error"></div>
+			</div>
+		</div>
+		<div class="row">
+			<div class="field">
+				<label>COMPANY*</label>
+				<input type="text" required name="company">
+				<div class="error"></div>
+			</div>
+		</div>
+		<div class="row">
+			<div class="field">
+				<label>NUMBER OF WORKSTATIONS*</label>
+				<input type="number" name="desk" required>
+				<div class="error"></div>
+			</div>
+		</div>
+		<div class="row">
+			<div class="field">
+				<label>WHAT ARE YOU LOOKING FOR?</label>
+				<select name="produit">
+					<option>Executive office</option>
+					<option>Signature suite</option>
+					<option>Private floors</option>
+					<option>Events/Meeting spaces</option>
+				</select>
+				<div class="error"></div>
+			</div>
+		</div>
+		<div class="row">
+			<div class="field">
+				<label>HOW DID YOU HEAR ABOUT KWERK?*</label>
+				<select name="origine_de_la_piste">
+					<option>Recommendation from my network</option>
+					<option>Online search</option>
+					<option>Recommendation from a Kwerk member</option>
+					<option>Introduced by a broker</option>
+					<option>Social media</option>
+					<option>Business meeting at Kwerk</option>
+					<option>Press coverage</option>
+					<option>Event at Kwerk</option>
+					<option>Lunch at Le Dana restaurant</option>
+				</select>
+				<div class="error"></div>
+			</div>
+		</div>
+		<div class="row row-full">
+			<div class="field">
+				<label>TELL US ABOUT YOUR PROJECT</label>
+				<textarea rows="4" name="description_de_la_transaction" placeholder="Example: We are looking for private offices to support our growth"></textarea>
+				<div class="error"></div>
+			</div>
+		</div>
+		<div class="form-footer">
+			<button type="submit" class="submit-btn">SUBMIT MY REQUEST</button>
+			<div class="success" id="successMessage"></div>
+			<span class="contact-phone">07 83 48 94 57</span>
+		</div>
+	</form>
+</div>
+				
+		<div class="sticky-btn-contact">
+	<a href="/en/contact" class="contact-btn-mobile-sticky">CONTACT US</a>
+</div>
+
+<footer class="footer">
+	<div class="footer-container">
+		<div class="footer-left">
+			<img src="/images/logo-kwerk-noir.png" alt="Kwerk" class="footer-logo"/>
+			<a href="/en/contact" class="footer-contact-btn">CONTACT US</a>
+			<div class="footer-socials">
+				<a href="https://www.instagram.com/kwerkparis/" target="_blank" rel="noreferrer noopener" aria-label="Instagram"><img src="/images/footer_social/instagram.svg"/></a>
+				<a href="https://www.linkedin.com/company/kwerk/" target="_blank" rel="noreferrer noopener" aria-label="LinkedIn"><img src="/images/footer_social/linkedin.svg"/></a>
+			</div>
+		</div>
+
+		<div class="footer-right">
+			<nav class="footer-nav">
+				<div class="footer-nav-col" data-links="adresses">
+					<div class="footer-nav-title active">LOCATIONS</div>
+					<ul class="footer-nav-links show">
+						<a href="/en/adresses/messine"><li>MESSINE</li></a>
+						<a href="/en/adresses/saint-honore"><li>SAINT-HONORÉ</li></a>
+						<a href="/en/adresses/madeleine"><li>MADELEINE</li></a>
+						<a href="/en/adresses/haussmann"><li>HAUSSMANN</li></a>
+					</ul>
+				</div>
+				<div class="footer-nav-col" data-links="produits">
+					<div class="footer-nav-title">WORKSPACES</div>
+					<ul class="footer-nav-links">
+						<a href="/en/espaces"><li>EXECUTIVE OFFICES</li></a>
+						<a href="/en/espaces"><li>SIGNATURE SUITES</li></a>
+						<a href="/en/espaces"><li>PRIVATE FLOORS</li></a>
+					</ul>
+				</div>
+				<div class="footer-nav-col" data-links="services">
+					<div class="footer-nav-title"><a href="/en/services">SERVICES</a></div>
+				</div>
+				<div class="footer-nav-col">
+					<div class="footer-nav-title">
+						<a href="/en/event">EVENTS</a>
+					</div>
+				</div>
+				<div class="footer-nav-col">
+					<div class="footer-nav-title">
+						<a href="/en/galerie">GALLERY</a>
+					</div>
+				</div>
+			</nav>
+		</div>
+	</div>
+	<div class="footer-bottom">
+		<a href="/cgu">Conditions générales d'utilisation</a>
+		<a href="/mentions-legales">Mentions légales</a>
+	</div>
+</footer>
+		<script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+		<script>
+			AOS.init({delay: 200, duration: 1500, anchorPlacement: 'center-center', once: true});
+		</script>
+		<!-- Start of HubSpot Embed Code -->
+		<script type="text/javascript" id="hs-script-loader" async defer src="//js-eu1.hs-scripts.com/26225487.js"></script>
+		<!-- End of HubSpot Embed Code -->
+		<script src="/js/sticky.js"></script>
+		<script src="/js/contact.js"></script>
+		<script src="/js/form.js"></script>
+		<script src="/js/footer.js"></script>
+		<script src="/js/script.js"></script>
+		<script src="/js/loader.js"></script>
+
+
+	</body>
+</html></body></html>
