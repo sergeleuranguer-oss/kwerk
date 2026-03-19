@@ -339,7 +339,7 @@ function initHeroSlides() {
       setTimeout(() => {
         idx = (idx + 1) % slides.length;
         const path = slides[idx];
-        const url = path.startsWith("http") ? path : `/${path}`;
+        const url = path.startsWith("http") ? path : new URL(path, window.location.href).href;
         el.style.backgroundImage = `url(${url})`;
         el.style.opacity = 1;
       }, fadeDuration);
