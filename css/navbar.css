@@ -256,21 +256,21 @@ p.subtitle {
 .side-menu {
   position: fixed;
   top: 0;
-  left: -18vw;
+  left: 0;
   width: 18vw;
   min-width: 200px;
-
   height: 100vh;
   background-color: white;
   z-index: 1003;
-  transition: left 0.7s cubic-bezier(0.86, 0, 0.07, 1);
+  transform: translateX(-100%);
+  transition: transform 0.7s cubic-bezier(0.86, 0, 0.07, 1);
   padding: 40px 30px;
   box-shadow: 2px 0 20px rgba(0, 0, 0, 0.1);
   display: flex;
   flex-direction: column;
 }
 .side-menu.active {
-  left: 0;
+  transform: translateX(0);
 }
 
 .submenu-panel.active {
