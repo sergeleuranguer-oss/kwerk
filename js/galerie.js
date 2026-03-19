@@ -39,8 +39,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
     imagesToShow.forEach((src, index) => {
       const img = document.createElement("img");
-      const cleanSrc = src.startsWith('#') ? src.slice(1) : src;
-      img.src = 'https://www.kwerk.fr' + cleanSrc;
+      img.src = src.startsWith('#') ? src.slice(1) : src;
       img.className = "item-" + ((index % 7) + 1);
       grid.appendChild(img);
     });
