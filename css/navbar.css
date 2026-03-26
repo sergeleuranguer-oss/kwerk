@@ -29,21 +29,33 @@
 }
 
 .navbar {
-  position: absolute;
-  top: 30px;
+  position: fixed;
+  top: 0;
   left: 0;
   right: 0;
   display: flex;
   align-items: center;
   justify-content: flex-start;
   padding: 0 40px;
-  z-index: 2;
+  z-index: 1002;
   height: 60px;
+  background: #1a2820;
 }
 
 .menu-icon {
-  font-size: 24px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
   cursor: pointer;
+}
+
+.menu-icon span {
+  font-size: 11px;
+  letter-spacing: 2px;
+  color: #fff;
+  text-transform: uppercase;
+  font-family: "Helvetica Neue", HelveticaNeue, sans-serif;
+  font-weight: 400;
 }
 
 .menu-icon img {
@@ -243,13 +255,13 @@ p.subtitle {
   left: 0;
   right: 0;
   z-index: 1002;
-  background: rgba(0, 0, 0, 0.92);
+  background: #1a2820;
   box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.24);
   transition:
     background 0.3s ease,
     top 0.5s ease;
-  animation: fadeInNavbar 0.7s ease-out;
-  padding: 50px 40px;
+  padding: 0 40px;
+  height: 60px;
 }
 
 /**************** MENU  *******************************/
