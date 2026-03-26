@@ -29,17 +29,16 @@
 }
 
 .navbar {
-  position: fixed;
-  top: 0;
+  position: absolute;
+  top: 30px;
   left: 0;
   right: 0;
   display: flex;
   align-items: center;
   justify-content: flex-start;
   padding: 0 40px;
-  z-index: 1002;
+  z-index: 2;
   height: 60px;
-  background: rgba(0, 0, 0, 0.92);
 }
 
 .menu-icon {
@@ -260,8 +259,8 @@ p.subtitle {
   transition:
     background 0.3s ease,
     top 0.5s ease;
-  padding: 0 40px;
-  height: 60px;
+  animation: fadeInNavbar 0.7s ease-out;
+  padding: 50px 40px;
 }
 
 /**************** MENU  *******************************/
