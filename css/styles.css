@@ -200,17 +200,24 @@ a {
 /* Responsive */
 @media (max-width: 700px) {
   .exceptional-section {
-    padding: 80px 0 90px;
+    padding: 60px 0 70px;
   }
   .exceptional-container {
-    padding: 0 28px;
+    padding: 0 24px;
   }
   .exceptional-heading {
-    font-size: 28px;
-    margin-bottom: 32px;
+    font-size: 26px;
+    margin-bottom: 28px;
+    line-height: 1.25;
   }
   .exceptional-body {
     font-size: 15px;
+    line-height: 1.75;
+  }
+  .exceptional-cta {
+    margin-top: 36px;
+    font-size: 11px;
+    padding: 12px 24px;
   }
 }
 
@@ -415,12 +422,26 @@ a {
 }
 
 @media (max-width: 700px) {
+  .offres-title {
+    font-size: 26px;
+    padding: 50px 24px 30px;
+  }
   .offres-grid {
-    flex-direction: column;
-    padding: 0 20px 60px;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 8px;
+    padding: 0 16px 50px;
   }
   .offre-bloc {
-    aspect-ratio: 16/7;
+    aspect-ratio: 3/4;
+  }
+  .offre-bloc .offre-label {
+    font-size: 16px;
+    letter-spacing: 0.5px;
+  }
+  .offre-bloc .offre-link {
+    font-size: 10px;
+    letter-spacing: 1px;
   }
 }
 
@@ -1205,8 +1226,14 @@ a {
 }
 
 @media (max-width: 950px) {
+  .nos-adresses-header {
+    padding: 60px 24px 40px;
+  }
+  .nos-adresses-title {
+    font-size: 26px;
+  }
   .adresse-details-section {
-    padding: 24px 0;
+    padding: 16px 0;
   }
   .adresse-details-block {
     flex-direction: column;
@@ -1216,12 +1243,26 @@ a {
   .reverse {
     flex-direction: column-reverse;
   }
-
   .adresse-details-img {
-    flex: none; /* Ajoutez cette ligne */
+    flex: none;
   }
   .adresse-details-img img {
-    height: 190px;
+    height: 260px;
+  }
+  .adresse-details-text {
+    padding: 0 20px;
+    min-width: unset;
+    gap: 16px;
+  }
+  .adresse-details-title {
+    font-size: 16px;
+  }
+  .adresse-details-desc {
+    font-size: 15px;
+    line-height: 1.65;
+  }
+  .adresse-details-section--home .adresse-details-desc {
+    font-size: 15px;
   }
 }
 

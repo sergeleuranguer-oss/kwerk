@@ -528,7 +528,12 @@ p.subtitle {
   }
   .hero-text {
     bottom: 20px;
-    padding: 5px;
+    padding: 5px 20px;
+  }
+  .hero-text p {
+    font-size: 32px !important;
+    letter-spacing: 0.5px !important;
+    line-height: 1.2 !important;
   }
   .hero-text--center {
     top: 58%;
