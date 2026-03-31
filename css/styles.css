@@ -445,6 +445,92 @@ a {
   }
 }
 
+/*********************** NOS MEMBRES ****************************/
+
+.membres-section {
+  width: 100vw;
+  background: #fff;
+  padding: 0 0 100px;
+}
+
+.membres-header {
+  text-align: center;
+  padding: 80px 0 50px;
+}
+
+.membres-title {
+  font-family: "Helvetica Neue", HelveticaNeue, sans-serif;
+  font-weight: 300;
+  font-size: 40px;
+  letter-spacing: -0.5px;
+  color: #111;
+  margin: 0;
+}
+
+.membres-grid {
+  display: flex;
+  gap: 20px;
+  padding: 0 40px;
+  align-items: stretch;
+}
+
+.membre-card {
+  flex: 1;
+  background: #f5f3ef;
+  padding: 36px 32px 32px;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.membre-quote {
+  font-size: 28px;
+  color: #b5a898;
+  font-family: Georgia, serif;
+  line-height: 1;
+}
+
+.membre-text {
+  font-family: "Helvetica Neue", HelveticaNeue, sans-serif;
+  font-size: 15px;
+  font-weight: 300;
+  color: #333;
+  line-height: 1.75;
+  margin: 0;
+  flex: 1;
+}
+
+.membre-author {
+  font-family: "Helvetica Neue", HelveticaNeue, sans-serif;
+  font-size: 11px;
+  font-weight: 500;
+  letter-spacing: 1.5px;
+  color: #222;
+  text-transform: uppercase;
+  margin-top: 8px;
+}
+
+.membre-company {
+  font-family: "Helvetica Neue", HelveticaNeue, sans-serif;
+  font-size: 13px;
+  font-weight: 300;
+  color: #777;
+}
+
+@media (max-width: 700px) {
+  .membres-header {
+    padding: 60px 24px 36px;
+  }
+  .membres-title {
+    font-size: 26px;
+  }
+  .membres-grid {
+    flex-direction: column;
+    padding: 0 20px;
+    gap: 14px;
+  }
+}
+
 .services-grid {
   width: 100vw;
   max-width: 100vw;
