@@ -343,7 +343,7 @@ function initHeroSlides() {
         el.style.backgroundImage = `url(${url})`;
         el.style.opacity = 1;
       }, fadeDuration);
-    }, 7000);
+    }, 10000);
   });
 }
 

@@ -3,6 +3,16 @@
   height: 100vh;
   overflow: hidden;
 }
+.hero::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.35);
+  z-index: 0;
+}
 .hero-video {
   position: absolute;
   top: 0;
@@ -150,8 +160,7 @@
   border: 1px solid white;
   padding: 8px 16px;
   text-decoration: none;
-  color: #222;
-  background: white;
+  color: white;
   font-size: 12px;
   text-transform: uppercase;
   letter-spacing: 1.2px;
@@ -159,17 +168,24 @@
   font-weight: 200;
   transition:
     border-color 0.2s ease,
-    color 0.2s ease,
-    background 0.2s ease;
+    color 0.2s ease;
 }
 
 .contact-btn.hide-on-contact {
   display: none;
 }
 .contact-btn:hover {
-  background: transparent;
-  color: white;
-  border-color: white;
+  border-color: transparent;
+  border-bottom: 1px solid white;
+}
+
+
+.hero-text--bottomleft {
+  position: absolute;
+  bottom: 70px;
+  left: 60px;
+  width: 45%;
+  z-index: 1;
 }
 
 .hero-text {
