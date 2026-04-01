@@ -597,6 +597,17 @@ f.parentNode.insertBefore(j, f);
 			object-fit: cover;
 		}
 
+		/* ── CUISINE SECTION — text left, images right ── */
+		.mk-cuisine-section .details-container {
+			direction: rtl;
+		}
+		.mk-cuisine-section .details-container > * {
+			direction: ltr;
+		}
+		.mk-cuisine-section {
+			padding-bottom: 0 !important;
+		}
+
 		/* ── RSE STANDALONE BANNER ── */
 		.mk-rse-banner-outer {
 			width: 100%;
@@ -911,28 +922,32 @@ f.parentNode.insertBefore(j, f);
 <!-- ============================================================
      5. SIGNATURE CULINAIRE
      ============================================================ -->
-<section class="adresse-details-section" style="padding-bottom: 0;">
-	<div class="adresse-details-block reverse">
-		<div class="adresse-details-text" data-aos="fade-right">
-			<div class="adresse-details-street">DE LA GASTRONOMIE À LA PAUSE CAFÉ</div>
-			<h2 class="adresse-details-title">UNE CUISINE D'EXCEPTION,<br>À TOUTE HEURE</h2>
-			<p class="adresse-details-desc">
-				Nous opérons aujourd'hui 15 points de vente de restauration et 50 tisaneries, avec la capacité de déployer de multiples formats sur différents lieux, simultanément et à grande échelle. Deux chefs exécutifs et une nutritionniste conçoivent chaque carte pour allier plaisir et équilibre nutritionnel — sans jamais l'un au détriment de l'autre.
+<section class="details-section mk-cuisine-section">
+	<div class="details-container">
+		<div class="details-text" data-aos="fade-right">
+			<h3 class="details-title">SIGNATURE CULINAIRE</h3>
+			<p class="details-description">
+				Deux chefs exécutifs et une nutritionniste conçoivent chaque carte — du restaurant Le Dana à la brasserie, du barista aux tisaneries. Des produits frais, de saison, 100&nbsp;% faits maison. Une cuisine qui transforme chaque déjeuner en vrai moment de plaisir.
 			</p>
 			<div class="details-list">
-				<h4>NOS FORMATS</h4>
+				<h4>RESTAURATION</h4>
 				<ul>
-					<li>Restaurant exécutif – Le Dana (50-90 couverts)</li>
-					<li>Brasserie collaborateurs (30 à 400 couverts)</li>
-					<li>Cafétéria &amp; click &amp; collect</li>
-					<li>Comptoir barista – carte renouvelée trimestriellement</li>
-					<li>Tisaneries en libre accès par étage</li>
-					<li>Frigos connectés 7j/7, disponibles en continu</li>
+					<li>Restaurant exécutif — Le Dana</li>
+					<li>Brasserie — carte renouvelée chaque jour</li>
+					<li>Cafétéria &amp; click and collect</li>
+					<li>Frigos connectés 7j/7</li>
+				</ul>
+				<h4>BOISSONS &amp; PAUSES</h4>
+				<ul>
+					<li>Comptoir barista — carte signature</li>
+					<li>Tisaneries en libre accès à chaque étage</li>
 				</ul>
 			</div>
 		</div>
-		<div class="adresse-details-img" data-aos="fade-left">
-			<img src="images/galerie/saint-honore/Dana1.jpg" alt="Restaurant Le Dana Kwerk"/>
+		<div class="details-images" data-aos="fade-left">
+			<div class="image-large"><img src="images/galerie/saint-honore/Danaheader.jpg" alt="Restaurant Le Dana Kwerk"></div>
+			<div class="image-small"><img src="images/galerie/saint-honore/Traiteur.jpg" alt="Cuisine gastronomique Kwerk"></div>
+			<div class="image-small"><img src="images/galerie/saint-honore/Traiteur_2.jpg" alt="Pâtisserie Kwerk"></div>
 		</div>
 	</div>
 </section>
