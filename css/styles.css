@@ -1698,14 +1698,13 @@ a {
   line-height: 1.85;
   margin-bottom: 8px;
   position: relative;
-  padding-left: 22px;
+  padding-left: 0;
 }
 
 .details-list ul li::before {
-  content: '–';
   position: absolute;
   left: 0;
-  color: #aaa;
+  color: #777;
 }
 
 .details-list h4:first-of-type {
