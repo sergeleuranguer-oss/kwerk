@@ -1369,6 +1369,8 @@ a {
   margin: 0 auto;
   color: #000000;
   font-size: 16px;
+  font-family: "Helvetica Neue", HelveticaNeue, sans-serif;
+  font-weight: 300;
 }
 
 .adresse-citation-star {
@@ -1392,16 +1394,16 @@ a {
 }
 
 .adresse-citation-text {
-  font-size: 15px;
+  font-size: 17px;
   color: #444;
-  line-height: 1.6;
+  line-height: 1.85;
   margin: 0 0 24px 0;
   font-style: normal;
-  font-weight: 400;
+  font-weight: 300;
 }
 
 .adresse-citation-author {
-  font-size: 13px;
+  font-size: 17px;
   color: #444;
   margin-top: 8px;
   letter-spacing: 0.6px;
@@ -1659,26 +1661,28 @@ a {
   flex-direction: column;
   align-self: center;
   padding: 50px 0 100px 0;
+  font-family: "Helvetica Neue", HelveticaNeue, sans-serif;
+  font-weight: 300;
 }
 
 .details-title {
-  font-size: 16px;
-  font-weight: bold;
+  font-size: 17px;
+  font-weight: 700;
   letter-spacing: 2px;
   margin-bottom: 20px;
 }
 
 .details-description {
-  font-size: 14px;
-  line-height: 1.6;
+  font-size: 17px;
+  line-height: 1.85;
   margin-bottom: 30px;
 }
 
 .details-list h4 {
-  font-size: 13px;
+  font-size: 17px;
   text-transform: uppercase;
   margin-bottom: 12px;
-  font-weight: 400;
+  font-weight: 300;
   margin-top: 30px;
   border-bottom: 1px solid #ccc;
   padding-bottom: 10px;
@@ -1686,15 +1690,15 @@ a {
 
 .details-list ul {
   list-style: none;
-  padding-left: 10px;
+  padding-left: 0;
 }
 
 .details-list ul li {
-  font-size: 13px;
-  line-height: 1.6;
+  font-size: 17px;
+  line-height: 1.85;
   margin-bottom: 8px;
   position: relative;
-  padding-left: 15px;
+  padding-left: 0;
 }
 
 .details-list ul li::before {
