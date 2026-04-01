@@ -154,8 +154,8 @@ f.parentNode.insertBefore(j, f);
 
 		/* ── PILLARS ── */
 		.mk-pillars {
-			background: #f7f7f7;
-			padding: 90px 0;
+			background: #fff;
+			padding: 60px 0 90px;
 		}
 		.mk-pillars-inner {
 			max-width: 1200px;
@@ -590,6 +590,27 @@ f.parentNode.insertBefore(j, f);
 		<a href="contact.html" class="contact-btn">CONTACTEZ-NOUS</a>
 	</nav>
 
+	<div class="mk-banner-container">
+		<div class="mk-banner-track">
+			<span class="mk-banner-item">10 ans de savoir-faire</span>
+			<span class="mk-banner-sep"></span>
+			<span class="mk-banner-item">30 000 m² opérés à Paris</span>
+			<span class="mk-banner-sep"></span>
+			<span class="mk-banner-item">1 000 repas servis chaque jour</span>
+			<span class="mk-banner-sep"></span>
+			<span class="mk-banner-item">400 événements organisés par an</span>
+			<span class="mk-banner-sep"></span>
+			<span class="mk-banner-item">10 ans de savoir-faire</span>
+			<span class="mk-banner-sep"></span>
+			<span class="mk-banner-item">30 000 m² opérés à Paris</span>
+			<span class="mk-banner-sep"></span>
+			<span class="mk-banner-item">1 000 repas servis chaque jour</span>
+			<span class="mk-banner-sep"></span>
+			<span class="mk-banner-item">400 événements organisés par an</span>
+			<span class="mk-banner-sep"></span>
+		</div>
+	</div>
+
 	</header>
 
 <!-- MENU -->
@@ -760,129 +781,11 @@ f.parentNode.insertBefore(j, f);
 </section>
 
 
-<!-- ============================================================
-     2. BANDEAU DÉFILANT
-     ============================================================ -->
-<style>
-	.mk-banner-container {
-		width: 100%;
-		background: #e8e4dc;
-		overflow: hidden;
-		height: 60px;
-		margin: -57px 0 60px 0;
-	}
-	.mk-banner-track {
-		display: flex;
-		align-items: center;
-		height: 100%;
-		animation: mkScroll 25s linear infinite;
-		white-space: nowrap;
-		will-change: transform;
-		backface-visibility: hidden;
-		transform: translateZ(0);
-	}
-	.mk-banner-item {
-		display: inline-flex;
-		align-items: center;
-		padding: 0 40px;
-		color: #1a1a1a;
-		font-size: 13px;
-		font-weight: 300;
-		letter-spacing: 0.05em;
-		text-transform: uppercase;
-		font-family: 'Helvetica Neue', HelveticaNeue, sans-serif;
-	}
-	.mk-banner-sep {
-		display: inline-block;
-		width: 4px;
-		height: 4px;
-		background: #1a1a1a;
-		margin: 0 40px;
-		opacity: 0.3;
-		flex-shrink: 0;
-	}
-	@keyframes mkScroll {
-		0%   { transform: translateX(0); }
-		100% { transform: translateX(-50%); }
-	}
-</style>
-<div class="mk-banner-container">
-	<div class="mk-banner-track">
-		<span class="mk-banner-item">10 ans de savoir-faire</span>
-		<span class="mk-banner-sep"></span>
-		<span class="mk-banner-item">30 000 m² opérés à Paris</span>
-		<span class="mk-banner-sep"></span>
-		<span class="mk-banner-item">1 000 repas servis chaque jour</span>
-		<span class="mk-banner-sep"></span>
-		<span class="mk-banner-item">400 événements organisés par an</span>
-		<span class="mk-banner-sep"></span>
-		<!-- Duplication pour scroll infini -->
-		<span class="mk-banner-item">10 ans de savoir-faire</span>
-		<span class="mk-banner-sep"></span>
-		<span class="mk-banner-item">30 000 m² opérés à Paris</span>
-		<span class="mk-banner-sep"></span>
-		<span class="mk-banner-item">1 000 repas servis chaque jour</span>
-		<span class="mk-banner-sep"></span>
-		<span class="mk-banner-item">400 événements organisés par an</span>
-		<span class="mk-banner-sep"></span>
-	</div>
-</div>
 
 
 <!-- ============================================================
      3. LES 3 PILIERS — Vue d'ensemble de l'offre
      ============================================================ -->
-<section class="mk-pillars" id="nos-services">
-	<div class="mk-pillars-inner">
-		<div class="mk-pillars-header" data-aos="fade-up">
-			<span class="mk-eyebrow">Notre approche</span>
-			<h2 class="mk-section-title">Une gestion intégrée de l'hospitalité</h2>
-			<p class="mk-pillars-sub">Révéler la singularité d'une adresse à travers une expérience fluide, cohérente et haut de gamme — orchestrée dans les moindres détails. Trois piliers, un seul partenaire.</p>
-		</div>
-		<div class="mk-pillars-grid">
-			<div class="mk-pillar" data-aos="fade-up" data-aos-delay="0">
-				<span class="mk-pillar-num">01</span>
-				<span class="mk-pillar-bar"></span>
-				<h3 class="mk-pillar-title">Hospitalité</h3>
-				<p class="mk-pillar-body">Une équipe dédiée, formée aux standards des plus grandes maisons hôtelières, pour faire de chaque instant au bureau une expérience personnalisée et mémorable.</p>
-				<ul class="mk-pillar-list">
-					<li>Accueil &amp; conciergerie</li>
-					<li>Réception des visiteurs</li>
-					<li>Gestion des réservations</li>
-					<li>Sport &amp; bien-être</li>
-					<li>Événementiel</li>
-					<li>Application digitale</li>
-				</ul>
-			</div>
-			<div class="mk-pillar" data-aos="fade-up" data-aos-delay="150">
-				<span class="mk-pillar-num">02</span>
-				<span class="mk-pillar-bar"></span>
-				<h3 class="mk-pillar-title">Signature Culinaire</h3>
-				<p class="mk-pillar-body">De la restauration gastronomique au barista du matin, nous opérons une offre culinaire complète et plurielle — pensée pour satisfaire tous les rythmes et toutes les envies.</p>
-				<ul class="mk-pillar-list">
-					<li>Restaurant exécutif – Le Dana</li>
-					<li>Brasserie collaborateurs</li>
-					<li>Cafétéria &amp; click &amp; collect</li>
-					<li>Comptoir barista</li>
-					<li>Tisaneries</li>
-					<li>Frigos connectés</li>
-				</ul>
-			</div>
-			<div class="mk-pillar" data-aos="fade-up" data-aos-delay="300">
-				<span class="mk-pillar-num">03</span>
-				<span class="mk-pillar-bar"></span>
-				<h3 class="mk-pillar-title">Soin des Espaces</h3>
-				<p class="mk-pillar-body">Des lieux impeccables, chaque jour. Notre partenaire historique OSAE assure l'entretien avec les mêmes standards d'excellence que sur nos propres adresses, depuis plus de dix ans.</p>
-				<ul class="mk-pillar-list">
-					<li>Ménage &amp; entretien quotidien</li>
-					<li>Factotum &amp; maintenance</li>
-					<li>Coordination des prestataires</li>
-					<li>Suivi qualité permanent</li>
-				</ul>
-			</div>
-		</div>
-	</div>
-</section>
 
 
 <!-- ============================================================
@@ -894,19 +797,20 @@ f.parentNode.insertBefore(j, f);
 			<img src="images/galerie/saint-honore/LobbySHOaccueil.jpg" alt="Accueil &amp; Conciergerie Kwerk"/>
 		</div>
 		<div class="adresse-details-text" data-aos="fade-left">
-			<span class="mk-service-tag">Hospitalité</span>
-			<div class="adresse-details-street">L'ART DE L'ATTENTION PERSONNALISÉE</div>
+			<div class="adresse-details-street">L'ART DE LA PERSONNALISATION</div>
 			<h2 class="adresse-details-title">ACCUEIL &amp; CONCIERGERIE</h2>
 			<p class="adresse-details-desc">
-				Notre équipe hospitalité cultive l'art du service personnalisé, inspirée des standards des plus grandes maisons hôtelières parisiennes. Chaque jour, avec constance et réactivité, elle accompagne vos collaborateurs et leurs invités pour garantir un quotidien fluide et sans friction.
+				Notre équipe hospitalité cultive l'art du service personnalisé, inspirée des codes des plus grandes maisons hôtelières parisiennes. Avec constance et attention, elle accompagne vos collaborateurs et leurs invités au quotidien — pour faire de chaque instant au bureau une expérience douce, fluide et mémorable.
 			</p>
-			<div class="mk-service-items">
-				<div class="mk-service-item">Accueil des visiteurs et invités</div>
-				<div class="mk-service-item">Gestion des réservations</div>
-				<div class="mk-service-item">Réception et traitement des colis</div>
-				<div class="mk-service-item">Organisation des déplacements</div>
-				<div class="mk-service-item">Point de contact pour les requêtes quotidiennes</div>
-				<div class="mk-service-item">Demandes complexes et sur-mesure</div>
+			<div class="details-list">
+				<ul>
+					<li>Accueil des visiteurs et invités</li>
+					<li>Gestion des réservations</li>
+					<li>Réception et traitement des colis</li>
+					<li>Organisation des déplacements</li>
+					<li>Point de contact pour les requêtes quotidiennes</li>
+					<li>Demandes complexes et sur-mesure</li>
+				</ul>
 			</div>
 		</div>
 	</div>
@@ -916,22 +820,23 @@ f.parentNode.insertBefore(j, f);
 <!-- ============================================================
      5. SIGNATURE CULINAIRE
      ============================================================ -->
-<section class="adresse-details-section" style="background: #f7f7f7;">
+<section class="adresse-details-section">
 	<div class="adresse-details-block reverse">
 		<div class="adresse-details-text" data-aos="fade-right">
-			<span class="mk-service-tag">Signature Culinaire</span>
 			<div class="adresse-details-street">DE LA GASTRONOMIE À LA PAUSE CAFÉ</div>
 			<h2 class="adresse-details-title">UNE CUISINE D'EXCEPTION,<br>À TOUTE HEURE</h2>
 			<p class="adresse-details-desc">
 				Nous opérons aujourd'hui 15 points de vente de restauration et 50 tisaneries, avec la capacité de déployer de multiples formats sur différents lieux, simultanément et à grande échelle. Deux chefs exécutifs et une nutritionniste conçoivent chaque carte pour allier plaisir et équilibre nutritionnel — sans jamais l'un au détriment de l'autre.
 			</p>
-			<div class="mk-service-items">
-				<div class="mk-service-item">Restaurant exécutif – Le Dana (50-90 couverts)</div>
-				<div class="mk-service-item">Brasserie collaborateurs (30 à 400 couverts)</div>
-				<div class="mk-service-item">Cafétéria &amp; click &amp; collect</div>
-				<div class="mk-service-item">Comptoir barista – carte renouvelée trimestriellement</div>
-				<div class="mk-service-item">Tisaneries en libre accès par étage</div>
-				<div class="mk-service-item">Frigos connectés 7j/7, disponibles en continu</div>
+			<div class="details-list">
+				<ul>
+					<li>Restaurant exécutif – Le Dana (50-90 couverts)</li>
+					<li>Brasserie collaborateurs (30 à 400 couverts)</li>
+					<li>Cafétéria &amp; click &amp; collect</li>
+					<li>Comptoir barista – carte renouvelée trimestriellement</li>
+					<li>Tisaneries en libre accès par étage</li>
+					<li>Frigos connectés 7j/7, disponibles en continu</li>
+				</ul>
 			</div>
 		</div>
 		<div class="adresse-details-img" data-aos="fade-left">
@@ -950,19 +855,20 @@ f.parentNode.insertBefore(j, f);
 			<img src="images/galerie/saint-honore/SportSho1.jpg" alt="Sport &amp; Bien-être Kwerk"/>
 		</div>
 		<div class="adresse-details-text" data-aos="fade-left">
-			<span class="mk-service-tag">Sport &amp; Bien-être</span>
 			<div class="adresse-details-street">LE CORPS ET L'ESPRIT AU QUOTIDIEN</div>
 			<h2 class="adresse-details-title">SPORT &amp; BIEN-ÊTRE</h2>
 			<p class="adresse-details-desc">
 				Des salles de sport entièrement équipées de machines de dernière génération, accessibles en libre accès. Une programmation sportive riche animée par 20 coachs experts, avec plus de 40 heures de cours par semaine. En complément, une approche bien-être globale pensée par Maud Chuffart, professeure de yoga depuis plus de 25 ans — pour inscrire la récupération et l'équilibre au cœur du quotidien.
 			</p>
-			<div class="mk-service-items">
-				<div class="mk-service-item">Boxe – Cycling – HIIT &amp; Renforcement</div>
-				<div class="mk-service-item">Cross Training &amp; Hyrox – Pilates &amp; Yoga</div>
-				<div class="mk-service-item">Run Club – Salles libre accès 24h/24</div>
-				<div class="mk-service-item">Sauna &amp; thérapie de contraste</div>
-				<div class="mk-service-item">Cabine de flottaison – Salle de sieste</div>
-				<div class="mk-service-item">Rituels de méditation &amp; coaching personnalisé</div>
+			<div class="details-list">
+				<ul>
+					<li>Boxe – Cycling – HIIT &amp; Renforcement</li>
+					<li>Cross Training &amp; Hyrox – Pilates &amp; Yoga</li>
+					<li>Run Club – Salles libre accès 24h/24</li>
+					<li>Sauna &amp; thérapie de contraste</li>
+					<li>Cabine de flottaison – Salle de sieste</li>
+					<li>Rituels de méditation &amp; coaching personnalisé</li>
+				</ul>
 			</div>
 		</div>
 	</div>
@@ -972,22 +878,23 @@ f.parentNode.insertBefore(j, f);
 <!-- ============================================================
      7. ÉVÉNEMENTIEL
      ============================================================ -->
-<section class="adresse-details-section" style="background: #f7f7f7;">
+<section class="adresse-details-section">
 	<div class="adresse-details-block reverse">
 		<div class="adresse-details-text" data-aos="fade-right">
-			<span class="mk-service-tag">Événementiel</span>
 			<div class="adresse-details-street">DE L'IDÉE À L'EXÉCUTION</div>
 			<h2 class="adresse-details-title">ÉVÉNEMENTIEL<br>SUR MESURE</h2>
 			<p class="adresse-details-desc">
 				Un interlocuteur dédié, un devis sous 24 heures, une coordination intégrale de A à Z. De la soirée de Noël au dîner assis, de la conférence de presse à l'atelier participatif — chaque événement est piloté par un chef de projet Kwerk unique, garant de la coordination avec l'ensemble des prestataires et des services généraux, de l'installation à la désinstallation.
 			</p>
-			<div class="mk-service-items">
-				<div class="mk-service-item">Soirées, dîners assis, cocktails dînatoires</div>
-				<div class="mk-service-item">Conférences de presse &amp; tables rondes</div>
-				<div class="mk-service-item">Ateliers créatifs &amp; séminaires</div>
-				<div class="mk-service-item">Tournages vidéo &amp; événements de marque</div>
-				<div class="mk-service-item">Coordination son, lumière, décoration, sécurité</div>
-				<div class="mk-service-item">Devis sous 24h – jusqu'à 48h avant l'événement</div>
+			<div class="details-list">
+				<ul>
+					<li>Soirées, dîners assis, cocktails dînatoires</li>
+					<li>Conférences de presse &amp; tables rondes</li>
+					<li>Ateliers créatifs &amp; séminaires</li>
+					<li>Tournages vidéo &amp; événements de marque</li>
+					<li>Coordination son, lumière, décoration, sécurité</li>
+					<li>Devis sous 24h – jusqu'à 48h avant l'événement</li>
+				</ul>
 			</div>
 		</div>
 		<div class="adresse-details-img" data-aos="fade-left">
@@ -1006,69 +913,23 @@ f.parentNode.insertBefore(j, f);
 			<img src="images/content/Lobby_Mes_2.jpg" alt="Soin des Espaces Kwerk"/>
 		</div>
 		<div class="adresse-details-text" data-aos="fade-left">
-			<span class="mk-service-tag">Soin des Espaces</span>
 			<div class="adresse-details-street">DES LIEUX IMPECCABLES, CHAQUE JOUR</div>
 			<h2 class="adresse-details-title">ENTRETIEN &amp; MAINTENANCE</h2>
 			<p class="adresse-details-desc">
 				La qualité et la pérennité des espaces reposent sur une gestion rigoureuse de leur entretien et de leur maintenance. Nous nous appuyons sur OSAE Services, partenaire de Kwerk depuis plus de dix ans, pour assurer des lieux impeccables et parfaitement fonctionnels. Un suivi de qualité permanent, au quotidien, pour maintenir le niveau d'exigence qui définit la Maison.
 			</p>
-			<div class="mk-service-items">
-				<div class="mk-service-item">Ménage quotidien par OSAE Services</div>
-				<div class="mk-service-item">Standards définis et suivis par Kwerk</div>
-				<div class="mk-service-item">Factotum dédié – surveillance des installations</div>
-				<div class="mk-service-item">Maintenance technique &amp; renfort Kwerk si nécessaire</div>
+			<div class="details-list">
+				<ul>
+					<li>Ménage quotidien par OSAE Services</li>
+					<li>Standards définis et suivis par Kwerk</li>
+					<li>Factotum dédié – surveillance des installations</li>
+					<li>Maintenance technique &amp; renfort Kwerk si nécessaire</li>
+				</ul>
 			</div>
 		</div>
 	</div>
 </section>
 
-
-<!-- ============================================================
-     9. CAS CLIENT QRT
-     ============================================================ -->
-<section class="mk-client">
-	<div class="mk-client-inner">
-		<div data-aos="fade-right">
-			<span class="mk-client-eyebrow">Cas client</span>
-			<h2 class="mk-client-title">QRT — Un partenaire<br>de confiance depuis 6 ans</h2>
-			<p class="mk-client-body">
-				Client de Kwerk depuis 2020, le fonds d'investissement quantitatif QRT nous a confié la gestion intégrale de l'hospitalité de ses nouveaux bureaux après 5 ans d'expansion continue sur nos sites. 10 000 m² sur 8 étages, 800 personnes accompagnées chaque jour : restauration, accueil, conciergerie, sport, factotum et ménage — l'intégralité des services opérés par Kwerk avec le même niveau d'exigence que sur nos propres adresses.
-			</p>
-			<div class="mk-client-metrics">
-				<div class="mk-metric">
-					<span class="mk-metric-num">10 000 m²</span>
-					<span class="mk-metric-lbl">Sur 8 étages</span>
-				</div>
-				<div class="mk-metric">
-					<span class="mk-metric-num">800</span>
-					<span class="mk-metric-lbl">Personnes accompagnées</span>
-				</div>
-				<div class="mk-metric">
-					<span class="mk-metric-num">650–800</span>
-					<span class="mk-metric-lbl">Repas servis par jour</span>
-				</div>
-				<div class="mk-metric">
-					<span class="mk-metric-num">15</span>
-					<span class="mk-metric-lbl">Événements par mois</span>
-				</div>
-			</div>
-			<div class="mk-score-block">
-				<span class="mk-score-num">9,2<span style="font-size: 28px;">/10</span></span>
-				<div class="mk-score-detail">
-					<span class="mk-score-main">Satisfaction globale QRT 2025</span>
-					<span class="mk-score-sub">
-						Qualité des plats : 9,1/10<br>
-						Qualité des produits : 9,1/10<br>
-						Qualité du service : 9,5/10
-					</span>
-				</div>
-			</div>
-		</div>
-		<div data-aos="fade-left">
-			<img src="images/content/Lobby_Hsm_1.jpg" alt="Référence client QRT Kwerk" class="mk-client-img"/>
-		</div>
-	</div>
-</section>
 
 
 <!-- ============================================================
