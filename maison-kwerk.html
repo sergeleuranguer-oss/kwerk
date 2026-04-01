@@ -761,39 +761,72 @@ f.parentNode.insertBefore(j, f);
 
 
 <!-- ============================================================
-     2. STATS — Preuve de l'expertise
+     2. BANDEAU DÉFILANT
      ============================================================ -->
-<section class="mk-stats">
-	<div class="mk-stats-inner">
-		<p class="mk-stats-lbl">Kwerk en chiffres</p>
-		<div class="mk-stats-grid">
-			<div class="mk-stat" data-aos="fade-up" data-aos-delay="0">
-				<span class="mk-stat-num">+10</span>
-				<span class="mk-stat-lbl">Ans d'expertise<br>opérationnelle</span>
-			</div>
-			<div class="mk-stat" data-aos="fade-up" data-aos-delay="100">
-				<span class="mk-stat-num">5</span>
-				<span class="mk-stat-lbl">Adresses opérées<br>dans le 8e à Paris</span>
-			</div>
-			<div class="mk-stat" data-aos="fade-up" data-aos-delay="200">
-				<span class="mk-stat-num">30 000</span>
-				<span class="mk-stat-lbl">m² gérés<br>au total</span>
-			</div>
-			<div class="mk-stat" data-aos="fade-up" data-aos-delay="0">
-				<span class="mk-stat-num">+1 000</span>
-				<span class="mk-stat-lbl">Repas servis<br>chaque jour</span>
-			</div>
-			<div class="mk-stat" data-aos="fade-up" data-aos-delay="100">
-				<span class="mk-stat-num">400</span>
-				<span class="mk-stat-lbl">Événements<br>organisés par an</span>
-			</div>
-			<div class="mk-stat" data-aos="fade-up" data-aos-delay="200">
-				<span class="mk-stat-num">75%</span>
-				<span class="mk-stat-lbl">De nos clients<br>issus de la finance</span>
-			</div>
-		</div>
+<style>
+	.mk-banner-container {
+		width: 100%;
+		background: #e8e4dc;
+		overflow: hidden;
+		height: 60px;
+		margin: -57px 0 60px 0;
+	}
+	.mk-banner-track {
+		display: flex;
+		align-items: center;
+		height: 100%;
+		animation: mkScroll 25s linear infinite;
+		white-space: nowrap;
+		will-change: transform;
+		backface-visibility: hidden;
+		transform: translateZ(0);
+	}
+	.mk-banner-item {
+		display: inline-flex;
+		align-items: center;
+		padding: 0 40px;
+		color: #1a1a1a;
+		font-size: 13px;
+		font-weight: 300;
+		letter-spacing: 0.05em;
+		text-transform: uppercase;
+		font-family: 'Helvetica Neue', HelveticaNeue, sans-serif;
+	}
+	.mk-banner-sep {
+		display: inline-block;
+		width: 4px;
+		height: 4px;
+		background: #1a1a1a;
+		margin: 0 40px;
+		opacity: 0.3;
+		flex-shrink: 0;
+	}
+	@keyframes mkScroll {
+		0%   { transform: translateX(0); }
+		100% { transform: translateX(-50%); }
+	}
+</style>
+<div class="mk-banner-container">
+	<div class="mk-banner-track">
+		<span class="mk-banner-item">10 ans de savoir-faire</span>
+		<span class="mk-banner-sep"></span>
+		<span class="mk-banner-item">30 000 m² opérés à Paris</span>
+		<span class="mk-banner-sep"></span>
+		<span class="mk-banner-item">1 000 repas servis chaque jour</span>
+		<span class="mk-banner-sep"></span>
+		<span class="mk-banner-item">400 événements organisés par an</span>
+		<span class="mk-banner-sep"></span>
+		<!-- Duplication pour scroll infini -->
+		<span class="mk-banner-item">10 ans de savoir-faire</span>
+		<span class="mk-banner-sep"></span>
+		<span class="mk-banner-item">30 000 m² opérés à Paris</span>
+		<span class="mk-banner-sep"></span>
+		<span class="mk-banner-item">1 000 repas servis chaque jour</span>
+		<span class="mk-banner-sep"></span>
+		<span class="mk-banner-item">400 événements organisés par an</span>
+		<span class="mk-banner-sep"></span>
 	</div>
-</section>
+</div>
 
 
 <!-- ============================================================
