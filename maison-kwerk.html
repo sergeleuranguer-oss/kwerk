@@ -528,6 +528,52 @@ f.parentNode.insertBefore(j, f);
 			border-color: #fff;
 		}
 
+		/* ── SCROLLING BANNER ── */
+		@keyframes mkScroll {
+			0%   { transform: translateX(0) translateZ(0); }
+			100% { transform: translateX(-50%) translateZ(0); }
+		}
+		.mk-banner-container {
+			position: absolute;
+			bottom: 0;
+			left: 0;
+			width: 100%;
+			background: #e8e4dc;
+			overflow: hidden;
+			height: 60px;
+			z-index: 1;
+			margin: 0;
+		}
+		.mk-banner-track {
+			display: flex;
+			align-items: center;
+			height: 100%;
+			animation: mkScroll 25s linear infinite;
+			white-space: nowrap;
+			will-change: transform;
+			backface-visibility: hidden;
+			transform: translateZ(0);
+		}
+		.mk-banner-item {
+			display: inline-block;
+			font-size: 10px;
+			letter-spacing: 3px;
+			text-transform: uppercase;
+			color: #6b6355;
+			font-family: 'Helvetica Neue', HelveticaNeue, sans-serif;
+			font-weight: 300;
+			padding: 0 40px;
+		}
+		.mk-banner-sep {
+			display: inline-block;
+			width: 4px;
+			height: 4px;
+			border-radius: 50%;
+			background: #b8b0a3;
+			vertical-align: middle;
+			flex-shrink: 0;
+		}
+
 		/* ── RESPONSIVE ── */
 		@media (max-width: 1000px) {
 			.mk-pillars-grid { grid-template-columns: 1fr; gap: 3px; }
