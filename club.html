@@ -27,21 +27,29 @@ f.parentNode.insertBefore(j, f);
 	<link rel="stylesheet" href="css/footer.css">
 	<style>
 		/* ── MOSAÏQUE CLUB ── */
+		.adresse-details-img:has(.club-mosaic) {
+			background: none;
+			padding: 0;
+			align-items: stretch;
+		}
+		.adresse-details-img:has(.club-mosaic) img {
+			height: auto;
+		}
 		.club-mosaic {
 			display: grid;
 			grid-template-columns: 1fr 1fr;
 			grid-template-rows: 1fr 1fr;
-			gap: 8px;
-			height: 100%;
+			gap: 6px;
+			width: 100%;
 		}
 		.club-mosaic img {
 			width: 100%;
-			height: 220px;
+			height: 240px;
 			object-fit: cover;
 			display: block;
 		}
 		@media (max-width: 768px) {
-			.club-mosaic img { height: 140px; }
+			.club-mosaic img { height: 130px; }
 		}
 
 		.error {
