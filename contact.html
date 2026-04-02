@@ -32,25 +32,17 @@ f.parentNode.insertBefore(j, f);
 										<link rel="stylesheet" href="css/navbar_galerie.css">
 					
 	<style>
-
+		/* ── FORMULAIRE CONTACT – STYLE PARIS SOCIETY ── */
 		.error {
 			color: #d00000;
-			font-size: 12px;
+			font-size: 11px;
 			margin-top: 4px;
-			display: none; /* affiché par le JS */
+			display: none;
 		}
-
-		.field input.error-field,
-		.field textarea.error-field,
-		.field select.error-field {
-			border-bottom-color: #d00000;
-		}
-
 		.contact-page {
 			display: flex;
-			gap: 24px;
-			padding-left: 60px;
-			padding-right: 60px;
+			gap: 40px;
+			padding: 60px;
 			background: #fff;
 			min-height: calc(100vh - 120px);
 			align-items: stretch;
@@ -59,132 +51,197 @@ f.parentNode.insertBefore(j, f);
 		.contact-panel {
 			flex: 1;
 			background: #fff;
-			border-radius: 0;
-			padding: 48px;
-			box-shadow: none;
 			display: flex;
 			flex-direction: column;
-			gap: 10px;
+			gap: 0;
 		}
 		.contact-media {
 			flex: 1;
 			min-height: 520px;
-			border-radius: 0;
 			overflow: hidden;
 			position: relative;
-			box-shadow: none;
 		}
-		.contact-title {
-			font-size: 24px;
-			letter-spacing: 1px;
+		/* ── TITRES SECTIONS ── */
+		.contact-section-title {
+			font-size: 18px;
+			font-weight: 700;
+			letter-spacing: 3px;
 			text-transform: uppercase;
-			margin-bottom: 8px;
 			color: #111;
+			font-family: "Helvetica Neue", HelveticaNeue, sans-serif;
+			margin-bottom: 28px;
 		}
-		.contact-subtitle {
-			font-size: 14px;
-			color: #444;
-			margin-bottom: 24px;
-			line-height: 1.6;
+		.contact-separator {
+			border: none;
+			border-top: 1px solid #ddd;
+			margin: 40px 0;
 		}
+		/* ── CHAMPS STYLE PARIS SOCIETY ── */
 		.contact-form {
 			display: flex;
 			flex-direction: column;
-			gap: 14px;
+			gap: 0;
 		}
-		.field-row {
+		.ps-field-row {
 			display: grid;
-			grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-			gap: 18px;
+			grid-template-columns: 1fr 1fr;
+			gap: 16px;
+			margin-bottom: 16px;
 		}
-		.field label {
-			font-size: 13px;
-			letter-spacing: 2px;
-			text-transform: uppercase;
-			font-weight: 500;
-			margin-bottom: 4px;
-			color: #333;
+		.ps-field-row.single {
+			grid-template-columns: 1fr;
 		}
-		.field input,
-		.field textarea,
-		.field select {
-			border: none;
-			border-bottom: 1px solid #222;
-			padding: 8px 6px;
-			font-size: 15px;
-			background: transparent;
-			outline: none;
-			color: #222;
-			margin: 6px 0;
+		.ps-field {
+			position: relative;
+			border: 1px solid #ccc;
+			border-radius: 8px;
+			padding: 14px 18px 10px;
+			background: #fff;
 			transition: border-color 0.2s;
 		}
-		.field textarea {
+		.ps-field:focus-within {
+			border-color: #111;
+		}
+		.ps-field label {
+			display: block;
+			font-size: 10px;
+			letter-spacing: 1.8px;
+			text-transform: uppercase;
+			font-weight: 500;
+			color: #1a2a4a;
+			margin-bottom: 4px;
+			font-family: "Helvetica Neue", HelveticaNeue, sans-serif;
+		}
+		.ps-field input,
+		.ps-field textarea,
+		.ps-field select {
+			width: 100%;
+			border: none;
+			outline: none;
+			font-size: 15px;
+			color: #222;
+			background: transparent;
+			font-family: "Helvetica Neue", HelveticaNeue, sans-serif;
+			font-weight: 300;
+			padding: 0;
+		}
+		.ps-field input::placeholder,
+		.ps-field textarea::placeholder {
+			color: #999;
+			font-weight: 300;
+		}
+		.ps-field textarea {
 			resize: vertical;
-			min-height: 120px;
+			min-height: 140px;
+			line-height: 1.6;
 		}
-		.field input:focus,
-		.field textarea:focus,
-		.field select:focus {
-			border-bottom: 1.5px solid #111;
+		.ps-field select {
+			-webkit-appearance: none;
+			-moz-appearance: none;
+			appearance: none;
+			cursor: pointer;
+			padding-right: 24px;
 		}
-		.field input[type="number"] {
+		.ps-field.ps-select {
+			position: relative;
+		}
+		.ps-field.ps-select::after {
+			content: '';
+			position: absolute;
+			right: 18px;
+			top: 50%;
+			transform: translateY(-50%);
+			width: 10px;
+			height: 6px;
+			background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 10 6'%3E%3Cpath d='M0 0l5 6 5-6z' fill='%23666'/%3E%3C/svg%3E") no-repeat center;
+			pointer-events: none;
+		}
+		.ps-field input[type="number"] {
 			-moz-appearance: textfield;
 		}
-		.field input[type="number"]::-webkit-inner-spin-button,
-		.field input[type="number"]::-webkit-outer-spin-button {
+		.ps-field input[type="number"]::-webkit-inner-spin-button,
+		.ps-field input[type="number"]::-webkit-outer-spin-button {
 			-webkit-appearance: none;
 			margin: 0;
 		}
+		.ps-field .error {
+			position: absolute;
+			bottom: -18px;
+			left: 18px;
+		}
+		/* ── CHECKBOX ── */
+		.ps-checkbox {
+			display: flex;
+			align-items: center;
+			gap: 12px;
+			margin-top: 8px;
+			margin-bottom: 24px;
+		}
+		.ps-checkbox input[type="checkbox"] {
+			width: 18px;
+			height: 18px;
+			border: 1px solid #bbb;
+			border-radius: 3px;
+			cursor: pointer;
+			accent-color: #111;
+		}
+		.ps-checkbox label {
+			font-size: 13px;
+			color: #555;
+			font-family: "Helvetica Neue", HelveticaNeue, sans-serif;
+			font-weight: 300;
+			cursor: pointer;
+		}
+		.ps-checkbox label a {
+			color: #222;
+			text-decoration: underline;
+		}
+		/* ── BOUTON SUBMIT ── */
 		.contact-actions {
 			display: flex;
 			align-items: center;
 			gap: 18px;
-			margin-top: 10px;
 			flex-wrap: wrap;
 		}
 		.contact-submit {
 			background: #111;
 			color: #fff;
 			text-transform: uppercase;
-			padding: 14px 30px;
+			padding: 16px 36px;
 			border: none;
-			font-size: 15px;
-			letter-spacing: 1px;
+			font-size: 12px;
+			letter-spacing: 2px;
 			cursor: pointer;
 			transition: background 0.2s;
+			font-family: "Helvetica Neue", HelveticaNeue, sans-serif;
+			font-weight: 500;
 		}
 		.contact-submit:hover {
 			background: #333;
 		}
 		.contact-phone {
 			border: 1px solid #222;
-			padding: 12px 26px;
-			font-size: 14px;
+			padding: 14px 28px;
+			font-size: 12px;
 			background: transparent;
 			color: #222;
-			letter-spacing: 1px;
-			border-radius: 2px;
+			letter-spacing: 2px;
 			text-transform: uppercase;
+			font-family: "Helvetica Neue", HelveticaNeue, sans-serif;
 		}
-		.contact-note {
-			font-size: 13px;
-			color: #555;
-			margin-top: 4px;
-		}
+		/* ── RESPONSIVE ── */
 		@media(max-width: 900px) {
 			.contact-page {
 				flex-direction: column;
-				padding-left: 24px;
-				padding-right: 24px;
+				padding: 32px 24px;
 			}
-			.contact-panel {
-				padding: 32px;
+			.ps-field-row {
+				grid-template-columns: 1fr;
 			}
 		}
 		@media(max-width: 600px) {
-
-			.contact-panel {
-				padding: 24px;
+			.contact-page {
+				padding: 24px 16px;
 			}
 		}
 	</style>
@@ -403,84 +460,91 @@ f.parentNode.insertBefore(j, f);
 		</div>
 	</section>
 
-				<section class="contact-page">
+		<section class="contact-page">
 		<div class="contact-panel">
-			<h2 class="contact-title">Parlez-nous de votre projet</h2>
-			<p class="contact-subtitle">Planifiez votre espace, vos services et votre timing avec notre équipe.</p>
 			<form class="contact-form">
-				<div class="field-row">
-					<div class="field">
-						<label>PRÉNOM</label>
-						<input type="text" name="firstname" required>
+
+				<!-- ── VOS COORDONNÉES ── -->
+				<h3 class="contact-section-title">VOS COORDONNÉES</h3>
+
+				<div class="ps-field-row">
+					<div class="ps-field">
+						<label>VOTRE PRÉNOM *</label>
+						<input type="text" name="firstname" placeholder="Votre prénom" required>
 						<div class="error"></div>
 					</div>
-					<div class="field">
-						<label>NOM</label>
-						<input type="text" name="lastname" required>
-						<div class="error"></div>
-					</div>
-				</div>
-				<div class="field-row">
-					<div class="field">
-						<label>EMAIL</label>
-						<input type="email" name="email" required>
-						<div class="error"></div>
-					</div>
-					<div class="field">
-						<label>TÉLÉPHONE</label>
-						<input type="text" name="phone" required>
+					<div class="ps-field">
+						<label>VOTRE NOM *</label>
+						<input type="text" name="lastname" placeholder="Votre nom" required>
 						<div class="error"></div>
 					</div>
 				</div>
-				<div class="field-row">
-					<div class="field">
-						<label>SOCIÉTÉ</label>
-						<input type="text" name="company" required>
+
+				<div class="ps-field-row">
+					<div class="ps-field">
+						<label>VOTRE NUMÉRO DE TÉLÉPHONE *</label>
+						<input type="text" name="phone" placeholder="+33 6 00 00 00 00" required>
 						<div class="error"></div>
 					</div>
-					<div class="field">
-						<label>NOMBRE DE POSTES</label>
-						<input type="number" name="desk" min="1" required>
+					<div class="ps-field">
+						<label>VOTRE ADRESSE E-MAIL *</label>
+						<input type="email" name="email" placeholder="nom@email.com" required>
 						<div class="error"></div>
 					</div>
 				</div>
-				<div class="field-row">
-					<div class="field">
-						<label>QUE RECHERCHEZ VOUS ?</label>
+
+				<div class="ps-field-row">
+					<div class="ps-field">
+						<label>VOTRE ENTREPRISE (LE CAS ÉCHÉANT)</label>
+						<input type="text" name="company" placeholder="Nom de l'entreprise">
+						<div class="error"></div>
+					</div>
+				</div>
+
+				<!-- ── SÉPARATEUR ── -->
+				<hr class="contact-separator">
+
+				<!-- ── VOTRE DEMANDE ── -->
+				<h3 class="contact-section-title">VOTRE DEMANDE</h3>
+
+				<div class="ps-field-row single">
+					<div class="ps-field ps-select">
+						<label>QUELLE EST VOTRE DEMANDE ?</label>
 						<select name="produit" required>
-							<option>Bureau exécutif</option>
-							<option>Suite Signature</option>
-							<option>Étages privatifs</option>
-						</select>
-						<div class="error"></div>
-					</div>
-					<div class="field">
-						<label>COMMENT AVEZ-VOUS CONNU KWERK ?</label>
-						<select name="origine_de_la_piste" required>
-							<option>Recommandation par mon réseau</option>
-							<option>Recherche internet</option>
-							<option>Recommandation par un membre Kwerk</option>
-							<option>Mis en relation par un broker</option>
-							<option>Sur les réseaux sociaux</option>
-							<option>Rendez-vous professionnel chez Kwerk</option>
-							<option>Dans la presse</option>
-							<option>Lors d&#039;un événement chez Kwerk</option>
-							<option>Au cours d&#039;un déjeuner au restaurant Dana</option>
+							<option value="" disabled selected>Veuillez choisir</option>
+							<option>Bureaux Exécutifs</option>
+							<option>Suite Signatures</option>
+							<option>Étages Privatifs</option>
+							<option>La Maison Kwerk</option>
+							<option>Événementiel</option>
+							<option>Le Club</option>
 						</select>
 						<div class="error"></div>
 					</div>
 				</div>
-				<div class="field">
-					<label>PARLEZ-NOUS DE VOTRE PROJET</label>
-					<textarea rows="5" name="description" placeholder="Parlez-nous de votre projet" required></textarea>
-					<div class="error"></div>
+
+				<div class="ps-field-row single">
+					<div class="ps-field">
+						<label>VEUILLEZ NOUS INDIQUER VOTRE DEMANDE</label>
+						<textarea name="description" placeholder="Ajoutez vos commentaires ici ..." required></textarea>
+						<div class="error"></div>
+					</div>
 				</div>
+
+				<!-- ── SÉPARATEUR ── -->
+				<hr class="contact-separator">
+
+				<div class="ps-checkbox">
+					<input type="checkbox" id="privacy" required>
+					<label for="privacy">J'ai lu et j'accepte la <a href="cgu.html">Politique de Confidentialité.</a></label>
+				</div>
+
 				<div class="contact-actions">
-					<button type="submit" class="contact-submit">ENVOYER MA DEMANDE</button>
+					<button type="submit" class="contact-submit">SOUMETTEZ VOTRE DEMANDE</button>
 					<div class="success" id="successMessage"></div>
-					<span class="contact-phone">07 83 48 94 57</span>
 				</div>
-				<div class="field" style="margin-top: 10px;">
+
+				<div style="margin-top: 10px;">
 					<input type="hidden" name="general">
 					<div class="error"></div>
 				</div>
@@ -488,9 +552,9 @@ f.parentNode.insertBefore(j, f);
 			</form>
 		</div>
 		<div class="contact-media carousel-img">
-			<img src="images/galerie/messine/SalledereunionMes1.jpg" alt="Bureaux Prana">
+			<img src="images/galerie/messine/SalledereunionMes1.jpg" alt="Bureaux Kwerk">
 			<img src="images/galerie/messine/RooftopMes1.jpg" alt="Espace de travail">
-			<img src="images/content/bureau_header.png" alt="Salle de r&eacute;union">
+			<img src="images/content/bureau_header.png" alt="Salle de réunion">
 		</div>
 	</section>
 
