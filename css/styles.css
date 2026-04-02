@@ -1351,6 +1351,28 @@ a {
     font-size: 15px;
   }
 }
+@media (max-width: 480px) {
+  .adresse-details-block {
+    width: 92vw;
+    gap: 14px;
+  }
+  .adresse-details-img img {
+    height: 210px;
+  }
+  .adresse-details-text {
+    padding: 0 0 20px 0;
+  }
+  .adresse-details-street {
+    font-size: 10px;
+  }
+  .adresse-details-title {
+    font-size: 14px;
+  }
+  .adresse-details-desc {
+    font-size: 14px;
+    line-height: 1.65;
+  }
+}
 
 /****************************** PAGE ADRESSE ***************************/
 
@@ -1715,19 +1737,19 @@ a {
 @media (max-width: 900px) {
   .details-container {
     grid-template-columns: 1fr;
-    gap: 40px;
+    gap: 32px;
+    width: 94vw;
+    padding: 60px 0 30px 0;
   }
   .details-text {
-    padding: 0 0 50px 0;
+    padding: 0 0 40px 0;
   }
-
   .details-images {
     grid-template-columns: 1fr;
   }
-
   .image-large img,
   .image-small img {
-    height: 220px;
+    height: 260px;
   }
 }
 @media (max-width: 768px) {
@@ -1736,6 +1758,59 @@ a {
   }
   .details-images--event .image-small {
     display: block;
+  }
+  .details-container {
+    gap: 24px;
+    padding: 48px 0 24px 0;
+  }
+  .details-title {
+    font-size: 15px;
+    letter-spacing: 1.5px;
+  }
+  .details-description {
+    font-size: 15px;
+    line-height: 1.75;
+  }
+  .details-list h4 {
+    font-size: 13px;
+    margin-top: 22px;
+  }
+  .details-list ul li {
+    font-size: 15px;
+    line-height: 1.75;
+  }
+  .image-large img {
+    height: 240px;
+  }
+}
+@media (max-width: 480px) {
+  .details-container {
+    width: 92vw;
+    padding: 36px 0 20px 0;
+    gap: 20px;
+  }
+  .details-title {
+    font-size: 13px;
+    letter-spacing: 1px;
+    margin-bottom: 14px;
+  }
+  .details-description {
+    font-size: 14px;
+    line-height: 1.7;
+    margin-bottom: 20px;
+  }
+  .details-list h4 {
+    font-size: 12px;
+    margin-top: 18px;
+    padding-bottom: 8px;
+  }
+  .details-list ul li {
+    font-size: 14px;
+    line-height: 1.7;
+    margin-bottom: 6px;
+  }
+  .image-large img {
+    height: 210px;
   }
 }
 
