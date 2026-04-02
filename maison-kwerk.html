@@ -627,6 +627,18 @@ f.parentNode.insertBefore(j, f);
 			height: auto;
 			object-fit: unset;
 		}
+		/* ── APPLICATION DIGITALE — image complète sans rognage ── */
+		.mk-digital-img {
+			display: block !important;
+		}
+		.mk-digital-img .image-large {
+			height: auto;
+		}
+		.mk-digital-img .image-large img {
+			width: 100%;
+			height: auto;
+			object-fit: unset;
+		}
 
 		/* ── RSE STANDALONE BANNER ── */
 		.mk-rse-banner-outer {
@@ -1104,39 +1116,23 @@ f.parentNode.insertBefore(j, f);
 <!-- ============================================================
      10. APPLICATION DIGITALE
      ============================================================ -->
-<section class="mk-app">
-	<div class="mk-app-inner">
-		<div data-aos="fade-right">
-			<img src="images/galerie/saint-honore/LOBBY_SHO_LOUNGE.jpg" alt="Application Kwerk" class="mk-app-img"/>
-		</div>
-		<div data-aos="fade-left">
-			<span class="mk-eyebrow">Digital</span>
-			<h2 class="mk-section-title">Tous vos services,<br>en un clic</h2>
-			<p class="mk-section-body">
-				Notre application digitale centralise l'ensemble des services de l'adresse en un point d'accès unique, fluide et intuitif — de la première heure de la journée jusqu'au début de soirée. Une expérience pensée pour simplifier le quotidien de chaque collaborateur.
-			</p>
-			<div class="mk-app-feats">
-				<div class="mk-app-feat">
-					<div class="mk-app-feat-dot"></div>
-					<span class="mk-app-feat-text">Consultation des menus du jour, du barista et des offres de la cafétéria</span>
-				</div>
-				<div class="mk-app-feat">
-					<div class="mk-app-feat-dot"></div>
-					<span class="mk-app-feat-text">Commande en click &amp; collect pour un retrait sans attente</span>
-				</div>
-				<div class="mk-app-feat">
-					<div class="mk-app-feat-dot"></div>
-					<span class="mk-app-feat-text">Réservation des cours Sport &amp; Bien-être en temps réel</span>
-				</div>
-				<div class="mk-app-feat">
-					<div class="mk-app-feat-dot"></div>
-					<span class="mk-app-feat-text">Demandes de conciergerie, accueil et organisation d'événements</span>
-				</div>
-				<div class="mk-app-feat">
-					<div class="mk-app-feat-dot"></div>
-					<span class="mk-app-feat-text">Fil d'actualité de l'adresse : événements, nouveautés, temps forts</span>
-				</div>
+<section class="details-section mk-digital-section">
+	<div class="details-container">
+		<div class="details-text" data-aos="fade-right">
+			<h3 class="details-title">APPLICATION DIGITALE</h3>
+			<p class="details-description">Notre application digitale centralise l'ensemble des services de l'adresse en un point d'accès unique, fluide et intuitif — de la première heure de la journée jusqu'au début de soirée. Une expérience pensée pour simplifier le quotidien de chaque collaborateur.</p>
+			<div class="details-list">
+				<ul>
+					<li>Consultation des menus du jour, du barista et des offres de la cafétéria</li>
+					<li>Commande en click &amp; collect pour un retrait sans attente</li>
+					<li>Réservation des cours Sport &amp; Bien-être en temps réel</li>
+					<li>Demandes de conciergerie, accueil et organisation d'événements</li>
+					<li>Fil d'actualité de l'adresse : événements, nouveautés, temps forts</li>
+				</ul>
 			</div>
+		</div>
+		<div class="details-images mk-digital-img" data-aos="fade-left">
+			<div class="image-large"><img src="images/digital.png" alt="Application digitale Kwerk"></div>
 		</div>
 	</div>
 </section>
