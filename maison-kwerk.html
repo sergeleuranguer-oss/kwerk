@@ -602,6 +602,20 @@ f.parentNode.insertBefore(j, f);
 			padding-bottom: 0 !important;
 		}
 
+		/* ── ÉVÉNEMENTIEL — image unique pleine hauteur ── */
+		.mk-event-img {
+			display: block !important;
+		}
+		.mk-event-img .image-large {
+			height: 520px;
+		}
+		@media (max-width: 900px) {
+			.mk-event-img .image-large { height: 300px; }
+		}
+		@media (max-width: 480px) {
+			.mk-event-img .image-large { height: 240px; }
+		}
+
 		/* ── RSE STANDALONE BANNER ── */
 		.mk-rse-banner-outer {
 			width: 100%;
@@ -1015,12 +1029,11 @@ f.parentNode.insertBefore(j, f);
 <!-- ============================================================
      7. ÉVÉNEMENTIEL
      ============================================================ -->
-<section class="adresse-details-section">
-	<div class="adresse-details-block reverse">
-		<div class="adresse-details-text" data-aos="fade-right">
-			<div class="adresse-details-street">DE L'IDÉE À L'EXÉCUTION</div>
-			<h2 class="adresse-details-title">ÉVÉNEMENTIEL<br>SUR MESURE</h2>
-			<p class="adresse-details-desc">
+<section class="details-section mk-event-section">
+	<div class="details-container">
+		<div class="details-text" data-aos="fade-right">
+			<h3 class="details-title">ÉVÉNEMENTIEL</h3>
+			<p class="details-description">
 				Un interlocuteur dédié, un devis sous 24 heures, une coordination intégrale de A à Z. De la soirée de Noël au dîner assis, de la conférence de presse à l'atelier participatif — chaque événement est piloté par un chef de projet Kwerk unique, garant de la coordination avec l'ensemble des prestataires et des services généraux, de l'installation à la désinstallation.
 			</p>
 			<div class="details-list">
@@ -1035,8 +1048,8 @@ f.parentNode.insertBefore(j, f);
 				</ul>
 			</div>
 		</div>
-		<div class="adresse-details-img" data-aos="fade-left">
-			<img src="images/galerie/saint-honore/Event_SHO_Lobby.png" alt="Événementiel Kwerk"/>
+		<div class="details-images mk-event-img" data-aos="fade-left">
+			<div class="image-large"><img src="images/Event.png" alt="Événementiel Kwerk"></div>
 		</div>
 	</div>
 </section>
