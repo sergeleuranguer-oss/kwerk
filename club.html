@@ -26,6 +26,24 @@ f.parentNode.insertBefore(j, f);
 	<link rel="stylesheet" href="css/styles.css">
 	<link rel="stylesheet" href="css/footer.css">
 	<style>
+		/* ── MOSAÏQUE CLUB ── */
+		.club-mosaic {
+			display: grid;
+			grid-template-columns: 1fr 1fr;
+			grid-template-rows: 1fr 1fr;
+			gap: 8px;
+			height: 100%;
+		}
+		.club-mosaic img {
+			width: 100%;
+			height: 220px;
+			object-fit: cover;
+			display: block;
+		}
+		@media (max-width: 768px) {
+			.club-mosaic img { height: 140px; }
+		}
+
 		.error {
 			color: #d00000;
 			font-size: 12px;
@@ -370,7 +388,12 @@ f.parentNode.insertBefore(j, f);
 				<a href="adresses/saint-honore.html" class="adresse-details-btn">DÉCOUVRIR L&#039;ADRESSE</a>
 			</div>
 			<div class="adresse-details-img" data-aos="fade-left">
-				<img src="images/content/Escalier_SHO_1.jpg" alt="Adresse Saint-Honoré"/>
+				<div class="club-mosaic">
+					<img src="images/rooftopclub.jpg" alt="Rooftop Club Kwerk"/>
+					<img src="images/danaclub.jpg" alt="Restaurant Dana Club Kwerk"/>
+					<img src="images/reunion.png" alt="Salle de réunion Kwerk"/>
+					<img src="images/sportclub.jpg" alt="Sport Club Kwerk"/>
+				</div>
 			</div>
 		</div>
 	</section>
