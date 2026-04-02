@@ -48,16 +48,35 @@ f.parentNode.insertBefore(j, f);
 			object-fit: cover;
 			display: block;
 		}
-		/* ── DETAILS-LIST dans ADRESSE-DETAILS ── */
+		/* ── TEXTE EN HAUT + TYPO DETAILS-LIST ── */
+		.adresse-details-text {
+			justify-content: flex-start;
+		}
 		.adresse-details-text .details-list h4 {
+			font-size: 17px;
+			font-weight: 300;
+			text-transform: uppercase;
+			letter-spacing: 2px;
 			color: #222;
-			font-size: 14px;
-			font-weight: 400;
-			letter-spacing: 1.5px;
+			margin-top: 22px;
+			margin-bottom: 10px;
+			border-bottom: 1px solid #ccc;
+			padding-bottom: 8px;
+			font-family: "Helvetica Neue", HelveticaNeue, sans-serif;
+		}
+		.adresse-details-text .details-list h4:first-of-type {
+			margin-top: 0;
+		}
+		.adresse-details-text .details-list ul {
+			list-style: none;
+			padding-left: 0;
 		}
 		.adresse-details-text .details-list ul li {
+			font-size: 17px;
+			line-height: 1.85;
 			color: #444;
-			font-size: 16px;
+			font-family: "Helvetica Neue", HelveticaNeue, sans-serif;
+			font-weight: 300;
 		}
 		@media (max-width: 768px) {
 			.club-mosaic img { height: 130px; }
