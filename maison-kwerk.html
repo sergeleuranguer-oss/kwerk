@@ -602,6 +602,19 @@ f.parentNode.insertBefore(j, f);
 			padding-bottom: 0 !important;
 		}
 
+		/* ── ENTRETIEN — image unique sans rognage ── */
+		.mk-entretien-img {
+			display: block !important;
+		}
+		.mk-entretien-img .image-large {
+			height: auto;
+		}
+		.mk-entretien-img .image-large img {
+			width: 100%;
+			height: auto;
+			object-fit: unset;
+		}
+
 		/* ── ÉVÉNEMENTIEL — image complète sans rognage ── */
 		.mk-event-img {
 			display: block !important;
@@ -1061,18 +1074,17 @@ f.parentNode.insertBefore(j, f);
 
 
 <!-- ============================================================
-     8. SOIN DES ESPACES
+     8. ENTRETIEN & MAINTENANCE
      ============================================================ -->
-<section class="adresse-details-section">
-	<div class="adresse-details-block">
-		<div class="adresse-details-img" data-aos="fade-right">
-			<img src="images/content/Lobby_Mes_2.jpg" alt="Soin des Espaces Kwerk"/>
+<section class="details-section mk-entretien-section">
+	<div class="details-container">
+		<div class="details-images mk-entretien-img" data-aos="fade-right">
+			<div class="image-large"><img src="images/menage.png" alt="Entretien & Maintenance Kwerk"></div>
 		</div>
-		<div class="adresse-details-text" data-aos="fade-left">
-			<div class="adresse-details-street">DES LIEUX IMPECCABLES, CHAQUE JOUR</div>
-			<h2 class="adresse-details-title">ENTRETIEN &amp; MAINTENANCE</h2>
-			<p class="adresse-details-desc">
-				La qualité et la pérennité des espaces reposent sur une gestion rigoureuse de leur entretien et de leur maintenance. Nous nous appuyons sur OSAE Services, partenaire de Kwerk depuis plus de dix ans, pour assurer des lieux impeccables et parfaitement fonctionnels. Un suivi de qualité permanent, au quotidien, pour maintenir le niveau d'exigence qui définit la Maison.
+		<div class="details-text" data-aos="fade-left">
+			<h3 class="details-title">ENTRETIEN &amp; MAINTENANCE</h3>
+			<p class="details-description">
+				La qualité et la pérennité des espaces reposent sur une gestion rigoureuse de leur entretien et de leur maintenance. Nous nous appuyons sur nos partenaires pour assurer des lieux impeccables et parfaitement fonctionnels. Un suivi de qualité permanent, au quotidien, pour maintenir le niveau d'exigence qui définit votre entreprise.
 			</p>
 			<div class="details-list">
 				<h4>SERVICES</h4>
