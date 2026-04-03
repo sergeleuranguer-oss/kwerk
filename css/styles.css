@@ -3061,3 +3061,331 @@ a {
     font-size: 22px;
   }
 }
+
+/* Scores Dana */
+.dana-scores {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 0;
+  margin: 40px auto 60px;
+  max-width: 700px;
+}
+.dana-score-item {
+  flex: 1;
+  text-align: center;
+  padding: 0 32px;
+}
+.dana-score-item + .dana-score-item {
+  border-left: 1px solid #ccc;
+}
+.dana-score-num {
+  font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  font-weight: 300;
+  font-size: 40px;
+  letter-spacing: -0.5px;
+  color: #111;
+  line-height: 1;
+}
+.dana-score-num sup {
+  font-size: 20px;
+  vertical-align: super;
+}
+.dana-score-label {
+  font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  font-weight: 300;
+  font-size: 10px;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: #888;
+  margin-top: 8px;
+}
+
+/* Membres grid 2 lignes – Dana */
+.membres-grid--2rows {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+  padding: 0 40px;
+}
+@media (max-width: 900px) {
+  .membres-grid--2rows {
+    grid-template-columns: 1fr;
+    padding: 0 20px;
+  }
+  .dana-scores {
+    flex-direction: column;
+    gap: 24px;
+  }
+  .dana-score-item + .dana-score-item {
+    border-left: none;
+    border-top: 1px solid #ccc;
+    padding-top: 24px;
+  }
+}
+
+/* Carte section – Dana */
+.carte-intro .exceptional-container {
+  max-width: 900px;
+}
+.carte-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 48px 40px;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 6vw 80px;
+}
+.carte-item__img {
+  width: 100%;
+  aspect-ratio: 1 / 1;
+  background: #1a1a1a;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  margin-bottom: 16px;
+}
+.carte-item__img img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+.carte-item__num {
+  font-family: 'Playfair Display', Georgia, serif;
+  font-size: 48px;
+  color: #555;
+}
+.carte-item__name {
+  font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  font-weight: 300;
+  font-size: 17px;
+  color: #1a1a1a;
+  margin-bottom: 4px;
+}
+.carte-item__desc {
+  font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  font-weight: 300;
+  font-size: 12px;
+  color: #888;
+  letter-spacing: 0.02em;
+}
+@media (max-width: 768px) {
+  .carte-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 28px 20px;
+    padding: 0 6vw 60px;
+  }
+}
+@media (max-width: 480px) {
+  .carte-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* Cheffe section – Dana */
+.cheffe-section {
+  background-color: #1e1b17;
+  color: #e8e0d4;
+  display: flex;
+  align-items: stretch;
+  min-height: 600px;
+}
+.cheffe-section__img {
+  flex: 0 0 50%;
+  overflow: hidden;
+}
+.cheffe-section__img img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+.cheffe-section__text {
+  flex: 1;
+  padding: 80px 6vw;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+.cheffe-section__label {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  font-size: 11px;
+  letter-spacing: 0.18em;
+  color: #b0a898;
+  text-transform: uppercase;
+  margin-bottom: 32px;
+}
+.cheffe-section__label::before {
+  content: '';
+  display: block;
+  width: 40px;
+  height: 1px;
+  background: #b0a898;
+}
+.cheffe-section__title {
+  font-family: 'Playfair Display', Georgia, serif;
+  font-size: clamp(28px, 3.5vw, 48px);
+  font-weight: 400;
+  line-height: 1.2;
+  color: #f0ebe3;
+  margin-bottom: 36px;
+}
+.cheffe-section__title em {
+  font-style: italic;
+}
+.cheffe-section__body {
+  font-size: 15px;
+  line-height: 1.75;
+  color: #c8bfb2;
+  margin-bottom: 16px;
+}
+.cheffe-section__signature {
+  margin-top: 32px;
+  font-family: 'Playfair Display', Georgia, serif;
+  font-style: italic;
+  font-size: 20px;
+  color: #e8e0d4;
+}
+.cheffe-section__role {
+  font-size: 11px;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: #b0a898;
+  margin-top: 4px;
+}
+@media (max-width: 900px) {
+  .cheffe-section {
+    flex-direction: column;
+  }
+  .cheffe-section__img {
+    flex: none;
+    height: 360px;
+  }
+  .cheffe-section__text {
+    padding: 48px 6vw;
+  }
+}
+
+/* ── FORMULAIRE PANEL NOUVEAU STYLE ── */
+.side-contact-form .contact-form-fields {
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+}
+.side-contact-form .contact-section-title {
+  font-size: 13px;
+  font-weight: 700;
+  letter-spacing: 2.5px;
+  text-transform: uppercase;
+  color: #111;
+  font-family: "Helvetica Neue", HelveticaNeue, sans-serif;
+  margin: 24px 0 16px;
+}
+.side-contact-form .contact-separator {
+  border: none;
+  border-top: 1px solid #ddd;
+  margin: 24px 0;
+}
+.side-contact-form .ps-field-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 12px;
+  margin-bottom: 12px;
+}
+.side-contact-form .ps-field-row.single {
+  grid-template-columns: 1fr;
+}
+.side-contact-form .ps-field {
+  position: relative;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  padding: 12px 14px 8px;
+  background: #fff;
+  transition: border-color 0.2s;
+}
+.side-contact-form .ps-field:focus-within {
+  border-color: #111;
+}
+.side-contact-form .ps-field label {
+  display: block;
+  font-size: 9px;
+  letter-spacing: 1.6px;
+  text-transform: uppercase;
+  font-weight: 500;
+  color: #1a2a4a;
+  margin-bottom: 3px;
+  font-family: "Helvetica Neue", HelveticaNeue, sans-serif;
+}
+.side-contact-form .ps-field input,
+.side-contact-form .ps-field textarea,
+.side-contact-form .ps-field select {
+  width: 100%;
+  border: none;
+  outline: none;
+  font-size: 14px;
+  color: #222;
+  background: transparent;
+  font-family: "Helvetica Neue", HelveticaNeue, sans-serif;
+  font-weight: 300;
+  padding: 0;
+}
+.side-contact-form .ps-field input::placeholder,
+.side-contact-form .ps-field textarea::placeholder {
+  color: #999;
+  font-weight: 300;
+}
+.side-contact-form .ps-field textarea {
+  resize: vertical;
+  min-height: 100px;
+  line-height: 1.6;
+}
+.side-contact-form .ps-field select {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  cursor: pointer;
+  padding-right: 20px;
+}
+.side-contact-form .ps-field.ps-select::after {
+  content: '';
+  position: absolute;
+  right: 14px;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 10px;
+  height: 6px;
+  background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 10 6'%3E%3Cpath d='M0 0l5 6 5-6z' fill='%23666'/%3E%3C/svg%3E") no-repeat center;
+  pointer-events: none;
+}
+.side-contact-form .ps-checkbox {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin: 8px 0 20px;
+}
+.side-contact-form .ps-checkbox input[type="checkbox"] {
+  width: 16px;
+  height: 16px;
+  border: 1px solid #bbb;
+  border-radius: 3px;
+  cursor: pointer;
+  accent-color: #111;
+  flex-shrink: 0;
+}
+.side-contact-form .ps-checkbox label {
+  font-size: 12px;
+  color: #555;
+  font-family: "Helvetica Neue", HelveticaNeue, sans-serif;
+  font-weight: 300;
+  cursor: pointer;
+  text-transform: none;
+  letter-spacing: 0;
+}
+.side-contact-form .ps-checkbox label a {
+  color: #222;
+  text-decoration: underline;
+}

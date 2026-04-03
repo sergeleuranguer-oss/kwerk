@@ -77,24 +77,24 @@ a {
 
 .footer-nav {
   display: flex;
-  gap: 0;
+  gap: 32px;
   justify-content: space-between;
   align-items: flex-start;
   width: 100%;
 }
 .footer-nav-col {
-  flex: 1;
+  flex: none;
   font-size: 13px;
   color: #222;
 }
 .footer-nav-title {
   text-transform: uppercase;
   font-weight: 400;
-  font-size: 13px;
-  letter-spacing: 3px;
-  margin-bottom: 18px;
   font-size: 12px;
+  letter-spacing: 2px;
+  margin-bottom: 18px;
   border-bottom: 1.2px solid transparent;
+  white-space: nowrap;
   width: fit-content;
   padding-bottom: 3px;
   transition:

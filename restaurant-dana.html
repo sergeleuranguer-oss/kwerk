@@ -72,6 +72,14 @@ f.parentNode.insertBefore(j, f);
 		</div>
 	</header>
 
+	<section class="exceptional-section">
+		<div class="exceptional-container" data-aos="fade-up">
+			<h2 class="exceptional-heading">La gastronomie s'invite au quotidien</h2>
+			<div style="width: 1px; height: 56px; background: #1a1a1a; margin: 32px auto;"></div>
+			<p class="exceptional-body">Le Dana, restaurant exécutif réservé aux membres Kwerk et à leurs invités.<br>Une table qui fait du déjeuner un moment d'exception.</p>
+		</div>
+	</section>
+
 <!-- MENU---------------------------->
 <div class="side-menu" id="sideMenu">
 	<div class="side-menu-header">
@@ -95,10 +103,10 @@ f.parentNode.insertBefore(j, f);
 			<a href="club.html">LE CLUB</a>
 		</li>
 		<li>
-			<a href="restaurant-dana.html">LE DANA - RESTAURANT</a>
+			<a href="restaurant-dana.html">LE DANA</a>
 		</li>
 		<li>
-			<a href="sport-bien-etre.html">LE SPORT &amp; LE BIEN-ÊTRE</a>
+			<a href="sport-bien-etre.html">SPORT &amp; BIEN-ÊTRE</a>
 		</li>
 		<li>
 			<a href="galerie.html">LA GALERIE</a>
@@ -138,65 +146,71 @@ f.parentNode.insertBefore(j, f);
 			<img src="images/close_cross.svg" alt="close">
 		</span>
 	</div>
-	<form class="contact-form-fields">
-		<div class="row">
-			<div class="field">
-				<label>PRÉNOM*</label>
-				<input type="text" name="firstname" required>
+		<form class="contact-form-fields">
+
+		<!-- VOS COORDONNÉES -->
+		<h3 class="contact-section-title">VOS COORDONNÉES</h3>
+
+		<div class="ps-field-row">
+			<div class="ps-field">
+				<label>VOTRE PRÉNOM *</label>
+				<input type="text" name="firstname" placeholder="Votre prénom" required>
+				<div class="error"></div>
+			</div>
+			<div class="ps-field">
+				<label>VOTRE NOM *</label>
+				<input type="text" name="lastname" placeholder="Votre nom" required>
 				<div class="error"></div>
 			</div>
 		</div>
-		<div class="row">
-			<div class="field">
-				<label>NOM*</label>
-				<input type="text" required name="lastname">
+
+		<div class="ps-field-row">
+			<div class="ps-field">
+				<label>VOTRE NUMÉRO DE TÉLÉPHONE *</label>
+				<input type="text" name="phone" placeholder="+33 6 00 00 00 00" required>
+				<div class="error"></div>
+			</div>
+			<div class="ps-field">
+				<label>VOTRE ADRESSE E-MAIL *</label>
+				<input type="email" name="email" placeholder="nom@email.com" required>
 				<div class="error"></div>
 			</div>
 		</div>
-		<div class="row">
-			<div class="field">
-				<label>EMAIL*</label>
-				<input type="email" required name="email">
+
+		<div class="ps-field-row single">
+			<div class="ps-field">
+				<label>VOTRE SOCIÉTÉ (LE CAS ÉCHÉANT)</label>
+				<input type="text" name="company" placeholder="Nom de l'entreprise">
 				<div class="error"></div>
 			</div>
 		</div>
-		<div class="row">
-			<div class="field">
-				<label>TÉLÉPHONE*</label>
-				<input type="text" name="phone" required>
-				<div class="error"></div>
-			</div>
-		</div>
-		<div class="row">
-			<div class="field">
-				<label>SOCIÉTÉ*</label>
-				<input type="text" required name="company">
-				<div class="error"></div>
-			</div>
-		</div>
-		<div class="row">
-			<div class="field">
-				<label>NOMBRE DE POSTES*</label>
-				<input type="number" name="desk" required>
-				<div class="error"></div>
-			</div>
-		</div>
-		<div class="row">
-			<div class="field">
-				<label>QUE RECHERCHEZ VOUS ?</label>
-				<select name="produit">
-					<option>Bureau exécutif</option>
-					<option>Suite Signature</option>
-					<option>Étages privatifs</option>
-					<option>Événements/Espaces de réunion</option>
+
+		<hr class="contact-separator">
+
+		<!-- VOTRE DEMANDE -->
+		<h3 class="contact-section-title">VOTRE DEMANDE</h3>
+
+		<div class="ps-field-row single">
+			<div class="ps-field ps-select">
+				<label>QUELLE EST VOTRE DEMANDE ? *</label>
+				<select name="produit" required>
+					<option value="" disabled selected>Veuillez choisir</option>
+					<option>Bureaux Exécutifs</option>
+					<option>Suite Signatures</option>
+					<option>Étages Privatifs</option>
+					<option>La Maison Kwerk</option>
+					<option>Événementiel</option>
+					<option>Le Club</option>
 				</select>
 				<div class="error"></div>
 			</div>
 		</div>
-		<div class="row">
-			<div class="field">
-				<label>COMMENT AVEZ VOUS CONNU KWERK ?*</label>
-				<select name="origine_de_la_piste">
+
+		<div class="ps-field-row single">
+			<div class="ps-field">
+				<label>COMMENT AVEZ-VOUS CONNU KWERK ? *</label>
+				<select name="origine_de_la_piste" required>
+					<option value="" disabled selected>Veuillez choisir</option>
 					<option>Recommandation par mon réseau</option>
 					<option>Recherche internet</option>
 					<option>Recommandation par un membre Kwerk</option>
@@ -210,15 +224,24 @@ f.parentNode.insertBefore(j, f);
 				<div class="error"></div>
 			</div>
 		</div>
-		<div class="row row-full">
-			<div class="field">
-				<label>PARLEZ-NOUS DE VOTRE PROJET</label>
-				<textarea rows="4" name="description_de_la_transaction" placeholder="Exemple: Bonjour, nous sommes à la recherche de bureaux privatifs afin d&#039;accompagner la croissance"></textarea>
+
+		<div class="ps-field-row single">
+			<div class="ps-field">
+				<label>EXPLIQUEZ-NOUS VOTRE PROJET *</label>
+				<textarea name="description_de_la_transaction" placeholder="Expliquez-nous votre projet" required></textarea>
 				<div class="error"></div>
 			</div>
 		</div>
+
+		<hr class="contact-separator">
+
+		<div class="ps-checkbox">
+			<input type="checkbox" id="privacy" required>
+			<label for="privacy">J'ai lu et j'accepte la <a href="cgu.html">Politique de Confidentialité.</a></label>
+		</div>
+
 		<div class="form-footer">
-			<button type="submit" class="submit-btn">ENVOYER MA DEMANDE</button>
+			<button type="submit" class="submit-btn">ENVOYEZ VOTRE DEMANDE</button>
 			<div class="success" id="successMessage"></div>
 			<span class="contact-phone">07 83 48 94 57</span>
 		</div>
@@ -228,13 +251,13 @@ f.parentNode.insertBefore(j, f);
 	<section class="adresse-details-section">
 		<div class="adresse-details-block">
 			<div class="adresse-details-img" data-aos="fade-right">
-				<img src="images/caroussel_service/dana.png" alt="DANA"/>
+				<img src="images/dana2.jpg" alt="DANA"/>
 			</div>
 			<div class="adresse-details-text" data-aos="fade-left">
-				<div class="adresse-details-street">RESTAURANT PRIVÉ</div>
-				<h2 class="adresse-details-title">LE DANA</h2>
+				<div class="adresse-details-street">RESTAURANT PRIVÉ — 18 rue de Courcelles 75008 — Kwerk Saint-Honoré</div>
+				<h2 class="adresse-details-title" style="font-weight: 700;">LÀ OÙ CHAQUE DÉJEUNER DEVIENT UNE EXPÉRIENCE UNIQUE</h2>
 				<p class="adresse-details-desc">
-					Découvrez Le Dana, notre restaurant semi-gastronomique réservé à nos membres et leurs invités, qui propose une cuisine authentique et raffinée, renouvelée chaque semaine par notre cheffe Lais Borba. Élaborée à partir de produits locaux et de saison, sa carte célèbre une cuisine généreuse, précise et équilibrée.
+					Le Dana est le lieu où la gastronomie s'invite dans son quotidien. Un cadre raffiné et chaleureux, chaque déjeuner s'élève au rang d'expérience - qu'il s'agisse de recevoir des clients importants, de partager un moment d'équipe privilégié ou de s'offrir une parenthèse de qualité au coeur de la journée.<br><br>Les produits sont soigneusement sourcés auprès de producteurs locaux et les menus renouvelés chaque semaine pour suivre le rythme des saisons. Chaque carte est travaillée pour allier équilibre et plaisir sans jamais l'un au détriment de l'autre.
 				</p>
 			</div>
 		</div>
@@ -243,19 +266,137 @@ f.parentNode.insertBefore(j, f);
 	<section class="adresse-details-section">
 		<div class="adresse-details-block reverse">
 			<div class="adresse-details-text" data-aos="fade-right">
-				<div class="adresse-details-street">PAUSE CAFÉ &amp; BOISSONS SIGNATURES</div>
-				<h2 class="adresse-details-title">LOUNGE ET BARISTA</h2>
+				<div class="adresse-details-street">LAÍS BORBA - CHEFFE EXÉCUTIVE DU DANA</div>
+				<h2 class="adresse-details-title" style="font-weight: 700;">UNE CUISINE FRANÇAISE, OUVERTE SUR LE MONDE</h2>
 				<p class="adresse-details-desc">
-					Des espaces pensés pour vous accueillir tout au long de la journée, proposant cafés de spécialité, thés, boissons fraîches et encas, selon vos rythmes. Des tisanières à chaque étage complètent l'offre, avec eaux aromatisées, fruits frais et infusions.
+					Sous la direction de Laís Borba, la carte puise dans les grands classiques français pour mieux les réinventer. Une touche contemporaine et voyageuse vient surprendre sans jamais dérouter, faisant de chaque assiette une invitation à la découverte autant qu'un moment de réconfort.<br><br>Plus de 10 ans d'expérience dans la restauration, Laís a exercé dans plusieurs restaurants gastronomiques et lieux de prestige, notamment à Hong Kong dans le groupe Meraki, avant de rejoindre Kwerk il y a quatre ans. Spécialiste de la fusion, elle conjugue maîtrise des classiques français et inspirations internationales avec exigence et créativité.
 				</p>
 			</div>
 			<div class="adresse-details-img" data-aos="fade-left">
-				<img src="images/galerie/saint-honore/LOBBY_SHO_LOUNGE.jpg" alt="Barista"/>
+				<img src="images/lais.png" alt="Laís Borba, Cheffe Exécutive Le Dana"/>
 			</div>
 		</div>
 	</section>
 
+
 	
+	<section class="exceptional-section carte-intro">
+		<div class="exceptional-container" data-aos="fade-up">
+			<h2 class="exceptional-heading">La carte</h2>
+			<div style="width: 1px; height: 56px; background: #1a1a1a; margin: 32px auto;"></div>
+			<p class="exceptional-body">Des saisons, des inspirations</p>
+		</div>
+	</section>
+
+	<div class="carte-grid">
+		<div class="carte-item" data-aos="fade-up">
+			<div class="carte-item__img"><img src="images/entree1.png" alt="Entrée 1"/></div>
+			<div class="carte-item__name">Tartare de bar et crevettes nacrées</div>
+			<div class="carte-item__desc">Vinaigrette d'algues, huile de kombu, gel de rhubarbe, cebette et radis</div>
+		</div>
+		<div class="carte-item" data-aos="fade-up" data-aos-delay="100">
+			<div class="carte-item__img"><img src="images/entree2.png" alt="Entrée 2"/></div>
+			<div class="carte-item__name">Tartelette chèvre et figue</div>
+			<div class="carte-item__desc">Crème de crottin de chèvre affinée, figues fraîches, noix de pécan rôti au piment d'Espelette et miel de fleurs</div>
+		</div>
+		<div class="carte-item" data-aos="fade-up" data-aos-delay="200">
+			<div class="carte-item__img"><img src="images/entree3.png" alt="Entrée 3"/></div>
+			<div class="carte-item__name">Gaspacho de tomate cœur de bœuf grillé</div>
+			<div class="carte-item__desc">Tomate ananas, fraises, framboises, fêta, concombre et aneth</div>
+		</div>
+		<div class="carte-item" data-aos="fade-up">
+			<div class="carte-item__img"><img src="images/plat1.png" alt="Plat 1" style="object-position: 50% 20%;"/></div>
+			<div class="carte-item__name">Faux-filet</div>
+			<div class="carte-item__desc">Tartelette au panais et champignons de saison, condiment d'oignon, jus réduit</div>
+		</div>
+		<div class="carte-item" data-aos="fade-up" data-aos-delay="100">
+			<div class="carte-item__img"><img src="images/plat2.png" alt="Plat 2"/></div>
+			<div class="carte-item__name">Noix de Saint-Jacques grillées</div>
+			<div class="carte-item__desc">Siphon de pommes de terre, condiment au cresson et huile de paprika fumée</div>
+		</div>
+		<div class="carte-item" data-aos="fade-up" data-aos-delay="200">
+			<div class="carte-item__img"><img src="images/plat3.png" alt="Plat 3"/></div>
+			<div class="carte-item__name">Velouté de topinambour</div>
+			<div class="carte-item__desc">Champignons grillés, scarmoza fumée, chips de topinambour, huile de ciboulette</div>
+		</div>
+		<div class="carte-item" data-aos="fade-up">
+			<div class="carte-item__img"><img src="images/dessert1.png" alt="Dessert 1"/></div>
+			<div class="carte-item__name">Mille-feuilles chocolat au lait et bière</div>
+			<div class="carte-item__desc">Glace à l'avoine</div>
+		</div>
+		<div class="carte-item" data-aos="fade-up" data-aos-delay="100">
+			<div class="carte-item__img"><img src="images/dessert2.png" alt="Dessert 2"/></div>
+			<div class="carte-item__name">Poire-vanille</div>
+			<div class="carte-item__desc">Sorbet poire, gel poire, mousse vanille et crumble</div>
+		</div>
+		<div class="carte-item" data-aos="fade-up" data-aos-delay="200">
+			<div class="carte-item__img"><img src="images/dessert3.png" alt="Dessert 3"/></div>
+			<div class="carte-item__name">Pavlova framboise</div>
+			<div class="carte-item__desc">Coco et coriandre</div>
+		</div>
+	</div>
+
+	<section class="membres-section">
+		<div class="membres-header">
+			<h2 class="exceptional-heading" style="margin-bottom: 0;">Une carte plébiscitée par nos membres</h2>
+		</div>
+		<div class="dana-scores">
+			<div class="dana-score-item">
+				<div class="dana-score-num">9.5<sup>/10</sup></div>
+				<div class="dana-score-label">Qualité des plats</div>
+			</div>
+			<div class="dana-score-item">
+				<div class="dana-score-num">9.4<sup>/10</sup></div>
+				<div class="dana-score-label">Qualité du service</div>
+			</div>
+			<div class="dana-score-item">
+				<div class="dana-score-num">9.4<sup>/10</sup></div>
+				<div class="dana-score-label">Ambiance</div>
+			</div>
+		</div>
+		<div class="membres-grid--2rows">
+			<div class="membre-card">
+				<span class="membre-quote">"</span>
+				<p class="membre-text"><em>La cuisine est raffinée et le service chaleureux.</em></p>
+				<div class="membre-author">Directeur Général</div>
+				<div class="membre-company">Entreprise IA</div>
+			</div>
+			<div class="membre-card">
+				<span class="membre-quote">"</span>
+				<p class="membre-text"><em>Tout est parfait : l'ambiance restaurant, la cuisine, l'accueil en salle — et je ne parle même pas des plats : ils parlent pour eux.</em></p>
+				<div class="membre-author">Vice-Président</div>
+				<div class="membre-company">Banque d'affaires</div>
+			</div>
+			<div class="membre-card">
+				<span class="membre-quote">"</span>
+				<p class="membre-text"><em>Très bonne cuisine, originale. Très bon service, souriant, chaleureux, personnalisé et efficace — très rare à Paris.</em></p>
+				<div class="membre-author">Directeur Général</div>
+				<div class="membre-company">Cabinet d'avocats</div>
+			</div>
+			<div class="membre-card">
+				<span class="membre-quote">"</span>
+				<p class="membre-text"><em>Les plats proposés et le service sont excellents !</em></p>
+				<div class="membre-author">Directeur Général</div>
+				<div class="membre-company">Cabinet de notaires</div>
+			</div>
+			<div class="membre-card">
+				<span class="membre-quote">"</span>
+				<p class="membre-text"><em>La qualité du service est tout simplement parfaite. Les plats sont délicieux, nous ne sommes jamais déçus !</em></p>
+				<div class="membre-author">Vice-Président</div>
+				<div class="membre-company">Agence RP</div>
+			</div>
+			<div class="membre-card">
+				<span class="membre-quote">"</span>
+				<p class="membre-text"><em>La qualité et la saisonnalité des plats proposés sont parfaites.</em></p>
+				<div class="membre-author">Assistante Exécutive</div>
+				<div class="membre-company">Banque d'affaires</div>
+			</div>
+		</div>
+		<div style="text-align: center; margin-top: 60px;">
+			<a href="contact.html" class="exceptional-cta">CONTACTEZ-NOUS</a>
+		</div>
+	</section>
+
 	<!-- BANDEAU CAROUSEL -->
 	<section class="univers-section">
 		<div class="univers-carousel" id="univers-carousel">
@@ -273,6 +414,11 @@ f.parentNode.insertBefore(j, f);
 <div class="sticky-btn-contact">
 	<a href="contact.html" class="contact-btn">CONTACTEZ-NOUS</a>
 </div>
+
+
+<section style="text-align:center; padding: 80px 0 60px;">
+	<a href="contact.html" class="exceptional-cta">CONTACTEZ-NOUS</a>
+</section>
 
 <footer class="footer">
 	<div class="footer-container">
@@ -320,12 +466,12 @@ f.parentNode.insertBefore(j, f);
 				</div>
 				<div class="footer-nav-col">
 					<div class="footer-nav-title">
-						<a href="restaurant-dana.html">LE DANA - RESTAURANT</a>
+						<a href="restaurant-dana.html">LE DANA</a>
 					</div>
 				</div>
 				<div class="footer-nav-col">
 					<div class="footer-nav-title">
-						<a href="sport-bien-etre.html">LE SPORT &amp; LE BIEN-ÊTRE</a>
+						<a href="sport-bien-etre.html">SPORT &amp; BIEN-ÊTRE</a>
 					</div>
 				</div>
 				<div class="footer-nav-col">
