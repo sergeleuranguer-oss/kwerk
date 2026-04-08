@@ -35,6 +35,135 @@ f.parentNode.insertBefore(j, f);
 		<link rel="stylesheet" href="css/styles.css">
 
 		<link rel="stylesheet" href="css/footer.css">
+
+	<style>
+		/* ── ESPACES — Section Layout ── */
+		.esp-section {
+			padding: 80px 0;
+			background: #fff;
+			border-bottom: 1px solid #f2f2f2;
+		}
+		.esp-section:last-of-type { border-bottom: none; }
+
+		.esp-inner {
+			max-width: 1280px;
+			margin: 0 auto;
+			padding: 0 60px;
+			display: grid;
+			grid-template-columns: 7fr 5fr;
+			gap: 64px;
+			align-items: start;
+		}
+		.esp-inner.esp-reverse {
+			grid-template-columns: 5fr 7fr;
+		}
+
+		/* Text side */
+		.esp-text { padding-top: 16px; }
+		.esp-eyebrow {
+			display: block;
+			font-size: 10px;
+			letter-spacing: 3px;
+			color: #999;
+			text-transform: uppercase;
+			margin-bottom: 18px;
+			font-family: 'Helvetica Neue', HelveticaNeue, sans-serif;
+		}
+		.esp-title {
+			font-size: 26px;
+			font-weight: 300;
+			letter-spacing: 2px;
+			text-transform: uppercase;
+			color: #1a1a1a;
+			line-height: 1.3;
+			font-family: 'Helvetica Neue', HelveticaNeue, sans-serif;
+			margin-bottom: 0;
+		}
+		.esp-bar {
+			display: block;
+			width: 28px;
+			height: 1px;
+			background: #1a1a1a;
+			margin: 22px 0 24px;
+		}
+		.esp-desc {
+			font-size: 14px;
+			color: #666;
+			line-height: 1.95;
+			font-weight: 300;
+			font-family: 'Helvetica Neue', HelveticaNeue, sans-serif;
+			margin-bottom: 32px;
+		}
+		.esp-features {
+			list-style: none;
+			padding: 0;
+			margin: 0;
+		}
+		.esp-features li {
+			font-size: 10px;
+			letter-spacing: 1.5px;
+			text-transform: uppercase;
+			color: #999;
+			padding: 12px 0;
+			border-bottom: 1px solid #f2f2f2;
+			font-family: 'Helvetica Neue', HelveticaNeue, sans-serif;
+			display: flex;
+			align-items: center;
+			gap: 14px;
+		}
+		.esp-features li::before {
+			content: '';
+			width: 16px;
+			height: 1px;
+			background: #ccc;
+			flex-shrink: 0;
+		}
+		.esp-features li:last-child { border-bottom: none; }
+
+		/* Photo mosaic */
+		.esp-mosaic {
+			display: flex;
+			flex-direction: column;
+			gap: 4px;
+		}
+		.esp-mosaic-main {
+			width: 100%;
+			height: 420px;
+			object-fit: cover;
+			display: block;
+		}
+		.esp-mosaic-strip {
+			display: grid;
+			grid-template-columns: repeat(3, 1fr);
+			gap: 4px;
+		}
+		.esp-mosaic-strip img {
+			width: 100%;
+			height: 195px;
+			object-fit: cover;
+			display: block;
+		}
+
+		/* Responsive */
+		@media (max-width: 1000px) {
+			.esp-inner,
+			.esp-inner.esp-reverse {
+				grid-template-columns: 1fr;
+				padding: 0 32px;
+				gap: 40px;
+			}
+		}
+		@media (max-width: 768px) {
+			.esp-mosaic-main { height: 260px; }
+			.esp-mosaic-strip img { height: 120px; }
+			.esp-section { padding: 60px 0; }
+		}
+		@media (max-width: 480px) {
+			.esp-mosaic-main { height: 200px; }
+			.esp-mosaic-strip img { height: 90px; }
+			.esp-inner, .esp-inner.esp-reverse { padding: 0 20px; }
+		}
+	</style>
 	</head>
 	<body>
 		<div id="pageLoader" class="page-loader">
@@ -253,54 +382,117 @@ f.parentNode.insertBefore(j, f);
 </div>
 				
 
-	<section class="adresse-details-section">
-		<div class="adresse-details-block">
-			<div class="adresse-details-img" data-aos="fade-right">
-				<img src="images/content/Bureaux_Hsm_1.png" alt="Bureaux ex&eacute;cutifs"/>
-			</div>
-			<div class="adresse-details-text" data-aos="fade-left">
-				<div class="adresse-details-street">ESPACES CLÉS EN MAIN</div>
-				<h2 class="adresse-details-title">BUREAUX EXÉCUTIFS</h2>
-				<p class="adresse-details-desc">
-					Des bureaux intimistes et baignés de lumière, conçus pour vous accueillir dans un cadre élégant et serein. Chaque espace allie confort, discrétion et confidentialité, offrant des conditions de travail optimales et un environnement propice à la concentration.
-				</p>
+
+<!-- ============================================================
+     INTRO
+     ============================================================ -->
+<section class="exceptional-section">
+	<div class="exceptional-container" data-aos="fade-up">
+		<h2 class="exceptional-heading">Des espaces conçus pour <strong>l'excellence</strong>,<br>au cœur de Paris</h2>
+		<div style="width: 1px; height: 56px; background: #1a1a1a; margin: 32px auto;"></div>
+		<p class="exceptional-body">
+			Kwerk propose trois formules d'espaces de travail haut de gamme, pensées pour s'adapter à la singularité de chaque organisation. Du bureau intimiste au plateau entièrement privatif, chaque espace est conçu pour allier confort, confidentialité et représentation — dans des adresses parisiennes d'exception.
+		</p>
+	</div>
+</section>
+
+
+<!-- ============================================================
+     1. BUREAUX EXÉCUTIFS
+     ============================================================ -->
+<section class="esp-section">
+	<div class="esp-inner">
+		<div class="esp-mosaic" data-aos="fade-right">
+			<img class="esp-mosaic-main" src="images/bureaux.jpg" alt="Bureaux exécutifs Kwerk">
+			<div class="esp-mosaic-strip">
+				<img src="images/executif2.jpg" alt="Bureau exécutif Kwerk">
+				<img src="images/executif3.jpg" alt="Bureau exécutif Kwerk">
+				<img src="images/executif4.jpg" alt="Bureau exécutif Kwerk">
 			</div>
 		</div>
-	</section>
+		<div class="esp-text" data-aos="fade-left">
+			<span class="esp-eyebrow">ESPACES CLÉS EN MAIN</span>
+			<h2 class="esp-title">BUREAUX<br>EXÉCUTIFS</h2>
+			<span class="esp-bar"></span>
+			<p class="esp-desc">
+				Des bureaux intimistes et baignés de lumière, conçus pour vous accueillir dans un cadre élégant et serein. Chaque espace allie confort, discrétion et confidentialité, offrant des conditions de travail optimales et un environnement propice à la concentration et à la représentation.
+			</p>
+			<ul class="esp-features">
+				<li>Surfaces de 10 à 60 m², entièrement meublées</li>
+				<li>Lumière naturelle et confidentialité garanties</li>
+				<li>Services hôteliers inclus — accueil, ménage, courrier</li>
+				<li>Accès au Club et à l'ensemble des espaces communs</li>
+				<li>Disponibles immédiatement, sans engagement long terme</li>
+			</ul>
+		</div>
+	</div>
+</section>
 
-	<section class="adresse-details-section">
-		<div class="adresse-details-block reverse">
-			<div class="adresse-details-text" data-aos="fade-right">
-				<div class="adresse-details-street">IDENTITÉ SUR-MESURE</div>
-				<h2 class="adresse-details-title">SUITES SIGNATURES</h2>
-				<p class="adresse-details-desc">
-					Des suites entièrement personnalisables, associant espaces de réception, salons privés et salles de réunion. Véritables lieux de représentation, elles offrent un cadre haut de gamme, propice aux échanges et à l&#039;accueil de vos interlocuteurs, dans une atmosphère à la fois confidentielle et raffinée.
-				</p>
-			</div>
-			<div class="adresse-details-img" data-aos="fade-left">
-				<img src="images/content/Suite_SHO_2.png" alt="Suites signatures"/>
+
+<!-- ============================================================
+     2. SUITES SIGNATURES
+     ============================================================ -->
+<section class="esp-section">
+	<div class="esp-inner esp-reverse">
+		<div class="esp-text" data-aos="fade-right">
+			<span class="esp-eyebrow">IDENTITÉ SUR-MESURE</span>
+			<h2 class="esp-title">SUITES<br>SIGNATURES</h2>
+			<span class="esp-bar"></span>
+			<p class="esp-desc">
+				Des suites entièrement personnalisables, associant espaces de réception, salons privés et salles de réunion. Véritables lieux de représentation, elles offrent un cadre haut de gamme propice aux échanges et à l'accueil de vos interlocuteurs, dans une atmosphère à la fois confidentielle et raffinée.
+			</p>
+			<ul class="esp-features">
+				<li>Espace de réception personnalisé à vos couleurs</li>
+				<li>Salon privé et salle de réunion intégrée</li>
+				<li>Accueil dédié et conciergerie sur mesure</li>
+				<li>Design et aménagement orchestrés par nos équipes</li>
+				<li>Idéal pour directions générales et cabinets d'exception</li>
+			</ul>
+		</div>
+		<div class="esp-mosaic" data-aos="fade-left">
+			<img class="esp-mosaic-main" src="images/content/Suite_SHO_2.png" alt="Suites signatures Kwerk">
+			<div class="esp-mosaic-strip">
+				<img src="images/signature2.jpg" alt="Suite signature Kwerk">
+				<img src="images/signature3.jpg" alt="Suite signature Kwerk">
+				<img src="images/signature4.jpg" alt="Suite signature Kwerk">
 			</div>
 		</div>
-	</section>
+	</div>
+</section>
 
-	<section class="adresse-details-section">
-		<div class="adresse-details-block">
-			<div class="adresse-details-img" data-aos="fade-right">
-				<img src="images/content/Suite_SHO_v2.png" alt="&Eacute;tages privatifs"/>
-			</div>
-			<div class="adresse-details-text" data-aos="fade-left">
-				<div class="adresse-details-street">PLATEAUX MODULABLES</div>
-				<h2 class="adresse-details-title">ÉTAGES PRIVATIFS</h2>
-				<p class="adresse-details-desc">
-					Des étages entièrement privatisables, configurables selon vos usages, intégrant espaces d&#039;accueil, zones collaboratives, cabines d&#039;appel et terrasses privatives. Chaque plateau offre une grande liberté d&#039;aménagement, permettant de créer un cadre de travail adapté à vos besoins, à vos équipes et à votre organisation.
-				</p>
+
+<!-- ============================================================
+     3. ÉTAGES PRIVATIFS
+     ============================================================ -->
+<section class="esp-section">
+	<div class="esp-inner">
+		<div class="esp-mosaic" data-aos="fade-right">
+			<img class="esp-mosaic-main" src="images/content/Suite_SHO_v2.png" alt="Étages privatifs Kwerk">
+			<div class="esp-mosaic-strip">
+				<img src="images/prive2.jpg" alt="Étage privatif Kwerk">
+				<img src="images/prive3.jpg" alt="Étage privatif Kwerk">
+				<img src="images/prive4.jpg" alt="Étage privatif Kwerk">
 			</div>
 		</div>
-	</section>
+		<div class="esp-text" data-aos="fade-left">
+			<span class="esp-eyebrow">PLATEAUX MODULABLES</span>
+			<h2 class="esp-title">ÉTAGES<br>PRIVATIFS</h2>
+			<span class="esp-bar"></span>
+			<p class="esp-desc">
+				Des étages entièrement privatisables, configurables selon vos usages, intégrant espaces d'accueil, zones collaboratives, cabines d'appel et terrasses privatives. Chaque plateau offre une grande liberté d'aménagement, permettant de créer un cadre de travail adapté à vos besoins et à l'identité de votre entreprise.
+			</p>
+			<ul class="esp-features">
+				<li>Plateaux de 300 à 2&nbsp;000 m², entièrement modulables</li>
+				<li>Espaces collaboratifs, cabines d'appel et zones de détente</li>
+				<li>Terrasses privatives disponibles sur certains sites</li>
+				<li>Aménagement sur-mesure selon votre identité de marque</li>
+				<li>Services La Maison Kwerk intégrables à la demande</li>
+			</ul>
+		</div>
+	</div>
+</section>
 
 
-
-		
 	<!-- BANDEAU CAROUSEL -->
 	
 <section style="text-align:center; padding: 80px 0 60px;" class="cta-before-carousel">
