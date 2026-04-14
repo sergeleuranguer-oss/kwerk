@@ -1,0 +1,96 @@
+name: GTM Auto-Insert
+
+on:
+  push:
+    branches:
+      - preprod
+
+jobs:
+  gtm-check:
+    runs-on: ubuntu-latest
+    if: github.actor != 'github-actions[bot]'
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+        with:
+          ref: preprod
+          token: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: Insert GTM snippets in HTML files
+        run: |
+          python3 << 'PYEOF'
+          import os
+          import re
+
+          GTM_ID = 'GTM-MK4BS4GL'
+
+          HEAD_SNIPPET = """    <!-- Google Tag Manager -->
+          <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+          new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+          j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+          'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+          })(window,document,'script','dataLayer','GTM-MK4BS4GL');</script>
+          <!-- End Google Tag Manager -->"""
+
+          BODY_SNIPPET = """    <!-- Google Tag Manager (noscript) -->
+          <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-MK4BS4GL"
+          height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+          <!-- End Google Tag Manager (noscript) -->"""
+
+          modified = []
+
+          for root, dirs, files in os.walk('.'):
+              dirs[:] = [d for d in dirs if not d.startswith('.')]
+              for fname in files:
+                  if not fname.endswith('.html'):
+                      continue
+                  fpath = os.path.join(root, fname)
+                  with open(fpath, 'r', encoding='utf-8', errors='replace') as f:
+                      content = f.read()
+
+                  if GTM_ID in content:
+                      print(f"SKIP (already has GTM): {fpath}")
+                      continue
+
+                  original = content
+
+                  charset_match = re.search(r'(<meta\s+charset[^>]*>)', content, re.IGNORECASE)
+                  head_match = re.search(r'(<head[^>]*>)', content, re.IGNORECASE)
+
+                  if charset_match:
+                      insert_pos = charset_match.end()
+                      content = content[:insert_pos] + '\n' + HEAD_SNIPPET + content[insert_pos:]
+                  elif head_match:
+                      insert_pos = head_match.end()
+                      content = content[:insert_pos] + '\n' + HEAD_SNIPPET + content[insert_pos:]
+                  else:
+                      print(f"WARNING: no <head> found in {fpath}, skipping head snippet")
+
+                  body_match = re.search(r'(<body[^>]*>)', content, re.IGNORECASE)
+                  if body_match:
+                      insert_pos = body_match.end()
+                      content = content[:insert_pos] + '\n' + BODY_SNIPPET + content[insert_pos:]
+                  else:
+                      print(f"WARNING: no <body> found in {fpath}, skipping body snippet")
+
+                  if content != original:
+                      with open(fpath, 'w', encoding='utf-8') as f:
+                          f.write(content)
+                      print(f"MODIFIED: {fpath}")
+                      modified.append(fpath)
+
+          print(f"\nTotal files modified: {len(modified)}")
+          PYEOF
+
+      - name: Commit modified HTML files
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add -A
+          if git diff --cached --quiet; then
+            echo "No changes to commit."
+          else
+            git commit -m "GTM: auto-ajout snippet GTM-MK4BS4GL"
+            git push origin preprod
+          fi
