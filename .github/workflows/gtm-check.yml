@@ -8,6 +8,8 @@ on:
 jobs:
   gtm-check:
     runs-on: ubuntu-latest
+    permissions:
+      contents: write
     if: github.actor != 'github-actions[bot]'
 
     steps:
