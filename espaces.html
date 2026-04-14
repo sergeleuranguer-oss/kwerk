@@ -161,6 +161,59 @@ f.parentNode.insertBefore(j, f);
 			.esp-mosaic-strip img { height: 90px; }
 			.esp-inner, .esp-inner.esp-reverse { padding: 0 20px; }
 		}
+	/* ── CTA FINAL BANDEAU ── */
+	.mk-cta-section {
+		position: relative;
+		min-height: 850px;
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		overflow: hidden;
+	}
+	.mk-cta-bg {
+		position: absolute;
+		inset: 0;
+		background-image: url('images/content/Rooftop_Mes_1.jpg');
+		background-size: cover;
+		background-position: center;
+	}
+	.mk-cta-overlay {
+		position: absolute;
+		inset: 0;
+		background: rgba(0, 0, 0, 0.62);
+	}
+	.mk-cta-content {
+		position: relative;
+		z-index: 2;
+		text-align: center;
+		padding: 80px 40px;
+	}
+	.mk-cta-title {
+		font-size: 28px;
+		font-weight: 300;
+		color: #fff;
+		letter-spacing: 1px;
+		text-transform: none;
+		margin-bottom: 32px;
+		line-height: 1.4;
+		font-family: 'Helvetica Neue', HelveticaNeue, sans-serif;
+	}
+	.mk-cta-btn {
+		position: relative;
+		display: inline-block;
+		border: 1px solid white;
+		padding: 8px 16px;
+		text-decoration: none;
+		color: white;
+		font-size: 12px;
+		text-transform: uppercase;
+		letter-spacing: 1.2px;
+		font-family: 'Helvetica Neue', HelveticaNeue, sans-serif;
+		font-weight: 200;
+		transition: border-color 0.2s ease, color 0.2s ease;
+	}
+	.mk-cta-btn:hover { border-color: transparent; border-bottom: 1px solid white; }
+
 	/* ── SERVICES (from maison-kwerk) ── */
 	.details-section .details-container { align-items: start; }
 	.details-section .details-text { padding-top: 0; }
@@ -780,10 +833,14 @@ f.parentNode.insertBefore(j, f);
 	</div>
 </section>
 
-	<!-- BANDEAU CAROUSEL -->
-	
-<section style="text-align:center; padding: 80px 0 60px;" class="cta-before-carousel">
-	<a href="contact.html" class="exceptional-cta">CONTACTEZ-NOUS</a>
+<!-- CTA FINAL -->
+<section class="mk-cta-section">
+	<div class="mk-cta-bg"></div>
+	<div class="mk-cta-overlay"></div>
+	<div class="mk-cta-content" data-aos="fade-up">
+		<h2 class="mk-cta-title">Échangez avec nos équipes pour une étude personnalisée</h2>
+		<a href="contact.html" class="mk-cta-btn">CONTACTEZ-NOUS</a>
+	</div>
 </section>
 <div class="sticky-btn-contact">
 	<a href="contact.html" class="contact-btn">CONTACTEZ-NOUS</a>
