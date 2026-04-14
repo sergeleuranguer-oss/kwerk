@@ -1269,6 +1269,18 @@ a {
   font-family: "Helvetica Neue", HelveticaNeue, sans-serif;
 }
 
+.adresse-details-subtitle {
+  font-size: 16px;
+  font-weight: 300;
+  font-style: italic;
+  color: #666;
+  margin-top: -16px;
+  margin-bottom: 0;
+  letter-spacing: 0.5px;
+  line-height: 1.4;
+  font-family: "Helvetica Neue", HelveticaNeue, sans-serif;
+}
+
 .adresse-details-desc {
   font-size: 20px;
   font-weight: 300;
