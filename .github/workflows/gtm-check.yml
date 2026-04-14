@@ -1,4 +1,4 @@
-name: GTM Auto-Insert
+name: GTM + HubSpot Auto-Insert
 
 on:
   push:
@@ -18,15 +18,16 @@ jobs:
         with:
           ref: preprod
           token: ${{ secrets.GITHUB_TOKEN }}
+          fetch-depth: 2
 
       - name: Insert GTM and HubSpot snippets in HTML files
         run: |
           python3 << 'PYEOF'
-          import os
+          import subprocess
           import re
+          import os
 
           GTM_ID = 'GTM-MK4BS4GL'
-
           HS_SCRIPT_ID = 'hs-script-loader'
           HS_CORRECT_SRC = 'https://js-eu1.hs-scripts.com/26225487.js'
 
@@ -47,54 +48,55 @@ jobs:
           <script type="text/javascript" id="hs-script-loader" async defer src="https://js-eu1.hs-scripts.com/26225487.js"></script>
           <!-- End of HubSpot Embed Code -->"""
 
-          modified = []
+          # Get only ADDED files in this commit
+          result = subprocess.run(
+              ['git', 'diff', '--name-status', 'HEAD~1', 'HEAD'],
+              capture_output=True, text=True
+          )
+          added_html = [
+              line.split('\t', 1)[1].strip()
+              for line in result.stdout.splitlines()
+              if line.startswith('A') and line.endswith('.html')
+          ]
 
-          for root, dirs, files in os.walk('.'):
-              dirs[:] = [d for d in dirs if not d.startswith('.')]
-              for fname in files:
-                  if not fname.endswith('.html'):
+          if not added_html:
+              print("No new HTML files in this commit. Nothing to do.")
+          else:
+              modified = []
+              for fpath in added_html:
+                  if not os.path.exists(fpath):
+                      print(f"WARNING: {fpath} not found, skipping")
                       continue
-                  fpath = os.path.join(root, fname)
                   with open(fpath, 'r', encoding='utf-8', errors='replace') as f:
                       content = f.read()
-
                   original = content
 
-                  # --- GTM check ---
+                  # GTM check
                   if GTM_ID not in content:
                       charset_match = re.search(r'(<meta\s+charset[^>]*>)', content, re.IGNORECASE)
                       head_match = re.search(r'(<head[^>]*>)', content, re.IGNORECASE)
-
                       if charset_match:
                           insert_pos = charset_match.end()
                           content = content[:insert_pos] + '\n' + HEAD_SNIPPET + content[insert_pos:]
                       elif head_match:
                           insert_pos = head_match.end()
                           content = content[:insert_pos] + '\n' + HEAD_SNIPPET + content[insert_pos:]
-                      else:
-                          print(f"WARNING: no <head> found in {fpath}, skipping GTM head snippet")
-
                       body_match = re.search(r'(<body[^>]*>)', content, re.IGNORECASE)
                       if body_match:
                           insert_pos = body_match.end()
                           content = content[:insert_pos] + '\n' + BODY_SNIPPET + content[insert_pos:]
-                      else:
-                          print(f"WARNING: no <body> found in {fpath}, skipping GTM body snippet")
+                      print(f"GTM ADDED: {fpath}")
                   else:
                       print(f"SKIP GTM (already present): {fpath}")
 
-                  # --- HubSpot check ---
+                  # HubSpot check
                   if HS_SCRIPT_ID not in content:
-                      # HubSpot snippet missing: insert before </body>
                       body_close = re.search(r'(</body>)', content, re.IGNORECASE)
                       if body_close:
                           insert_pos = body_close.start()
                           content = content[:insert_pos] + HS_SNIPPET + '\n' + content[insert_pos:]
-                          print(f"HUBSPOT ADDED: {fpath}")
-                      else:
-                          print(f"WARNING: no </body> found in {fpath}, skipping HubSpot snippet")
+                      print(f"HUBSPOT ADDED: {fpath}")
                   else:
-                      # HubSpot tag present — check if src is broken (relative path)
                       broken_hs = re.search(
                           r'(<script[^>]+id=["\']hs-script-loader["\'][^>]+src=["\'])(\.\./js-eu1[^"\'>]+)(["\'])',
                           content, re.IGNORECASE
@@ -108,10 +110,9 @@ jobs:
                   if content != original:
                       with open(fpath, 'w', encoding='utf-8') as f:
                           f.write(content)
-                      print(f"MODIFIED: {fpath}")
                       modified.append(fpath)
 
-          print(f"\nTotal files modified: {len(modified)}")
+              print(f"\nTotal files modified: {len(modified)}")
           PYEOF
 
       - name: Commit modified HTML files
