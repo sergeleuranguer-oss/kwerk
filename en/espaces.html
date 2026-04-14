@@ -35,7 +35,109 @@ f.parentNode.insertBefore(j, f);
 		<link rel="stylesheet" href="../css/styles.css">
 
 		<link rel="stylesheet" href="../css/footer.css">
-	</head>
+	
+	<style>
+		/* ── ESPACES — Section Layout ── */
+		.esp-section {
+			padding: 80px 0;
+			background: #fff;
+		}
+
+		.esp-inner {
+			max-width: 1280px;
+			margin: 0 auto;
+			padding: 0 60px;
+			display: grid;
+			grid-template-columns: 7fr 5fr;
+			gap: 64px;
+			align-items: start;
+		}
+		.esp-inner.esp-reverse {
+			grid-template-columns: 5fr 7fr;
+		}
+
+		/* Text side */
+		.esp-text { padding-top: 16px; }
+		.esp-eyebrow {
+			display: block;
+			font-size: 10px;
+			letter-spacing: 3px;
+			color: #999;
+			text-transform: uppercase;
+			margin-bottom: 18px;
+			font-family: 'Helvetica Neue', HelveticaNeue, sans-serif;
+		}
+		.esp-title {
+			font-size: 26px;
+			font-weight: 300;
+			letter-spacing: 2px;
+			text-transform: uppercase;
+			color: #1a1a1a;
+			line-height: 1.3;
+			font-family: 'Helvetica Neue', HelveticaNeue, sans-serif;
+			margin-bottom: 0;
+		}
+		.esp-bar {
+			display: block;
+			width: 28px;
+			height: 1px;
+			background: #1a1a1a;
+			margin: 22px 0 24px;
+		}
+		.esp-desc {
+			font-size: 17px;
+			color: #666;
+			line-height: 1.85;
+			font-weight: 300;
+			font-family: 'Helvetica Neue', HelveticaNeue, sans-serif;
+			margin-bottom: 32px;
+		}
+
+		/* Photo mosaic */
+		.esp-mosaic {
+			display: flex;
+			flex-direction: column;
+			gap: 4px;
+		}
+		.esp-mosaic-main {
+			width: 100%;
+			height: 420px;
+			object-fit: cover;
+			display: block;
+		}
+		.esp-mosaic-strip {
+			display: grid;
+			grid-template-columns: repeat(3, 1fr);
+			gap: 4px;
+		}
+		.esp-mosaic-strip img {
+			width: 100%;
+			height: 195px;
+			object-fit: cover;
+			display: block;
+		}
+
+		/* Responsive */
+		@media (max-width: 1000px) {
+			.esp-inner,
+			.esp-inner.esp-reverse {
+				grid-template-columns: 1fr;
+				padding: 0 32px;
+				gap: 40px;
+			}
+		}
+		@media (max-width: 768px) {
+			.esp-mosaic-main { height: 260px; }
+			.esp-mosaic-strip img { height: 120px; }
+			.esp-section { padding: 60px 0; }
+		}
+		@media (max-width: 480px) {
+			.esp-mosaic-main { height: 200px; }
+			.esp-mosaic-strip img { height: 90px; }
+			.esp-inner, .esp-inner.esp-reverse { padding: 0 20px; }
+		}
+	</style>
+</head>
 	<body>
 		<div id="pageLoader" class="page-loader">
 			<div class="loader-content">
@@ -87,23 +189,21 @@ f.parentNode.insertBefore(j, f);
 		<a href="index.html"><img src="../images/logo-kwerk-noir.png" alt="Logo"></a>
 		<span class="close-btn" id="closeMenu"><img src="../images/close_cross.svg" alt="close"></span>
 	</div>
-	<ul class="side-menu-links">
-		<li data-submenu="submenuPRAdresses">LOCATIONS
-			<span>&rsaquo;</span>
+		<ul class="side-menu-links">
+		<li>
+			<a href="adresses.html">OUR ADDRESSES</a>
 		</li>
 		<li>
-			<a href="espaces.html">WORKSPACES</a>
+			<a href="espaces.html">THE OFFICES</a>
 		</li>
 		<li>
-			<a href="services.html">SERVICES</a>
+			<a href="services.html">OUR SERVICES AT YOUR PREMISES</a>
 		</li>
 		<li>
 			<a href="event.html">EVENTS</a>
 		</li>
 		<li>
-			<a href="club.html">CLUB</a></li>
-		<li>
-			<a href="galerie.html">GALLERY</a>
+			<a href="galerie.html">THE GALLERY</a>
 		</li>
 		<li>
 			<a href="contact.html">CONTACT US</a>
@@ -112,26 +212,7 @@ f.parentNode.insertBefore(j, f);
 
 </div>
 
-<!--SOUS MENU ADRESSES-->
-<div class="submenu-panel" id="submenuPRAdresses">
-	<div class="submenu-header">
-		<span class="close-submenu" data-back="true">
-			<img src="../images/close_cross.svg" alt="close">
-		</span>
-	</div>
-	<img src="../images/adresses.png" alt="Image PR Produit" class="submenu-img">
-	<div class="submenu-content">
-		<a href="adresses.html">
-			<h4>OUR LOCATIONS</h4>
-		</a>
-		<ul>
-			<li><a href="adresses/messine.html">MESSINE</a></li>
-			<li><a href="adresses/saint-honore.html">SAINT-HONORÉ</a></li>
-			<li><a href="adresses/madeleine.html">MADELEINE</a></li>
-			<li><a href="adresses/haussmann.html">HAUSSMANN</a></li>
-		</ul>
-	</div>
-</div>
+
 
 <!-- SIDE CONTACT FORM -->
 <div class="side-contact-form" id="sideContactForm">
@@ -142,87 +223,102 @@ f.parentNode.insertBefore(j, f);
 			<img src="../images/close_cross.svg" alt="close">
 		</span>
 	</div>
-	<form class="contact-form-fields">
-		<div class="row">
-			<div class="field">
-				<label>FIRST NAME*</label>
-				<input type="text" name="firstname" required>
-				<div class="error"></div>
-			</div>
-		</div>
-		<div class="row">
-			<div class="field">
-				<label>LAST NAME*</label>
-				<input type="text" required name="lastname">
-				<div class="error"></div>
-			</div>
-		</div>
-		<div class="row">
-			<div class="field">
-				<label>EMAIL*</label>
-				<input type="email" required name="email">
-				<div class="error"></div>
-			</div>
-		</div>
-		<div class="row">
-			<div class="field">
-				<label>PHONE*</label>
-				<input type="text" name="phone" required>
-				<div class="error"></div>
-			</div>
-		</div>
-		<div class="row">
-			<div class="field">
-				<label>COMPANY*</label>
-				<input type="text" required name="company">
-				<div class="error"></div>
-			</div>
-		</div>
-		<div class="row">
-			<div class="field">
-				<label>NUMBER OF WORKSTATIONS*</label>
-				<input type="number" name="desk" required>
-				<div class="error"></div>
-			</div>
-		</div>
-		<div class="row">
-			<div class="field">
-				<label>WHAT ARE YOU LOOKING FOR?</label>
-				<select name="produit">
-					<option>Executive office</option>
-					<option>Signature suite</option>
-					<option>Private floors</option>
-					<option>Events/Meeting spaces</option>
+		<form class="contact-form-fields">
+
+		<!-- YOUR REQUEST -->
+		<h3 class="contact-section-title">YOUR REQUEST</h3>
+
+		<div class="ps-field-row single">
+			<div class="ps-field ps-select">
+				<label>WHAT IS YOUR REQUEST? *</label>
+				<select name="produit" required>
+					<option value="" disabled selected>Please select</option>
+					<option>Executive Offices</option>
+					<option>Signature Suites</option>
+					<option>Private Floors</option>
+					<option>Our Services At Your Premises</option>
+					<option>Events</option>
+					<option>The Club</option>
 				</select>
 				<div class="error"></div>
 			</div>
 		</div>
-		<div class="row">
-			<div class="field">
-				<label>HOW DID YOU HEAR ABOUT KWERK?*</label>
-				<select name="origine_de_la_piste">
+
+		<div class="ps-field-row single">
+			<div class="ps-field">
+				<label>HOW DID YOU HEAR ABOUT KWERK? *</label>
+				<select name="origine_de_la_piste" required>
+					<option value="" disabled selected>Please select</option>
 					<option>Recommendation from my network</option>
-					<option>Online search</option>
+					<option>Internet search</option>
 					<option>Recommendation from a Kwerk member</option>
-					<option>Introduced by a broker</option>
-					<option>Social media</option>
-					<option>Business meeting at Kwerk</option>
-					<option>Press coverage</option>
-					<option>Event at Kwerk</option>
-					<option>Lunch at Le Dana restaurant</option>
+					<option>Referred by a broker</option>
+					<option>On social media</option>
+					<option>Professional meeting at Kwerk</option>
+					<option>In the press</option>
+					<option>At a Kwerk event</option>
+					<option>During lunch at the Dana restaurant</option>
 				</select>
 				<div class="error"></div>
 			</div>
 		</div>
-		<div class="row row-full">
-			<div class="field">
-				<label>TELL US ABOUT YOUR PROJECT</label>
-				<textarea rows="4" name="description_de_la_transaction" placeholder="Example: We are looking for private offices to support our growth"></textarea>
+
+		<div class="ps-field-row single">
+			<div class="ps-field">
+				<label>TELL US ABOUT YOUR PROJECT *</label>
+				<textarea name="description_de_la_transaction" placeholder="Tell us about your project" required></textarea>
 				<div class="error"></div>
 			</div>
 		</div>
+
+		<hr class="contact-separator">
+
+		<!-- YOUR DETAILS -->
+		<h3 class="contact-section-title">YOUR DETAILS</h3>
+
+		<div class="ps-field-row">
+			<div class="ps-field">
+				<label>YOUR FIRST NAME *</label>
+				<input type="text" name="firstname" placeholder="Your first name" required>
+				<div class="error"></div>
+			</div>
+			<div class="ps-field">
+				<label>YOUR LAST NAME *</label>
+				<input type="text" name="lastname" placeholder="Your last name" required>
+				<div class="error"></div>
+			</div>
+		</div>
+
+		<div class="ps-field-row">
+			<div class="ps-field">
+				<label>YOUR PHONE NUMBER *</label>
+				<input type="text" name="phone" placeholder="+33 6 00 00 00 00" required>
+				<div class="error"></div>
+			</div>
+			<div class="ps-field">
+				<label>YOUR EMAIL ADDRESS *</label>
+				<input type="email" name="email" placeholder="name@email.com" required>
+				<div class="error"></div>
+			</div>
+		</div>
+
+		<div class="ps-field-row single">
+			<div class="ps-field">
+				<label>YOUR COMPANY (IF APPLICABLE)</label>
+				<input type="text" name="company" placeholder="Company name">
+				<div class="error"></div>
+			</div>
+		</div>
+
+		<hr class="contact-separator">
+
+		<div class="ps-checkbox">
+			<input type="checkbox" id="privacy" required>
+			<label for="privacy">I have read and accept the <a href="../cgu.html">Privacy Policy.</a></label>
+		</div>
+
 		<div class="form-footer">
-			<button type="submit" class="submit-btn">SUBMIT MY REQUEST</button>
+			<button type="submit" class="submit-btn">SEND YOUR REQUEST</button>
 			<div class="success" id="successMessage"></div>
 			<span class="contact-phone">07 83 48 94 57</span>
 		</div>
@@ -230,50 +326,95 @@ f.parentNode.insertBefore(j, f);
 </div>
 				
 
-	<section class="adresse-details-section">
-		<div class="adresse-details-block">
-			<div class="adresse-details-img" data-aos="fade-right">
-				<img src="../images/content/Bureaux_Hsm_1.png" alt="Bureaux ex&eacute;cutifs"/>
-			</div>
-			<div class="adresse-details-text" data-aos="fade-left">
-				<div class="adresse-details-street">TURNKEY SPACES</div>
-				<h2 class="adresse-details-title">EXECUTIVE OFFICES</h2>
-				<p class="adresse-details-desc">
-					Intimate, light-filled offices designed to welcome you into an elegant and serene environment. Each space combines comfort, discretion and confidentiality, offering optimal working conditions and a setting conducive to focus.
-				</p>
-			</div>
-		</div>
-	</section>
 
-	<section class="adresse-details-section">
-		<div class="adresse-details-block reverse">
-			<div class="adresse-details-text" data-aos="fade-right">
-				<div class="adresse-details-street">TAILORED IDENTITY</div>
-				<h2 class="adresse-details-title">SIGNATURE SUITES</h2>
-				<p class="adresse-details-desc">
-					Fully customizable suites combining reception areas, private lounges and meeting rooms. True representation spaces, they offer a premium environment for hosting and exchanging in a refined and confidential atmosphere.
-				</p>
-			</div>
-			<div class="adresse-details-img" data-aos="fade-left">
-				<img src="../images/content/Suite_SHO_2.png" alt="Suites signatures"/>
-			</div>
-		</div>
-	</section>
 
-	<section class="adresse-details-section">
-		<div class="adresse-details-block">
-			<div class="adresse-details-img" data-aos="fade-right">
-				<img src="../images/content/Suite_SHO_v2.png" alt="&Eacute;tages privatifs"/>
-			</div>
-			<div class="adresse-details-text" data-aos="fade-left">
-				<div class="adresse-details-street">EXCLUSIVE FLOORS</div>
-				<h2 class="adresse-details-title">PRIVATE FLOORS</h2>
-				<p class="adresse-details-desc">
-					Fully privatized floors tailored to your needs, integrating reception areas, collaborative spaces, phone booths and private terraces. Each floor offers exceptional flexibility, allowing you to create a workspace perfectly aligned with your teams and organization.
-				</p>
+<!-- ============================================================
+     INTRO
+     ============================================================ -->
+<section class="exceptional-section">
+	<div class="exceptional-container" data-aos="fade-up">
+		<h2 class="exceptional-heading">Exceptional offices,<br>in the heart of Paris</h2>
+		<div style="width: 1px; height: 56px; background: #1a1a1a; margin: 32px auto;"></div>
+		<p class="exceptional-body">
+			From intimate offices to entirely private floors, each space combines uniqueness, comfort and confidentiality.
+		</p>
+	</div>
+</section>
+
+
+<!-- ============================================================
+     1. EXECUTIVE OFFICES
+     ============================================================ -->
+<section class="esp-section">
+	<div class="esp-inner">
+		<div class="esp-mosaic" data-aos="fade-right">
+			<img class="esp-mosaic-main" src="../images/Bureau_header.png" alt="Executive Offices Kwerk">
+			<div class="esp-mosaic-strip">
+				<img src="../images/executif2.jpg" alt="Executive Office Kwerk">
+				<img src="../images/bureaux.jpg" alt="Executive Office Kwerk">
+				<img src="../images/executif3.jpg" alt="Executive Office Kwerk">
 			</div>
 		</div>
-	</section>
+		<div class="esp-text" data-aos="fade-left">
+			<span class="esp-eyebrow">TURNKEY SPACES</span>
+			<h2 class="esp-title">EXECUTIVE<br>OFFICES</h2>
+			<span class="esp-bar"></span>
+			<p class="esp-desc">
+				Intimate, fully furnished offices bathed in natural light, designed to welcome you in an elegant and serene setting. Each space combines comfort, discretion and confidentiality, offering optimal working conditions in an environment conducive to focus.
+			</p>
+		</div>
+	</div>
+</section>
+
+
+<!-- ============================================================
+     2. SIGNATURE SUITES
+     ============================================================ -->
+<section class="esp-section">
+	<div class="esp-inner esp-reverse">
+		<div class="esp-text" data-aos="fade-right">
+			<span class="esp-eyebrow">TAILORED IDENTITY</span>
+			<h2 class="esp-title">SIGNATURE<br>SUITES</h2>
+			<span class="esp-bar"></span>
+			<p class="esp-desc">
+				Fully customizable suites combining reception areas, private lounges and meeting rooms. True representation spaces, they offer a premium environment for hosting and exchanging in a refined and confidential atmosphere.
+			</p>
+		</div>
+		<div class="esp-mosaic" data-aos="fade-left">
+			<img class="esp-mosaic-main" src="../images/content/Suite_SHO_2.png" alt="Signature Suites Kwerk">
+			<div class="esp-mosaic-strip">
+				<img src="../images/signature4.jpg" alt="Signature Suite Kwerk">
+				<img src="../images/signature2.jpg" alt="Signature Suite Kwerk">
+				<img src="../images/signature3.jpg" alt="Signature Suite Kwerk">
+			</div>
+		</div>
+	</div>
+</section>
+
+
+<!-- ============================================================
+     3. PRIVATE FLOORS
+     ============================================================ -->
+<section class="esp-section">
+	<div class="esp-inner">
+		<div class="esp-mosaic" data-aos="fade-right">
+			<img class="esp-mosaic-main" src="../images/content/Suite_SHO_v2.png" alt="Private Floors Kwerk">
+			<div class="esp-mosaic-strip">
+				<img src="../images/prive2.jpg" alt="Private Floor Kwerk">
+				<img src="../images/prive3.jpg" alt="Private Floor Kwerk">
+				<img src="../images/prive4.jpg" alt="Private Floor Kwerk">
+			</div>
+		</div>
+		<div class="esp-text" data-aos="fade-left">
+			<span class="esp-eyebrow">EXCLUSIVE FLOORS</span>
+			<h2 class="esp-title">PRIVATE<br>FLOORS</h2>
+			<span class="esp-bar"></span>
+			<p class="esp-desc">
+				Fully privatized floors tailored to your needs, integrating reception areas, collaborative spaces, phone booths and private terraces. Each floor offers exceptional flexibility, allowing you to create a workspace perfectly aligned with your teams and organization.
+			</p>
+		</div>
+	</div>
+</section>
 
 
 
@@ -304,15 +445,10 @@ f.parentNode.insertBefore(j, f);
 					</ul>
 				</div>
 				<div class="footer-nav-col" data-links="produits">
-					<div class="footer-nav-title">WORKSPACES</div>
-					<ul class="footer-nav-links">
-						<a href="espaces.html"><li>EXECUTIVE OFFICES</li></a>
-						<a href="espaces.html"><li>SIGNATURE SUITES</li></a>
-						<a href="espaces.html"><li>PRIVATE FLOORS</li></a>
-					</ul>
+					<div class="footer-nav-title"><a href="espaces.html">THE OFFICES</a></div>
 				</div>
-				<div class="footer-nav-col" data-links="services">
-					<div class="footer-nav-title"><a href="services.html">SERVICES</a></div>
+				<div class="footer-nav-col">
+					<div class="footer-nav-title"><a href="services.html">OUR SERVICES AT YOUR PREMISES</a></div>
 				</div>
 				<div class="footer-nav-col">
 					<div class="footer-nav-title">

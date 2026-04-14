@@ -82,20 +82,20 @@ f.parentNode.insertBefore(j, f);
 		<span class="close-btn" id="closeMenu"><img src="images/close_cross.svg" alt="close"></span>
 	</div>
 	<ul class="side-menu-links">
-		<li data-submenu="submenuPRAdresses">LOCATIONS
-			<span>&rsaquo;</span>
+		<li>
+			<a href="en/adresses.html">OUR ADDRESSES</a>
 		</li>
 		<li>
-			<a href="en/espaces.html">WORKSPACES</a>
+			<a href="en/espaces.html">THE OFFICES</a>
 		</li>
 		<li>
-			<a href="en/services.html">SERVICES</a>
+			<a href="en/services.html">OUR SERVICES AT YOUR PREMISES</a>
 		</li>
 		<li>
 			<a href="en/event.html">EVENTS</a>
 		</li>
 		<li>
-			<a href="en/galerie.html">GALLERY</a>
+			<a href="en/galerie.html">THE GALLERY</a>
 		</li>
 		<li>
 			<a href="en/contact.html">CONTACT US</a>
@@ -104,26 +104,7 @@ f.parentNode.insertBefore(j, f);
 
 </div>
 
-<!--SOUS MENU ADRESSES-->
-<div class="submenu-panel" id="submenuPRAdresses">
-	<div class="submenu-header">
-		<span class="close-submenu" data-back="true">
-			<img src="images/close_cross.svg" alt="close">
-		</span>
-	</div>
-	<img src="images/adresses.png" alt="Image PR Produit" class="submenu-img">
-	<div class="submenu-content">
-		<a href="en/adresses.html">
-			<h4>OUR LOCATIONS</h4>
-		</a>
-		<ul>
-			<li><a href="en/adresses/messine.html">MESSINE</a></li>
-			<li><a href="en/adresses/saint-honore.html">SAINT-HONORÉ</a></li>
-			<li><a href="en/adresses/madeleine.html">MADELEINE</a></li>
-			<li><a href="en/adresses/haussmann.html">HAUSSMANN</a></li>
-		</ul>
-	</div>
-</div>
+
 
 <!-- SIDE CONTACT FORM -->
 <div class="side-contact-form" id="sideContactForm">
@@ -136,20 +117,20 @@ f.parentNode.insertBefore(j, f);
 	</div>
 		<form class="contact-form-fields">
 
-		<!-- VOTRE DEMANDE -->
-		<h3 class="contact-section-title">VOTRE DEMANDE</h3>
+		<!-- YOUR REQUEST -->
+		<h3 class="contact-section-title">YOUR REQUEST</h3>
 
 		<div class="ps-field-row single">
 			<div class="ps-field ps-select">
-				<label>QUELLE EST VOTRE DEMANDE ? *</label>
+				<label>WHAT IS YOUR REQUEST? *</label>
 				<select name="produit" required>
-					<option value="" disabled selected>Veuillez choisir</option>
-					<option>Bureaux Exécutifs</option>
-					<option>Suite Signatures</option>
-					<option>Étages Privatifs</option>
-					<option>La Maison Kwerk</option>
-					<option>Événementiel</option>
-					<option>Le Club</option>
+					<option value="" disabled selected>Please select</option>
+					<option>Executive Offices</option>
+					<option>Signature Suites</option>
+					<option>Private Floors</option>
+					<option>Our Services At Your Premises</option>
+					<option>Events</option>
+					<option>The Club</option>
 				</select>
 				<div class="error"></div>
 			</div>
@@ -157,18 +138,18 @@ f.parentNode.insertBefore(j, f);
 
 		<div class="ps-field-row single">
 			<div class="ps-field">
-				<label>COMMENT AVEZ-VOUS CONNU KWERK ? *</label>
+				<label>HOW DID YOU HEAR ABOUT KWERK? *</label>
 				<select name="origine_de_la_piste" required>
-					<option value="" disabled selected>Veuillez choisir</option>
-					<option>Recommandation par mon réseau</option>
-					<option>Recherche internet</option>
-					<option>Recommandation par un membre Kwerk</option>
-					<option>Mis en relation par un broker</option>
-					<option>Sur les réseaux sociaux</option>
-					<option>Rendez-vous professionnel chez Kwerk</option>
-					<option>Dans la presse</option>
-					<option>Lors d&#039;un événement chez Kwerk</option>
-					<option>Au cours d&#039;un déjeuner au restaurant Dana</option>
+					<option value="" disabled selected>Please select</option>
+					<option>Recommendation from my network</option>
+					<option>Internet search</option>
+					<option>Recommendation from a Kwerk member</option>
+					<option>Referred by a broker</option>
+					<option>On social media</option>
+					<option>Professional meeting at Kwerk</option>
+					<option>In the press</option>
+					<option>At a Kwerk event</option>
+					<option>During lunch at the Dana restaurant</option>
 				</select>
 				<div class="error"></div>
 			</div>
@@ -176,47 +157,47 @@ f.parentNode.insertBefore(j, f);
 
 		<div class="ps-field-row single">
 			<div class="ps-field">
-				<label>EXPLIQUEZ-NOUS VOTRE PROJET *</label>
-				<textarea name="description_de_la_transaction" placeholder="Expliquez-nous votre projet" required></textarea>
+				<label>TELL US ABOUT YOUR PROJECT *</label>
+				<textarea name="description_de_la_transaction" placeholder="Tell us about your project" required></textarea>
 				<div class="error"></div>
 			</div>
 		</div>
 
 		<hr class="contact-separator">
 
-		<!-- VOS COORDONNÉES -->
-		<h3 class="contact-section-title">VOS COORDONNÉES</h3>
+		<!-- YOUR DETAILS -->
+		<h3 class="contact-section-title">YOUR DETAILS</h3>
 
 		<div class="ps-field-row">
 			<div class="ps-field">
-				<label>VOTRE PRÉNOM *</label>
-				<input type="text" name="firstname" placeholder="Votre prénom" required>
+				<label>YOUR FIRST NAME *</label>
+				<input type="text" name="firstname" placeholder="Your first name" required>
 				<div class="error"></div>
 			</div>
 			<div class="ps-field">
-				<label>VOTRE NOM *</label>
-				<input type="text" name="lastname" placeholder="Votre nom" required>
+				<label>YOUR LAST NAME *</label>
+				<input type="text" name="lastname" placeholder="Your last name" required>
 				<div class="error"></div>
 			</div>
 		</div>
 
 		<div class="ps-field-row">
 			<div class="ps-field">
-				<label>VOTRE NUMÉRO DE TÉLÉPHONE *</label>
+				<label>YOUR PHONE NUMBER *</label>
 				<input type="text" name="phone" placeholder="+33 6 00 00 00 00" required>
 				<div class="error"></div>
 			</div>
 			<div class="ps-field">
-				<label>VOTRE ADRESSE E-MAIL *</label>
-				<input type="email" name="email" placeholder="nom@email.com" required>
+				<label>YOUR EMAIL ADDRESS *</label>
+				<input type="email" name="email" placeholder="name@email.com" required>
 				<div class="error"></div>
 			</div>
 		</div>
 
 		<div class="ps-field-row single">
 			<div class="ps-field">
-				<label>VOTRE SOCIÉTÉ (LE CAS ÉCHÉANT)</label>
-				<input type="text" name="company" placeholder="Nom de l'entreprise">
+				<label>YOUR COMPANY (IF APPLICABLE)</label>
+				<input type="text" name="company" placeholder="Company name">
 				<div class="error"></div>
 			</div>
 		</div>
@@ -225,11 +206,11 @@ f.parentNode.insertBefore(j, f);
 
 		<div class="ps-checkbox">
 			<input type="checkbox" id="privacy" required>
-			<label for="privacy">J'ai lu et j'accepte la <a href="cgu.html">Politique de Confidentialité.</a></label>
+			<label for="privacy">I have read and accept the <a href="cgu.html">Privacy Policy.</a></label>
 		</div>
 
 		<div class="form-footer">
-			<button type="submit" class="submit-btn">ENVOYEZ VOTRE DEMANDE</button>
+			<button type="submit" class="submit-btn">SEND YOUR REQUEST</button>
 			<div class="success" id="successMessage"></div>
 			<span class="contact-phone">07 83 48 94 57</span>
 		</div>
@@ -241,6 +222,28 @@ f.parentNode.insertBefore(j, f);
 			<p class="exceptional-desc">
 				Kwerk designs exceptional workspaces in the heart of Paris, where refined hospitality and discretion shape a truly distinctive work experience
 			</p>
+		</div>
+	</section>
+
+	<section class="offres-section">
+		<h2 class="offres-title">The Kwerk Universe</h2>
+		<div class="offres-grid">
+			<a href="en/adresses.html" class="offre-bloc" style="background-image: url('images/bureaux.jpg');">
+				<span class="offre-label">OUR ADDRESSES</span>
+				<span class="offre-link">LEARN MORE</span>
+			</a>
+			<a href="en/services.html" class="offre-bloc" style="background-image: url('images/maison-kwerk.jpg');">
+				<span class="offre-label">OUR SERVICES<br>AT YOUR PREMISES</span>
+				<span class="offre-link">LEARN MORE</span>
+			</a>
+			<a href="en/event.html" class="offre-bloc" style="background-image: url('images/evenementiel.png');">
+				<span class="offre-label">EVENTS</span>
+				<span class="offre-link">LEARN MORE</span>
+			</a>
+			<a href="en/club.html" class="offre-bloc" style="background-image: url('images/club.jpg');">
+				<span class="offre-label">THE CLUB</span>
+				<span class="offre-link">LEARN MORE</span>
+			</a>
 		</div>
 	</section>
 
@@ -395,15 +398,10 @@ f.parentNode.insertBefore(j, f);
 					</ul>
 				</div>
 				<div class="footer-nav-col" data-links="produits">
-					<div class="footer-nav-title">WORKSPACES</div>
-					<ul class="footer-nav-links">
-						<a href="en/espaces.html"><li>EXECUTIVE OFFICES</li></a>
-						<a href="en/espaces.html"><li>SIGNATURE SUITES</li></a>
-						<a href="en/espaces.html"><li>PRIVATE FLOORS</li></a>
-					</ul>
+					<div class="footer-nav-title"><a href="en/espaces.html">THE OFFICES</a></div>
 				</div>
-				<div class="footer-nav-col" data-links="services">
-					<div class="footer-nav-title"><a href="en/services.html">SERVICES</a></div>
+				<div class="footer-nav-col">
+					<div class="footer-nav-title"><a href="en/services.html">OUR SERVICES AT YOUR PREMISES</a></div>
 				</div>
 				<div class="footer-nav-col">
 					<div class="footer-nav-title">
