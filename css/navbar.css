@@ -526,6 +526,9 @@ p.subtitle {
   .contact-btn {
     display: none;
   }
+  .menu-icon span {
+    display: none;
+  }
   .hero-text {
     bottom: 20px;
     padding: 5px 20px;
