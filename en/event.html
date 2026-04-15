@@ -35,6 +35,12 @@ f.parentNode.insertBefore(j, f);
 		<link rel="stylesheet" href="../css/styles.css">
 
 		<link rel="stylesheet" href="../css/footer.css">
+	<style>
+		/* ── EVENT details-section ── */
+		.details-images--event .image-large img { height: auto; }
+		.details-images--event ~ .details-text { align-self: flex-start; }
+		.video-section { margin-top: 80px; }
+	</style>
 	</head>
 	<body>
 		<div id="pageLoader" class="page-loader">
@@ -59,7 +65,7 @@ f.parentNode.insertBefore(j, f);
 		<!-- End Google Tag Manager (noscript) -->
 
 					<header class="hero" style="height: 100vh; background-color: #000;">
-			<div class="hero-video hero-slideshow" style="background-image: url('../images/galerie/saint-honore/RooftopShoIA1.png');" data-hero-slides="../images/galerie/saint-honore/RooftopShoIA1.png,../images/content/Rooftop_Sho_2.jpg,../images/content/Rooftop_Mes_1.jpg,../images/content/Rooftop_Mad_1.png,../images/content/Rooftop_HSM_2.png"></div>
+			<div class="hero-video hero-slideshow" style="background-image: url('../images/eventwinter.jpg');"></div>
 		
 	<nav class="navbar">
 		<div class="menu-icon"><img src="../images/menu_burger.svg"><span>MENU</span></div>
@@ -252,14 +258,8 @@ f.parentNode.insertBefore(j, f);
 	<section class="details-section bg-grey">
 		<div class="details-container">
 			<div class="details-images details-images--event" data-aos="fade-right">
-				<div class="image-large">
-					<img src="../images/galerie/saint-honore/Event_SHO_Lobby.png" alt="Grande Image">
-				</div>
-				<div class="image-small">
-					<img src="../images/event/Winter_Party_1.png" alt="Petite Image 1">
-				</div>
-				<div class="image-small">
-					<img src="../images/galerie/saint-honore/Traiteur_2.jpg" alt="Petite Image 2">
+				<div class="image-large" style="grid-column: 1 / -1;">
+					<img src="../images/Event.png" alt="Evenementiel Kwerk" style="width:100%; height:auto; object-fit:contain;">
 				</div>
 			</div>
 

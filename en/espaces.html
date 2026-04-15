@@ -136,6 +136,69 @@ f.parentNode.insertBefore(j, f);
 			.esp-mosaic-strip img { height: 90px; }
 			.esp-inner, .esp-inner.esp-reverse { padding: 0 20px; }
 		}
+
+		/* ── CTA FINAL BANDEAU ── */
+		.mk-cta-section {
+			position: relative;
+			min-height: 850px;
+			display: flex;
+			align-items: center;
+			justify-content: center;
+			overflow: hidden;
+		}
+		.mk-cta-bg {
+			position: absolute;
+			inset: 0;
+			background-image: url('../images/ROOFTOP.jpg');
+			background-size: cover;
+			background-position: center;
+		}
+		.mk-cta-overlay {
+			position: absolute;
+			inset: 0;
+			background: rgba(0, 0, 0, 0.62);
+		}
+		.mk-cta-content {
+			position: relative;
+			z-index: 2;
+			text-align: center;
+			padding: 80px 40px;
+		}
+		.mk-cta-title {
+			font-size: 28px;
+			font-weight: 300;
+			color: #fff;
+			letter-spacing: 1px;
+			text-transform: none;
+			margin-bottom: 32px;
+			line-height: 1.4;
+			font-family: 'Helvetica Neue', HelveticaNeue, sans-serif;
+		}
+		.mk-cta-btn {
+			position: relative;
+			display: inline-block;
+			border: 1px solid white;
+			padding: 8px 16px;
+			text-decoration: none;
+			color: white;
+			font-size: 12px;
+			text-transform: uppercase;
+			letter-spacing: 1.2px;
+			font-family: 'Helvetica Neue', HelveticaNeue, sans-serif;
+			font-weight: 200;
+			transition: border-color 0.2s ease, color 0.2s ease;
+		}
+		.mk-cta-btn:hover { border-color: transparent; border-bottom: 1px solid white; }
+		@media (max-width: 900px) {
+			.mk-cta-section { min-height: 60vh; }
+			.mk-cta-title { font-size: 22px; }
+			.mk-cta-content { padding: 50px 24px; }
+		}
+		@media (max-width: 480px) {
+			.mk-cta-section { min-height: 50vh; }
+			.mk-cta-title { font-size: 18px; }
+			.mk-cta-content { padding: 32px 16px; }
+		}
 	</style>
 </head>
 	<body>
@@ -381,11 +444,11 @@ f.parentNode.insertBefore(j, f);
 			</p>
 		</div>
 		<div class="esp-mosaic" data-aos="fade-left">
-			<img class="esp-mosaic-main" src="../images/content/Suite_SHO_2.png" alt="Signature Suites Kwerk">
+			<img class="esp-mosaic-main" src="../images/suite-signature-11.jpg" alt="Signature Suites Kwerk">
 			<div class="esp-mosaic-strip">
+				<img src="../images/suite-signature-3.jpg" alt="Signature Suite Kwerk">
 				<img src="../images/signature4.jpg" alt="Signature Suite Kwerk">
-				<img src="../images/signature2.jpg" alt="Signature Suite Kwerk">
-				<img src="../images/signature3.jpg" alt="Signature Suite Kwerk">
+				<img src="../images/suite-signature-5.jpg" alt="Signature Suite Kwerk">
 			</div>
 		</div>
 	</div>
@@ -400,9 +463,9 @@ f.parentNode.insertBefore(j, f);
 		<div class="esp-mosaic" data-aos="fade-right">
 			<img class="esp-mosaic-main" src="../images/content/Suite_SHO_v2.png" alt="Private Floors Kwerk">
 			<div class="esp-mosaic-strip">
-				<img src="../images/prive2.jpg" alt="Private Floor Kwerk">
-				<img src="../images/prive3.jpg" alt="Private Floor Kwerk">
 				<img src="../images/prive4.jpg" alt="Private Floor Kwerk">
+				<img src="../images/prive2.jpg" alt="Private Floor Kwerk">
+				<img src="../images/salle-reunion-messine.jpg" alt="Private Floor Kwerk">
 			</div>
 		</div>
 		<div class="esp-text" data-aos="fade-left">
@@ -417,6 +480,16 @@ f.parentNode.insertBefore(j, f);
 </section>
 
 
+
+<!-- CTA FINAL BANDEAU -->
+<section class="mk-cta-section">
+	<div class="mk-cta-bg"></div>
+	<div class="mk-cta-overlay"></div>
+	<div class="mk-cta-content" data-aos="fade-up">
+		<h2 class="mk-cta-title">Speak with our teams for a personalised study</h2>
+		<a href="contact.html" class="mk-cta-btn">CONTACT US</a>
+	</div>
+</section>
 
 		<div class="sticky-btn-contact">
 	<a href="contact.html" class="contact-btn-mobile-sticky">CONTACT US</a>
