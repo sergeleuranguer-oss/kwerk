@@ -574,6 +574,12 @@ p.subtitle {
     font-size: 22px;
     letter-spacing: 1.5px;
   }
+  .hero-center-tagline {
+    font-size: clamp(20px, 5vw, 30px);
+    white-space: normal;
+    text-align: center;
+    width: 90%;
+  }
 
   .side-menu {
     width: 100vw;

@@ -3398,3 +3398,63 @@ a {
   color: #222;
   text-decoration: underline;
 }
+
+/* ═══════════════════════════════════════════════════════════════
+   CORRECTIFS MOBILE GLOBAUX
+   ═══════════════════════════════════════════════════════════════ */
+
+/* Exceptional section — transition fluide 900px → 700px → 480px */
+@media (max-width: 900px) {
+  .exceptional-section { padding: 80px 0 90px; }
+  .exceptional-heading { font-size: 30px; }
+  .exceptional-body { font-size: 17px; }
+}
+/* Restauration des valeurs 700px (après la règle 900px pour gagner en cascade) */
+@media (max-width: 700px) {
+  .exceptional-section { padding: 60px 0 70px; }
+  .exceptional-container { padding: 0 24px; }
+  .exceptional-heading { font-size: 26px; margin-bottom: 28px; line-height: 1.25; }
+  .exceptional-body { font-size: 15px; line-height: 1.75; }
+}
+@media (max-width: 480px) {
+  .exceptional-heading { font-size: 22px; }
+  .exceptional-body { font-size: 14px; }
+  .exceptional-section { padding: 48px 0 56px; }
+}
+
+/* Barista grid — 2 colonnes sur tablette, 1 colonne sur mobile */
+@media (max-width: 768px) {
+  .barista-grid { grid-template-columns: repeat(2, 1fr); gap: 12px; }
+}
+@media (max-width: 600px) {
+  .barista-grid { grid-template-columns: 1fr; gap: 20px; }
+}
+
+/* Services — image plus haute sur tablette */
+@media (max-width: 950px) {
+  .services-img { height: 320px; }
+}
+@media (max-width: 600px) {
+  .services-img { height: 220px; }
+  .services-grid { gap: 20px; padding: 50px 0; }
+  .services-content { padding: 0 16px; }
+}
+
+/* Adresse details — padding section plus généreux */
+@media (max-width: 950px) {
+  .adresse-details-section { padding: 40px 0; }
+}
+@media (max-width: 600px) {
+  .adresse-details-section { padding: 28px 0; }
+}
+
+/* Footer nav — colonnes sur mobile */
+@media (max-width: 600px) {
+  .footer-nav { flex-direction: column; gap: 24px; }
+  .footer-nav-col { width: 100%; }
+}
+
+/* Details container — padding top réduit sur mobile */
+@media (max-width: 600px) {
+  .details-container { padding: 32px 0 16px 0; }
+}
