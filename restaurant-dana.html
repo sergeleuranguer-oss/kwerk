@@ -28,6 +28,58 @@ f.parentNode.insertBefore(j, f);
 	<link rel="stylesheet" href="css/navbar.css">
 	<link rel="stylesheet" href="css/styles.css">
 	<link rel="stylesheet" href="css/footer.css">
+	<style>
+		/* ── CTA BANDEAU DANAOUT ── */
+		.dana-cta-section {
+			position: relative;
+			min-height: 850px;
+			display: flex;
+			align-items: center;
+			justify-content: center;
+			overflow: hidden;
+		}
+		.dana-cta-bg {
+			position: absolute;
+			inset: 0;
+			background-image: url('images/danaout.jpg');
+			background-size: cover;
+			background-position: center;
+		}
+		.dana-cta-overlay {
+			position: absolute;
+			inset: 0;
+			background: rgba(0, 0, 0, 0.42);
+		}
+		.dana-cta-content {
+			position: relative;
+			z-index: 2;
+			text-align: center;
+			padding: 80px 40px;
+		}
+		.dana-cta-btn {
+			position: relative;
+			display: inline-block;
+			border: 1px solid white;
+			padding: 8px 16px;
+			text-decoration: none;
+			color: white;
+			font-size: 12px;
+			text-transform: uppercase;
+			letter-spacing: 1.2px;
+			font-family: 'Helvetica Neue', HelveticaNeue, sans-serif;
+			font-weight: 200;
+			transition: border-color 0.2s ease, color 0.2s ease;
+		}
+		.dana-cta-btn:hover { border-color: transparent; border-bottom: 1px solid white; }
+		@media (max-width: 900px) {
+			.dana-cta-section { min-height: 60vh; }
+			.dana-cta-content { padding: 50px 24px; }
+		}
+		@media (max-width: 480px) {
+			.dana-cta-section { min-height: 50vh; }
+			.dana-cta-content { padding: 32px 16px; }
+		}
+	</style>
 </head>
 <body>
 	<div id="pageLoader" class="page-loader">
@@ -337,10 +389,13 @@ f.parentNode.insertBefore(j, f);
 	</div>
 
 
-	<!-- BANDEAU CAROUSEL -->
-	
-<section style="text-align:center; padding: 80px 0 60px;" class="cta-before-carousel">
-	<a href="contact.html" class="exceptional-cta">CONTACTEZ-NOUS</a>
+	<!-- BANDEAU DANAOUT CTA -->
+<section class="dana-cta-section">
+	<div class="dana-cta-bg"></div>
+	<div class="dana-cta-overlay"></div>
+	<div class="dana-cta-content" data-aos="fade-up">
+		<a href="contact.html" class="dana-cta-btn">CONTACTEZ-NOUS</a>
+	</div>
 </section>
 <div class="sticky-btn-contact">
 	<a href="contact.html" class="contact-btn">CONTACTEZ-NOUS</a>
