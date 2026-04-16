@@ -213,7 +213,7 @@ class ContactFormValidator {
     }
 
     try {
-      await this.simulateFormSubmission(formData);
+      await this.submitToHubspot(formData);
       this.showSuccess();
       this.form.reset();
     } catch (error) {
@@ -230,16 +230,32 @@ class ContactFormValidator {
     }
   }
 
-  simulateFormSubmission(formData) {
-    return new Promise((resolve, reject) => {
-      setTimeout(() => {
-        if (Math.random() > 0.1) {
-          resolve("Succès");
-        } else {
-          reject(new Error("Erreur simulée"));
-        }
-      }, 1000);
-    });
+  async submitToHubspot(formData) {
+    const payload = {
+      fields: [
+        { name: "firstname", value: formData.get("firstname") || "" },
+        { name: "lastname", value: formData.get("lastname") || "" },
+        { name: "email", value: formData.get("email") || "" },
+        { name: "phone", value: formData.get("phone") || "" },
+        { name: "company", value: formData.get("company") || "" },
+        { name: "desk", value: formData.get("desk") || "" },
+        { name: "origine_de_la_piste", value: formData.get("origine_de_la_piste") || "" },
+        { name: "produit", value: formData.get("produit") || "" },
+        { name: "description_de_la_transaction", value: formData.get("description_de_la_transaction") || "" },
+      ],
+      context: { pageUri: window.location.href, pageName: document.title },
+    };
+
+    const response = await fetch(
+      "https://api.hsforms.com/submissions/v3/integration/submit/26225487/ced806a0-ddf5-4cc6-b583-d19ac3bf28e0",
+      {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(payload),
+      }
+    );
+
+    if (!response.ok) throw new Error("Erreur HubSpot: " + response.status);
   }
 
   scrollToFirstError() {
