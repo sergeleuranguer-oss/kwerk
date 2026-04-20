@@ -1,4 +1,4 @@
-name: GTM + HubSpot Auto-Insert
+name: GTM + HubSpot + Axeptio Auto-Insert
 
 on:
   push:
@@ -20,7 +20,7 @@ jobs:
           token: ${{ secrets.GITHUB_TOKEN }}
           fetch-depth: 2
 
-      - name: Insert GTM and HubSpot snippets in HTML files
+      - name: Insert GTM, HubSpot and Axeptio snippets in HTML files
         run: |
           python3 << 'PYEOF'
           import subprocess
@@ -30,6 +30,7 @@ jobs:
           GTM_ID = 'GTM-MK4BS4GL'
           HS_SCRIPT_ID = 'hs-script-loader'
           HS_CORRECT_SRC = 'https://js-eu1.hs-scripts.com/26225487.js'
+          AXEPTIO_MARKER = 'axept.io'
 
           HEAD_SNIPPET = """    <!-- Google Tag Manager -->
           <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
@@ -48,11 +49,26 @@ jobs:
           <script type="text/javascript" id="hs-script-loader" async defer src="https://js-eu1.hs-scripts.com/26225487.js"></script>
           <!-- End of HubSpot Embed Code -->"""
 
+          AXEPTIO_SNIPPET = """    <!-- Axeptio -->
+          <script>
+          window.axeptioSettings = {
+            clientId: "67b4575ea6e9c7674834e1e1",
+            cookiesVersion: "custom_Cp",
+          };
+
+          (function(d, s) {
+            var t = d.getElementsByTagName(s)[0], e = d.createElement(s);
+            e.async = true; e.src = "//static.axept.io/sdk.js";
+            t.parentNode.insertBefore(e, t);
+          })(document, "script");
+          </script>
+          <!-- End Axeptio -->"""
+
           # Get only ADDED files in this commit
           result = subprocess.run(
               ['git', 'diff', '--name-status', 'HEAD~1', 'HEAD'],
               capture_output=True, text=True
-          )
+           )
           added_html = [
               line.split('\t', 1)[1].strip()
               for line in result.stdout.splitlines()
@@ -98,7 +114,7 @@ jobs:
                       print(f"HUBSPOT ADDED: {fpath}")
                   else:
                       broken_hs = re.search(
-                          r'(<script[^>]+id=["\']hs-script-loader["\'][^>]+src=["\'])(\.\./js-eu1[^"\'>]+)(["\'])',
+                          r'(<script[^>]+id=["\']hs-script-loader["\'][^>]+src=["\'])(\.\./js-eu1[^"\'\'>]+)(["\'])',
                           content, re.IGNORECASE
                       )
                       if broken_hs:
@@ -106,6 +122,16 @@ jobs:
                           print(f"HUBSPOT FIXED (broken src): {fpath}")
                       else:
                           print(f"SKIP HubSpot (already correct): {fpath}")
+
+                  # Axeptio check
+                  if AXEPTIO_MARKER not in content:
+                      head_close = re.search(r'(</head>)', content, re.IGNORECASE)
+                      if head_close:
+                          insert_pos = head_close.start()
+                          content = content[:insert_pos] + AXEPTIO_SNIPPET + '\n' + content[insert_pos:]
+                      print(f"AXEPTIO ADDED: {fpath}")
+                  else:
+                      print(f"SKIP Axeptio (already present): {fpath}")
 
                   if content != original:
                       with open(fpath, 'w', encoding='utf-8') as f:
@@ -123,6 +149,6 @@ jobs:
           if git diff --cached --quiet; then
             echo "No changes to commit."
           else
-            git commit -m "GTM + HubSpot: auto-ajout snippets sur les pages HTML"
+            git commit -m "GTM + HubSpot + Axeptio: auto-ajout snippets sur les pages HTML"
             git push origin preprod
           fi
