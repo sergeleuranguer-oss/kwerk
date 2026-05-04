@@ -352,13 +352,13 @@ a {
 }
 
 .offres-grid {
-  display: flex;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
   gap: 12px;
   padding: 0 40px 80px;
 }
 
 .offre-bloc {
-  flex: 1;
   position: relative;
   aspect-ratio: 3/4;
   background: #111 center/cover no-repeat;
