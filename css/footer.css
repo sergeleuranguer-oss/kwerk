@@ -77,8 +77,8 @@ a {
 
 .footer-nav {
   display: flex;
-  gap: 32px;
-  justify-content: space-between;
+  gap: 48px;
+  justify-content: flex-start;
   align-items: flex-start;
   width: 100%;
 }
