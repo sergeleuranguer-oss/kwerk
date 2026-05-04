@@ -355,12 +355,14 @@ a {
   display: flex;
   gap: 12px;
   padding: 0 40px 80px;
+  align-items: stretch;
 }
 
 .offre-bloc {
-  flex: 1;
+  flex: 1 1 0;
   position: relative;
-  aspect-ratio: 3/4;
+  height: 520px;
+  aspect-ratio: unset;
   background: #111 center/cover no-repeat;
   display: flex;
   flex-direction: column;
