@@ -1864,8 +1864,8 @@ a {
 .gallery-grid {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-  grid-template-rows: repeat(6, 200px);
-  gap: 10px;
+  grid-template-rows: repeat(6, auto);
+  gap: 16px;
   padding: 40px;
 }
 
