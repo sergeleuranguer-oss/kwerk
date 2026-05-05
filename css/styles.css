@@ -354,7 +354,7 @@ a {
 .offres-grid {
   display: flex;
   gap: 12px;
-  padding: 0 80px 80px;
+  padding: 0 120px 80px;
   align-items: stretch;
 }
 
@@ -432,7 +432,7 @@ a {
     display: grid;
     grid-template-columns: 1fr 1fr;
     gap: 8px;
-    padding: 0 24px 50px;
+    padding: 0 32px 50px;
   }
   .offre-bloc {
     aspect-ratio: 3/4;
@@ -1215,8 +1215,8 @@ a {
 .adresse-details-block {
   display: flex;
   min-width: 340px;
-  width: 86vw;
-  max-width: 1280px;
+  width: 78vw;
+  max-width: 1200px;
   gap: 64px;
   align-items: stretch;
   justify-content: center;
@@ -1361,7 +1361,7 @@ a {
 }
 @media (max-width: 480px) {
   .adresse-details-block {
-    width: 88vw;
+    width: 84vw;
     gap: 14px;
   }
   .adresse-details-img img {
