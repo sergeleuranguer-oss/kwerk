@@ -579,7 +579,7 @@ a {
 
 .carousel-img {
   position: relative;
-  width: 693;
+  width: 693px;
   height: 707px;
   overflow: hidden;
 }
@@ -1681,6 +1681,11 @@ a {
   width: 100%;
   height: auto;
   display: block;
+}
+@media (max-width: 480px) {
+  .event-duo {
+    grid-template-columns: 1fr;
+  }
 }
 
 /* ── MOSAÏQUE ÉVÉNEMENTIEL ── */
@@ -3492,4 +3497,104 @@ a {
 /* Details container — padding top réduit sur mobile */
 @media (max-width: 600px) {
   .details-container { padding: 32px 0 16px 0; }
+}
+
+
+/* ── AJOUTS MOBILE COMPLÉMENTAIRES ── */
+
+/* adresses-section : padding réduit dès 900px */
+@media (max-width: 900px) {
+  .adresses-section {
+    padding: 50px 0 40px 0;
+    gap: 32px;
+  }
+  .adresses-intro {
+    padding-left: 24px;
+    padding-right: 24px;
+    width: 100%;
+    min-width: unset;
+    margin-right: 0;
+  }
+}
+@media (max-width: 480px) {
+  .adresses-section {
+    padding: 32px 0 28px 0;
+    gap: 20px;
+  }
+}
+
+/* offres-grid : colonne unique sous 360px */
+@media (max-width: 380px) {
+  .offres-grid {
+    grid-template-columns: 1fr;
+    padding: 0 12px 40px;
+  }
+  .offre-bloc {
+    aspect-ratio: 4/3;
+  }
+}
+
+/* services-grid : padding réduit à 900px */
+@media (max-width: 900px) {
+  .services-grid {
+    padding: 50px 0;
+    gap: 44px;
+  }
+}
+
+/* details-container : rétablir full-width sur mobile */
+@media (max-width: 900px) {
+  .details-container {
+    width: 90vw;
+  }
+  .details-text {
+    padding-top: 0;
+    padding-bottom: 20px;
+  }
+}
+
+/* nos-adresses-header : padding réduit sur mobile */
+@media (max-width: 900px) {
+  .nos-adresses-header {
+    padding: 60px 24px 40px;
+  }
+  .nos-adresses-title {
+    font-size: 20px;
+  }
+}
+@media (max-width: 480px) {
+  .nos-adresses-header {
+    padding: 40px 20px 28px;
+  }
+}
+
+/* univers-section : titre réduit */
+@media (max-width: 480px) {
+  .univers-section {
+    padding: 48px 0 48px;
+  }
+}
+
+/* footer : padding mobile */
+@media (max-width: 480px) {
+  .footer {
+    padding: 28px 0 16px 0;
+  }
+  .footer-container {
+    padding: 0 20px;
+    gap: 28px;
+  }
+  .footer-baseline {
+    font-size: 11px;
+  }
+}
+
+/* Sticky btn mobile : hauteur réduite */
+@media (max-width: 480px) {
+  .sticky-btn-contact {
+    height: 56px;
+  }
+  .footer {
+    margin-bottom: 56px;
+  }
 }

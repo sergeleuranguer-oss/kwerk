@@ -832,6 +832,7 @@ p.subtitle {
     width: 100vw;
     right: -100vw;
     min-width: unset;
+    padding: 40px 24px;
   }
   .side-contact-form.active {
     right: 0;
@@ -863,5 +864,39 @@ p.subtitle {
   /* Pour éviter que le contenu soit caché sous la navbar sticky */
   .hero {
     padding-top: 60px;
+  }
+}
+
+/* ── MOBILE ADDITIONS ── */
+@media (max-width: 480px) {
+  .side-contact-form {
+    padding: 32px 18px;
+  }
+  .contact-form-header {
+    font-size: 14px;
+    margin-bottom: 28px;
+  }
+  .submit-btn {
+    width: 100%;
+    text-align: center;
+    padding: 14px 20px;
+  }
+  .side-menu-links li {
+    margin-bottom: 20px;
+    line-height: 32px;
+  }
+}
+
+/* Touch targets minimum 44px */
+@media (max-width: 900px) {
+  .exceptional-cta,
+  .contact-btn-mobile,
+  .btn,
+  .adresses-btn,
+  .footer-contact-btn {
+    min-height: 44px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
   }
 }
