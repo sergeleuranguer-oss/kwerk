@@ -1668,6 +1668,24 @@ a {
   gap: 20px;
 }
 
+/* ── MOSAÏQUE ÉVÉNEMENTIEL ── */
+.event-mosaic {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: 240px 240px;
+  gap: 5px;
+  width: 100%;
+}
+.event-mosaic__cell {
+  overflow: hidden;
+}
+.event-mosaic__cell img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
 .image-large {
   grid-column: 1 / span 2;
 }
