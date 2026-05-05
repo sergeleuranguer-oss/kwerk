@@ -74,7 +74,7 @@ window.axeptioSettings = {
 			<div class="hero-video hero-slideshow" style="background-image: url('../images/content/Lobby_Mad_1.jpg');" data-hero-slides="../images/content/Lobby_Mad_1.jpg,../images/content/Lobby_Mad_3.png,../images/content/Rooftop_Mad_1.png,../images/content/Rooftop_Madeleine_IA_1.png"></div>
 		
 	<nav class="navbar">
-		<div class="menu-icon"><img src="../images/menu_burger.svg"><span>MENU</span></div>
+		<div class="menu-icon"><img src="../images/menu_burger.svg"></div>
 		<a href="../index.html" class="logo-wrapper">
 			<div class="logo"><img src="../images/logo-sans-bureaux.png"></div>
 			
@@ -95,12 +95,12 @@ window.axeptioSettings = {
 		<a href="../index.html"><img src="../images/logo-kwerk-noir.png" alt="Logo"></a>
 		<span class="close-btn" id="closeMenu"><img src="../images/close_cross.svg" alt="close"></span>
 	</div>
-	<ul class="side-menu-links">
+		<ul class="side-menu-links">
 		<li>
-			<a href="../adresses.html">LES ADRESSES</a>
+			<a href="../espaces.html">NOS BUREAUX ET SERVICES</a>
 		</li>
 		<li>
-			<a href="../espaces.html">LES BUREAUX</a>
+			<a href="../adresses.html">NOS ADRESSES</a>
 		</li>
 		<li>
 			<a href="../maison-kwerk.html">VOS BUREAUX OPÉRÉS PAR KWERK</a>
@@ -108,12 +108,6 @@ window.axeptioSettings = {
 		<li>
 			<a href="../event.html">VOS ÉVÉNEMENTS</a>
 		</li>
-		<li>
-			
-		<li>
-			<a href="../restaurant-dana.html">LE DANA - RESTAURANT</a></li>
-		<li>
-			<a href="../sport-bien-etre.html">LE SPORT &amp; LE BIEN-ÊTRE</a></li>
 	</ul>
 
 </div>
@@ -148,90 +142,99 @@ window.axeptioSettings = {
 			<img src="../images/close_cross.svg" alt="close">
 		</span>
 	</div>
-	<form class="contact-form-fields">
-		<div class="row">
-			<div class="field">
-				<label>PRÉNOM*</label>
-				<input type="text" name="firstname" required>
-				<div class="error"></div>
-			</div>
-		</div>
-		<div class="row">
-			<div class="field">
-				<label>NOM*</label>
-				<input type="text" required name="lastname">
-				<div class="error"></div>
-			</div>
-		</div>
-		<div class="row">
-			<div class="field">
-				<label>EMAIL*</label>
-				<input type="email" required name="email">
-				<div class="error"></div>
-			</div>
-		</div>
-		<div class="row">
-			<div class="field">
-				<label>TÉLÉPHONE*</label>
-				<input type="text" name="phone" required>
-				<div class="error"></div>
-			</div>
-		</div>
-		<div class="row">
-			<div class="field">
-				<label>SOCIÉTÉ*</label>
-				<input type="text" required name="company">
-				<div class="error"></div>
-			</div>
-		</div>
-		<div class="row">
-			<div class="field">
-				<label>NOMBRE DE POSTES*</label>
-				<input type="number" name="desk" required>
-				<div class="error"></div>
-			</div>
-		</div>
-		<div class="row">
-			<div class="field">
-				<label>QUE RECHERCHEZ VOUS ?</label>
-				<select name="produit">
-					<option>Bureau exécutif</option>
-					<option>Suite Signature</option>
-					<option>Étages privatifs</option>
-					<option>Événements/Espaces de réunion</option>
+		<form class="contact-form-fields">
+
+	<!-- VOTRE DEMANDE -->
+	<h3 class="contact-section-title">VOTRE DEMANDE</h3>
+
+	<div class="ps-field-row single">
+		<div class="ps-field ps-select">
+			<label>QUELLE EST VOTRE DEMANDE ? *</label>
+			<select name="produit" required>
+				<option value="" disabled selected>Veuillez choisir</option>
+				<option>Bureaux Exécutifs</option>
+				<option>Suites Signatures</option>
+				<option>Étages Privatifs</option>
+				<option>Vos bureaux opérés par Kwerk</option>
+				<option>Événementiel</option>
 				</select>
-				<div class="error"></div>
-			</div>
+			<div class="error"></div>
 		</div>
-		<div class="row">
-			<div class="field">
-				<label>COMMENT AVEZ VOUS CONNU KWERK ?*</label>
-				<select name="origine_de_la_piste">
-					<option>Recommandation par mon réseau</option>
-					<option>Recherche internet</option>
-					<option>Recommandation par un membre Kwerk</option>
-					<option>Mis en relation par un broker</option>
-					<option>Sur les réseaux sociaux</option>
-					<option>Rendez-vous professionnel chez Kwerk</option>
-					<option>Dans la presse</option>
-					<option>Lors d&#039;un événement chez Kwerk</option>
-					<option>Au cours d&#039;un déjeuner au restaurant Dana</option>
-				</select>
-				<div class="error"></div>
-			</div>
+	</div>
+
+	<div class="ps-field-row single">
+		<div class="ps-field">
+			<label>COMMENT AVEZ-VOUS CONNU KWERK ? *</label>
+			<select name="origine_de_la_piste" required>
+				<option value="" disabled selected>Veuillez choisir</option>
+				<option>Recommandation par mon réseau</option>
+				<option>Recherche internet</option>
+				<option>Recommandation par un membre Kwerk</option>
+				<option>Mis en relation par un broker</option>
+				<option>Sur les réseaux sociaux</option>
+				<option>Rendez-vous professionnel chez Kwerk</option>
+				<option>Dans la presse</option>
+				<option>Lors d&#039;un événement chez Kwerk</option>
+				<option>Au cours d&#039;un déjeuner au restaurant Le Dana</option>
+			</select>
+			<div class="error"></div>
 		</div>
-		<div class="row row-full">
-			<div class="field">
-				<label>PARLEZ-NOUS DE VOTRE PROJET</label>
-				<textarea rows="4" name="description_de_la_transaction" placeholder="Exemple: Bonjour, nous sommes à la recherche de bureaux privatifs afin d&#039;accompagner la croissance"></textarea>
-				<div class="error"></div>
-			</div>
+	</div>
+
+	<div class="ps-field-row single">
+		<div class="ps-field">
+			<label>EXPLIQUEZ-NOUS VOTRE PROJET *</label>
+			<textarea name="description_de_la_transaction" placeholder="Expliquez-nous votre projet" required></textarea>
+			<div class="error"></div>
 		</div>
-		<div class="form-footer">
-			<button type="submit" class="submit-btn">ENVOYER MA DEMANDE</button>
-			<div class="success" id="successMessage"></div>
-			<span class="contact-phone">07 83 48 94 57</span>
+	</div>
+
+	<hr class="contact-separator">
+
+	<!-- VOS COORDONNÉES -->
+	<h3 class="contact-section-title">VOS COORDONNÉES</h3>
+
+	<div class="ps-field-row">
+		<div class="ps-field">
+			<label>VOTRE PRÉNOM *</label>
+			<input type="text" name="firstname" placeholder="Votre prénom" required>
+			<div class="error"></div>
 		</div>
+		<div class="ps-field">
+			<label>VOTRE NOM *</label>
+			<input type="text" name="lastname" placeholder="Votre nom" required>
+			<div class="error"></div>
+		</div>
+	</div>
+
+	<div class="ps-field-row">
+		<div class="ps-field">
+			<label>VOTRE NUMÉRO DE TÉLÉPHONE *</label>
+			<input type="text" name="phone" placeholder="+33 6 00 00 00 00" required>
+			<div class="error"></div>
+		</div>
+		<div class="ps-field">
+			<label>VOTRE ADRESSE E-MAIL *</label>
+			<input type="email" name="email" placeholder="nom@email.com" required>
+			<div class="error"></div>
+		</div>
+	</div>
+
+	<div class="ps-field-row single">
+		<div class="ps-field">
+			<label>VOTRE SOCIÉTÉ (LE CAS ÉCHÉANT)</label>
+			<input type="text" name="company" placeholder="Nom de l'entreprise">
+			<div class="error"></div>
+		</div>
+	</div>
+
+	<hr class="contact-separator">
+
+	<div class="form-footer">
+		<button type="submit" class="submit-btn">ENVOYEZ VOTRE DEMANDE</button>
+		<div class="success" id="successMessage"></div>
+		<span class="contact-phone">07 83 48 94 57</span>
+	</div>
 	</form>
 </div>
 					<section class="adresse-citation-section" data-aos="fade-right">
