@@ -1215,8 +1215,7 @@ a {
 .adresse-details-block {
   display: flex;
   min-width: 340px;
-  width: 86vw;
-  max-width: 1280px;
+  width: 94vw;
   gap: 64px;
   align-items: stretch;
   justify-content: center;
@@ -1361,7 +1360,7 @@ a {
 }
 @media (max-width: 480px) {
   .adresse-details-block {
-    width: 88vw;
+    width: 92vw;
     gap: 14px;
   }
   .adresse-details-img img {
@@ -1453,7 +1452,7 @@ a {
 .gallery-section {
   max-width: 1200px;
   margin: 0 auto;
-  padding: 0 60px;
+  /*padding: 60px 20px;*/
 }
 
 .parent {
@@ -1512,8 +1511,8 @@ a {
   .parent {
     grid-template-columns: repeat(4, 1fr);
     grid-auto-rows: calc(100vw / 4);
-    padding-left: 20px;
-    padding-right: 20px;
+    padding-left: 7px;
+    padding-right: 7px;
     grid-column-gap: 5px;
     grid-row-gap: 5px;
   }
