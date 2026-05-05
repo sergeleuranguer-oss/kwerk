@@ -70,9 +70,6 @@ class NavFormValidator {
         if (required && !trimmedValue) {
           errorMessage = "Le téléphone est obligatoire.";
           isValid = false;
-        } else if (trimmedValue && !this.isValidPhone(trimmedValue)) {
-          errorMessage = "Veuillez saisir un numéro de téléphone valide.";
-          isValid = false;
         }
         break;
 
