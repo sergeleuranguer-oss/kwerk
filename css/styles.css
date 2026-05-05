@@ -1338,6 +1338,7 @@ a {
   }
   .adresse-details-img {
     flex: none;
+    min-height: unset;
   }
   .adresse-details-img img {
     height: 260px;
