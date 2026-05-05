@@ -424,9 +424,12 @@ window.axeptioSettings = {
 					<div class="field">
 						<label>WHAT ARE YOU LOOKING FOR?</label>
 						<select name="produit" required>
-							<option>Executive office</option>
-							<option>Signature suite</option>
-							<option>Private floors</option>
+							<option value="" disabled selected>Please select</option>
+							<option>Executive Offices</option>
+							<option>Signature Suites</option>
+							<option>Private Floors</option>
+							<option>Our Services At Your Premises</option>
+							<option>Events</option>
 						</select>
 						<div class="error"></div>
 					</div>
@@ -434,14 +437,14 @@ window.axeptioSettings = {
 						<label>HOW DID YOU HEAR ABOUT KWERK?</label>
 						<select name="origine_de_la_piste" required>
 							<option>Recommendation from my network</option>
-							<option>Online search</option>
+							<option>Internet search</option>
 							<option>Recommendation from a Kwerk member</option>
-							<option>Introduced by a broker</option>
+							<option>Referred by a broker</option>
 							<option>Social media</option>
-							<option>Business meeting at Kwerk</option>
-							<option>Press coverage</option>
+							<option>Professional meeting at Kwerk</option>
+							<option>In the press</option>
 							<option>Event at Kwerk</option>
-							<option>Lunch at Le Dana restaurant</option>
+							<option>During lunch at the Dana restaurant</option>
 						</select>
 						<div class="error"></div>
 					</div>
@@ -516,8 +519,8 @@ window.axeptioSettings = {
 		</div>
 	</div>
 	<div class="footer-bottom">
-		<a href="../cgu.html">Conditions générales d'utilisation</a>
-		<a href="../mentions-legales.html">Mentions légales</a>
+		<a href="cgu.html">Terms of Use</a>
+		<a href="mentions-legales.html">Legal Notice</a>
 	</div>
 </footer>
 		<script src="../../unpkg.com/aos%402.3.1/dist/aos.js"></script>
