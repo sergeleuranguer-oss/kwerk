@@ -523,6 +523,11 @@ p.subtitle {
   color: #ccc;
 }
 @media (max-width: 900px) {
+  .hero {
+    height: 60vh !important;
+    min-height: 320px !important;
+  }
+
   .contact-btn {
     display: none;
   }
