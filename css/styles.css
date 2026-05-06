@@ -1717,6 +1717,23 @@ a {
   object-fit: cover;
 }
 
+/* Phone mockup image — smaller, no crop */
+.mk-digital-img {
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+}
+.mk-digital-img .image-large {
+  grid-column: unset;
+  max-width: 320px;
+  width: 100%;
+}
+.mk-digital-img .image-large img {
+  object-fit: contain;
+  height: auto;
+  width: 100%;
+}
+
 .image-small img {
   width: 100%;
   height: 100%;
