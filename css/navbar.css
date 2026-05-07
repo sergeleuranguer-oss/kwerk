@@ -624,11 +624,6 @@ p.subtitle {
       max-width: none;
       z-index: 2000;
       padding: 40px 24px;
-  }
-  .side-menu-links li {
-    font-size: 12px;
-    letter-spacing: 1px;
-    white-space: nowrap;
       box-shadow: none;
       /* Animation de base */
       transform: translateX(100%);
