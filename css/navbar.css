@@ -590,17 +590,14 @@ p.subtitle {
 
   .side-menu {
     width: 100vw;
-    left: -100vw;
     max-width: none;
     padding: 40px 24px;
+    overflow-y: auto;
   }
   .side-menu-links li {
     font-size: 12px;
     letter-spacing: 1px;
     white-space: nowrap;
-  }
-  .side-menu.active {
-    left: 0;
   }
   .submenu-content ul li {
     display: block;
