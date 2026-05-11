@@ -115,39 +115,37 @@ document.querySelectorAll(".carousel-img").forEach(function (carousel) {
   let isAnimating = false;
 
   function show(newIdx) {
-    if (isAnimating) return; // Évite les conflits d'animation
+    if (isAnimating) return;
+    if (newIdx === currentIdx) return;
 
     isAnimating = true;
     const currentImg = images[currentIdx];
     const newImg = images[newIdx];
 
-    // Retire toutes les classes
-    images.forEach((img) => {
-      img.classList.remove("active", "previous", "entering", "exiting");
-    });
+    // S'assure que newImg est à sa position "ready" (droite, invisible) sans animation
+    // au cas où elle aurait un état résiduel.
+    newImg.classList.add("no-transition");
+    newImg.classList.remove("active", "past");
+    void newImg.offsetWidth; // force reflow
+    newImg.classList.remove("no-transition");
 
-    // Nouvelle image entre depuis la droite
-    newImg.classList.add("entering");
+    // Lance la transition : newImg entre (droite → centre), currentImg sort (centre → gauche)
+    newImg.classList.add("active");
+    if (currentImg && currentImg !== newImg) {
+      currentImg.classList.remove("active");
+      currentImg.classList.add("past");
+    }
 
-    // Attendre que l'image soit arrivée au centre (25% de 2s = 0.5s)
+    // Après la transition (1s), remet currentImg à droite sans animation
     setTimeout(() => {
-      // Image actuelle sort vers la gauche
-      if (currentImg) {
-        currentImg.classList.add("exiting");
-      }
-    }, 500); // L'image précédente commence à sortir quand la nouvelle arrive
-
-    // Après les animations complètes
-    setTimeout(() => {
-      images.forEach((img) => {
-        img.classList.remove("entering", "exiting");
-      });
-      newImg.classList.add("active");
-      if (currentImg) {
-        currentImg.classList.add("previous");
+      if (currentImg && currentImg !== newImg) {
+        currentImg.classList.add("no-transition");
+        currentImg.classList.remove("past");
+        void currentImg.offsetWidth;
+        currentImg.classList.remove("no-transition");
       }
       isAnimating = false;
-    }, 2500); // 2s pour l'entrée + 0.5s de marge
+    }, 1100);
 
     currentIdx = newIdx;
   }

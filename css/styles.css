@@ -608,10 +608,10 @@ a {
   height: 100%;
   object-fit: cover;
   opacity: 0;
-  transform: translateX(-100%) scale(1.01);
+  transform: translateX(100%);
   transition:
-    opacity 0.6s cubic-bezier(0.6, 0.1, 0.1, 1),
-    transform 1.5s cubic-bezier(0.6, 0.1, 0.1, 1);
+    opacity 0.6s ease,
+    transform 1s cubic-bezier(0.5, 0, 0.2, 1);
   z-index: 1;
 }
 
@@ -622,56 +622,16 @@ a {
   z-index: 2;
 }
 
-/* Image précédente - sort vers la gauche */
-.carousel-img img.previous {
-  opacity: 1;
+/* Image sortante - vers la gauche */
+.carousel-img img.past {
+  opacity: 0;
   transform: translateX(-100%);
   z-index: 1;
 }
 
-/* Effet de défilement continu avec pause au centre */
-.carousel-img img.entering {
-  opacity: 0;
-  transform: translateX(100%);
-  animation: slideInAndStop 2s cubic-bezier(0.25, 0.46, 0.45, 0.94) forwards;
-}
-
-.carousel-img img.exiting {
-  opacity: 1;
-  transform: translateX(0);
-  animation: slideOutToLeft 1s cubic-bezier(0.25, 0.46, 0.45, 0.94) forwards;
-}
-
-/* Animation d'entrée : glisse puis s'arrête */
-@keyframes slideInAndStop {
-  0% {
-    opacity: 0;
-    transform: translateX(100%);
-  }
-  25% {
-    opacity: 1;
-    transform: translateX(0);
-  }
-  75% {
-    opacity: 1;
-    transform: translateX(0); /* Reste au centre */
-  }
-  100% {
-    opacity: 1;
-    transform: translateX(0);
-  }
-}
-
-/* Animation de sortie : repart vers la gauche */
-@keyframes slideOutToLeft {
-  0% {
-    opacity: 1;
-    transform: translateX(0);
-  }
-  100% {
-    opacity: 0;
-    transform: translateX(-100%);
-  }
+/* Reset instantané (pas de transition) pour repositionner une image à droite après sortie */
+.carousel-img img.no-transition {
+  transition: none !important;
 }
 
 /* Version alternative avec effet de parallaxe */

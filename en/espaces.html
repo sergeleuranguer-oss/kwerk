@@ -155,6 +155,12 @@ f.parentNode.insertBefore(j, f);
 		.mk-digital-img .image-large { height: auto; }
 		.mk-digital-img .image-large img { width: 100%; height: auto; object-fit: unset; }
 		@media (max-width: 480px) { .details-section .details-text { padding-top: 0; } .details-section .details-container { align-items: stretch; } }
+		/* Alternance image → texte forcée sur mobile */
+		@media (max-width: 900px) {
+			.details-section .details-images,
+			.details-section .event-duo { order: 1; }
+			.details-section .details-text { order: 2; }
+		}
 
 		/* ── CTA FINAL BANDEAU ── */
 		.mk-cta-section {
