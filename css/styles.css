@@ -441,6 +441,18 @@ a {
     aspect-ratio: unset;
     height: 150px;
   }
+  .offres-grid .offre-bloc:nth-child(1) {
+    background-image: url('../images/bureaux-mobile.jpg') !important;
+  }
+  .offres-grid .offre-bloc:nth-child(2) {
+    background-image: url('../images/Lobby 1-mobile.jpg') !important;
+  }
+  .offres-grid .offre-bloc:nth-child(3) {
+    background-image: url('../images/maison-kwerk-mobile.jpg') !important;
+  }
+  .offres-grid .offre-bloc:nth-child(4) {
+    background-image: url('../images/evenementiel-mobile.png') !important;
+  }
   .offre-bloc .offre-label {
     font-size: 16px;
     letter-spacing: 0.5px;

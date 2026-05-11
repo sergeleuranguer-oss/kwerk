@@ -693,6 +693,21 @@ f.parentNode.insertBefore(j, f);
 			.mk-cta-title { font-size: 18px; }
 			.mk-cta-content { padding: 32px 16px; }
 		}
+		/* ── Grille images services : conserver la grille desktop sur mobile ── */
+		@media (max-width: 900px) {
+			.details-section .details-images {
+				grid-template-columns: repeat(2, 1fr);
+			}
+			/* Alternance image → texte forcée sur mobile */
+			.details-section .details-images,
+			.details-section .event-duo { order: 1; }
+			.details-section .details-text { order: 2; }
+		}
+		@media (max-width: 768px) {
+			.details-section .details-images .image-small {
+				display: block;
+			}
+		}
 	</style>
 <script>
 window.axeptioSettings = {
