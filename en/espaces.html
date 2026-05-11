@@ -125,6 +125,8 @@ f.parentNode.insertBefore(j, f);
 				padding: 0 32px;
 				gap: 40px;
 			}
+			.esp-inner.esp-reverse .esp-mosaic { order: 1; }
+			.esp-inner.esp-reverse .esp-text { order: 2; }
 		}
 		@media (max-width: 768px) {
 			.esp-mosaic-main { height: 260px; }
@@ -152,8 +154,7 @@ f.parentNode.insertBefore(j, f);
 		.mk-digital-img { display: block !important; }
 		.mk-digital-img .image-large { height: auto; }
 		.mk-digital-img .image-large img { width: 100%; height: auto; object-fit: unset; }
-		@media (max-width: 768px) { .details-section .image-large { height: 260px; } }
-		@media (max-width: 480px) { .details-section .image-large { height: 220px; } .details-section .details-text { padding-top: 0; } .details-section .details-container { align-items: stretch; } }
+		@media (max-width: 480px) { .details-section .details-text { padding-top: 0; } .details-section .details-container { align-items: stretch; } }
 
 		/* ── CTA FINAL BANDEAU ── */
 		.mk-cta-section {

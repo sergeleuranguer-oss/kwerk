@@ -424,18 +424,22 @@ a {
 }
 
 @media (max-width: 700px) {
+  .offres-section {
+    padding-bottom: 20px;
+  }
   .offres-title {
     font-size: 26px;
-    padding: 50px 24px 30px;
+    padding: 20px 24px 20px;
   }
   .offres-grid {
     display: grid;
-    grid-template-columns: 1fr 1fr;
+    grid-template-columns: 1fr;
     gap: 8px;
-    padding: 0 16px 50px;
+    padding: 0 16px 20px;
   }
   .offre-bloc {
-    aspect-ratio: 3/4;
+    aspect-ratio: unset;
+    height: 150px;
   }
   .offre-bloc .offre-label {
     font-size: 16px;
@@ -3548,7 +3552,8 @@ a {
     padding: 0 12px 40px;
   }
   .offre-bloc {
-    aspect-ratio: 4/3;
+    aspect-ratio: unset;
+    height: 150px;
   }
 }
 
