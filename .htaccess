@@ -1,2 +1,9 @@
 ErrorDocument 404 /index.html
 ErrorDocument 403 /index.html
+
+RewriteEngine On
+
+RewriteRule ^espaces/haussmann/?$ /adresses/haussmann.html [R=301,L]
+RewriteRule ^espaces/messine/?$ /adresses/messine.html [R=301,L]
+RewriteRule ^espaces/madeleine/?$ /adresses/madeleine.html [R=301,L]
+RewriteRule ^espaces/saint-honore/?$ /adresses/saint-honore.html [R=301,L]
