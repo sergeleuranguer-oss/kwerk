@@ -18,3 +18,8 @@ RewriteRule ^adresses/?$ /maison-kwerk.html [R=301,L]
 RewriteRule ^services/?$ /espaces.html [R=301,L]
 RewriteRule ^espaces/?$ /espaces.html [R=301,L]
 RewriteRule ^event/?$ /event.html [R=301,L]
+
+RewriteRule ^en/services/?$ /en/espaces.html [R=301,L]
+RewriteRule ^en/espaces/?$ /en/espaces.html [R=301,L]
+RewriteRule ^en/event/?$ /en/event.html [R=301,L]
+RewriteRule ^en/galerie/?$ /en/galerie.html [R=301,L]
