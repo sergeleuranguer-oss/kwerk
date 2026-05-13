@@ -8,4 +8,9 @@ RewriteRule ^espaces/messine/?$ /adresses/messine.html [R=301,L]
 RewriteRule ^espaces/madeleine/?$ /adresses/madeleine.html [R=301,L]
 RewriteRule ^espaces/saint-honore/?$ /adresses/saint-honore.html [R=301,L]
 
+RewriteRule ^adresses/haussmann/?$ /adresses/haussmann.html [R=301,L]
+RewriteRule ^adresses/messine/?$ /adresses/messine.html [R=301,L]
+RewriteRule ^adresses/madeleine/?$ /adresses/madeleine.html [R=301,L]
+RewriteRule ^adresses/saint-honore/?$ /adresses/saint-honore.html [R=301,L]
+
 RewriteRule ^adresses/?$ /maison-kwerk.html [R=301,L]
