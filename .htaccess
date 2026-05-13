@@ -14,3 +14,7 @@ RewriteRule ^adresses/madeleine/?$ /adresses/madeleine.html [R=301,L]
 RewriteRule ^adresses/saint-honore/?$ /adresses/saint-honore.html [R=301,L]
 
 RewriteRule ^adresses/?$ /maison-kwerk.html [R=301,L]
+
+RewriteRule ^services/?$ /espaces.html [R=301,L]
+RewriteRule ^espaces/?$ /espaces.html [R=301,L]
+RewriteRule ^event/?$ /event.html [R=301,L]
