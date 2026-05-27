@@ -712,7 +712,7 @@ f.parentNode.insertBefore(j, f);
 		/* ── UNE OFFRE, DEUX REGARDS ── */
 		.mk-offer-section {
 			background: #fff;
-			padding: 100px 0 110px;
+			padding: 20px 0 60px;
 		}
 		.mk-offer-container {
 			max-width: 1200px;
@@ -725,53 +725,60 @@ f.parentNode.insertBefore(j, f);
 			grid-template-columns: 1fr 1fr;
 			gap: 1px;
 			background: #e8e8e8;
-			margin-top: 56px;
+			margin-top: 24px;
 			text-align: left;
 		}
 		.mk-offer-card {
 			background: #fff;
-			padding: 56px 48px;
+			padding: 32px 40px;
 			display: flex;
 			flex-direction: column;
 		}
 		.mk-offer-eyebrow {
 			display: block;
-			font-size: 10px;
-			letter-spacing: 3px;
-			color: #999;
-			text-transform: uppercase;
-			margin-bottom: 20px;
 			font-family: 'Helvetica Neue', HelveticaNeue, sans-serif;
+			font-weight: 300;
+			font-size: 20px;
+			line-height: 1.7;
+			color: #222;
+			margin-bottom: 16px;
 		}
 		.mk-offer-bar {
 			display: block;
 			width: 28px;
 			height: 1px;
 			background: #1a1a1a;
-			margin-bottom: 24px;
+			margin-bottom: 20px;
 		}
 		.mk-offer-title {
-			font-size: 22px;
-			font-weight: 300;
-			letter-spacing: 1px;
-			color: #1a1a1a;
-			line-height: 1.4;
-			margin: 0 0 24px;
 			font-family: 'Helvetica Neue', HelveticaNeue, sans-serif;
+			font-weight: 300;
+			font-size: 20px;
+			line-height: 1.7;
+			color: #222;
+			margin: 0 0 16px;
 		}
 		.mk-offer-body {
-			font-size: 15px;
-			color: #666;
-			line-height: 1.9;
-			font-weight: 300;
 			font-family: 'Helvetica Neue', HelveticaNeue, sans-serif;
+			font-weight: 300;
+			font-size: 20px;
+			line-height: 1.7;
+			color: #222;
 			margin: 0;
 		}
 		@media (max-width: 900px) {
 			.mk-offer-grid { grid-template-columns: 1fr; }
-			.mk-offer-card { padding: 40px 28px; }
-			.mk-offer-section { padding: 70px 0 80px; }
+			.mk-offer-card { padding: 28px 24px; }
+			.mk-offer-section { padding: 12px 0 40px; }
 			.mk-offer-container { padding: 0 24px; }
+			.mk-offer-eyebrow,
+			.mk-offer-title,
+			.mk-offer-body { font-size: 17px; }
+		}
+		@media (max-width: 700px) {
+			.mk-offer-eyebrow,
+			.mk-offer-title,
+			.mk-offer-body { font-size: 15px; line-height: 1.75; }
 		}
 	</style>
 </head>
