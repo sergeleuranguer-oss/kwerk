@@ -708,6 +708,71 @@ f.parentNode.insertBefore(j, f);
 				display: block;
 			}
 		}
+
+		/* ── UNE OFFRE, DEUX REGARDS ── */
+		.mk-offer-section {
+			background: #fff;
+			padding: 100px 0 110px;
+		}
+		.mk-offer-container {
+			max-width: 1200px;
+			margin: 0 auto;
+			padding: 0 40px;
+			text-align: center;
+		}
+		.mk-offer-grid {
+			display: grid;
+			grid-template-columns: 1fr 1fr;
+			gap: 1px;
+			background: #e8e8e8;
+			margin-top: 56px;
+			text-align: left;
+		}
+		.mk-offer-card {
+			background: #fff;
+			padding: 56px 48px;
+			display: flex;
+			flex-direction: column;
+		}
+		.mk-offer-eyebrow {
+			display: block;
+			font-size: 10px;
+			letter-spacing: 3px;
+			color: #999;
+			text-transform: uppercase;
+			margin-bottom: 20px;
+			font-family: 'Helvetica Neue', HelveticaNeue, sans-serif;
+		}
+		.mk-offer-bar {
+			display: block;
+			width: 28px;
+			height: 1px;
+			background: #1a1a1a;
+			margin-bottom: 24px;
+		}
+		.mk-offer-title {
+			font-size: 22px;
+			font-weight: 300;
+			letter-spacing: 1px;
+			color: #1a1a1a;
+			line-height: 1.4;
+			margin: 0 0 24px;
+			font-family: 'Helvetica Neue', HelveticaNeue, sans-serif;
+		}
+		.mk-offer-body {
+			font-size: 15px;
+			color: #666;
+			line-height: 1.9;
+			font-weight: 300;
+			font-family: 'Helvetica Neue', HelveticaNeue, sans-serif;
+			margin: 0;
+		}
+		@media (max-width: 900px) {
+			.mk-offer-grid { grid-template-columns: 1fr; }
+			.mk-offer-card { padding: 40px 28px; }
+			.mk-offer-section { padding: 70px 0 80px; }
+			.mk-offer-container { padding: 0 24px; }
+		}
 	</style>
 </head>
 <body>
@@ -916,8 +981,28 @@ f.parentNode.insertBefore(j, f);
 
 
 <!-- ============================================================
-     3. LES 3 PILIERS — Vue d'ensemble de l'offre
+     2. UNE OFFRE, DEUX REGARDS
      ============================================================ -->
+<section class="mk-offer-section">
+	<div class="mk-offer-container" data-aos="fade-up">
+		<h2 class="exceptional-heading">Une offre, deux regards</h2>
+		<div style="width: 1px; height: 56px; background: #1a1a1a; margin: 32px auto;"></div>
+		<div class="mk-offer-grid">
+			<div class="mk-offer-card" data-aos="fade-right">
+				<span class="mk-offer-eyebrow">PROPRIÉTAIRES &amp; GESTIONNAIRES</span>
+				<span class="mk-offer-bar"></span>
+				<h3 class="mk-offer-title">Faire de votre actif une adresse.</h3>
+				<p class="mk-offer-body">Une adresse opérée par Kwerk se distingue sur son marché. Elle attire des locataires exigeants, les retient plus longtemps. Notre rôle : hisser votre actif au standard d'hospitalité de nos adresses parisiennes.</p>
+			</div>
+			<div class="mk-offer-card" data-aos="fade-left">
+				<span class="mk-offer-eyebrow">ENTREPRISES OCCUPANTES</span>
+				<span class="mk-offer-bar"></span>
+				<h3 class="mk-offer-title">Votre siège, vécu comme une adresse Kwerk.</h3>
+				<p class="mk-offer-body">Pour vos talents comme pour vos invités, Kwerk transforme votre siège en lieu d'attractivité. Nos équipes anticipent les besoins du quotidien, et le standard de service est celui de nos propres adresses.</p>
+			</div>
+		</div>
+	</div>
+</section>
 
 
 <!-- ============================================================
