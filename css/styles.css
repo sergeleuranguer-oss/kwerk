@@ -361,8 +361,7 @@ a {
 .offre-bloc {
   flex: 1 1 0;
   position: relative;
-  height: 520px;
-  aspect-ratio: unset;
+  aspect-ratio: 2/3;
   background: #111 center/cover no-repeat;
   display: flex;
   flex-direction: column;
@@ -372,6 +371,10 @@ a {
   text-decoration: none;
   overflow: hidden;
   transition: transform 0.4s ease;
+}
+
+.offres-grid--adresses .offre-bloc {
+  aspect-ratio: 3/2;
 }
 
 .offre-bloc::before {
