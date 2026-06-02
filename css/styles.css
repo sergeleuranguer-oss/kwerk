@@ -221,6 +221,40 @@ a {
   }
 }
 
+/*********************** INTRO ADRESSES ****************************/
+
+.adresses-intro-section {
+  text-align: center;
+  padding: 90px 40px 80px;
+  background: #fff;
+}
+
+.adresses-intro-title {
+  font-family: "Helvetica Neue", HelveticaNeue, sans-serif;
+  font-weight: 300;
+  font-size: 32px;
+  letter-spacing: -0.3px;
+  color: #111;
+  line-height: 1.3;
+  margin: 0 0 40px;
+}
+
+.adresses-intro-sep {
+  width: 1px;
+  height: 60px;
+  background: #bbb;
+  margin: 0 auto 40px;
+}
+
+.adresses-intro-body {
+  font-family: "Helvetica Neue", HelveticaNeue, sans-serif;
+  font-weight: 300;
+  font-size: 16px;
+  color: #555;
+  line-height: 1.7;
+  margin: 0;
+}
+
 /*********************** SECTION PRODUITS ****************************/
 
 .offres-section {
