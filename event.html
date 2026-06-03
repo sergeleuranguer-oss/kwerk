@@ -25,6 +25,7 @@ f.parentNode.insertBefore(j, f);
 
 		<!-- Import Google Fonts (Roboto) -->
 		<link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&amp;display=swap" rel="stylesheet">
+		<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;1,300;1,400&amp;display=swap" rel="stylesheet">
 		<link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
 		<link rel="icon" type="image/svg+xml" href="favicon.ico">
 		
@@ -46,54 +47,36 @@ f.parentNode.insertBefore(j, f);
 			padding: 70px 40px 50px;
 		}
 		.event-stats-banner {
-			background: #1a1714;
-			padding: 50px 60px;
-			display: flex;
-			justify-content: space-between;
-			align-items: center;
-			gap: 24px;
-			font-family: "Helvetica Neue", HelveticaNeue, sans-serif;
-		}
-		.event-stat {
-			flex: 1;
+			background: #162032;
+			padding: 65px 100px;
 			text-align: center;
-			color: #fff;
-			border-right: 1px solid rgba(255,255,255,0.15);
-			padding: 0 20px;
 		}
-		.event-stat:last-child { border-right: none; }
-		.event-stat-number {
-			display: block;
-			font-family: "Helvetica Neue", HelveticaNeue, sans-serif;
-			font-size: 30px;
+		.event-stats-line {
+			font-family: 'Cormorant Garamond', Georgia, serif;
+			font-size: 24px;
 			font-weight: 300;
-			letter-spacing: -0.5px;
-			text-transform: uppercase;
-			line-height: 1.2;
-			margin-bottom: 10px;
+			font-style: italic;
+			color: #ddd5c0;
+			line-height: 1;
+			margin: 0 0 30px;
+			letter-spacing: 0.01em;
 		}
-		.event-stat-label {
-			display: block;
-			font-family: "Helvetica Neue", HelveticaNeue, sans-serif;
-			font-size: 13px;
+		.event-stats-line:last-child { margin-bottom: 0; }
+		.event-stats-num {
+			color: #c9a870;
+			font-style: normal;
+		}
+		.event-stats-sep {
+			color: #c9a870;
+			margin: 0 22px;
+			font-style: normal;
 			font-weight: 300;
-			letter-spacing: 0.05em;
-			line-height: 1.6;
-			color: rgba(255,255,255,0.75);
 		}
 		@media (max-width: 768px) {
-			.event-stats-banner {
-				flex-direction: column;
-				padding: 40px 30px;
-				gap: 30px;
-			}
-			.event-stat {
-				border-right: none;
-				border-bottom: 1px solid rgba(255,255,255,0.15);
-				padding: 0 0 24px;
-			}
-			.event-stat:last-child { border-bottom: none; padding-bottom: 0; }
-			.event-stat-number { font-size: 24px; }
+			.event-stats-banner { padding: 50px 30px; }
+			.event-stats-line { font-size: 18px; margin-bottom: 22px; }
+			.event-stats-sep { display: none; }
+			.event-stats-line { display: flex; flex-direction: column; gap: 10px; }
 		}
 	</style>
 </head>
@@ -318,26 +301,19 @@ f.parentNode.insertBefore(j, f);
 	</div>
 
 	<div class="event-stats-banner">
-		<div class="event-stat">
-			<span class="event-stat-number">5 000 m²</span>
-			<span class="event-stat-label">de réception</span>
-		</div>
-		<div class="event-stat">
-			<span class="event-stat-number">4</span>
-			<span class="event-stat-label">rooftops<br>jusqu'à 150 personnes</span>
-		</div>
-		<div class="event-stat">
-			<span class="event-stat-number">4</span>
-			<span class="event-stat-label">lobbys<br>jusqu'à 250 personnes</span>
-		</div>
-		<div class="event-stat">
-			<span class="event-stat-number">Le Dana</span>
-			<span class="event-stat-label">jusqu'à 80 couverts<br>intérieur &amp; terrasse</span>
-		</div>
-		<div class="event-stat">
-			<span class="event-stat-number">20</span>
-			<span class="event-stat-label">salles de réunion dont<br>1 centre de conférence<br>pour 120 personnes</span>
-		</div>
+		<p class="event-stats-line">
+			<span class="event-stats-num">5 000 m²</span> de réception
+			<span class="event-stats-sep">|</span>
+			<span class="event-stats-num">4</span> rooftops, jusqu'à 150 personnes
+			<span class="event-stats-sep">|</span>
+			<span class="event-stats-num">4</span> lobbys privatisables, jusqu'à 250 personnes
+		</p>
+		<p class="event-stats-line">
+			<span class="event-stats-num">20</span> salles de réunion (dont 1 centre de conférence pour 120 personnes)
+		</p>
+		<p class="event-stats-line">
+			<span class="event-stats-num">1</span> restaurant — Le Dana, jusqu'à 80 couverts, intérieur et terrasse
+		</p>
 	</div>
 
 
