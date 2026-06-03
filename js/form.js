@@ -12,6 +12,24 @@ class NavFormValidator {
 
     this.form.addEventListener("submit", (e) => this.handleSubmit(e));
     this.setupRealTimeValidation();
+    this.setupDeskFieldToggle();
+  }
+
+  setupDeskFieldToggle() {
+    const produitSelect = this.form.querySelector('select[name="produit"]');
+    const deskRow = this.form.querySelector('.ps-field-row--desk');
+    const deskInput = this.form.querySelector('input[name="desk"]');
+    if (!produitSelect || !deskRow || !deskInput) return;
+
+    const toggle = () => {
+      const isBureaux = produitSelect.value === 'Bureaux';
+      deskRow.style.display = isBureaux ? '' : 'none';
+      deskInput.required = isBureaux;
+      if (!isBureaux) deskInput.value = '';
+    };
+
+    produitSelect.addEventListener('change', toggle);
+    toggle();
   }
 
   setupRealTimeValidation() {
