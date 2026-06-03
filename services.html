@@ -143,12 +143,18 @@ f.parentNode.insertBefore(j, f);
 				<label>QUELLE EST VOTRE DEMANDE ? *</label>
 				<select name="produit" required>
 					<option value="" disabled selected>Veuillez choisir</option>
-					<option>Bureaux Exécutifs</option>
-					<option>Suites Signatures</option>
-					<option>Étages Privatifs</option>
+					<option value="Bureaux">Bureaux</option>
 					<option>Votre immeuble opéré par Kwerk</option>
 					<option>Événementiel</option>
 				</select>
+				<div class="error"></div>
+			</div>
+		</div>
+
+		<div class="ps-field-row single ps-field-row--desk" style="display:none;">
+			<div class="ps-field">
+				<label>DE COMBIEN DE POSTES AVEZ-VOUS BESOIN ? *</label>
+				<input type="number" name="desk" min="1" placeholder="Nombre de postes">
 				<div class="error"></div>
 			</div>
 		</div>
