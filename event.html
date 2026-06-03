@@ -40,6 +40,72 @@ f.parentNode.insertBefore(j, f);
 		.details-section .details-text { padding-top: 0; }
 		.video-section { margin-top: 80px; }
 
+		/* ── ROOFTOP SECTION ── */
+		.event-rooftop-section {
+			display: grid;
+			grid-template-columns: 1fr 1fr;
+			min-height: 700px;
+		}
+		.event-rooftop-text {
+			padding: 90px 70px 90px 80px;
+			display: flex;
+			flex-direction: column;
+			justify-content: center;
+		}
+		.event-rooftop-eyebrow {
+			display: flex;
+			align-items: center;
+			gap: 14px;
+			margin-bottom: 36px;
+		}
+		.event-rooftop-eyebrow-line {
+			flex: 1;
+			max-width: 60px;
+			height: 1px;
+			background: #b8935a;
+		}
+		.event-rooftop-eyebrow-text {
+			font-family: "Helvetica Neue", HelveticaNeue, sans-serif;
+			font-size: 11px;
+			font-weight: 400;
+			letter-spacing: 0.2em;
+			text-transform: uppercase;
+			color: #b8935a;
+		}
+		.event-rooftop-title {
+			font-family: "Helvetica Neue", HelveticaNeue, sans-serif;
+			font-size: 52px;
+			font-weight: 300;
+			letter-spacing: -1px;
+			line-height: 1.1;
+			color: #1a1a1a;
+			margin: 0 0 36px;
+		}
+		.event-rooftop-desc {
+			font-family: "Helvetica Neue", HelveticaNeue, sans-serif;
+			font-size: 17px;
+			font-weight: 300;
+			line-height: 1.85;
+			color: #444;
+			margin: 0 0 22px;
+		}
+		.event-rooftop-desc:last-of-type { margin-bottom: 0; }
+		.event-rooftop-img {
+			overflow: hidden;
+		}
+		.event-rooftop-img img {
+			width: 100%;
+			height: 100%;
+			object-fit: cover;
+			display: block;
+		}
+		@media (max-width: 900px) {
+			.event-rooftop-section { grid-template-columns: 1fr; }
+			.event-rooftop-text { padding: 60px 30px; }
+			.event-rooftop-img { height: 400px; }
+			.event-rooftop-title { font-size: 36px; }
+		}
+
 		/* ── STATS BANNER ── */
 		.event-count-heading {
 			text-align: center;
@@ -315,32 +381,19 @@ f.parentNode.insertBefore(j, f);
 	</div>
 
 
-	<section class="details-section">
-		<div class="details-container">
-			<div class="event-duo" data-aos="fade-right">
-				<img src="images/Lizette-event.jpg" alt="Événementiel Kwerk">
-				<img src="images/soiree.jpg" alt="Événementiel Kwerk">
+	<section class="event-rooftop-section">
+		<div class="event-rooftop-text" data-aos="fade-right">
+			<div class="event-rooftop-eyebrow">
+				<span class="event-rooftop-eyebrow-line"></span>
+				<span class="event-rooftop-eyebrow-text">NOS ESPACES</span>
+				<span class="event-rooftop-eyebrow-line"></span>
 			</div>
-
-			<div class="details-text" data-aos="fade-left">
-				<h3 class="details-title">NOTRE SENS DU DÉTAIL</h3>
-				<p class="details-description">
-					Nous concevons et orchestrons des expériences complètes en intégrant scénographie, technique et coordination. De la création des décors à la production (son, lumière, vidéo), jusqu'au pilotage des équipes sur site, nous assurons une exécution fluide et exigeante. Nos scénographies sur-mesure, associées à l'expertise de nos techniciens et à une coordination rigoureuse, garantissent des événements parfaitement maîtrisés.
-				</p>
-
-				<div class="details-list">
-					<h4>ANIMATIONS</h4>
-					<ul>
-						<li>Expériences culinaires : traiteur, show cooking, bar à cocktails</li>
-						<li>Ateliers créatifs</li>
-						<li>Pop-up, lancement produit</li>
-						<li>Shooting photo, tournage vidéo</li>
-							<li>DJ set, spectacle visuel</li>
-						<li>Conférence de presse, masterclass</li>
-					</ul>
-
-				</div>
-			</div>
+			<h2 class="event-rooftop-title">Les rooftops.</h2>
+			<p class="event-rooftop-desc">Quatre lieux suspendus au cœur du 8e arrondissement avec une vue imprenable sur les plus beaux monuments de la capitale, du matin jusqu'au coucher du soleil.</p>
+			<p class="event-rooftop-desc">Cocktail en fin de journée, dîner sous le ciel parisien, soirée avec DJ set, atelier de mixologie, pop-up éphémère : chaque événement est imaginé selon l'atmosphère et le rythme que vous souhaitez lui donner.</p>
+		</div>
+		<div class="event-rooftop-img" data-aos="fade-left">
+			<img src="images/ROOFMESSINE.png" alt="Rooftop Messine Kwerk">
 		</div>
 	</section>
 	<section class="video-section">
