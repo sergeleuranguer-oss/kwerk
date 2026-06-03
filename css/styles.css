@@ -409,7 +409,8 @@ a {
 }
 
 .offres-grid--adresses .offre-bloc {
-  aspect-ratio: 3/2;
+  height: 400px;
+  aspect-ratio: unset;
 }
 
 .offre-bloc::before {
@@ -430,7 +431,8 @@ a {
 }
 
 .offre-bloc .offre-label,
-.offre-bloc .offre-link {
+.offre-bloc .offre-link,
+.offre-bloc span {
   position: relative;
   z-index: 1;
 }
