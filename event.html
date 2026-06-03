@@ -68,9 +68,26 @@ f.parentNode.insertBefore(j, f);
 			object-position: center center;
 			display: block;
 		}
+		/* ── DANA SECTION : 2 photos côte à côte à gauche ── */
+		.event-dana-imgs {
+			display: grid;
+			grid-template-columns: 1fr 1fr;
+			gap: 12px;
+			height: 520px;
+			overflow: hidden;
+		}
+		.event-dana-imgs img {
+			width: 100%;
+			height: 100%;
+			object-fit: cover;
+			object-position: center center;
+			display: block;
+		}
 		@media (max-width: 900px) {
 			.event-rooftop-title { font-size: 28px; }
 			.event-rooftop-img { height: 300px; }
+			.event-dana-imgs { height: auto; grid-template-columns: 1fr; }
+			.event-dana-imgs img { height: 260px; }
 		}
 
 		/* ── STATS BANNER ── */
@@ -360,6 +377,21 @@ f.parentNode.insertBefore(j, f);
 			</div>
 		</div>
 	</section>
+
+	<section class="details-section">
+		<div class="details-container">
+			<div class="event-dana-imgs" data-aos="fade-right">
+				<img src="images/DAN1.jpg" alt="Restaurant Le Dana Kwerk">
+				<img src="images/DAN2.jpg" alt="Restaurant Le Dana Kwerk">
+			</div>
+			<div class="details-text" data-aos="fade-left">
+				<h2 class="event-rooftop-title">Restaurant Le Dana</h2>
+				<p class="event-rooftop-desc">Quatre lieux suspendus au cœur du 8e arrondissement avec une vue imprenable sur les plus beaux monuments de la capitale, du matin jusqu'au coucher du soleil.</p>
+				<p class="event-rooftop-desc">Cocktail en fin de journée, dîner sous le ciel parisien, soirée avec DJ set, atelier de mixologie, pop-up éphémère : chaque événement est imaginé selon l'atmosphère et le rythme que vous souhaitez lui donner.</p>
+			</div>
+		</div>
+	</section>
+
 	<section class="video-section">
 		<div class="video-container">
 			<video width="100%" height="auto" autoplay muted loop playsinline>
