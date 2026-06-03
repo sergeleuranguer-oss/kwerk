@@ -50,7 +50,7 @@ f.parentNode.insertBefore(j, f);
 			padding: 50px 60px;
 			display: flex;
 			justify-content: space-between;
-			align-items: flex-start;
+			align-items: center;
 			gap: 24px;
 			font-family: "Helvetica Neue", HelveticaNeue, sans-serif;
 		}
@@ -65,20 +65,21 @@ f.parentNode.insertBefore(j, f);
 		.event-stat-number {
 			display: block;
 			font-family: "Helvetica Neue", HelveticaNeue, sans-serif;
-			font-size: 36px;
+			font-size: 30px;
 			font-weight: 300;
-			letter-spacing: 0.02em;
+			letter-spacing: -0.5px;
+			text-transform: uppercase;
+			line-height: 1.2;
 			margin-bottom: 10px;
 		}
-		.event-stat--bold .event-stat-number { font-weight: 600; }
 		.event-stat-label {
 			display: block;
-			font-size: 12px;
+			font-family: "Helvetica Neue", HelveticaNeue, sans-serif;
+			font-size: 13px;
 			font-weight: 300;
-			letter-spacing: 0.12em;
-			text-transform: uppercase;
+			letter-spacing: 0.05em;
 			line-height: 1.6;
-			color: rgba(255,255,255,0.65);
+			color: rgba(255,255,255,0.75);
 		}
 		@media (max-width: 768px) {
 			.event-stats-banner {
@@ -92,7 +93,7 @@ f.parentNode.insertBefore(j, f);
 				padding: 0 0 24px;
 			}
 			.event-stat:last-child { border-bottom: none; padding-bottom: 0; }
-			.event-stat-number { font-size: 28px; }
+			.event-stat-number { font-size: 24px; }
 		}
 	</style>
 </head>
@@ -321,19 +322,19 @@ f.parentNode.insertBefore(j, f);
 			<span class="event-stat-number">5 000 m²</span>
 			<span class="event-stat-label">de réception</span>
 		</div>
-		<div class="event-stat event-stat--bold">
+		<div class="event-stat">
 			<span class="event-stat-number">4</span>
 			<span class="event-stat-label">rooftops<br>jusqu'à 150 personnes</span>
 		</div>
-		<div class="event-stat event-stat--bold">
+		<div class="event-stat">
 			<span class="event-stat-number">4</span>
 			<span class="event-stat-label">lobbys<br>jusqu'à 250 personnes</span>
 		</div>
 		<div class="event-stat">
 			<span class="event-stat-number">Le Dana</span>
-			<span class="event-stat-label">restaurant avec +80 couverts<br>intérieur &amp; terrasse</span>
+			<span class="event-stat-label">jusqu'à 80 couverts<br>intérieur &amp; terrasse</span>
 		</div>
-		<div class="event-stat event-stat--bold">
+		<div class="event-stat">
 			<span class="event-stat-number">20</span>
 			<span class="event-stat-label">salles de réunion dont<br>1 centre de conférence<br>pour 120 personnes</span>
 		</div>
