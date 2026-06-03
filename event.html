@@ -39,6 +39,59 @@ f.parentNode.insertBefore(j, f);
 		.details-images--event ~ .details-text { align-self: flex-start; }
 		.details-section .details-text { padding-top: 0; }
 		.video-section { margin-top: 80px; }
+
+		/* ── STATS BANNER ── */
+		.event-count-heading {
+			text-align: center;
+			padding: 70px 40px 50px;
+		}
+		.event-stats-banner {
+			background: #1a1a1a;
+			padding: 50px 60px;
+			display: flex;
+			justify-content: space-between;
+			align-items: flex-start;
+			gap: 24px;
+		}
+		.event-stat {
+			flex: 1;
+			text-align: center;
+			color: #fff;
+			border-right: 1px solid rgba(255,255,255,0.15);
+			padding: 0 20px;
+		}
+		.event-stat:last-child { border-right: none; }
+		.event-stat-number {
+			display: block;
+			font-family: 'Canela', 'Georgia', serif;
+			font-size: 36px;
+			font-weight: 300;
+			letter-spacing: 0.02em;
+			margin-bottom: 10px;
+		}
+		.event-stat-label {
+			display: block;
+			font-size: 12px;
+			font-weight: 400;
+			letter-spacing: 0.12em;
+			text-transform: uppercase;
+			line-height: 1.5;
+			color: rgba(255,255,255,0.75);
+		}
+		@media (max-width: 768px) {
+			.event-stats-banner {
+				flex-direction: column;
+				padding: 40px 30px;
+				gap: 30px;
+			}
+			.event-stat {
+				border-right: none;
+				border-bottom: 1px solid rgba(255,255,255,0.15);
+				padding: 0 0 24px;
+			}
+			.event-stat:last-child { border-bottom: none; padding-bottom: 0; }
+			.event-stat-number { font-size: 28px; }
+		}
 	</style>
 </head>
 	<body>
@@ -256,6 +309,33 @@ f.parentNode.insertBefore(j, f);
 		</div>
 
 	</section>
+
+	<div class="event-count-heading">
+		<h2 class="exceptional-heading">+400 événements organisés par an</h2>
+	</div>
+
+	<div class="event-stats-banner">
+		<div class="event-stat">
+			<span class="event-stat-number">5 000 m²</span>
+			<span class="event-stat-label">de réception</span>
+		</div>
+		<div class="event-stat">
+			<span class="event-stat-number">4</span>
+			<span class="event-stat-label">rooftops</span>
+		</div>
+		<div class="event-stat">
+			<span class="event-stat-number">4</span>
+			<span class="event-stat-label">lobbys</span>
+		</div>
+		<div class="event-stat">
+			<span class="event-stat-number">Le Dana</span>
+			<span class="event-stat-label">restaurant avec +80 couverts<br>intérieur &amp; terrasse</span>
+		</div>
+		<div class="event-stat">
+			<span class="event-stat-number">20</span>
+			<span class="event-stat-label">salles de réunion dont<br>1 centre de conférence<br>pour 120 personnes</span>
+		</div>
+	</div>
 
 
 	<section class="details-section">
