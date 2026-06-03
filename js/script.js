@@ -70,6 +70,15 @@ window.addEventListener("click", function (e) {
 //   });
 // });
 
+// Auto-open modal if redirected from contact.html
+if (sessionStorage.getItem('openContactModal') === '1') {
+  sessionStorage.removeItem('openContactModal');
+  document.addEventListener('DOMContentLoaded', () => {
+    const panel = document.getElementById("sideContactForm");
+    if (panel) panel.classList.add("active");
+  });
+}
+
 // FORM CONTACT //
 
 const contactBtn = document.querySelectorAll(
