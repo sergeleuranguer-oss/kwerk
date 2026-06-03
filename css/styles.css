@@ -395,7 +395,8 @@ a {
 .offre-bloc {
   flex: 1 1 0;
   position: relative;
-  aspect-ratio: 2/3;
+  height: 450px;
+  aspect-ratio: unset;
   background: #111 center/cover no-repeat;
   display: flex;
   flex-direction: column;
