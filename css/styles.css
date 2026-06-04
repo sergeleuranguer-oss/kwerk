@@ -413,6 +413,14 @@ a {
   aspect-ratio: unset;
 }
 
+.offres-grid--event .offre-bloc {
+  justify-content: center;
+}
+
+.offres-grid--event .offre-label {
+  margin-top: 0;
+}
+
 .offre-bloc::before {
   content: "";
   position: absolute;
