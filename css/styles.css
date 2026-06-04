@@ -417,7 +417,7 @@ a {
   justify-content: center;
 }
 
-.offres-grid--event .offre-label {
+.offres-grid--event .offre-bloc .offre-label {
   margin-top: 0;
 }
 
