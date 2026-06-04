@@ -3,7 +3,7 @@
 <head>
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<title>YOUR BUILDING, MANAGED BY KWERK – Kwerk</title>
+	<title>YOUR BUILDING, OPERATED BY KWERK – Kwerk</title>
 	<meta name="description" content="Kwerk deploys its premium hospitality expertise within your offices — reception, dining, sport & wellness, events. A French pioneer for over ten years.">
 	<!-- Google Tag Manager -->
 	<script>
@@ -708,6 +708,79 @@ f.parentNode.insertBefore(j, f);
 				display: block;
 			}
 		}
+
+		/* ── UNE OFFRE, DEUX REGARDS ── */
+		.mk-offer-section {
+			background: #fff;
+			padding: 20px 0 60px;
+		}
+		.mk-offer-container {
+			max-width: 1200px;
+			margin: 0 auto;
+			padding: 0 40px;
+			text-align: center;
+		}
+		.mk-offer-grid {
+			display: grid;
+			grid-template-columns: 1fr 1fr;
+			gap: 0;
+			background: transparent;
+			margin-top: 24px;
+			text-align: center;
+		}
+		.mk-offer-card {
+			background: #fff;
+			padding: 32px 40px;
+			display: flex;
+			flex-direction: column;
+			align-items: center;
+		}
+		.mk-offer-eyebrow {
+			display: block;
+			font-family: 'Helvetica Neue', HelveticaNeue, sans-serif;
+			font-weight: 300;
+			font-size: 20px;
+			line-height: 1.7;
+			color: #222;
+			margin-bottom: 16px;
+		}
+		.mk-offer-bar {
+			display: block;
+			width: 28px;
+			height: 1px;
+			background: #1a1a1a;
+			margin: 0 auto 20px;
+		}
+		.mk-offer-title {
+			font-family: 'Helvetica Neue', HelveticaNeue, sans-serif;
+			font-weight: 300;
+			font-size: 20px;
+			line-height: 1.7;
+			color: #222;
+			margin: 0 0 16px;
+		}
+		.mk-offer-body {
+			font-family: 'Helvetica Neue', HelveticaNeue, sans-serif;
+			font-weight: 300;
+			font-size: 20px;
+			line-height: 1.7;
+			color: #222;
+			margin: 0;
+		}
+		@media (max-width: 900px) {
+			.mk-offer-grid { grid-template-columns: 1fr; }
+			.mk-offer-card { padding: 28px 24px; }
+			.mk-offer-section { padding: 12px 0 40px; }
+			.mk-offer-container { padding: 0 24px; }
+			.mk-offer-eyebrow,
+			.mk-offer-title,
+			.mk-offer-body { font-size: 17px; }
+		}
+		@media (max-width: 700px) {
+			.mk-offer-eyebrow,
+			.mk-offer-title,
+			.mk-offer-body { font-size: 15px; line-height: 1.75; }
+		}
 	</style>
 </head>
 <body>
@@ -737,7 +810,7 @@ f.parentNode.insertBefore(j, f);
 
 	<nav class="navbar">
 		<div class="menu-icon"><img src="../images/menu_burger.svg"></div>
-		<a href="index.html" class="logo-wrapper">
+		<a href="../en.html" class="logo-wrapper">
 			<div class="logo"><img src="../images/logo-sans-bureaux.png"></div>
 		</a>
 		<div class="nav-lang-switch">
@@ -748,15 +821,16 @@ f.parentNode.insertBefore(j, f);
 		<a href="#" class="contact-btn">CONTACT US</a>
 	</nav>
 
+
 	</header>
 
 <!-- MENU -->
 <div class="side-menu" id="sideMenu">
 	<div class="side-menu-header">
-		<a href="index.html"><img src="../images/logo-kwerk-noir.png" alt="Logo"></a>
+		<a href="../en.html"><img src="../images/logo-kwerk-noir.png" alt="Logo"></a>
 		<span class="close-btn" id="closeMenu"><img src="../images/close_cross.svg" alt="close"></span>
 	</div>
-		<ul class="side-menu-links">
+	<ul class="side-menu-links">
 		<li>
 			<a href="espaces.html">OUR OFFICES &amp; SERVICES</a>
 		</li>
@@ -770,6 +844,27 @@ f.parentNode.insertBefore(j, f);
 			<a href="event.html">YOUR EVENTS</a>
 		</li>
 	</ul>
+</div>
+
+<!-- SOUS MENU ADRESSES -->
+<div class="submenu-panel" id="submenuPRAdresses">
+	<div class="submenu-header">
+		<span class="close-submenu" data-back="true">
+			<img src="../images/close_cross.svg" alt="close">
+		</span>
+	</div>
+	<img src="../images/adresses.png" alt="Addresses" class="submenu-img">
+	<div class="submenu-content">
+		<a href="adresses.html">
+			<h4>OUR ADDRESSES</h4>
+		</a>
+		<ul>
+			<li><a href="adresses/messine.html">MESSINE</a></li>
+			<li><a href="adresses/saint-honore.html">SAINT-HONORÉ</a></li>
+			<li><a href="adresses/madeleine.html">MADELEINE</a></li>
+			<li><a href="adresses/haussmann.html">HAUSSMANN</a></li>
+		</ul>
+	</div>
 </div>
 
 <!-- SIDE CONTACT FORM -->
@@ -789,12 +884,18 @@ f.parentNode.insertBefore(j, f);
 				<label>WHAT IS YOUR REQUEST? *</label>
 				<select name="produit" required>
 					<option value="" disabled selected>Please select</option>
-					<option>Executive Offices</option>
-					<option>Signature Suites</option>
-					<option>Private Floors</option>
-					<option>Your Offices Managed By Kwerk</option>
+					<option value="Executive Offices">Executive Offices</option>
+					<option>Your building managed by Kwerk</option>
 					<option>Events</option>
 				</select>
+				<div class="error"></div>
+			</div>
+		</div>
+
+		<div class="ps-field-row single ps-field-row--desk" style="display:none;">
+			<div class="ps-field">
+				<label>HOW MANY DESKS DO YOU NEED? *</label>
+				<input type="number" name="desk" min="1" placeholder="Number of desks">
 				<div class="error"></div>
 			</div>
 		</div>
@@ -859,8 +960,8 @@ f.parentNode.insertBefore(j, f);
 
 		<div class="ps-field-row single">
 			<div class="ps-field">
-				<label>YOUR COMPANY (IF APPLICABLE)</label>
-				<input type="text" name="company" placeholder="Company name">
+				<label>YOUR COMPANY *</label>
+				<input type="text" name="company" placeholder="Company name" required>
 				<div class="error"></div>
 			</div>
 		</div>
@@ -879,18 +980,45 @@ f.parentNode.insertBefore(j, f);
      1. INTRO
      ============================================================ -->
 <section class="exceptional-section">
-	<div class="exceptional-container" data-aos="fade-up">
-		<h2 class="exceptional-heading">Your building, operated like a Kwerk address</h2>
+	<div class="exceptional-container">
+		<h2 class="exceptional-heading">Your building,<br>operated like a Kwerk address</h2>
 		<div style="width: 1px; height: 56px; background: #1a1a1a; margin: 32px auto;"></div>
 		<p class="exceptional-body">
-			We deploy our expertise within your offices. A carefully balanced blend of discreet service and genuine warmth, brought into your spaces for your teams and their guests — making the office a place that unites and attracts your talent. Reception and concierge services, dining, sport and wellness: every service operated to the same standards of excellence as our own Parisian addresses.<br><br>Tenants, owners, asset managers: we take full responsibility for the life of your address, ensuring that every detail contributes to an experience that is uniquely yours.
+			For over ten years, Kwerk has developed an operator's expertise across its own Parisian addresses — expertise tested daily by the companies who work within them. This practice, refined in close contact with your teams, now enables us to bring the hospitality standards of our addresses directly into your offices.<br><br>Tenants, owners, asset managers: we take full responsibility for every aspect of your address, so that each detail contributes to an experience that is uniquely yours.
 		</p>
 	</div>
 </section>
 
 
+
+
 <!-- ============================================================
-     4. RECEPTION & CONCIERGE
+     2. ONE OFFER, TWO PERSPECTIVES
+     ============================================================ -->
+<section class="mk-offer-section">
+	<div class="mk-offer-container">
+		<h2 class="exceptional-heading">One offer, two perspectives</h2>
+		<div style="width: 1px; height: 56px; background: #1a1a1a; margin: 32px auto;"></div>
+		<div class="mk-offer-grid">
+			<div class="mk-offer-card">
+				<span class="mk-offer-eyebrow">OWNERS &amp; ASSET MANAGERS</span>
+				<span class="mk-offer-bar"></span>
+				<h3 class="mk-offer-title">Enhance the value of your real estate asset</h3>
+				<p class="mk-offer-body">A building operated by Kwerk stands out in its market. It attracts discerning tenants and retains them for longer. Our role: to elevate your asset to the hospitality standard of our own Parisian addresses.</p>
+			</div>
+			<div class="mk-offer-card">
+				<span class="mk-offer-eyebrow">OCCUPYING COMPANIES</span>
+				<span class="mk-offer-bar"></span>
+				<h3 class="mk-offer-title">Your headquarters, experienced as a Kwerk address.</h3>
+				<p class="mk-offer-body">For your talent and your guests alike, Kwerk transforms your headquarters into a place of genuine appeal. Our teams anticipate the needs of daily life, and the standard of service mirrors that of our own addresses.</p>
+			</div>
+		</div>
+	</div>
+</section>
+
+
+<!-- ============================================================
+     4. HOSPITALITY
      ============================================================ -->
 <section class="details-section">
 	<div class="details-container">
@@ -899,29 +1027,45 @@ f.parentNode.insertBefore(j, f);
 				<img src="../images/Aurelien.jpg" alt="Reception Kwerk">
 			</div>
 			<div class="image-small">
-				<img src="../images/accueilmaison.jpg" alt="Reception Maison Kwerk">
+				<img src="../images/lobbychat.png" alt="Reception Maison Kwerk">
 			</div>
 			<div class="image-small">
-				<img src="../images/conciergerie.jpg" alt="Concierge Kwerk">
+				<img src="../images/coniergeriechat.png" alt="Concierge Kwerk">
 			</div>
 		</div>
 		<div class="details-text" data-aos="fade-right">
-			<h3 class="details-title">RECEPTION &amp; CONCIERGE</h3>
+			<h3 class="details-title">HOSPITALITY</h3>
 			<p class="details-description">
-				Our teams bring a refined sense of personalised service, inspired by the standards of Paris's most prestigious hotels. With consistency and care, they support your employees and their guests every day — turning every moment at the office into something effortless, fluid and memorable.
+				Our teams cultivate the art of personalised service, drawing inspiration from the codes of the world's finest hotels. With consistency and genuine care, they support your employees and their guests each day, turning every moment at the office into an experience that meets your highest expectations.
 			</p>
 			<div class="details-list">
 				<h4>RECEPTION</h4>
 				<ul>
-					<li>Welcoming members and guests</li>
+					<li>Welcoming employees and their guests</li>
 					<li>Handling parcels and mail</li>
-					<li>Point of contact for day-to-day requests</li>
+					<li>Dedicated point of contact for day-to-day requests</li>
+					<li>International press available on-site</li>
 				</ul>
 				<h4>CONCIERGE</h4>
 				<ul>
-					<li>Reservations management</li>
+					<li>Reservations (restaurants, hotels, taxis, tickets, travel)</li>
 					<li>Organisation of business travel</li>
+					<li>Personal day-to-day services (dry cleaning, errands, deliveries)</li>
 					<li>Handling complex and bespoke requests</li>
+				</ul>
+				<h4>EXPERIENCE</h4>
+				<ul>
+					<li>Animation of shared spaces</li>
+					<li>Communications and events programming for the address</li>
+					<li>Signature sound and scent atmospheres</li>
+					<li>Signage, décor and greenery</li>
+				</ul>
+				<h4>MAINTENANCE &amp; FACILITIES</h4>
+				<ul>
+					<li>Daily eco-responsible cleaning</li>
+					<li>Preventive and corrective technical maintenance</li>
+					<li>Dedicated building manager and facilities supervision</li>
+					<li>Activity reports and personalised follow-up</li>
 				</ul>
 			</div>
 		</div>
@@ -937,43 +1081,49 @@ f.parentNode.insertBefore(j, f);
 		<div class="details-text" data-aos="fade-right">
 			<h3 class="details-title">DINING</h3>
 			<p class="details-description">
-				Our chefs and nutritionists design the full dining experience — from the semi-gastronomic restaurant to the bakery, the brasserie to the barista bar. Every menu reflects the team it serves, every dish follows the rhythm of the seasons, and everything is made fresh in-house.
+				A table is the heart of any house. At Kwerk, our chefs and nutritionist work together to create fresh, seasonal, entirely house-made cuisine. Each address has its own format, each team its own rhythm: from the morning coffee to the eagerly anticipated lunch, from the everyday restaurant to more signature formats for your key meetings. Accessible and honest cooking that knows how to be generous when the moment calls for it.
 			</p>
 			<div class="details-list">
-				<h4>EXECUTIVE RESTAURANT</h4>
-				<ul>
-					<li>A fine dining table for your business lunches</li>
-					<li>Contemporary, globally inspired cuisine, refreshed regularly</li>
-				</ul>
-				<h4>TRADITIONAL BRASSERIE</h4>
+				<h4>STAFF RESTAURANT</h4>
 				<ul>
 					<li>Generous, everyday cooking accessible to all</li>
-					<li>A daily menu designed to bring teams together</li>
+					<li>A menu that changes daily — hot and cold, familiar and adventurous — balanced with input from our nutritionist</li>
+					<li>A well-paced service, designed for the midday break</li>
 				</ul>
-				<h4>BAKERY &amp; SANDWICH BAR</h4>
+				<h4>EXECUTIVE BRASSERIE</h4>
 				<ul>
-					<li>Fresh breads, pastries and sandwiches prepared each morning</li>
-					<li>Available throughout the day, for every schedule</li>
+					<li>A chef's table dedicated to business lunches</li>
+					<li>Attentive plated service and a short menu showcasing the sourcing of each ingredient</li>
 				</ul>
-				<h4>CONNECTED FRIDGE</h4>
+				<h4>ALTERNATIVE DINING</h4>
 				<ul>
-					<li>Fresh, on-the-go options</li>
-					<li>Ideal for team members on the move or working irregular hours</li>
+					<li>Formats with a clear identity: corner, counter, permanent food truck</li>
+					<li>Extended opening hours for quick and easy consumption</li>
 				</ul>
 				<h4>BARISTA &amp; TEA BAR</h4>
 				<ul>
-					<li>Specialty coffees, curated infusions, signature drinks and house-made snacks</li>
-					<li>Moments designed to slow down and reconnect</li>
+					<li>Specialty coffees</li>
+					<li>House-made plant-based drinks, prepared to your taste</li>
+					<li>Fresh drinks made to order</li>
+					<li>House-made sweet and savoury snacks</li>
+				</ul>
+				<h4>EVENTS CATERING</h4>
+				<ul>
+					<li>From coffee breaks to cocktail dinners</li>
+					<li>Prestigious lunches and dinners orchestrated by our chefs</li>
+					<li>Access to an exclusive selection of Kwerk and partner venues</li>
 				</ul>
 			</div>
 		</div>
 		<div class="details-images" data-aos="fade-left">
-			<div class="image-large"><picture><source media="(max-width: 768px)" srcset="../images/Danacuisine-mobile.png"><img src="../images/Danacuisine.png" alt="Le Dana Restaurant Kwerk"></picture></div>
+			<div class="image-large"><picture><source media="(max-width: 768px)" srcset="../images/Danacuisine-mobile.png"><img src="../images/Danacuisine.png" alt="Restaurant Le Dana Kwerk"></picture></div>
 			<div class="image-small"><img src="../images/Plats.png" alt="Fine dining Kwerk"></div>
 			<div class="image-small"><img src="../images/BARISTA(1).jpg" alt="Barista Kwerk"></div>
 		</div>
 	</div>
 </section>
+
+
 
 
 <!-- ============================================================
@@ -982,34 +1132,42 @@ f.parentNode.insertBefore(j, f);
 <section class="details-section">
 	<div class="details-container">
 		<div class="details-images" data-aos="fade-right">
-			<div class="image-large"><img src="../images/galerie/saint-honore/SportSho1.jpg" alt="Sport Kwerk"></div>
+			<div class="image-large"><img src="../images/STUDIO SPORT MESSINE.jpg" alt="Sport Kwerk"></div>
 			<div class="image-small"><img src="../images/Boxe.png" alt="Boxing Kwerk"></div>
 			<div class="image-small"><img src="../images/sauna.jpg" alt="Sauna Kwerk"></div>
 		</div>
 		<div class="details-text" data-aos="fade-left">
 			<h3 class="details-title">SPORT &amp; WELLNESS</h3>
 			<p class="details-description">
-				Sport, recovery, emotional balance: we build a comprehensive programme, led every day by expert coaches, so that everyone can train, unwind and recharge throughout their working day. Our gym facilities and equipment are freely accessible 24 hours a day, 7 days a week.
+				Sport, recovery, emotional balance: we build a comprehensive programme, led every day by expert coaches, so that everyone can train, unwind and recharge at their own pace throughout the working day.
 			</p>
 			<div class="details-list">
 				<h4>SPORT</h4>
 				<ul>
-					<li>Boxing — English &amp; Thai</li>
+					<li>Equipment and specialist machinery management</li>
+					<li>Personal coaching</li>
+					<li>Group class programme</li>
+					<li>Boxing (English &amp; Thai)</li>
 					<li>Cardio, Cross &amp; Functional Training</li>
-					<li>Pilates — Classic, Strengthening &amp; Flow</li>
+					<li>Classic, Strength &amp; Flow Pilates</li>
 					<li>Cycling</li>
-					<li>Hyrox Training</li>
+					<li>Hyrox Preparation</li>
 					<li>Vinyasa &amp; Iyengar Yoga</li>
 					<li>Run Club &amp; Athletic Running</li>
 					<li>HIIT</li>
-					<li>Strength &amp; Conditioning</li>
+					<li>Strength Training</li>
 				</ul>
 				<h4>WELLNESS</h4>
 				<ul>
-					<li>Sauna</li>
-					<li>Float tank cabin</li>
-					<li>Nap room</li>
-					<li>Meditation programme</li>
+					<li>Relaxation circuit (sauna, flotation cabin, nap room, massage chair)</li>
+					<li>Beauty treatments (from nail bar to treatment rooms)</li>
+					<li>Personalised health assessment (fitness programme and training plan)</li>
+				</ul>
+				<h4>EVENTS &amp; PROGRAMMING</h4>
+				<ul>
+					<li>Regular programming (workshops, taster sessions)</li>
+					<li>Team sports challenges and competitions</li>
+					<li>Talks by our experts (nutrition, sleep, performance)</li>
 				</ul>
 			</div>
 		</div>
@@ -1020,22 +1178,22 @@ f.parentNode.insertBefore(j, f);
 
 
 <!-- ============================================================
-     10. DIGITAL APPLICATION
+     10. DIGITAL APP
      ============================================================ -->
 <section class="details-section mk-digital-section">
 	<div class="details-container">
 		<div class="details-text" data-aos="fade-right">
-			<h3 class="details-title">DIGITAL APPLICATION</h3>
-			<p class="details-description">Every service at your address, in one app. Built and managed by the Kwerk team to make daily life effortless for everyone.</p>
+			<h3 class="details-title">DIGITAL APP</h3>
+			<p class="details-description">Every service at your address, in one app. Designed and operated by the Kwerk team to simplify everyone's day.</p>
 			<div class="details-list">
 				<h4>FEATURES</h4>
 				<ul>
-					<li>Live address newsfeed: events, highlights and what's on, in real time</li>
-					<li>Book sport sessions and wellness treatments</li>
-					<li>Order in-room services and event catering, à la carte</li>
-					<li>Browse daily menus, barista offerings and every dining option at your address</li>
-					<li>Click &amp; collect ordering for wait-free pickup</li>
-					<li>Integrated wallet to pay for any service in one tap</li>
+					<li>Address newsfeed: events, updates and highlights, in real time</li>
+					<li>Booking for sport classes and wellness sessions</li>
+					<li>Ordering in-room services and event catering à la carte</li>
+					<li>Viewing today's menus, the barista offering and all dining options at the address</li>
+					<li>Click &amp; collect ordering, for no-wait pickup</li>
+					<li>Integrated wallet, to pay for all services in one tap</li>
 				</ul>
 			</div>
 		</div>
@@ -1046,6 +1204,8 @@ f.parentNode.insertBefore(j, f);
 </section>
 
 
+
+
 <!-- ============================================================
      12. CTA FINAL
      ============================================================ -->
@@ -1053,14 +1213,17 @@ f.parentNode.insertBefore(j, f);
 	<div class="mk-cta-bg"></div>
 	<div class="mk-cta-overlay"></div>
 	<div class="mk-cta-content" data-aos="fade-up">
-		<h2 class="mk-cta-title">Speak with our team for a tailored proposal</h2>
-		<a href="contact.html" class="mk-cta-btn">CONTACT US</a>
+		<h2 class="mk-cta-title">Speak with our team for a personalised proposal</h2>
+		<a href="#" class="mk-cta-btn contact-btn">CONTACT US</a>
 	</div>
 </section>
+
+
 
 <div class="sticky-btn-contact">
 	<a href="contact.html" class="contact-btn-mobile-sticky">CONTACT US</a>
 </div>
+
 
 <footer class="footer">
 	<div class="footer-container">
@@ -1073,7 +1236,7 @@ f.parentNode.insertBefore(j, f);
 			</div>
 		</div>
 
-				<div class="footer-right">
+		<div class="footer-right">
 			<nav class="footer-nav">
 				<div class="footer-nav-col" data-links="produits">
 					<div class="footer-nav-title"><a href="espaces.html">OUR OFFICES &amp; SERVICES</a></div>

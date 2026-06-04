@@ -3,7 +3,7 @@
 <head>
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<title>Le Dana Restaurant – Kwerk</title>
+	<title>LE DANA — Kwerk</title>
 	<meta name="description" content="Le Dana, an executive restaurant reserved for Kwerk members and their guests, at the heart of Paris.">
 	<!-- Google Tag Manager -->
 	<script>
@@ -108,7 +108,7 @@ f.parentNode.insertBefore(j, f);
 
 	<nav class="navbar">
 		<div class="menu-icon"><img src="../images/menu_burger.svg"></div>
-		<a href="index.html" class="logo-wrapper">
+		<a href="../en.html" class="logo-wrapper">
 			<div class="logo"><img src="../images/logo-sans-bureaux.png"></div>
 		</a>
 		<div class="nav-lang-switch">
@@ -120,17 +120,25 @@ f.parentNode.insertBefore(j, f);
 	</nav>
 
 		<div class="hero-text hero-text--desktop-title-center hero-text--mobile-center">
-			<a href="contact.html" class="btn">GET IN TOUCH</a>
+			<a href="#" class="btn contact-btn">GET IN TOUCH</a>
 		</div>
 	</header>
 
-<!-- MENU---------------------------->
+	<section class="exceptional-section">
+		<div class="exceptional-container" data-aos="fade-up">
+			<h2 class="exceptional-heading">Gastronomy as a daily ritual</h2>
+			<div style="width: 1px; height: 56px; background: #1a1a1a; margin: 32px auto;"></div>
+			<p class="exceptional-body">Le Dana, an executive restaurant reserved for Kwerk members and their guests.<br>A dining experience that transforms every lunch into a moment of genuine distinction.</p>
+		</div>
+	</section>
+
+<!-- MENU -->
 <div class="side-menu" id="sideMenu">
 	<div class="side-menu-header">
-		<a href="index.html"><img src="../images/logo-kwerk-noir.png" alt="Logo"></a>
+		<a href="../en.html"><img src="../images/logo-kwerk-noir.png" alt="Logo"></a>
 		<span class="close-btn" id="closeMenu"><img src="../images/close_cross.svg" alt="close"></span>
 	</div>
-		<ul class="side-menu-links">
+	<ul class="side-menu-links">
 		<li>
 			<a href="espaces.html">OUR OFFICES &amp; SERVICES</a>
 		</li>
@@ -138,12 +146,33 @@ f.parentNode.insertBefore(j, f);
 			<a href="adresses.html">OUR ADDRESSES</a>
 		</li>
 		<li>
-			<a href="maison-kwerk.html">YOUR OFFICES MANAGED BY KWERK</a>
+			<a href="maison-kwerk.html">YOUR BUILDING, MANAGED BY KWERK</a>
 		</li>
 		<li>
 			<a href="event.html">YOUR EVENTS</a>
 		</li>
 	</ul>
+</div>
+
+<!-- SOUS MENU ADRESSES -->
+<div class="submenu-panel" id="submenuPRAdresses">
+	<div class="submenu-header">
+		<span class="close-submenu" data-back="true">
+			<img src="../images/close_cross.svg" alt="close">
+		</span>
+	</div>
+	<img src="../images/adresses.png" alt="Addresses" class="submenu-img">
+	<div class="submenu-content">
+		<a href="adresses.html">
+			<h4>OUR ADDRESSES</h4>
+		</a>
+		<ul>
+			<li><a href="adresses/messine.html">MESSINE</a></li>
+			<li><a href="adresses/saint-honore.html">SAINT-HONORÉ</a></li>
+			<li><a href="adresses/madeleine.html">MADELEINE</a></li>
+			<li><a href="adresses/haussmann.html">HAUSSMANN</a></li>
+		</ul>
+	</div>
 </div>
 
 <!-- SIDE CONTACT FORM -->
@@ -163,10 +192,8 @@ f.parentNode.insertBefore(j, f);
 				<label>WHAT IS YOUR REQUEST? *</label>
 				<select name="produit" required>
 					<option value="" disabled selected>Please select</option>
-					<option>Executive Offices</option>
-					<option>Signature Suites</option>
-					<option>Private Floors</option>
-					<option>Your Offices Managed By Kwerk</option>
+					<option value="Executive Offices">Executive Offices</option>
+					<option>Your building managed by Kwerk</option>
 					<option>Events</option>
 				</select>
 				<div class="error"></div>
@@ -233,8 +260,8 @@ f.parentNode.insertBefore(j, f);
 
 		<div class="ps-field-row single">
 			<div class="ps-field">
-				<label>YOUR COMPANY (IF APPLICABLE)</label>
-				<input type="text" name="company" placeholder="Company name">
+				<label>YOUR COMPANY *</label>
+				<input type="text" name="company" placeholder="Company name" required>
 				<div class="error"></div>
 			</div>
 		</div>
@@ -248,14 +275,6 @@ f.parentNode.insertBefore(j, f);
 	</form>
 </div>
 
-	<section class="exceptional-section">
-		<div class="exceptional-container" data-aos="fade-up">
-			<h2 class="exceptional-heading">Gastronomy as a daily ritual</h2>
-			<div style="width: 1px; height: 56px; background: #1a1a1a; margin: 32px auto;"></div>
-			<p class="exceptional-body">Le Dana, an executive restaurant reserved for Kwerk members and their guests.<br>A dining experience that transforms every lunch into a moment of genuine distinction.</p>
-		</div>
-	</section>
-
 	<section class="adresse-details-section">
 		<div class="adresse-details-block">
 			<div class="adresse-details-img" data-aos="fade-right">
@@ -265,7 +284,7 @@ f.parentNode.insertBefore(j, f);
 				<div class="adresse-details-street">PRIVATE RESTAURANT — 18 rue de Courcelles 75008 — Kwerk Saint-Honoré</div>
 				<h2 class="adresse-details-title" style="font-weight: 700;">WHERE EVERY LUNCH BECOMES A UNIQUE EXPERIENCE</h2>
 				<p class="adresse-details-desc">
-					Le Dana is where gastronomy becomes part of everyday life. In a refined and welcoming setting, each lunch rises to the level of an experience — whether you are entertaining important clients, sharing a special moment with your team, or simply treating yourself to a quality break in the middle of your day.<br><br>Ingredients are carefully sourced from local producers and the menu is refreshed every week to follow the rhythm of the seasons. Each dish is crafted to strike the perfect balance between nourishment and pleasure, without sacrificing one for the other.
+					Le Dana is where gastronomy becomes part of everyday life. In a refined and welcoming setting, every lunch rises to the level of a true experience — whether you are entertaining important clients, sharing a special moment with your team, or simply treating yourself to a quality break in the middle of your day.<br><br>Ingredients are carefully sourced from local producers, and the menu is refreshed every week to follow the rhythm of the seasons. Each dish is crafted to strike the right balance between nourishment and pleasure, without ever sacrificing one for the other.
 				</p>
 			</div>
 		</div>
@@ -277,7 +296,7 @@ f.parentNode.insertBefore(j, f);
 				<div class="adresse-details-street">LAÍS BORBA — EXECUTIVE CHEF AT LE DANA</div>
 				<h2 class="adresse-details-title" style="font-weight: 700;">A FRENCH CUISINE, OPEN TO THE WORLD</h2>
 				<p class="adresse-details-desc">
-					Under the direction of Laís Borba, the menu draws from the great classics of French cuisine only to reinvent them. A contemporary, well-travelled sensibility adds an element of surprise without ever unsettling the palate, making each dish both an invitation to discovery and a moment of genuine comfort.<br><br>With over 10 years of experience in fine dining, Laís has worked in some of the most prestigious restaurants and venues across the world — including the Meraki group in Hong Kong — before joining Kwerk four years ago. A specialist in fusion cuisine, she combines mastery of French culinary tradition with international influences, bringing both rigour and creativity to everything she creates.
+					Under the direction of Laís Borba, the menu draws from the great classics of French cuisine only to reinvent them. A contemporary, well-travelled sensibility adds an element of surprise without ever unsettling the palate, making each dish both an invitation to discovery and a moment of genuine comfort.<br><br>With over 10 years of experience in fine dining, Laís has worked at some of the most prestigious restaurants and venues in the world — including the Meraki group in Hong Kong — before joining Kwerk four years ago. A specialist in fusion cuisine, she combines mastery of French culinary tradition with international influences, bringing both rigour and creativity to everything she creates.
 				</p>
 			</div>
 			<div class="adresse-details-img" data-aos="fade-left">
@@ -286,11 +305,13 @@ f.parentNode.insertBefore(j, f);
 		</div>
 	</section>
 
+
+
 	<section class="exceptional-section carte-intro">
 		<div class="exceptional-container" data-aos="fade-up">
-			<h2 class="exceptional-heading">The Menu</h2>
+			<h2 class="exceptional-heading">The menu</h2>
 			<div style="width: 1px; height: 56px; background: #1a1a1a; margin: 32px auto;"></div>
-			<p class="exceptional-body">Inspired by the seasons</p>
+			<p class="exceptional-body">Seasons and inspirations</p>
 		</div>
 	</section>
 
@@ -342,6 +363,7 @@ f.parentNode.insertBefore(j, f);
 		</div>
 	</div>
 
+
 	<!-- BANDEAU DANAOUT CTA -->
 <section class="dana-cta-section">
 	<div class="dana-cta-bg"></div>
@@ -350,6 +372,7 @@ f.parentNode.insertBefore(j, f);
 <div class="sticky-btn-contact">
 	<a href="contact.html" class="contact-btn-mobile-sticky">CONTACT US</a>
 </div>
+
 
 <footer class="footer">
 	<div class="footer-container">
@@ -361,7 +384,7 @@ f.parentNode.insertBefore(j, f);
 				<a href="https://www.linkedin.com/company/kwerk/" target="_blank" rel="noreferrer noopener" aria-label="LinkedIn"><img src="../images/footer_social/linkedin.svg"/></a>
 			</div>
 		</div>
-				<div class="footer-right">
+		<div class="footer-right">
 			<nav class="footer-nav">
 				<div class="footer-nav-col" data-links="produits">
 					<div class="footer-nav-title"><a href="espaces.html">OUR OFFICES &amp; SERVICES</a></div>
@@ -377,7 +400,7 @@ f.parentNode.insertBefore(j, f);
 				</div>
 				<div class="footer-nav-col">
 					<div class="footer-nav-title">
-						<a href="maison-kwerk.html">YOUR OFFICES MANAGED BY KWERK</a>
+						<a href="maison-kwerk.html">YOUR BUILDING, MANAGED BY KWERK</a>
 					</div>
 				</div>
 				<div class="footer-nav-col">
