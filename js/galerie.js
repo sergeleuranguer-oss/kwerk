@@ -39,7 +39,9 @@ document.addEventListener("DOMContentLoaded", function () {
 
     imagesToShow.forEach((src, index) => {
       const img = document.createElement("img");
-      img.src = src.startsWith('#') ? src.slice(1) : src;
+      let path = src.startsWith('#') ? src.slice(1) : src;
+      if (path.startsWith('/')) path = path.slice(1);
+      img.src = path;
       img.className = "item-" + ((index % 7) + 1);
       grid.appendChild(img);
     });
