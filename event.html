@@ -129,6 +129,51 @@ f.parentNode.insertBefore(j, f);
 			.event-stats-sep { display: none; }
 			.event-stats-line { display: flex; flex-direction: column; gap: 10px; }
 		}
+
+		/* ── CTA BANNER ── */
+		.event-cta-banner {
+			background: #162032;
+			padding: 65px 100px;
+			text-align: center;
+		}
+		.event-cta-banner-title {
+			font-family: "Helvetica Neue", HelveticaNeue, sans-serif;
+			font-size: 40px;
+			font-weight: 300;
+			letter-spacing: -0.5px;
+			line-height: 1.2;
+			color: #ddd5c0;
+			margin: 0 0 28px;
+		}
+		.event-cta-banner-desc {
+			font-family: "Helvetica Neue", HelveticaNeue, sans-serif;
+			font-size: 17px;
+			font-weight: 300;
+			line-height: 1.85;
+			color: #ddd5c0;
+			margin: 0 0 36px;
+		}
+		.event-cta-banner-btn {
+			display: inline-block;
+			padding: 14px 36px;
+			border: 1px solid #c9a870;
+			color: #c9a870 !important;
+			font-size: 13px;
+			font-weight: 500;
+			letter-spacing: 0.12em;
+			text-decoration: none;
+			text-transform: uppercase;
+			background: transparent;
+			transition: background 0.25s, color 0.25s;
+		}
+		.event-cta-banner-btn:hover {
+			background: #c9a870;
+			color: #162032 !important;
+		}
+		@media (max-width: 768px) {
+			.event-cta-banner { padding: 50px 30px; }
+			.event-cta-banner-title { font-size: 28px; }
+		}
 	</style>
 </head>
 	<body class="event-page">
@@ -427,6 +472,12 @@ f.parentNode.insertBefore(j, f);
 			</div>
 		</div>
 	</section>
+
+	<div class="event-cta-banner">
+		<h2 class="event-cta-banner-title">Recevoir à une adresse Kwerk</h2>
+		<p class="event-cta-banner-desc">Nous étudions chaque demande avec notre équipe événementielle et nous vous apportons une réponse dans les 24 heures.</p>
+		<a href="#" class="contact-btn event-cta-banner-btn">Contactez-nous</a>
+	</div>
 
 	<section class="video-section">
 		<div class="video-container">
