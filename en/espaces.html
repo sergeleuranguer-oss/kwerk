@@ -1,18 +1,13 @@
 <!DOCTYPE html>
 <html lang="en">
-	
-<!-- Mirrored from www.kwerk.fr/en/espaces by HTTrack Website Copier/3.x [XR&CO'2014], Mon, 09 Mar 2026 14:52:23 GMT -->
-<!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=UTF-8" /><!-- /Added by HTTrack -->
 <head>
-		<meta charset="UTF-8">
-		<meta name="viewport" content="width=device-width, initial-scale=1.0">
-		<title>
-				Kwerk - Spaces
-		</title>
-		<meta name="description" content="Une sélection d&#039;espaces d&#039;exception : bureaux exécutifs, suites signatures et étages privatifs.">
-		<!-- Google Tag Manager -->
-		<script>
-			(function (w, d, s, l, i) {
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>OUR OFFICES &amp; SERVICES – Kwerk</title>
+	<meta name="description" content="A curated selection of exceptional spaces: executive offices, signature suites and private floors.">
+	<!-- Google Tag Manager -->
+	<script>
+		(function (w, d, s, l, i) {
 w[l] = w[l] || [];
 w[l].push({'gtm.start': new Date().getTime(), event: 'gtm.js'});
 var f = d.getElementsByTagName(s)[0],
@@ -22,20 +17,20 @@ j.async = true;
 j.src = 'https://www.googletagmanager.com/gtm.js?id=' + i + dl;
 f.parentNode.insertBefore(j, f);
 })(window, document, 'script', 'dataLayer', 'GTM-MK4BS4GL');
-		</script>
-		<!-- End Google Tag Manager -->
+	</script>
+	<!-- End Google Tag Manager -->
 
-		<!-- Import Google Fonts (Roboto) -->
-		<link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&amp;display=swap" rel="stylesheet">
-		<link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
-		<link rel="icon" type="image/svg+xml" href="../favicon.ico">
-		
-									<link rel="stylesheet" href="../css/navbar.css">
-							<!-- Votre fichier CSS “pixel-perfect” -->
-		<link rel="stylesheet" href="../css/styles.css">
+	<!-- Import Google Fonts (Roboto) -->
+	<link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&amp;display=swap" rel="stylesheet">
+	<link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+	<link rel="icon" type="image/svg+xml" href="../favicon.ico">
 
-		<link rel="stylesheet" href="../css/footer.css">
-	
+	<link rel="stylesheet" href="../css/navbar.css">
+	<!-- Votre fichier CSS "pixel-perfect" -->
+	<link rel="stylesheet" href="../css/styles.css">
+
+	<link rel="stylesheet" href="../css/footer.css">
+
 	<style>
 		/* ── ESPACES — Section Layout ── */
 		.esp-section {
@@ -92,6 +87,31 @@ f.parentNode.insertBefore(j, f);
 			font-family: 'Helvetica Neue', HelveticaNeue, sans-serif;
 			margin-bottom: 32px;
 		}
+		.esp-features {
+			list-style: none;
+			padding: 0;
+			margin: 0;
+		}
+		.esp-features li {
+			font-size: 10px;
+			letter-spacing: 1.5px;
+			text-transform: uppercase;
+			color: #999;
+			padding: 12px 0;
+			border-bottom: 1px solid #f2f2f2;
+			font-family: 'Helvetica Neue', HelveticaNeue, sans-serif;
+			display: flex;
+			align-items: center;
+			gap: 14px;
+		}
+		.esp-features li::before {
+			content: '';
+			width: 16px;
+			height: 1px;
+			background: #ccc;
+			flex-shrink: 0;
+		}
+		.esp-features li:last-child { border-bottom: none; }
 
 		/* Photo mosaic */
 		.esp-mosaic {
@@ -138,154 +158,153 @@ f.parentNode.insertBefore(j, f);
 			.esp-mosaic-strip img { height: 90px; }
 			.esp-inner, .esp-inner.esp-reverse { padding: 0 20px; }
 		}
+	/* ── CTA FINAL BANDEAU ── */
+	.mk-cta-section {
+		position: relative;
+		min-height: 850px;
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		overflow: hidden;
+	}
+	.mk-cta-bg {
+		position: absolute;
+		inset: 0;
+		background-image: url('../images/ROOFTOP.jpg');
+		background-size: cover;
+		background-position: center;
+	}
+	.mk-cta-overlay {
+		position: absolute;
+		inset: 0;
+		background: rgba(0, 0, 0, 0.62);
+	}
+	.mk-cta-content {
+		position: relative;
+		z-index: 2;
+		text-align: center;
+		padding: 80px 40px;
+	}
+	.mk-cta-title {
+		font-size: 28px;
+		font-weight: 300;
+		color: #fff;
+		letter-spacing: 1px;
+		text-transform: none;
+		margin-bottom: 32px;
+		line-height: 1.4;
+		font-family: 'Helvetica Neue', HelveticaNeue, sans-serif;
+	}
+	.mk-cta-btn {
+		position: relative;
+		display: inline-block;
+		border: 1px solid white;
+		padding: 8px 16px;
+		text-decoration: none;
+		color: white;
+		font-size: 12px;
+		text-transform: uppercase;
+		letter-spacing: 1.2px;
+		font-family: 'Helvetica Neue', HelveticaNeue, sans-serif;
+		font-weight: 200;
+		transition: border-color 0.2s ease, color 0.2s ease;
+	}
+	.mk-cta-btn:hover { border-color: transparent; border-bottom: 1px solid white; }
 
-		/* ── SERVICES SECTIONS ── */
-		.details-section .details-container { align-items: start; }
-		.details-section .details-text { padding-top: 0; }
-		.details-section .image-large { height: 340px; overflow: hidden; }
-		.details-section .image-large img { width: 100%; height: 100%; object-fit: cover; }
-		.mk-cuisine-section { padding-bottom: 0 !important; }
-		.mk-entretien-img { display: block !important; }
-		.mk-entretien-img .image-large { height: auto; }
-		.mk-entretien-img .image-large img { width: 100%; height: auto; object-fit: unset; }
-		.mk-event-img { display: block !important; }
-		.mk-event-img .image-large { height: auto; }
-		.mk-event-img .image-large img { width: 100%; height: auto; object-fit: unset; }
-		.mk-digital-img { display: block !important; }
-		.mk-digital-img .image-large { height: auto; }
-		.mk-digital-img .image-large img { width: 100%; height: auto; object-fit: unset; }
-		@media (max-width: 480px) { .details-section .details-text { padding-top: 0; } .details-section .details-container { align-items: stretch; } }
-		/* Alternance image → texte forcée sur mobile + grille images conservée */
-		@media (max-width: 900px) {
-			.details-section .details-images,
-			.details-section .event-duo { order: 1; }
-			.details-section .details-text { order: 2; }
-			.details-section .details-images {
-				grid-template-columns: repeat(2, 1fr);
-			}
+	/* ── SERVICES (from maison-kwerk) ── */
+	.details-section .details-container { align-items: start; }
+	.details-section .details-text { padding-top: 0; }
+	.details-section .image-large { height: 340px; overflow: hidden; }
+	.details-section .image-large img { width: 100%; height: 100%; object-fit: cover; }
+	.mk-cuisine-section { padding-bottom: 0 !important; }
+	.mk-entretien-img { display: block !important; }
+	.mk-entretien-img .image-large { height: auto; }
+	.mk-entretien-img .image-large img { width: 100%; height: auto; object-fit: unset; }
+	.mk-event-img { display: block !important; }
+	.mk-event-img .image-large { height: auto; }
+	.mk-event-img .image-large img { width: 100%; height: auto; object-fit: unset; }
+	.mk-digital-img { display: block !important; }
+	.mk-digital-img .image-large { height: auto; }
+	.mk-digital-img .image-large img { width: 100%; height: auto; object-fit: unset; }
+	@media (max-width: 480px) { .details-section .details-text { padding-top: 0; } .details-section .details-container { align-items: stretch; } }
+	/* Alternance image → texte forcée sur mobile + grille images conservée */
+	@media (max-width: 900px) {
+		.details-section .details-images,
+		.details-section .event-duo { order: 1; }
+		.details-section .details-text { order: 2; }
+		.details-section .details-images {
+			grid-template-columns: repeat(2, 1fr);
 		}
-		@media (max-width: 768px) {
-			.details-section .details-images .image-small {
-				display: block;
-			}
+	}
+	@media (max-width: 768px) {
+		.details-section .details-images .image-small {
+			display: block;
 		}
+	}
 
-		/* ── CTA FINAL BANDEAU ── */
-		.mk-cta-section {
-			position: relative;
-			min-height: 850px;
-			display: flex;
-			align-items: center;
-			justify-content: center;
-			overflow: hidden;
-		}
-		.mk-cta-bg {
-			position: absolute;
-			inset: 0;
-			background-image: url('../images/ROOFTOP.jpg');
-			background-size: cover;
-			background-position: center;
-		}
-		.mk-cta-overlay {
-			position: absolute;
-			inset: 0;
-			background: rgba(0, 0, 0, 0.62);
-		}
-		.mk-cta-content {
-			position: relative;
-			z-index: 2;
-			text-align: center;
-			padding: 80px 40px;
-		}
-		.mk-cta-title {
-			font-size: 28px;
-			font-weight: 300;
-			color: #fff;
-			letter-spacing: 1px;
-			text-transform: none;
-			margin-bottom: 32px;
-			line-height: 1.4;
-			font-family: 'Helvetica Neue', HelveticaNeue, sans-serif;
-		}
-		.mk-cta-btn {
-			position: relative;
-			display: inline-block;
-			border: 1px solid white;
-			padding: 8px 16px;
-			text-decoration: none;
-			color: white;
-			font-size: 12px;
-			text-transform: uppercase;
-			letter-spacing: 1.2px;
-			font-family: 'Helvetica Neue', HelveticaNeue, sans-serif;
-			font-weight: 200;
-			transition: border-color 0.2s ease, color 0.2s ease;
-		}
-		.mk-cta-btn:hover { border-color: transparent; border-bottom: 1px solid white; }
-		@media (max-width: 900px) {
-			.mk-cta-section { min-height: 60vh; }
-			.mk-cta-title { font-size: 22px; }
-			.mk-cta-content { padding: 50px 24px; }
-		}
-		@media (max-width: 480px) {
-			.mk-cta-section { min-height: 50vh; }
-			.mk-cta-title { font-size: 18px; }
-			.mk-cta-content { padding: 32px 16px; }
-		}
+	/* ── CTA SECTION RESPONSIVE ── */
+	@media (max-width: 900px) {
+		.mk-cta-section { min-height: 60vh; }
+		.mk-cta-title { font-size: 22px; }
+		.mk-cta-content { padding: 50px 24px; }
+	}
+	@media (max-width: 480px) {
+		.mk-cta-section { min-height: 50vh; }
+		.mk-cta-title { font-size: 18px; }
+		.mk-cta-content { padding: 32px 16px; }
+	}
 	</style>
 </head>
-	<body>
-		<div id="pageLoader" class="page-loader">
-			<div class="loader-content">
-				<div class="loader-logo">
-					<img src="../images/logo_kwerk.png" alt="Kwerk" class="loader-logo-img">
-				</div>
-				<div class="loader-animation">
-					<div class="loader-circle">
-						<div class="loader-path"></div>
-					</div>
-				</div>
-				<div class="loader-progress">
-					<div class="progress-bar" id="progressBar"></div>
+<body>
+	<div id="pageLoader" class="page-loader">
+		<div class="loader-content">
+			<div class="loader-logo">
+				<img src="../images/logo_kwerk.png" alt="Kwerk" class="loader-logo-img">
+			</div>
+			<div class="loader-animation">
+				<div class="loader-circle">
+					<div class="loader-path"></div>
 				</div>
 			</div>
+			<div class="loader-progress">
+				<div class="progress-bar" id="progressBar"></div>
+			</div>
 		</div>
-		<!-- Google Tag Manager (noscript) -->
-		<noscript>
-			<iframe src="https://www.googletagmanager.com/ns.html?id=GTM-MK4BS4GL" height="0" width="0" style="display:none;visibility:hidden"></iframe>
-		</noscript>
-		<!-- End Google Tag Manager (noscript) -->
+	</div>
+	<!-- Google Tag Manager (noscript) -->
+	<noscript>
+		<iframe src="https://www.googletagmanager.com/ns.html?id=GTM-MK4BS4GL" height="0" width="0" style="display:none;visibility:hidden"></iframe>
+	</noscript>
+	<!-- End Google Tag Manager (noscript) -->
 
-					<header class="hero" style="background-color: #000;">
-			<div class="hero-video hero-slideshow" style="background-image: url('../images/content/Suite_SHO_v2.png');" data-hero-slides="../images/content/Suite_SHO_v2.png,../images/content/Salle_de_reunion_Mes_1.jpg,../images/content/SHO_privatifs.png,../images/content/Bureaux_Hsm_1.png,../images/content/Suite_SHO_2.png"></div>
-		
+	<header class="hero" style="background-color: #000;">
+		<div class="hero-video hero-slideshow" style="background-image: url('../images/content/Suite_SHO_v2.png');" data-hero-slides="../images/content/Suite_SHO_v2.png,../images/content/Salle_de_reunion_Mes_1.jpg,../images/content/SHO_privatifs.png,../images/content/Bureaux_Hsm_1.png,../images/content/Suite_SHO_2.png"></div>
+
 	<nav class="navbar">
 		<div class="menu-icon"><img src="../images/menu_burger.svg"></div>
-		<a href="index.html" class="logo-wrapper">
+		<a href="../en.html" class="logo-wrapper">
 			<div class="logo"><img src="../images/logo-sans-bureaux.png"></div>
-			
 		</a>
 		<div class="nav-lang-switch">
 			<a href="../espaces.html">FR</a>
 			<span class="lang-sep">/</span>
 			<a href="espaces.html">EN</a>
 		</div>
-		<a href="contact.html" class="contact-btn ">CONTACT US</a>
+		<a href="#" class="contact-btn">CONTACT US</a>
 	</nav>
 
-			<div class="hero-text hero-text--desktop-title-center hero-text--mobile-center">
-			<a href="contact.html" class="btn">GET IN TOUCH</a>
-
-		</div>
+		<div class="hero-text hero-text--desktop-title-center hero-text--mobile-center">
+		<a href="#" class="btn contact-btn">GET IN TOUCH</a>
+	</div>
 	</header>
 
-<!-- MENU---------------------------->
+<!-- MENU -->
 <div class="side-menu" id="sideMenu">
 	<div class="side-menu-header">
-		<a href="index.html"><img src="../images/logo-kwerk-noir.png" alt="Logo"></a>
+		<a href="../en.html"><img src="../images/logo-kwerk-noir.png" alt="Logo"></a>
 		<span class="close-btn" id="closeMenu"><img src="../images/close_cross.svg" alt="close"></span>
 	</div>
-			<ul class="side-menu-links">
+	<ul class="side-menu-links">
 		<li>
 			<a href="espaces.html">OUR OFFICES &amp; SERVICES</a>
 		</li>
@@ -293,16 +312,34 @@ f.parentNode.insertBefore(j, f);
 			<a href="adresses.html">OUR ADDRESSES</a>
 		</li>
 		<li>
-			<a href="maison-kwerk.html">YOUR OFFICES MANAGED BY KWERK</a>
+			<a href="maison-kwerk.html">YOUR BUILDING<br>MANAGED BY KWERK</a>
 		</li>
 		<li>
 			<a href="event.html">YOUR EVENTS</a>
 		</li>
 	</ul>
-
 </div>
 
-
+<!-- SUBMENU ADDRESSES -->
+<div class="submenu-panel" id="submenuPRAdresses">
+	<div class="submenu-header">
+		<span class="close-submenu" data-back="true">
+			<img src="../images/close_cross.svg" alt="close">
+		</span>
+	</div>
+	<img src="../images/adresses.png" alt="Our Addresses" class="submenu-img">
+	<div class="submenu-content">
+		<a href="adresses.html">
+			<h4>OUR ADDRESSES</h4>
+		</a>
+		<ul>
+			<li><a href="adresses/messine.html">MESSINE</a></li>
+			<li><a href="adresses/saint-honore.html">SAINT-HONORÉ</a></li>
+			<li><a href="adresses/madeleine.html">MADELEINE</a></li>
+			<li><a href="adresses/haussmann.html">HAUSSMANN</a></li>
+		</ul>
+	</div>
+</div>
 
 <!-- SIDE CONTACT FORM -->
 <div class="side-contact-form" id="sideContactForm">
@@ -312,7 +349,7 @@ f.parentNode.insertBefore(j, f);
 			<img src="../images/close_cross.svg" alt="close">
 		</span>
 	</div>
-		<form class="contact-form-fields">
+	<form class="contact-form-fields">
 
 		<!-- YOUR REQUEST -->
 		<h3 class="contact-section-title">YOUR REQUEST</h3>
@@ -322,12 +359,18 @@ f.parentNode.insertBefore(j, f);
 				<label>WHAT IS YOUR REQUEST? *</label>
 				<select name="produit" required>
 					<option value="" disabled selected>Please select</option>
-					<option>Executive Offices</option>
-					<option>Signature Suites</option>
-					<option>Private Floors</option>
-					<option>Your Offices Managed By Kwerk</option>
+					<option value="Bureaux">Executive Offices</option>
+					<option>Your building managed by Kwerk</option>
 					<option>Events</option>
 				</select>
+				<div class="error"></div>
+			</div>
+		</div>
+
+		<div class="ps-field-row single ps-field-row--desk" style="display:none;">
+			<div class="ps-field">
+				<label>HOW MANY DESKS DO YOU NEED? *</label>
+				<input type="number" name="desk" min="1" placeholder="Number of desks">
 				<div class="error"></div>
 			</div>
 		</div>
@@ -345,7 +388,7 @@ f.parentNode.insertBefore(j, f);
 					<option>Professional meeting at Kwerk</option>
 					<option>In the press</option>
 					<option>At a Kwerk event</option>
-					<option>During lunch at the Dana restaurant</option>
+					<option>During lunch at Le Dana restaurant</option>
 				</select>
 				<div class="error"></div>
 			</div>
@@ -392,8 +435,8 @@ f.parentNode.insertBefore(j, f);
 
 		<div class="ps-field-row single">
 			<div class="ps-field">
-				<label>YOUR COMPANY (IF APPLICABLE)</label>
-				<input type="text" name="company" placeholder="Company name">
+				<label>YOUR COMPANY *</label>
+				<input type="text" name="company" placeholder="Company name" required>
 				<div class="error"></div>
 			</div>
 		</div>
@@ -406,8 +449,6 @@ f.parentNode.insertBefore(j, f);
 		</div>
 	</form>
 </div>
-				
-
 
 
 <!-- ============================================================
@@ -415,10 +456,10 @@ f.parentNode.insertBefore(j, f);
      ============================================================ -->
 <section class="exceptional-section">
 	<div class="exceptional-container" data-aos="fade-up">
-		<h2 class="exceptional-heading">Exceptional offices,<br>in the heart of Paris</h2>
+		<h2 class="exceptional-heading">Offices designed and operated<br>to the standards of a great house</h2>
 		<div style="width: 1px; height: 56px; background: #1a1a1a; margin: 32px auto;"></div>
 		<p class="exceptional-body">
-			From intimate offices to entirely private floors, each space combines uniqueness, comfort and confidentiality.
+			From intimate offices to entirely private floors, our Paris addresses primarily welcome teams from finance, technology and corporate law — clients for whom the quality of their address is part of their success.
 		</p>
 	</div>
 </section>
@@ -442,7 +483,7 @@ f.parentNode.insertBefore(j, f);
 			<span class="esp-eyebrow" style="margin-top: 10px; margin-bottom: 0;">10 TO 60 M²</span>
 			<span class="esp-bar"></span>
 			<p class="esp-desc">
-				Intimate, fully furnished offices bathed in natural light, designed to welcome you in an elegant and serene setting. Each space combines comfort, discretion and confidentiality, offering optimal working conditions in an environment conducive to focus.
+				Beautifully appointed offices, fully furnished and filled with natural light, designed to welcome you in an elegant, serene setting. Each space combines comfort, discretion and confidentiality, offering optimal working conditions in an environment built for focus.
 			</p>
 		</div>
 	</div>
@@ -459,7 +500,7 @@ f.parentNode.insertBefore(j, f);
 			<span class="esp-eyebrow" style="margin-top: 10px; margin-bottom: 0;">40 TO 270 M²</span>
 			<span class="esp-bar"></span>
 			<p class="esp-desc">
-				Fully customizable suites combining reception areas, private lounges and meeting rooms. Ideal for client-facing meetings, they offer a premium environment for hosting in a refined and confidential atmosphere.
+				Fully customisable suites combining reception areas, private lounges and meeting rooms. True spaces for representation, they offer a premium setting for meetings and client entertaining — refined, confidential and distinctly Kwerk.
 			</p>
 		</div>
 		<div class="esp-mosaic" data-aos="fade-left">
@@ -492,7 +533,7 @@ f.parentNode.insertBefore(j, f);
 			<span class="esp-eyebrow" style="margin-top: 10px; margin-bottom: 0;">FROM 150 M²</span>
 			<span class="esp-bar"></span>
 			<p class="esp-desc">
-				Entire floors, fully private and tailored to your needs, integrating reception areas, collaborative spaces, phone booths and private terraces. Each floor offers exceptional flexibility, allowing you to create a workspace perfectly aligned with your teams and organization.
+				Entirely private floors, configurable to your specifications, incorporating reception areas, collaborative zones, call booths and private terraces. Each floor offers great freedom of layout, making it possible to create a working environment that reflects your company's identity and needs.
 			</p>
 		</div>
 	</div>
@@ -508,7 +549,7 @@ f.parentNode.insertBefore(j, f);
 		<h2 class="exceptional-heading">The services included in your spaces, every day</h2>
 		<div style="width: 1px; height: 56px; background: #1a1a1a; margin: 32px auto;"></div>
 		<p class="exceptional-body">
-			Reception and concierge, dining, sport and wellness, events, facilities management, digital application: every service operated to the same standards of excellence for a truly unique experience.
+			Reception and concierge, dining, sport and wellness, events, facilities management, digital app: every service is delivered to the same standard of excellence, for a truly distinctive experience.
 		</p>
 	</div>
 </section>
@@ -530,20 +571,20 @@ f.parentNode.insertBefore(j, f);
 		<div class="details-text" data-aos="fade-right">
 			<h3 class="details-title">RECEPTION &amp; CONCIERGE</h3>
 			<p class="details-description">
-				Our teams bring a refined sense of personalised service, inspired by the standards of Paris's most prestigious hotels. With consistency and care, they support your employees and their guests every day — turning every moment at the office into something effortless, fluid and memorable.
+				Our teams bring the art of personal service — inspired by the best Parisian hospitality houses — to every interaction. Consistent, attentive and warm, they support your colleagues and guests day after day, making every moment at the office feel effortless and memorable.
 			</p>
 			<div class="details-list">
 				<h4>RECEPTION</h4>
 				<ul>
-					<li>Welcoming members and guests</li>
-					<li>Handling parcels and mail</li>
-					<li>Point of contact for day-to-day requests</li>
+					<li>Member and guest reception</li>
+					<li>Parcel and mail handling</li>
+					<li>Daily requests and enquiries</li>
 				</ul>
 				<h4>CONCIERGE</h4>
 				<ul>
-					<li>Reservations management</li>
-					<li>Organisation of business travel</li>
-					<li>Handling complex and bespoke requests</li>
+					<li>Reservation management</li>
+					<li>Professional travel coordination</li>
+					<li>Complex and bespoke requests</li>
 				</ul>
 			</div>
 		</div>
@@ -556,33 +597,33 @@ f.parentNode.insertBefore(j, f);
 		<div class="details-text" data-aos="fade-right">
 			<h3 class="details-title">DINING</h3>
 			<p class="details-description">
-				Our chefs and nutritionists design the full dining experience — from the semi-gastronomic restaurant to the bakery, the brasserie to the barista bar. Every menu reflects the team it serves, every dish follows the rhythm of the seasons, and everything is made fresh in-house.
+				Our chefs and nutritionists design the full food offering — from semi-gastronomic dining to the bakery, from the brasserie to the barista counter. Every menu reflects the team, every dish follows the seasons, and everything is fresh and entirely house-made.
 			</p>
 			<div class="details-list">
 				<h4>EXECUTIVE RESTAURANT</h4>
 				<ul>
-					<li>A fine dining table for your business lunches</li>
-					<li>Contemporary, globally inspired cuisine, refreshed regularly</li>
+					<li>Semi-gastronomic table for your business lunches</li>
+					<li>Contemporary world cuisine, refreshed according to the season</li>
 				</ul>
 				<h4>TRADITIONAL BRASSERIE</h4>
 				<ul>
-					<li>Generous, everyday cooking accessible to all</li>
+					<li>Generous, accessible everyday cooking</li>
 					<li>A daily menu designed to bring teams together</li>
 				</ul>
 				<h4>BAKERY &amp; SANDWICH BAR</h4>
 				<ul>
-					<li>Fresh breads, pastries and sandwiches prepared each morning</li>
+					<li>Breads, pastries and sandwiches prepared each morning</li>
 					<li>Available throughout the day, for every schedule</li>
 				</ul>
-				<h4>CONNECTED FRIDGE</h4>
+				<h4>SMART FRIDGE</h4>
 				<ul>
-					<li>Fresh, on-the-go options</li>
-					<li>Ideal for team members on the move or working irregular hours</li>
+					<li>Fresh, accessible options</li>
+					<li>Ideal for colleagues on the go or working non-standard hours</li>
 				</ul>
 				<h4>BARISTA &amp; TEA BAR</h4>
 				<ul>
 					<li>Specialty coffees, curated infusions, signature drinks and house-made snacks</li>
-					<li>Moments designed to slow down and reconnect</li>
+					<li>Pause rituals for slowing down and reconnecting</li>
 				</ul>
 			</div>
 		</div>
@@ -595,7 +636,7 @@ f.parentNode.insertBefore(j, f);
 </section>
 
 <div style="text-align:center; padding: 40px 0 20px;">
-	<a href="restaurant-dana.html" class="exceptional-cta">DISCOVER LE DANA RESTAURANT</a>
+	<a href="restaurant-dana.html" class="exceptional-cta">DISCOVER OUR RESTAURANT LE DANA</a>
 </div>
 
 <!-- SPORT & WELLNESS -->
@@ -609,25 +650,25 @@ f.parentNode.insertBefore(j, f);
 		<div class="details-text" data-aos="fade-left">
 			<h3 class="details-title">SPORT &amp; WELLNESS</h3>
 			<p class="details-description">
-				Sport, recovery, emotional balance: we build a comprehensive programme, led every day by expert coaches, so that everyone can train, unwind and recharge throughout their working day. Our gym facilities and equipment are freely accessible 24 hours a day, 7 days a week.
+				Sport, recovery, emotional balance: we build a complete programme, delivered daily by expert coaches, so everyone can train, unwind and recharge throughout their day. Our gym equipment and machines are freely accessible 24/7.
 			</p>
 			<div class="details-list">
 				<h4>SPORT</h4>
 				<ul>
-					<li>Boxing — English &amp; Thai</li>
+					<li>Boxing (English &amp; Thai)</li>
 					<li>Cardio, Cross &amp; Functional Training</li>
-					<li>Pilates — Classic, Strengthening &amp; Flow</li>
+					<li>Classic, Strength &amp; Flow Pilates</li>
 					<li>Cycling</li>
-					<li>Hyrox Training</li>
+					<li>Hyrox Preparation</li>
 					<li>Vinyasa &amp; Iyengar Yoga</li>
 					<li>Run Club &amp; Athletic Running</li>
 					<li>HIIT</li>
-					<li>Strength &amp; Conditioning</li>
+					<li>Strength Training</li>
 				</ul>
 				<h4>WELLNESS</h4>
 				<ul>
 					<li>Sauna</li>
-					<li>Float tank cabin</li>
+					<li>Flotation cabin</li>
 					<li>Nap room</li>
 					<li>Meditation programme</li>
 				</ul>
@@ -642,15 +683,15 @@ f.parentNode.insertBefore(j, f);
 		<div class="details-text" data-aos="fade-right">
 			<h3 class="details-title">EVENTS</h3>
 			<p class="details-description">
-				We design and orchestrate complete event experiences, integrating scenography, technical production and on-site coordination. From set creation to full technical management (sound, lighting, video) and team leadership, we deliver a seamless, high-quality execution. Our bespoke staging, combined with the expertise of our technicians and meticulous coordination, ensures every event is perfectly mastered.
+				We design and orchestrate complete experiences, integrating set design, technical production and on-site coordination. From scenic design to sound, light and video production — through to full team management on the day — we deliver seamless, exacting events. Our bespoke scenography, combined with our technicians' expertise and rigorous coordination, ensures every event is perfectly controlled.
 			</p>
 			<div class="details-list">
-				<h4>ACTIVATIONS</h4>
+				<h4>PROGRAMMING</h4>
 				<ul>
-					<li>Culinary experiences: catering, live show cooking, cocktail bars</li>
+					<li>Culinary experiences: caterer, live cooking, cocktail bar</li>
 					<li>Creative workshops</li>
 					<li>Pop-ups, product launches</li>
-					<li>Photo shoots, video production</li>
+					<li>Photo shoots, video productions</li>
 					<li>DJ sets, visual performances</li>
 					<li>Press conferences, masterclasses</li>
 				</ul>
@@ -663,23 +704,23 @@ f.parentNode.insertBefore(j, f);
 	</div>
 </section>
 
-<!-- FACILITIES MANAGEMENT -->
+<!-- FACILITIES & MAINTENANCE -->
 <section class="details-section">
 	<div class="details-container">
 		<div class="details-images mk-entretien-img" data-aos="fade-right">
-			<div class="image-large"><img src="../images/vitre.png" alt="Facilities Management Kwerk"></div>
+			<div class="image-large"><img src="../images/vitre.png" alt="Facilities &amp; Maintenance Kwerk"></div>
 		</div>
 		<div class="details-text" data-aos="fade-left">
-			<h3 class="details-title">FACILITIES MANAGEMENT</h3>
+			<h3 class="details-title">FACILITIES &amp; MAINTENANCE</h3>
 			<p class="details-description">
-				The quality and longevity of a workspace depends on rigorous maintenance management. We work with trusted partners to keep your spaces impeccable and fully operational at all times. A permanent quality monitoring programme, day in and day out, to uphold the standards that define your organisation.
+				The quality and longevity of our spaces depend on rigorous upkeep and maintenance management. We rely on trusted partners to keep every space immaculate and fully operational. A permanent quality standard, maintained daily, to uphold the level of excellence that defines your company.
 			</p>
 			<div class="details-list">
 				<h4>SERVICES</h4>
 				<ul>
 					<li>Daily cleaning</li>
-					<li>Quality standards defined and monitored by Kwerk</li>
-					<li>Dedicated handyman — facilities monitoring</li>
+					<li>Standards defined and monitored by Kwerk</li>
+					<li>Dedicated handyman – building supervision</li>
 					<li>Technical maintenance</li>
 				</ul>
 			</div>
@@ -687,43 +728,43 @@ f.parentNode.insertBefore(j, f);
 	</div>
 </section>
 
-<!-- DIGITAL APPLICATION -->
+<!-- DIGITAL APP -->
 <section class="details-section">
 	<div class="details-container">
 		<div class="details-text" data-aos="fade-right">
-			<h3 class="details-title">DIGITAL APPLICATION</h3>
-			<p class="details-description">Every service at your address, in one app. Built and managed by the Kwerk team to make daily life effortless for everyone.</p>
+			<h3 class="details-title">DIGITAL APP</h3>
+			<p class="details-description">Every service at your address, in one app. Designed and operated by the Kwerk team to simplify everyone's day.</p>
 			<div class="details-list">
 				<h4>FEATURES</h4>
 				<ul>
-					<li>Live address newsfeed: events, highlights and what's on, in real time</li>
-					<li>Book sport sessions and wellness treatments</li>
-					<li>Order in-room services and event catering, à la carte</li>
-					<li>Browse daily menus, barista offerings and every dining option at your address</li>
-					<li>Click &amp; collect ordering for wait-free pickup</li>
-					<li>Integrated wallet to pay for any service in one tap</li>
+					<li>Address newsfeed: events, updates and highlights, in real time</li>
+					<li>Booking for sport classes and wellness sessions</li>
+					<li>Ordering in-room services and event catering à la carte</li>
+					<li>Viewing today's menus, the barista offering and all dining options at the address</li>
+					<li>Click &amp; collect ordering, for no-wait pickup</li>
+					<li>Integrated wallet, to pay for all services in one tap</li>
 				</ul>
 			</div>
 		</div>
-		<div class="details-images mk-digital-img" data-aos="fade-left">
-			<div class="image-large"><img src="../images/application digitale.png" alt="Digital application Kwerk"></div>
+		<div data-aos="fade-left" style="width: 100%; aspect-ratio: 16/9; overflow: hidden;">
+			<img src="../images/Applica.png" alt="Digital app Kwerk" style="width: 100%; height: 100%; object-fit: cover; display: block;">
 		</div>
 	</div>
 </section>
 
-<!-- CTA FINAL BANDEAU -->
+<!-- CTA FINAL -->
 <section class="mk-cta-section">
 	<div class="mk-cta-bg"></div>
 	<div class="mk-cta-overlay"></div>
 	<div class="mk-cta-content" data-aos="fade-up">
-		<h2 class="mk-cta-title">Speak with our teams for a personalised proposal</h2>
-		<a href="contact.html" class="mk-cta-btn">CONTACT US</a>
+		<h2 class="mk-cta-title">Speak to our team for a personalised proposal</h2>
+		<a href="#" class="mk-cta-btn contact-btn">CONTACT US</a>
 	</div>
 </section>
-
-		<div class="sticky-btn-contact">
+<div class="sticky-btn-contact">
 	<a href="contact.html" class="contact-btn-mobile-sticky">CONTACT US</a>
 </div>
+
 
 <footer class="footer">
 	<div class="footer-container">
@@ -736,7 +777,7 @@ f.parentNode.insertBefore(j, f);
 			</div>
 		</div>
 
-				<div class="footer-right">
+		<div class="footer-right">
 			<nav class="footer-nav">
 				<div class="footer-nav-col" data-links="produits">
 					<div class="footer-nav-title"><a href="espaces.html">OUR OFFICES &amp; SERVICES</a></div>
@@ -752,7 +793,7 @@ f.parentNode.insertBefore(j, f);
 				</div>
 				<div class="footer-nav-col">
 					<div class="footer-nav-title">
-						<a href="maison-kwerk.html">YOUR OFFICES MANAGED BY KWERK</a>
+						<a href="maison-kwerk.html">YOUR BUILDING MANAGED BY KWERK</a>
 					</div>
 				</div>
 				<div class="footer-nav-col">
@@ -768,22 +809,18 @@ f.parentNode.insertBefore(j, f);
 		<a href="mentions-legales.html">Legal Notice</a>
 	</div>
 </footer>
-		<script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
-		<script>
-			AOS.init({delay: 200, duration: 1500, anchorPlacement: 'center-center', once: true});
-		</script>
-		<!-- Start of HubSpot Embed Code -->
-		<script type="text/javascript" id="hs-script-loader" async defer src="https://js-eu1.hs-scripts.com/26225487.js"></script>
-		<!-- End of HubSpot Embed Code -->
-		<script src="../js/sticky.js"></script>
-		<script src="../js/contact.js"></script>
-		<script src="../js/form.js"></script>
-		<script src="../js/footer.js"></script>
-		<script src="../js/script.js"></script>
-		<script src="../js/loader.js"></script>
-
-
-	</body>
-
-<!-- Mirrored from www.kwerk.fr/en/espaces by HTTrack Website Copier/3.x [XR&CO'2014], Mon, 09 Mar 2026 14:52:23 GMT -->
-</html></body></html>
+	<script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+	<script>
+		AOS.init({delay: 200, duration: 1500, anchorPlacement: 'center-center', once: true});
+	</script>
+	<!-- Start of HubSpot Embed Code -->
+	<script type="text/javascript" id="hs-script-loader" async defer src="https://js-eu1.hs-scripts.com/26225487.js"></script>
+	<!-- End of HubSpot Embed Code -->
+	<script src="../js/sticky.js"></script>
+	<script src="../js/contact.js"></script>
+	<script src="../js/form.js"></script>
+	<script src="../js/footer.js"></script>
+	<script src="../js/script.js"></script>
+	<script src="../js/loader.js"></script>
+</body>
+</html>
