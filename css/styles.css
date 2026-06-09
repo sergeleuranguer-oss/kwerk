@@ -408,10 +408,6 @@ a {
   transition: transform 0.4s ease;
 }
 
-.offres-grid--adresses .offre-bloc {
-  height: 400px;
-  aspect-ratio: unset;
-}
 
 .offres-grid--event .offre-bloc {
   justify-content: center;
