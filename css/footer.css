@@ -19,8 +19,8 @@ a {
   color: #222;
 }
 .footer-left {
-  min-width: 270px;
-  max-width: 340px;
+  min-width: 200px;
+  max-width: 240px;
   display: flex;
   flex-direction: column;
   gap: 32px;
@@ -77,8 +77,8 @@ a {
 
 .footer-nav {
   display: flex;
-  gap: 86px;
-  justify-content: flex-start;
+  gap: 40px;
+  justify-content: space-between;
   align-items: flex-start;
   width: 100%;
 }
