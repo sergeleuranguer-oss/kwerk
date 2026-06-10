@@ -82,7 +82,7 @@ if (sessionStorage.getItem('openContactModal') === '1') {
 // FORM CONTACT //
 
 const contactBtn = document.querySelectorAll(
-  ".contact-btn , .contact-btn-mobile, .footer-contact-btn, .contact-btn-mobile-sticky, .side-menu-cta"
+  ".contact-btn , .contact-btn-mobile, .footer-contact-btn, .contact-btn-mobile-sticky, .side-menu-cta, .cta-final-btn"
 );
 const contactFormPanel = document.getElementById("sideContactForm");
 const closeContactFormBtn = document.getElementById("closeContactForm");

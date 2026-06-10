@@ -485,16 +485,13 @@ a {
     aspect-ratio: unset;
     height: 150px;
   }
-  .offres-grid .offre-bloc:nth-child(1) {
+  .offres-grid:not(.offres-grid--adresses) .offre-bloc:nth-child(1) {
     background-image: url('../images/bureaux-mobile.jpg') !important;
   }
-  .offres-grid .offre-bloc:nth-child(2) {
-    background-image: url('../images/Lobby 1-mobile.jpg') !important;
-  }
-  .offres-grid .offre-bloc:nth-child(3) {
+  .offres-grid:not(.offres-grid--adresses) .offre-bloc:nth-child(2) {
     background-image: url('../images/maison-kwerk-mobile.jpg') !important;
   }
-  .offres-grid .offre-bloc:nth-child(4) {
+  .offres-grid:not(.offres-grid--adresses) .offre-bloc:nth-child(3) {
     background-image: url('../images/evenementiel-mobile.png') !important;
   }
   .offre-bloc .offre-label {
@@ -504,6 +501,219 @@ a {
   .offre-bloc .offre-link {
     font-size: 10px;
     letter-spacing: 1px;
+  }
+}
+
+/*********************** SECTION SUB-TITLE ****************************/
+
+.section-sub {
+  text-align: center;
+  font-family: "Helvetica Neue", HelveticaNeue, sans-serif;
+  font-weight: 300;
+  font-size: 18px;
+  color: #555;
+  line-height: 1.6;
+  max-width: 720px;
+  margin: -20px auto 48px;
+  padding: 0 40px;
+}
+
+/*********************** NOTRE HISTOIRE ****************************/
+
+.histoire-section {
+  width: 100vw;
+  background: #fff;
+  padding-bottom: 80px;
+}
+
+.histoire-card {
+  position: relative;
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+  height: 560px;
+  margin: 0 40px;
+  background: #111 center/cover no-repeat;
+  text-decoration: none;
+  overflow: hidden;
+  padding: 36px 20px 40px;
+  transition: transform 0.4s ease;
+}
+
+.histoire-card::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.35);
+  transition: background 0.3s ease;
+  z-index: 0;
+}
+
+.histoire-card:hover::before {
+  background: rgba(0, 0, 0, 0.2);
+}
+
+.histoire-card:hover {
+  transform: scale(1.005);
+}
+
+.histoire-card .offre-link {
+  position: relative;
+  z-index: 1;
+  color: #fff;
+  font-family: "Helvetica Neue", HelveticaNeue, sans-serif;
+  font-weight: 300;
+  font-size: 11px;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.7);
+  padding-bottom: 2px;
+  margin: 0;
+  text-decoration: none;
+}
+
+/*********************** LES SERVICES — VIGNETTES ****************************/
+
+.services-vignettes-section {
+  width: 100vw;
+  background: #fff;
+  padding-bottom: 80px;
+}
+
+.services-vignettes-grid {
+  display: flex;
+  gap: 24px;
+  padding: 0 40px;
+  align-items: stretch;
+}
+
+.service-vignette {
+  flex: 1 1 0;
+  text-decoration: none;
+  display: block;
+}
+
+.service-vignette-img {
+  width: 100%;
+  height: 280px;
+  background: #111 center/cover no-repeat;
+  filter: saturate(0.92);
+  transition: transform 0.4s ease;
+}
+
+.service-vignette:hover .service-vignette-img {
+  transform: scale(1.02);
+}
+
+.service-vignette figcaption {
+  margin-top: 16px;
+  text-align: center;
+  font-family: "Helvetica Neue", HelveticaNeue, sans-serif;
+  font-weight: 300;
+  font-size: 13px;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  color: #111;
+}
+
+.services-vignettes-link {
+  text-align: center;
+  margin-top: 48px;
+}
+
+.link-underline {
+  font-family: "Helvetica Neue", HelveticaNeue, sans-serif;
+  font-weight: 300;
+  font-size: 13px;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+  color: #111;
+  text-decoration: none;
+  border-bottom: 1px solid #111;
+  padding-bottom: 3px;
+  transition: color 0.2s, border-color 0.2s;
+}
+
+.link-underline:hover {
+  color: #777;
+  border-color: #bbb;
+}
+
+/*********************** CTA FINAL ****************************/
+
+.cta-final-section {
+  width: 100vw;
+  background: #fff;
+  text-align: center;
+  padding: 90px 40px 110px;
+}
+
+.cta-final-sep {
+  width: 1px;
+  height: 60px;
+  background: #bbb;
+  margin: 0 auto 40px;
+}
+
+.cta-final-title {
+  font-family: "Helvetica Neue", HelveticaNeue, sans-serif;
+  font-weight: 300;
+  font-size: 40px;
+  letter-spacing: -0.5px;
+  color: #111;
+  margin: 0 0 40px;
+}
+
+.cta-final-btn {
+  display: inline-block;
+  padding: 16px 44px;
+  border: 1px solid #1a1a1a;
+  color: #1a1a1a;
+  font-family: "Helvetica Neue", HelveticaNeue, sans-serif;
+  font-weight: 400;
+  font-size: 13px;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  text-decoration: none;
+  cursor: pointer;
+  transition: background 0.25s, color 0.25s;
+}
+
+.cta-final-btn:hover {
+  background: #1a1a1a;
+  color: #fff;
+}
+
+@media (max-width: 700px) {
+  .section-sub {
+    font-size: 15px;
+    margin: -8px auto 32px;
+    padding: 0 24px;
+  }
+  .histoire-card {
+    height: 280px;
+    margin: 0 16px;
+  }
+  .services-vignettes-grid {
+    flex-wrap: wrap;
+    gap: 16px;
+    padding: 0 16px;
+  }
+  .service-vignette {
+    flex: 1 1 calc(50% - 8px);
+  }
+  .service-vignette-img {
+    height: 180px;
+  }
+  .service-vignette figcaption {
+    font-size: 11px;
+    letter-spacing: 1px;
+  }
+  .cta-final-section {
+    padding: 60px 24px 70px;
+  }
+  .cta-final-title {
+    font-size: 26px;
   }
 }
 
