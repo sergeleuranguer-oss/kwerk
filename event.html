@@ -99,7 +99,6 @@ f.parentNode.insertBefore(j, f);
 			padding: 40px 40px 50px;
 		}
 		.event-stats-banner {
-			background: #162032;
 			padding: 65px 100px;
 			text-align: center;
 		}
@@ -107,18 +106,18 @@ f.parentNode.insertBefore(j, f);
 			font-family: "Helvetica Neue", HelveticaNeue, sans-serif;
 			font-size: 17px;
 			font-weight: 300;
-			color: #ddd5c0;
+			color: #666;
 			line-height: 1;
 			margin: 0 0 30px;
 			letter-spacing: 0.01em;
 		}
 		.event-stats-line:last-child { margin-bottom: 0; }
 		.event-stats-num {
-			color: #c9a870;
+			color: #1a1a1a;
 			font-style: normal;
 		}
 		.event-stats-sep {
-			color: #c9a870;
+			color: #666;
 			margin: 0 22px;
 			font-style: normal;
 			font-weight: 300;
@@ -132,7 +131,6 @@ f.parentNode.insertBefore(j, f);
 
 		/* ── CTA BANNER ── */
 		.event-cta-banner {
-			background: #162032;
 			padding: 65px 100px;
 			text-align: center;
 		}
@@ -142,7 +140,7 @@ f.parentNode.insertBefore(j, f);
 			font-weight: 300;
 			letter-spacing: -0.5px;
 			line-height: 1.2;
-			color: #ddd5c0;
+			color: #1a1a1a;
 			margin: 0 0 28px;
 		}
 		.event-cta-banner-desc {
@@ -150,14 +148,14 @@ f.parentNode.insertBefore(j, f);
 			font-size: 17px;
 			font-weight: 300;
 			line-height: 1.85;
-			color: #ddd5c0;
+			color: #666;
 			margin: 0 0 36px;
 		}
 		.event-cta-banner-btn {
 			display: inline-block;
 			padding: 14px 36px;
-			border: 1px solid #c9a870;
-			color: #c9a870 !important;
+			border: 1px solid #1a1a1a;
+			color: #1a1a1a !important;
 			font-size: 13px;
 			font-weight: 500;
 			letter-spacing: 0.12em;
@@ -167,8 +165,8 @@ f.parentNode.insertBefore(j, f);
 			transition: background 0.25s, color 0.25s;
 		}
 		.event-cta-banner-btn:hover {
-			background: #c9a870;
-			color: #162032 !important;
+			background: #1a1a1a;
+			color: #fff !important;
 		}
 		@media (max-width: 768px) {
 			.event-cta-banner { padding: 50px 30px; }
@@ -238,7 +236,7 @@ f.parentNode.insertBefore(j, f);
 			<a href="adresses.html">NOS ADRESSES</a>
 		</li>
 		<li>
-			<a href="maison-kwerk.html">VOTRE ADRESSE OPÉRÉE PAR KWERK</a>
+			<a href="maison-kwerk.html">EXPERIENCE BY KWERK</a>
 		</li>
 		<li>
 			<a href="event.html">VOS ÉVÉNEMENTS</a>
@@ -277,16 +275,16 @@ f.parentNode.insertBefore(j, f);
 	</div>
 		<form class="contact-form-fields">
 
-		<!-- VOTRE DEMANDE -->
-		<h3 class="contact-section-title">VOTRE DEMANDE</h3>
+		<!-- VOTRE BESOIN -->
+		<h3 class="contact-section-title">VOTRE BESOIN</h3>
 
 		<div class="ps-field-row single">
 			<div class="ps-field ps-select">
-				<label>QUELLE EST VOTRE DEMANDE ? *</label>
+				<label>QUEL EST VOTRE BESOIN ? *</label>
 				<select name="produit" required>
 					<option value="" disabled selected>Veuillez choisir</option>
 					<option value="Bureaux">Bureaux</option>
-					<option>Votre adresse opérée par Kwerk</option>
+					<option>Experience by Kwerk</option>
 					<option>Événementiel</option>
 				</select>
 				<div class="error"></div>
@@ -301,24 +299,6 @@ f.parentNode.insertBefore(j, f);
 			</div>
 		</div>
 
-		<div class="ps-field-row single">
-			<div class="ps-field">
-				<label>COMMENT AVEZ-VOUS CONNU KWERK ? *</label>
-				<select name="origine_de_la_piste" required>
-					<option value="" disabled selected>Veuillez choisir</option>
-					<option>Recommandation par mon réseau</option>
-					<option>Recherche internet</option>
-					<option>Recommandation par un membre Kwerk</option>
-					<option>Mis en relation par un broker</option>
-					<option>Sur les réseaux sociaux</option>
-					<option>Rendez-vous professionnel chez Kwerk</option>
-					<option>Dans la presse</option>
-					<option>Lors d&#039;un événement chez Kwerk</option>
-					<option>Au cours d&#039;un déjeuner au restaurant Le Dana</option>
-				</select>
-				<div class="error"></div>
-			</div>
-		</div>
 
 		<div class="ps-field-row single">
 			<div class="ps-field">
@@ -367,10 +347,29 @@ f.parentNode.insertBefore(j, f);
 			</div>
 		</div>
 
+		<div class="ps-field-row single">
+			<div class="ps-field">
+				<label>COMMENT AVEZ-VOUS CONNU KWERK ? *</label>
+				<select name="origine_de_la_piste" required>
+					<option value="" disabled selected>Veuillez choisir</option>
+					<option>Recommandation par mon réseau</option>
+					<option>Recherche internet</option>
+					<option>Recommandation par un membre Kwerk</option>
+					<option>Mis en relation par un broker</option>
+					<option>Sur les réseaux sociaux</option>
+					<option>Rendez-vous professionnel chez Kwerk</option>
+					<option>Dans la presse</option>
+					<option>Lors d&#039;un événement chez Kwerk</option>
+					<option>Au cours d&#039;un déjeuner au restaurant Le Dana</option>
+				</select>
+				<div class="error"></div>
+			</div>
+		</div>
+
 		<hr class="contact-separator">
 
 		<div class="form-footer">
-			<button type="submit" class="submit-btn">ENVOYEZ VOTRE DEMANDE</button>
+			<button type="submit" class="submit-btn">ENVOYER</button>
 			<div class="success" id="successMessage"></div>
 		</div>
 	</form>
@@ -380,7 +379,7 @@ f.parentNode.insertBefore(j, f);
 		<div class="exceptional-container" data-aos="fade-up">
 			<h2 class="exceptional-heading">Recevoir à une adresse Kwerk</h2>
 			<div style="width: 1px; height: 56px; background: #1a1a1a; margin: 32px auto;"></div>
-			<p class="exceptional-body">Nos quatre adresses parisiennes sont ouvertes à la privatisation. Nos équipes conçoivent et tiennent chaque événement avec le soin qu'elles donnent à nos lieux, dans une atmosphère où l'on se sent chez soi.</p>
+			<p class="exceptional-body">Nos trois adresses parisiennes sont ouvertes à la privatisation. Nos équipes conçoivent et tiennent chaque événement avec le soin qu'elles donnent à nos lieux, dans une atmosphère où l'on se sent chez soi.</p>
 		</div>
 	</section>
 
@@ -528,7 +527,7 @@ f.parentNode.insertBefore(j, f);
 				</div>
 				<div class="footer-nav-col">
 					<div class="footer-nav-title">
-						<a href="maison-kwerk.html">VOTRE ADRESSE OPÉRÉE PAR KWERK</a>
+						<a href="maison-kwerk.html">EXPERIENCE BY KWERK</a>
 					</div>
 				</div>
 				<div class="footer-nav-col">
