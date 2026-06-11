@@ -146,6 +146,43 @@ a {
 .footer-nav-links li:hover {
   color: #888;
 }
+.footer-nav--3col {
+  gap: 64px;
+  justify-content: flex-end;
+}
+.footer-col {
+  font-size: 13px;
+  color: #222;
+}
+.footer-col-title {
+  text-transform: uppercase;
+  font-weight: 500;
+  font-size: 12px;
+  letter-spacing: 2px;
+  margin: 0 0 18px;
+  color: #111;
+}
+.footer-col-links {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+.footer-col-links li {
+  font-size: 12px;
+  letter-spacing: 2px;
+  line-height: 14px;
+}
+.footer-col-links a {
+  color: #222;
+  transition: color 0.2s;
+}
+.footer-col-links a:hover {
+  color: #888;
+}
+
 .sticky-btn-contact {
   display: none;
 }
