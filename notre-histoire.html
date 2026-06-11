@@ -79,11 +79,11 @@ f.parentNode.insertBefore(j, f);
 			padding-bottom: 0;
 		}
 
-		/* ── FONDATEURS (blocs éditoriaux alternés) ── */
+		/* ── LES VISAGES DE KWERK (cartes verticales) ── */
 		.nh-founders {
 			width: 100vw;
 			background: #fff;
-			padding: 20px 0 40px;
+			padding: 20px 0 60px;
 			display: flex;
 			justify-content: center;
 		}
@@ -95,15 +95,11 @@ f.parentNode.insertBefore(j, f);
 		.nh-founders-grid {
 			display: grid;
 			grid-template-columns: repeat(2, 1fr);
-			gap: 64px;
+			gap: 72px 64px;
 			align-items: start;
 		}
 		.nh-founder {
 			display: block;
-		}
-		.nh-founder--solo {
-			max-width: 440px;
-			margin: 0 auto 72px;
 		}
 		.nh-founder-media {
 			width: 100%;
@@ -146,62 +142,9 @@ f.parentNode.insertBefore(j, f);
 		.nh-founder-body p:last-child {
 			margin-bottom: 0;
 		}
-
-		/* ── ÉQUIPE (grille de cartes verticales) ── */
-		.nh-team {
-			width: 100vw;
-			background: #fafafa;
-			padding: 90px 0 110px;
-			display: flex;
-			justify-content: center;
-		}
-		.nh-team-inner {
-			width: 100%;
-			max-width: 1100px;
-			padding: 0 60px;
-		}
-		.nh-team-grid {
-			display: grid;
-			grid-template-columns: repeat(3, 1fr);
-			gap: 48px 40px;
-			margin-top: 8px;
-		}
-		.nh-team-card {
-			text-align: left;
-		}
-		.nh-team-photo {
-			width: 100%;
-			aspect-ratio: 4 / 5;
-			background: #1a1a1a;
-			overflow: hidden;
-			margin-bottom: 18px;
-		}
-		.nh-team-photo img {
-			width: 100%;
-			height: 100%;
-			object-fit: cover;
-			display: block;
-		}
-		.nh-team-card h3 {
-			font-family: "Helvetica Neue", HelveticaNeue, sans-serif;
-			font-weight: 300;
-			font-size: 21px;
-			line-height: 1.1;
-			color: #111;
-			margin: 0 0 7px;
-		}
-		.nh-team-card .nh-role {
-			display: block;
-			font-family: "Helvetica Neue", HelveticaNeue, sans-serif;
-			font-size: 11px;
-			letter-spacing: 2px;
-			text-transform: uppercase;
-			color: #888;
-		}
 		.nh-portraits-note {
-			max-width: 1100px;
-			margin: 60px auto 0;
-			padding: 0 60px;
+			max-width: 1000px;
+			margin: 64px auto 0;
 			text-align: center;
 			font-family: "Helvetica Neue", HelveticaNeue, sans-serif;
 			font-size: 13px;
@@ -262,24 +205,18 @@ f.parentNode.insertBefore(j, f);
 		}
 
 		/* ── RESPONSIVE ── */
-		@media (max-width: 900px) {
-			.nh-team-grid { grid-template-columns: repeat(2, 1fr); gap: 40px 32px; }
-		}
 		@media (max-width: 700px) {
-			.nh-founders-grid { grid-template-columns: 1fr; gap: 48px; max-width: 420px; margin: 0 auto; }
+			.nh-founders-grid { grid-template-columns: 1fr; gap: 56px; max-width: 420px; margin: 0 auto; }
 		}
 		@media (max-width: 768px) {
 			.nh-hero-title { font-size: 26px; }
 			.nh-founders-inner { padding: 0 24px; }
-			.nh-team-inner { padding: 0 24px; }
-			.nh-portraits-note { padding: 0 24px; }
 			.nh-citation { padding: 90px 24px; }
 			.nh-citation blockquote { font-size: 22px; }
 			.nh-signature { font-size: 19px; }
 		}
 		@media (max-width: 480px) {
 			.nh-hero-title { font-size: 22px; }
-			.nh-team-grid { grid-template-columns: repeat(2, 1fr); gap: 28px 20px; }
 			.nh-citation blockquote { font-size: 19px; }
 		}
 	</style>
@@ -515,12 +452,12 @@ window.axeptioSettings = {
      ============================================================ -->
 <section class="exceptional-section nh-intro-equipe">
 	<div class="exceptional-container">
-		<h2 class="exceptional-heading">Les fondateurs</h2>
+		<h2 class="exceptional-heading">Les visages de Kwerk</h2>
 	</div>
 </section>
 
 <!-- ============================================================
-     3a. FONDATEURS
+     3. LES VISAGES DE KWERK
      ============================================================ -->
 <section class="nh-founders">
 	<div class="nh-founders-inner">
@@ -546,57 +483,54 @@ window.axeptioSettings = {
 				</div>
 			</article>
 
-		</div>
-	</div>
-</section>
-
-<!-- ============================================================
-     3b. ÉQUIPE
-     ============================================================ -->
-<section class="nh-team">
-	<div class="nh-team-inner">
-		<h2 class="exceptional-heading" style="text-align:center; margin-bottom:48px;">Les visages de Kwerk</h2>
-
-		<article class="nh-founder nh-founder--solo">
-			<div class="nh-founder-media"><img src="images/vincent1.png" alt="Vincent Cosme"></div>
-			<div class="nh-founder-body">
-				<h3>Vincent Cosme</h3>
-				<span class="nh-founder-role">Chef exécutif</span>
-				<p>Plus de quinze ans d'expérience dans la restauration, passé par des maisons telles que le Ritz-Carlton ou des établissements Relais &amp; Châteaux. Vincent a également exercé comme chef privé pendant six ans et opéré des prestations événementielles haut de gamme. Chef primé, il a été élu Champion de France Traiteur en 2021.</p>
-				<p>Chez Kwerk, il imagine une restauration qui prolonge l'esprit de la maison : une cuisine du produit, sincère et généreuse, pensée comme un véritable moment d'hospitalité. Chaque déjeuner y devient un temps fort de la journée, à partager comme à la table d'une maison que l'on aime.</p>
-			</div>
-		</article>
-
-		<div class="nh-team-grid">
-
-			<article class="nh-team-card">
-				<div class="nh-team-photo"></div>
-				<h3>Lizette</h3>
-				<span class="nh-role">Équipe Kwerk</span>
+			<article class="nh-founder">
+				<div class="nh-founder-media"><img src="images/vincent1.png" alt="Vincent Cosme"></div>
+				<div class="nh-founder-body">
+					<h3>Vincent Cosme</h3>
+					<span class="nh-founder-role">Chef exécutif</span>
+					<p>Plus de quinze ans d'expérience dans la restauration, passé par des maisons telles que le Ritz-Carlton ou des établissements Relais &amp; Châteaux. Vincent a également exercé comme chef privé pendant six ans et opéré des prestations événementielles haut de gamme. Chef primé, il a été élu Champion de France Traiteur en 2021.</p>
+					<p>Chez Kwerk, il imagine une restauration qui prolonge l'esprit de la maison : une cuisine du produit, sincère et généreuse, pensée comme un véritable moment d'hospitalité. Chaque déjeuner y devient un temps fort de la journée, à partager comme à la table d'une maison que l'on aime.</p>
+				</div>
 			</article>
 
-			<article class="nh-team-card">
-				<div class="nh-team-photo"></div>
-				<h3>Jean-Michel</h3>
-				<span class="nh-role">Équipe Kwerk</span>
+			<article class="nh-founder">
+				<div class="nh-founder-media"></div>
+				<div class="nh-founder-body">
+					<h3>Lizette</h3>
+					<span class="nh-founder-role">Équipe Kwerk</span>
+				</div>
 			</article>
 
-			<article class="nh-team-card">
-				<div class="nh-team-photo"></div>
-				<h3>Maria</h3>
-				<span class="nh-role">Équipe Kwerk</span>
+			<article class="nh-founder">
+				<div class="nh-founder-media"></div>
+				<div class="nh-founder-body">
+					<h3>Jean-Michel</h3>
+					<span class="nh-founder-role">Équipe Kwerk</span>
+				</div>
 			</article>
 
-			<article class="nh-team-card">
-				<div class="nh-team-photo"></div>
-				<h3>Aurélien</h3>
-				<span class="nh-role">Équipe Kwerk</span>
+			<article class="nh-founder">
+				<div class="nh-founder-media"></div>
+				<div class="nh-founder-body">
+					<h3>Maria</h3>
+					<span class="nh-founder-role">Équipe Kwerk</span>
+				</div>
 			</article>
 
-			<article class="nh-team-card">
-				<div class="nh-team-photo"></div>
-				<h3>Charlotte</h3>
-				<span class="nh-role">Équipe Kwerk</span>
+			<article class="nh-founder">
+				<div class="nh-founder-media"></div>
+				<div class="nh-founder-body">
+					<h3>Aurélien</h3>
+					<span class="nh-founder-role">Équipe Kwerk</span>
+				</div>
+			</article>
+
+			<article class="nh-founder">
+				<div class="nh-founder-media"></div>
+				<div class="nh-founder-body">
+					<h3>Charlotte</h3>
+					<span class="nh-founder-role">Équipe Kwerk</span>
+				</div>
 			</article>
 
 		</div>
