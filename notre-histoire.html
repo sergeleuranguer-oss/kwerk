@@ -1,0 +1,613 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>NOTRE HISTOIRE – Kwerk</title>
+	<meta name="description" content="L'histoire de Kwerk : une intuition devenue un savoir-faire. Fondé par Albert Angel et Lawrence Knights, opérateur d'adresses parisiennes depuis 2015.">
+	<!-- Google Tag Manager -->
+	<script>
+		(function (w, d, s, l, i) {
+w[l] = w[l] || [];
+w[l].push({'gtm.start': new Date().getTime(), event: 'gtm.js'});
+var f = d.getElementsByTagName(s)[0],
+j = d.createElement(s),
+dl = l != 'dataLayer' ? '&l=' + l : '';
+j.async = true;
+j.src = 'https://www.googletagmanager.com/gtm.js?id=' + i + dl;
+f.parentNode.insertBefore(j, f);
+})(window, document, 'script', 'dataLayer', 'GTM-MK4BS4GL');
+	</script>
+	<!-- End Google Tag Manager -->
+
+	<link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&amp;display=swap" rel="stylesheet">
+	<link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+	<link rel="icon" type="image/svg+xml" href="favicon.ico">
+	<link rel="stylesheet" href="css/navbar.css">
+	<link rel="stylesheet" href="css/styles.css">
+	<link rel="stylesheet" href="css/footer.css">
+
+	<style>
+		/* ================================================
+		   NOTRE HISTOIRE — PAGE STYLES
+		   Typographie cohérente avec le site (Helvetica Neue)
+		   ================================================ */
+
+		/* ── HERO — titre en surimpression ── */
+		.nh-hero-title {
+			color: #fff;
+			font-family: "Helvetica Neue", HelveticaNeue, sans-serif;
+			font-weight: 300;
+			font-size: 40px;
+			line-height: 1.2;
+			letter-spacing: 1px;
+			text-transform: uppercase;
+			margin: 0 auto;
+			max-width: 900px;
+			padding: 0 24px;
+			text-shadow: 0 2px 8px rgba(0, 0, 0, 0.35);
+		}
+
+		/* ── MANIFESTE — réutilise .exceptional-section ── */
+		.nh-manifeste .exceptional-container {
+			max-width: 780px;
+		}
+		.nh-manifeste .exceptional-body {
+			text-align: left;
+			margin-bottom: 28px;
+		}
+		.nh-manifeste .exceptional-body:last-of-type {
+			margin-bottom: 0;
+		}
+		.nh-signature {
+			font-family: "Helvetica Neue", HelveticaNeue, sans-serif;
+			font-weight: 300;
+			font-style: italic;
+			font-size: 22px;
+			line-height: 1.4;
+			color: #111;
+			text-align: center;
+			margin: 44px 0 0;
+		}
+
+		/* ── INTRO ÉQUIPE ── */
+		.nh-intro-equipe {
+			padding-bottom: 0;
+		}
+
+		/* ── PORTRAITS ── */
+		.nh-portraits {
+			width: 100vw;
+			background: #fff;
+			padding: 60px 0 130px;
+			display: flex;
+			justify-content: center;
+		}
+		.nh-portraits-inner {
+			width: 100%;
+			max-width: 1280px;
+			padding: 0 60px;
+		}
+		.nh-portraits-grid {
+			display: grid;
+			grid-template-columns: repeat(2, 1fr);
+			gap: 56px 72px;
+		}
+		.nh-portrait {
+			display: grid;
+			grid-template-columns: 200px 1fr;
+			gap: 28px;
+			align-items: start;
+		}
+		.nh-portrait-photo {
+			width: 200px;
+			height: 240px;
+			background: #1a1a1a;
+			overflow: hidden;
+		}
+		.nh-portrait-photo img {
+			width: 100%;
+			height: 100%;
+			object-fit: cover;
+			display: block;
+		}
+		.nh-portrait-info {
+			padding-top: 6px;
+		}
+		.nh-portrait-info h3 {
+			font-family: "Helvetica Neue", HelveticaNeue, sans-serif;
+			font-weight: 300;
+			font-size: 24px;
+			line-height: 1.1;
+			color: #111;
+			margin: 0 0 8px;
+		}
+		.nh-portrait-info .nh-role {
+			display: block;
+			font-family: "Helvetica Neue", HelveticaNeue, sans-serif;
+			font-size: 12px;
+			letter-spacing: 2px;
+			text-transform: uppercase;
+			color: #888;
+			margin-bottom: 16px;
+		}
+		.nh-portrait-info p {
+			font-family: "Helvetica Neue", HelveticaNeue, sans-serif;
+			font-weight: 300;
+			font-size: 16px;
+			line-height: 1.7;
+			color: #444;
+			margin: 0;
+		}
+		.nh-portraits-note {
+			max-width: 1280px;
+			margin: 56px auto 0;
+			padding: 0 60px;
+			font-family: "Helvetica Neue", HelveticaNeue, sans-serif;
+			font-size: 13px;
+			font-style: italic;
+			letter-spacing: 0.5px;
+			color: #999;
+		}
+
+		/* ── CITATION ── */
+		.nh-citation {
+			width: 100vw;
+			padding: 130px 32px;
+			background:
+				linear-gradient(180deg, rgba(14, 14, 14, 0.55) 0%, rgba(14, 14, 14, 0.65) 100%),
+				url('images/FACADE.jpg') center/cover no-repeat;
+			text-align: center;
+			color: #fff;
+		}
+		.nh-citation-inner {
+			max-width: 860px;
+			margin: 0 auto;
+		}
+		.nh-citation blockquote {
+			font-family: "Helvetica Neue", HelveticaNeue, sans-serif;
+			font-weight: 300;
+			font-size: 30px;
+			line-height: 1.4;
+			color: #fff;
+			margin: 0 0 28px;
+		}
+		.nh-citation .nh-author {
+			font-size: 12px;
+			text-transform: uppercase;
+			letter-spacing: 2.5px;
+			color: #fff;
+			opacity: 0.85;
+		}
+
+		/* ── CTA FINAL ── */
+		.nh-cta-btn {
+			display: inline-block;
+			margin-top: 40px;
+			border: 1px solid #111;
+			background: #111;
+			color: #fff;
+			padding: 16px 40px;
+			font-family: "Helvetica Neue", HelveticaNeue, sans-serif;
+			font-size: 13px;
+			text-transform: uppercase;
+			letter-spacing: 2px;
+			font-weight: 400;
+			cursor: pointer;
+			transition: background 0.25s, color 0.25s;
+		}
+		.nh-cta-btn:hover {
+			background: transparent;
+			color: #111;
+		}
+
+		/* ── RESPONSIVE ── */
+		@media (max-width: 1000px) {
+			.nh-portraits-grid { grid-template-columns: 1fr; gap: 44px; }
+		}
+		@media (max-width: 768px) {
+			.nh-hero-title { font-size: 26px; }
+			.nh-portraits-inner { padding: 0 24px; }
+			.nh-portraits-note { padding: 0 24px; }
+			.nh-portrait { grid-template-columns: 140px 1fr; gap: 20px; }
+			.nh-portrait-photo { width: 140px; height: 170px; }
+			.nh-citation { padding: 90px 24px; }
+			.nh-citation blockquote { font-size: 22px; }
+			.nh-signature { font-size: 19px; }
+		}
+		@media (max-width: 480px) {
+			.nh-hero-title { font-size: 22px; }
+			.nh-portrait-info h3 { font-size: 20px; }
+			.nh-citation blockquote { font-size: 19px; }
+		}
+	</style>
+</head>
+<body>
+	<div id="pageLoader" class="page-loader">
+		<div class="loader-content">
+			<div class="loader-logo">
+				<img src="images/logo_kwerk.png" alt="Kwerk" class="loader-logo-img">
+			</div>
+			<div class="loader-animation">
+				<div class="loader-circle">
+					<div class="loader-path"></div>
+				</div>
+			</div>
+			<div class="loader-progress">
+				<div class="progress-bar" id="progressBar"></div>
+			</div>
+		</div>
+	</div>
+	<!-- Google Tag Manager (noscript) -->
+	<noscript>
+		<iframe src="https://www.googletagmanager.com/ns.html?id=GTM-MK4BS4GL" height="0" width="0" style="display:none;visibility:hidden"></iframe>
+	</noscript>
+	<!-- End Google Tag Manager (noscript) -->
+
+	<header class="hero hero--no-overlay" style="background-color: #000;">
+		<div class="hero-video hero-slideshow" style="background-image: url('images/FACADE.jpg');"></div>
+
+	<nav class="navbar">
+		<div class="menu-icon"><img src="images/menu_burger.svg"></div>
+		<a href="index.html" class="logo-wrapper">
+			<div class="logo"><img src="images/logo-sans-bureaux.png"></div>
+		</a>
+		<div class="nav-lang-switch">
+			<a href="notre-histoire.html">FR</a>
+			<span class="lang-sep">/</span>
+			<a href="en.html">EN</a>
+		</div>
+		<a href="#" class="contact-btn">CONTACTEZ-NOUS</a>
+	</nav>
+
+		<div class="hero-text hero-text--center">
+			<h1 class="nh-hero-title">Une certaine idée du bureau parisien</h1>
+		</div>
+
+	</header>
+
+<!-- MENU -->
+<div class="side-menu" id="sideMenu">
+	<div class="side-menu-header">
+		<a href="index.html"><img src="images/logo-kwerk-noir.png" alt="Logo"></a>
+		<span class="close-btn" id="closeMenu"><img src="images/close_cross.svg" alt="close"></span>
+	</div>
+	<ul class="side-menu-links">
+		<li>
+			<a href="espaces.html">LES BUREAUX</a>
+		</li>
+		<li>
+			<a href="maison-kwerk.html">EXPÉRIENCE BY KWERK</a>
+		</li>
+		<li>
+			<a href="event.html">L'ÉVÉNEMENTIEL</a>
+		</li>
+		<li class="side-menu-sep"></li>
+		<li>
+			<a href="notre-histoire.html">NOTRE HISTOIRE</a>
+		</li>
+		<li>
+			<a href="nos-services.html">LES SERVICES</a>
+		</li>
+		<li>
+			<a href="adresses.html">LES ADRESSES</a>
+		</li>
+	</ul>
+	<a href="#" class="side-menu-cta">RÉSERVER UNE VISITE</a>
+</div>
+
+<!-- SOUS MENU ADRESSES -->
+<div class="submenu-panel" id="submenuPRAdresses">
+	<div class="submenu-header">
+		<span class="close-submenu" data-back="true">
+			<img src="images/close_cross.svg" alt="close">
+		</span>
+	</div>
+	<img src="images/adresses.png" alt="Image PR Produit" class="submenu-img">
+	<div class="submenu-content">
+		<a href="adresses.html">
+			<h4>NOS ADRESSES</h4>
+		</a>
+		<ul>
+			<li><a href="adresses/messine.html">MESSINE</a></li>
+			<li><a href="adresses/saint-honore.html">SAINT-HONORÉ</a></li>
+			<li><a href="adresses/madeleine.html">MADELEINE</a></li>
+		</ul>
+	</div>
+</div>
+
+<!-- SIDE CONTACT FORM -->
+<div class="side-contact-form" id="sideContactForm">
+	<div class="contact-form-header">
+		<span class="close-contact-form" id="closeContactForm">
+			<img src="images/close_cross.svg" alt="close">
+		</span>
+	</div>
+		<form class="contact-form-fields">
+
+		<!-- VOTRE BESOIN -->
+		<h3 class="contact-section-title">VOTRE BESOIN</h3>
+
+		<div class="ps-field-row single">
+			<div class="ps-field ps-select">
+				<label>QUEL EST VOTRE BESOIN ? *</label>
+				<select name="produit" required>
+					<option value="" disabled selected>Veuillez choisir</option>
+					<option value="Bureaux">Bureaux</option>
+					<option>Expérience by Kwerk</option>
+					<option>Événementiel</option>
+				</select>
+				<div class="error"></div>
+			</div>
+		</div>
+
+		<div class="ps-field-row single ps-field-row--desk" style="display:none;">
+			<div class="ps-field">
+				<label>DE COMBIEN DE POSTES AVEZ-VOUS BESOIN ? *</label>
+				<input type="number" name="desk" min="1" placeholder="Nombre de postes">
+				<div class="error"></div>
+			</div>
+		</div>
+
+
+		<div class="ps-field-row single">
+			<div class="ps-field">
+				<label>EXPLIQUEZ-NOUS VOTRE PROJET *</label>
+				<textarea name="description_de_la_transaction" placeholder="Expliquez-nous votre projet" required></textarea>
+				<div class="error"></div>
+			</div>
+		</div>
+
+		<hr class="contact-separator">
+
+		<!-- VOS COORDONNÉES -->
+		<h3 class="contact-section-title">VOS COORDONNÉES</h3>
+
+		<div class="ps-field-row">
+			<div class="ps-field">
+				<label>VOTRE PRÉNOM *</label>
+				<input type="text" name="firstname" placeholder="Votre prénom" required>
+				<div class="error"></div>
+			</div>
+			<div class="ps-field">
+				<label>VOTRE NOM *</label>
+				<input type="text" name="lastname" placeholder="Votre nom" required>
+				<div class="error"></div>
+			</div>
+		</div>
+
+		<div class="ps-field-row">
+			<div class="ps-field">
+				<label>VOTRE NUMÉRO DE TÉLÉPHONE *</label>
+				<input type="text" name="phone" placeholder="+XX X XX XX XX XX" required>
+				<div class="error"></div>
+			</div>
+			<div class="ps-field">
+				<label>VOTRE ADRESSE E-MAIL *</label>
+				<input type="email" name="email" placeholder="nom@email.com" required>
+				<div class="error"></div>
+			</div>
+		</div>
+
+		<div class="ps-field-row single">
+			<div class="ps-field">
+				<label>VOTRE SOCIÉTÉ *</label>
+				<input type="text" name="company" placeholder="Nom de l'entreprise" required>
+				<div class="error"></div>
+			</div>
+		</div>
+
+		<div class="ps-field-row single">
+			<div class="ps-field">
+				<label>COMMENT AVEZ-VOUS CONNU KWERK ? *</label>
+				<select name="origine_de_la_piste" required>
+					<option value="" disabled selected>Veuillez choisir</option>
+					<option>Recommandation par mon réseau</option>
+					<option>Recherche internet</option>
+					<option>Recommandation par un membre Kwerk</option>
+					<option>Mis en relation par un broker</option>
+					<option>Sur les réseaux sociaux</option>
+					<option>Rendez-vous professionnel chez Kwerk</option>
+					<option>Dans la presse</option>
+					<option>Lors d&#039;un événement chez Kwerk</option>
+					<option>Au cours d&#039;un déjeuner au restaurant Le Dana</option>
+				</select>
+				<div class="error"></div>
+			</div>
+		</div>
+
+		<hr class="contact-separator">
+
+		<div class="form-footer">
+			<button type="submit" class="submit-btn">ENVOYER</button>
+			<div class="success" id="successMessage"></div>
+		</div>
+	</form>
+</div>
+
+<!-- ============================================================
+     1. MANIFESTE — Une intuition, devenue un savoir-faire
+     ============================================================ -->
+<section class="exceptional-section nh-manifeste">
+	<div class="exceptional-container">
+		<h2 class="exceptional-heading">Une intuition, devenue un savoir-faire</h2>
+		<div style="width: 1px; height: 56px; background: #1a1a1a; margin: 32px auto;"></div>
+		<p class="exceptional-body">Kwerk a été fondé par <strong>Albert Angel</strong> et <strong>Lawrence Knights</strong>. Une idée à l'origine : un bureau ne devrait pas être un espace, mais une adresse. On y travaille ; on devrait y être reçu comme on l'est dans une maison qu'on aime.</p>
+		<p class="exceptional-body">La première adresse a ouvert ses portes en 2015. Aujourd'hui, nous en tenons trois, toutes au cœur de Paris, toutes signées par notre direction artistique, toutes opérées par Kwerk. Chaque pièce a son écriture. Chaque service est tenu par nos équipes, du matin au soir.</p>
+		<p class="exceptional-body">Plus de dix ans plus tard, la promesse n'a pas changé. Nous tenons nos adresses comme on tient une maison qu'on aime.</p>
+		<p class="nh-signature">Albert Angel &amp; Lawrence Knights</p>
+	</div>
+</section>
+
+<!-- ============================================================
+     2. INTRO ÉQUIPE
+     ============================================================ -->
+<section class="exceptional-section nh-intro-equipe">
+	<div class="exceptional-container">
+		<h2 class="exceptional-heading">Les visages de Kwerk</h2>
+	</div>
+</section>
+
+<!-- ============================================================
+     3. PORTRAITS
+     ============================================================ -->
+<section class="nh-portraits">
+	<div class="nh-portraits-inner">
+		<div class="nh-portraits-grid">
+
+			<article class="nh-portrait">
+				<div class="nh-portrait-photo"></div>
+				<div class="nh-portrait-info">
+					<h3>Albert</h3>
+					<span class="nh-role">Cofondateur</span>
+				</div>
+			</article>
+
+			<article class="nh-portrait">
+				<div class="nh-portrait-photo"></div>
+				<div class="nh-portrait-info">
+					<h3>Lawrence</h3>
+					<span class="nh-role">Cofondateur</span>
+				</div>
+			</article>
+
+			<article class="nh-portrait">
+				<div class="nh-portrait-photo"></div>
+				<div class="nh-portrait-info">
+					<h3>Vincent</h3>
+					<span class="nh-role">Équipe Kwerk</span>
+				</div>
+			</article>
+
+			<article class="nh-portrait">
+				<div class="nh-portrait-photo"></div>
+				<div class="nh-portrait-info">
+					<h3>Lizette</h3>
+					<span class="nh-role">Équipe Kwerk</span>
+				</div>
+			</article>
+
+			<article class="nh-portrait">
+				<div class="nh-portrait-photo"></div>
+				<div class="nh-portrait-info">
+					<h3>Jean-Michel</h3>
+					<span class="nh-role">Équipe Kwerk</span>
+				</div>
+			</article>
+
+			<article class="nh-portrait">
+				<div class="nh-portrait-photo"></div>
+				<div class="nh-portrait-info">
+					<h3>Maria</h3>
+					<span class="nh-role">Équipe Kwerk</span>
+				</div>
+			</article>
+
+			<article class="nh-portrait">
+				<div class="nh-portrait-photo"></div>
+				<div class="nh-portrait-info">
+					<h3>Aurélien</h3>
+					<span class="nh-role">Équipe Kwerk</span>
+				</div>
+			</article>
+
+			<article class="nh-portrait">
+				<div class="nh-portrait-photo"></div>
+				<div class="nh-portrait-info">
+					<h3>Charlotte</h3>
+					<span class="nh-role">Équipe Kwerk</span>
+				</div>
+			</article>
+
+		</div>
+		<p class="nh-portraits-note">Photographies et biographies à venir.</p>
+	</div>
+</section>
+
+<!-- ============================================================
+     4. CITATION
+     ============================================================ -->
+<section class="nh-citation">
+	<div class="nh-citation-inner">
+		<blockquote>« Un bureau ne devrait pas être un espace, mais une adresse. On y travaille ; on devrait y être reçu comme on l'est dans une maison qu'on aime. »</blockquote>
+		<div class="nh-author">Albert Angel — Cofondateur</div>
+	</div>
+</section>
+
+<!-- ============================================================
+     5. CTA FINAL
+     ============================================================ -->
+<section class="exceptional-section">
+	<div class="exceptional-container">
+		<h2 class="exceptional-heading">Rencontrer la maison</h2>
+		<p class="exceptional-body">La meilleure façon de comprendre une adresse, c'est d'y passer la journée. Nous vous accueillons pour une visite de nos adresses, ou de celle qui vous ressemble.</p>
+		<a href="#" class="nh-cta-btn cta-final-btn">Demander un rendez-vous</a>
+	</div>
+</section>
+
+
+<footer class="footer">
+	<div class="footer-container">
+		<div class="footer-left">
+			<img src="images/logo-kwerk-noir.png" alt="Kwerk" class="footer-logo"/>
+			<a href="#" class="footer-contact-btn">CONTACTEZ-NOUS</a>
+			<div class="footer-socials">
+				<a href="https://www.instagram.com/kwerkparis/" target="_blank" rel="noreferrer noopener" aria-label="Instagram"><img src="images/footer_social/instagram.svg"/></a>
+				<a href="https://www.linkedin.com/company/kwerk/" target="_blank" rel="noreferrer noopener" aria-label="LinkedIn"><img src="images/footer_social/linkedin.svg"/></a>
+			</div>
+		</div>
+
+		<div class="footer-right">
+			<nav class="footer-nav footer-nav--3col">
+				<div class="footer-col">
+					<h4 class="footer-col-title">NOS OFFRES</h4>
+					<ul class="footer-col-links">
+						<li><a href="espaces.html">LES BUREAUX</a></li>
+						<li><a href="maison-kwerk.html">EXPÉRIENCE BY KWERK</a></li>
+						<li><a href="event.html">L'ÉVÉNEMENTIEL</a></li>
+					</ul>
+				</div>
+				<div class="footer-col">
+					<h4 class="footer-col-title">DÉCOUVRIR</h4>
+					<ul class="footer-col-links">
+						<li><a href="notre-histoire.html">NOTRE HISTOIRE</a></li>
+						<li><a href="nos-services.html">LES SERVICES</a></li>
+						<li><a href="adresses.html">LES ADRESSES</a></li>
+						<li><a href="galerie.html">LA GALERIE</a></li>
+					</ul>
+				</div>
+				<div class="footer-col">
+					<h4 class="footer-col-title">NOS ADRESSES</h4>
+					<ul class="footer-col-links">
+						<li><a href="adresses/messine.html">MESSINE</a></li>
+						<li><a href="adresses/saint-honore.html">SAINT-HONORÉ</a></li>
+						<li><a href="adresses/madeleine.html">MADELEINE</a></li>
+					</ul>
+				</div>
+			</nav>
+		</div>
+	</div>
+	<div class="footer-bottom">
+		<span class="footer-copy">© Kwerk</span>
+		<div class="footer-legal">
+			<a href="cgu.html">Conditions générales d'utilisation</a>
+			<a href="mentions-legales.html">Mentions légales</a>
+		</div>
+	</div>
+</footer>
+
+	<script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+	<script>
+		AOS.init({delay: 200, duration: 1500, anchorPlacement: 'center-center', once: true});
+	</script>
+	<!-- Start of HubSpot Embed Code -->
+	<script type="text/javascript" id="hs-script-loader" async defer src="https://js-eu1.hs-scripts.com/26225487.js"></script>
+	<!-- End of HubSpot Embed Code -->
+	<script src="js/sticky.js"></script>
+	<script src="js/contact.js"></script>
+	<script src="js/form.js"></script>
+	<script src="js/footer.js"></script>
+	<script src="js/script.js"></script>
+	<script src="js/loader.js"></script>
+</body>
+</html>
