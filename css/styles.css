@@ -229,6 +229,14 @@ a {
   background: #fff;
 }
 
+.adresses-intro-section--compact {
+  padding: 80px 40px 40px;
+}
+
+.adresses-intro-section--compact .adresses-intro-title {
+  margin-bottom: 0;
+}
+
 .adresses-intro-title {
   font-family: "Helvetica Neue", HelveticaNeue, sans-serif;
   font-weight: 300;
