@@ -147,9 +147,9 @@ a {
   color: #888;
 }
 .footer-nav--3col {
-  gap: 40px;
-  justify-content: space-between;
-  width: 100%;
+  gap: 72px;
+  justify-content: flex-start;
+  width: auto;
 }
 .footer-col {
   flex: none;
