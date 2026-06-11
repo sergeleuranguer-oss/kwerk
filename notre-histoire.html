@@ -89,27 +89,28 @@ f.parentNode.insertBefore(j, f);
 		}
 		.nh-founders-inner {
 			width: 100%;
-			max-width: 1100px;
+			max-width: 1000px;
 			padding: 0 60px;
 		}
-		.nh-founder {
+		.nh-founders-grid {
 			display: grid;
-			grid-template-columns: 360px 1fr;
-			gap: 72px;
-			align-items: center;
-			padding: 72px 0;
+			grid-template-columns: repeat(2, 1fr);
+			gap: 64px;
+			align-items: start;
 		}
-		.nh-founder + .nh-founder {
-			border-top: 1px solid #ececec;
+		.nh-founder {
+			display: block;
 		}
-		.nh-founder--reverse .nh-founder-media {
-			order: 2;
+		.nh-founder--solo {
+			max-width: 440px;
+			margin: 0 auto 72px;
 		}
 		.nh-founder-media {
 			width: 100%;
 			aspect-ratio: 4 / 5;
 			background: #1a1a1a;
 			overflow: hidden;
+			margin-bottom: 28px;
 		}
 		.nh-founder-media img {
 			width: 100%;
@@ -264,14 +265,14 @@ f.parentNode.insertBefore(j, f);
 		@media (max-width: 900px) {
 			.nh-team-grid { grid-template-columns: repeat(2, 1fr); gap: 40px 32px; }
 		}
+		@media (max-width: 700px) {
+			.nh-founders-grid { grid-template-columns: 1fr; gap: 48px; max-width: 420px; margin: 0 auto; }
+		}
 		@media (max-width: 768px) {
 			.nh-hero-title { font-size: 26px; }
 			.nh-founders-inner { padding: 0 24px; }
 			.nh-team-inner { padding: 0 24px; }
 			.nh-portraits-note { padding: 0 24px; }
-			.nh-founder { grid-template-columns: 1fr; gap: 28px; padding: 48px 0; }
-			.nh-founder--reverse .nh-founder-media { order: 0; }
-			.nh-founder-media { max-width: 320px; }
 			.nh-citation { padding: 90px 24px; }
 			.nh-citation blockquote { font-size: 22px; }
 			.nh-signature { font-size: 19px; }
@@ -523,27 +524,29 @@ window.axeptioSettings = {
      ============================================================ -->
 <section class="nh-founders">
 	<div class="nh-founders-inner">
+		<div class="nh-founders-grid">
 
-		<article class="nh-founder">
-			<div class="nh-founder-media"><img src="images/albert.png" alt="Albert Angel"></div>
-			<div class="nh-founder-body">
-				<h3>Albert Angel</h3>
-				<span class="nh-founder-role">Architecte designer et cofondateur</span>
-				<p>Après avoir obtenu son diplôme d'architecture à l'Université de Cape Town en 1996, il déménage à New York, où il travaille sur le design des musées au sein de l'agence Ralph Appelbaum Associates.</p>
-				<p>En 2008, il rencontre Lawrence Knights, avec qui il crée Kwerk en 2015. Chez Kwerk, il design et crée des environnements de travail qui provoquent des émotions fortes, positives et engageantes. Il conçoit chaque adresse comme la pièce unique d'une même collection, qui explore les matières et mêle les influences qui résonnent en chacun de nous.</p>
-			</div>
-		</article>
+			<article class="nh-founder">
+				<div class="nh-founder-media"><img src="images/albert.png" alt="Albert Angel"></div>
+				<div class="nh-founder-body">
+					<h3>Albert Angel</h3>
+					<span class="nh-founder-role">Architecte designer et cofondateur</span>
+					<p>Après avoir obtenu son diplôme d'architecture à l'Université de Cape Town en 1996, il déménage à New York, où il travaille sur le design des musées au sein de l'agence Ralph Appelbaum Associates.</p>
+					<p>En 2008, il rencontre Lawrence Knights, avec qui il crée Kwerk en 2015. Chez Kwerk, il design et crée des environnements de travail qui provoquent des émotions fortes, positives et engageantes. Il conçoit chaque adresse comme la pièce unique d'une même collection, qui explore les matières et mêle les influences qui résonnent en chacun de nous.</p>
+				</div>
+			</article>
 
-		<article class="nh-founder nh-founder--reverse">
-			<div class="nh-founder-media"><img src="images/lawence.jpeg" alt="Lawrence Knights"></div>
-			<div class="nh-founder-body">
-				<h3>Lawrence Knights</h3>
-				<span class="nh-founder-role">Entrepreneur et cofondateur</span>
-				<p>Diplômé de HEC, Lawrence s'installe à New York en 2008 pour diriger le bureau américain du cabinet RLD-Partners, dont il est associé. C'est là qu'il rencontre Albert Angel et qu'il rejoint son cabinet d'architecture et de design.</p>
-				<p>Passionnés de voyage et d'ailleurs, ils s'établissent ensemble à Bali, où ils créent une entreprise de sourcing et de création de meubles. De retour en France, ils fondent Kwerk en 2015 et se donnent pour mission de créer les plus beaux environnements de travail, des lieux où chacun se sent pleinement à sa place.</p>
-			</div>
-		</article>
+			<article class="nh-founder">
+				<div class="nh-founder-media"><img src="images/lawence.jpeg" alt="Lawrence Knights"></div>
+				<div class="nh-founder-body">
+					<h3>Lawrence Knights</h3>
+					<span class="nh-founder-role">Entrepreneur et cofondateur</span>
+					<p>Diplômé de HEC, Lawrence s'installe à New York en 2008 pour diriger le bureau américain du cabinet RLD-Partners, dont il est associé. C'est là qu'il rencontre Albert Angel et qu'il rejoint son cabinet d'architecture et de design.</p>
+					<p>Passionnés de voyage et d'ailleurs, ils s'établissent ensemble à Bali, où ils créent une entreprise de sourcing et de création de meubles. De retour en France, ils fondent Kwerk en 2015 et se donnent pour mission de créer les plus beaux environnements de travail, des lieux où chacun se sent pleinement à sa place.</p>
+				</div>
+			</article>
 
+		</div>
 	</div>
 </section>
 
@@ -552,14 +555,19 @@ window.axeptioSettings = {
      ============================================================ -->
 <section class="nh-team">
 	<div class="nh-team-inner">
-		<h2 class="exceptional-heading" style="text-align:center; margin-bottom:8px;">Les visages de Kwerk</h2>
-		<div class="nh-team-grid">
+		<h2 class="exceptional-heading" style="text-align:center; margin-bottom:48px;">Les visages de Kwerk</h2>
 
-			<article class="nh-team-card">
-				<div class="nh-team-photo"></div>
-				<h3>Vincent</h3>
-				<span class="nh-role">Équipe Kwerk</span>
-			</article>
+		<article class="nh-founder nh-founder--solo">
+			<div class="nh-founder-media"><img src="images/vincent1.png" alt="Vincent Cosme"></div>
+			<div class="nh-founder-body">
+				<h3>Vincent Cosme</h3>
+				<span class="nh-founder-role">Chef exécutif</span>
+				<p>Plus de quinze ans d'expérience dans la restauration, passé par des maisons telles que le Ritz-Carlton ou des établissements Relais &amp; Châteaux. Vincent a également exercé comme chef privé pendant six ans et opéré des prestations événementielles haut de gamme. Chef primé, il a été élu Champion de France Traiteur en 2021.</p>
+				<p>Chez Kwerk, il imagine une restauration qui prolonge l'esprit de la maison : une cuisine du produit, sincère et généreuse, pensée comme un véritable moment d'hospitalité. Chaque déjeuner y devient un temps fort de la journée, à partager comme à la table d'une maison que l'on aime.</p>
+			</div>
+		</article>
+
+		<div class="nh-team-grid">
 
 			<article class="nh-team-card">
 				<div class="nh-team-photo"></div>
