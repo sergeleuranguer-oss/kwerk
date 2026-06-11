@@ -148,7 +148,7 @@ a {
 }
 .footer-nav--3col {
   gap: 64px;
-  justify-content: flex-end;
+  justify-content: center;
 }
 .footer-col {
   font-size: 13px;
