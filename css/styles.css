@@ -649,11 +649,19 @@ a {
 
 /*********************** CTA FINAL ****************************/
 
+.offres-section--adresses {
+  padding-bottom: 0;
+}
+
+.offres-section--adresses .offres-grid--adresses {
+  padding-bottom: 0;
+}
+
 .cta-final-section {
   width: 100vw;
   background: #fff;
   text-align: center;
-  padding: 90px 40px 110px;
+  padding: 40px 40px 110px;
 }
 
 .cta-final-sep {
