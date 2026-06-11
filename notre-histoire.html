@@ -95,13 +95,15 @@ f.parentNode.insertBefore(j, f);
 		}
 		.nh-portrait {
 			display: grid;
-			grid-template-columns: 200px 1fr;
+			grid-template-columns: 220px 1fr;
 			gap: 28px;
-			align-items: start;
+			align-items: stretch;
 		}
 		.nh-portrait-photo {
-			width: 200px;
-			height: 240px;
+			width: 220px;
+			height: auto;
+			min-height: 260px;
+			align-self: stretch;
 			background: #1a1a1a;
 			overflow: hidden;
 		}
@@ -209,8 +211,8 @@ f.parentNode.insertBefore(j, f);
 			.nh-hero-title { font-size: 26px; }
 			.nh-portraits-inner { padding: 0 24px; }
 			.nh-portraits-note { padding: 0 24px; }
-			.nh-portrait { grid-template-columns: 140px 1fr; gap: 20px; }
-			.nh-portrait-photo { width: 140px; height: 170px; }
+			.nh-portrait { grid-template-columns: 150px 1fr; gap: 20px; }
+			.nh-portrait-photo { width: 150px; min-height: 190px; }
 			.nh-citation { padding: 90px 24px; }
 			.nh-citation blockquote { font-size: 22px; }
 			.nh-signature { font-size: 19px; }
@@ -442,7 +444,7 @@ window.axeptioSettings = {
 	<div class="exceptional-container">
 		<h2 class="exceptional-heading">Une certaine idée du bureau parisien,<br>une intuition devenue un savoir-faire</h2>
 		<div style="width: 1px; height: 56px; background: #1a1a1a; margin: 32px auto;"></div>
-		<p class="exceptional-body">Kwerk a été fondé par <strong>Albert Angel</strong>, architecte designer, et <strong>Lawrence Knights</strong>, entrepreneur. Une idée à l'origine : un bureau ne devrait pas être un simple espace de travail, mais une adresse à laquelle on se sent bien. Un lieu où l'on est reçu comme dans une maison qu'on aime.</p>
+		<p class="exceptional-body">Kwerk a été fondé par Albert Angel, architecte designer, et Lawrence Knights, entrepreneur. Une idée à l'origine : un bureau ne devrait pas être un simple espace de travail, mais une adresse à laquelle on se sent bien. Un lieu où l'on est reçu comme dans une maison qu'on aime.</p>
 		<p class="exceptional-body">La première adresse a ouvert ses portes en 2015. Aujourd'hui, nous en tenons trois, toutes au cœur de Paris, dans le 8e arrondissement, toutes signées par notre direction artistique, toutes opérées par Kwerk. Chaque pièce a son écriture. Chaque service est tenu par nos équipes, du matin au soir.</p>
 		<p class="exceptional-body">Plus de dix ans plus tard, la promesse n'a pas changé. Nous tenons nos adresses comme on tient une maison qu'on aime.</p>
 	</div>
@@ -469,7 +471,7 @@ window.axeptioSettings = {
 				<div class="nh-portrait-info">
 					<h3>Albert Angel</h3>
 					<span class="nh-role">Architecte designer et cofondateur</span>
-					<p>Après avoir obtenu son diplôme d'architecture à l'Université de Cape Town en 1996, il déménage à New York, où il travaille sur le design des musées au sein de l'agence Ralph Appelbaum Associates et sur les environnements de marques aux côtés du « branding guru » Marc Gobé.</p>
+					<p>Après avoir obtenu son diplôme d'architecture à l'Université de Cape Town en 1996, il déménage à New York, où il travaille sur le design des musées au sein de l'agence Ralph Appelbaum Associates.</p>
 					<p>En 2008, il rencontre Lawrence Knights, avec qui il crée Kwerk en 2015. Chez Kwerk, il design et crée des environnements de travail qui provoquent des émotions fortes, positives et engageantes. Il conçoit chaque adresse comme la pièce unique d'une même collection, qui explore les matières et mêle les influences qui résonnent en chacun de nous.</p>
 				</div>
 			</article>
