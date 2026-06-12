@@ -483,6 +483,12 @@ a {
     font-size: 26px;
     padding: 20px 24px 20px;
   }
+  .adresses-intro-title {
+    font-size: 26px;
+  }
+  .adresses-intro-section--compact .adresses-intro-title {
+    margin-bottom: 24px;
+  }
   .offres-grid {
     display: grid;
     grid-template-columns: 1fr;
