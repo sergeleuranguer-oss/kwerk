@@ -3,7 +3,7 @@ document.addEventListener("DOMContentLoaded", function () {
   const filterLinks = document.querySelectorAll(".filter-menu a");
   const btnMore = document.querySelector(".btn-more");
 
-  const availableFilters = ["all", "messine", "madeleine", "haussmann", "saint-honore"];
+  const availableFilters = ["all", "messine", "madeleine", "saint-honore"];
   const urlFilter = new URLSearchParams(window.location.search).get("filter");
   let currentFilter = availableFilters.includes(urlFilter) ? urlFilter : "all";
   let page = 0;
