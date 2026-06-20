@@ -1,4 +1,4 @@
-name: Build (analytics snippets + partials injection)
+name: Build (GTM safety-net + partials injection)
 
 on:
   push:
@@ -6,7 +6,7 @@ on:
       - preprod
 
 jobs:
-  gtm-check:
+  build:
     runs-on: ubuntu-latest
     permissions:
       contents: write
@@ -18,134 +18,16 @@ jobs:
         with:
           ref: preprod
           token: ${{ secrets.GITHUB_TOKEN }}
-          fetch-depth: 2
 
-      - name: Insert GTM, HubSpot and Axeptio snippets in HTML files
-        run: |
-          python3 << 'PYEOF'
-          import subprocess
-          import re
-          import os
-
-          GTM_ID = 'GTM-MK4BS4GL'
-          HS_SCRIPT_ID = 'hs-script-loader'
-          HS_CORRECT_SRC = 'https://js-eu1.hs-scripts.com/26225487.js'
-          AXEPTIO_MARKER = 'axept.io'
-
-          HEAD_SNIPPET = """    <!-- Google Tag Manager -->
-          <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
-          new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
-          j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
-          'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
-          })(window,document,'script','dataLayer','GTM-MK4BS4GL');</script>
-          <!-- End Google Tag Manager -->"""
-
-          BODY_SNIPPET = """    <!-- Google Tag Manager (noscript) -->
-          <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-MK4BS4GL"
-          height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
-          <!-- End Google Tag Manager (noscript) -->"""
-
-          HS_SNIPPET = """    <!-- Start of HubSpot Embed Code -->
-          <script type="text/javascript" id="hs-script-loader" async defer src="https://js-eu1.hs-scripts.com/26225487.js"></script>
-          <!-- End of HubSpot Embed Code -->"""
-
-          AXEPTIO_SNIPPET = """    <!-- Axeptio -->
-          <script>
-          window.axeptioSettings = {
-            clientId: "67b4575ea6e9c7674834e1e1",
-            cookiesVersion: "custom_Cp",
-          };
-
-          (function(d, s) {
-            var t = d.getElementsByTagName(s)[0], e = d.createElement(s);
-            e.async = true; e.src = "//static.axept.io/sdk.js";
-            t.parentNode.insertBefore(e, t);
-          })(document, "script");
-          </script>
-          <!-- End Axeptio -->"""
-
-          # Get only ADDED files in this commit
-          result = subprocess.run(
-              ['git', 'diff', '--name-status', 'HEAD~1', 'HEAD'],
-              capture_output=True, text=True
-           )
-          added_html = [
-              line.split('\t', 1)[1].strip()
-              for line in result.stdout.splitlines()
-              if line.startswith('A') and line.endswith('.html')
-              and not line.split('\t', 1)[1].strip().startswith('partials/')
-          ]
-
-          if not added_html:
-              print("No new HTML files in this commit. Nothing to do.")
-          else:
-              modified = []
-              for fpath in added_html:
-                  if not os.path.exists(fpath):
-                      print(f"WARNING: {fpath} not found, skipping")
-                      continue
-                  with open(fpath, 'r', encoding='utf-8', errors='replace') as f:
-                      content = f.read()
-                  original = content
-
-                  # GTM check
-                  if GTM_ID not in content:
-                      charset_match = re.search(r'(<meta\s+charset[^>]*>)', content, re.IGNORECASE)
-                      head_match = re.search(r'(<head[^>]*>)', content, re.IGNORECASE)
-                      if charset_match:
-                          insert_pos = charset_match.end()
-                          content = content[:insert_pos] + '\n' + HEAD_SNIPPET + content[insert_pos:]
-                      elif head_match:
-                          insert_pos = head_match.end()
-                          content = content[:insert_pos] + '\n' + HEAD_SNIPPET + content[insert_pos:]
-                      body_match = re.search(r'(<body[^>]*>)', content, re.IGNORECASE)
-                      if body_match:
-                          insert_pos = body_match.end()
-                          content = content[:insert_pos] + '\n' + BODY_SNIPPET + content[insert_pos:]
-                      print(f"GTM ADDED: {fpath}")
-                  else:
-                      print(f"SKIP GTM (already present): {fpath}")
-
-                  # HubSpot check
-                  if HS_SCRIPT_ID not in content:
-                      body_close = re.search(r'(</body>)', content, re.IGNORECASE)
-                      if body_close:
-                          insert_pos = body_close.start()
-                          content = content[:insert_pos] + HS_SNIPPET + '\n' + content[insert_pos:]
-                      print(f"HUBSPOT ADDED: {fpath}")
-                  else:
-                      broken_hs = re.search(
-                          r'(<script[^>]+id=["\']hs-script-loader["\'][^>]+src=["\'])(\.\./js-eu1[^"\'\'>]+)(["\'])',
-                          content, re.IGNORECASE
-                      )
-                      if broken_hs:
-                          content = content[:broken_hs.start(2)] + HS_CORRECT_SRC + content[broken_hs.end(2):]
-                          print(f"HUBSPOT FIXED (broken src): {fpath}")
-                      else:
-                          print(f"SKIP HubSpot (already correct): {fpath}")
-
-                  # Axeptio check
-                  if AXEPTIO_MARKER not in content:
-                      head_close = re.search(r'(</head>)', content, re.IGNORECASE)
-                      if head_close:
-                          insert_pos = head_close.start()
-                          content = content[:insert_pos] + AXEPTIO_SNIPPET + '\n' + content[insert_pos:]
-                      print(f"AXEPTIO ADDED: {fpath}")
-                  else:
-                      print(f"SKIP Axeptio (already present): {fpath}")
-
-                  if content != original:
-                      with open(fpath, 'w', encoding='utf-8') as f:
-                          f.write(content)
-                      modified.append(fpath)
-
-              print(f"\nTotal files modified: {len(modified)}")
-          PYEOF
+      # GTM uniquement : HubSpot vient du partial `scripts`, Axeptio est chargé PAR GTM
+      # (ne jamais inliner Axeptio -> double-chargement).
+      - name: Ensure GTM container on all pages
+        run: python3 build/inject_gtm.py
 
       - name: Inject shared partials (header / nav / menu / footer / scripts)
         run: python3 build/inject_partials.py
 
-      - name: Commit modified HTML files
+      - name: Commit regenerated HTML files
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "github-actions[bot]@users.noreply.github.com"
@@ -153,6 +35,6 @@ jobs:
           if git diff --cached --quiet; then
             echo "No changes to commit."
           else
-            git commit -m "build: snippets analytics + injection des partials communs"
+            git commit -m "build: GTM + injection des partials communs"
             git push origin preprod
           fi
