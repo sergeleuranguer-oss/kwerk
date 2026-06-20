@@ -21,13 +21,15 @@ f.parentNode.insertBefore(j, f);
 	<!-- End Google Tag Manager -->
 
 	<!-- Import Google Fonts (Roboto) -->
-	<link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&amp;display=swap" rel="stylesheet">
-	<link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
-	<link rel="icon" type="image/svg+xml" href="favicon.ico">
-
-	<link rel="stylesheet" href="css/navbar.css">
-	<link rel="stylesheet" href="css/styles.css">
-	<link rel="stylesheet" href="css/footer.css">
+<!-- KW:head -->
+		<!-- Import Google Fonts (Roboto) -->
+		<link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&amp;display=swap" rel="stylesheet">
+		<link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+		<link rel="icon" type="image/svg+xml" href="favicon.ico">
+		<link rel="stylesheet" href="css/navbar.css">
+		<link rel="stylesheet" href="css/styles.css">
+		<link rel="stylesheet" href="css/footer.css">
+<!-- /KW:head -->
 </head>
 <body>
 	<div id="pageLoader" class="page-loader">
@@ -54,22 +56,25 @@ f.parentNode.insertBefore(j, f);
 	<header class="hero hero--no-overlay" style="background-color: #000;">
 		<div class="hero-video hero-slideshow" style="background-image: url('images/1-HP.jpg');" data-hero-slides="images/1-HP.jpg,images/2-HP.jpg,images/3-HP.jpg,images/4-HP.jpg,images/5-HP.jpg,images/6-HP.jpg,images/7-HP.jpg,images/8-HP.jpg"></div>
 
-	<nav class="navbar">
-		<div class="menu-icon"><img src="images/menu_burger.svg"></div>
-		<a href="en.html" class="logo-wrapper">
-			<div class="logo"><img src="images/logo-sans-bureaux.png"></div>
-		</a>
-		<div class="nav-lang-switch">
-			<a href="index.html">FR</a>
-			<span class="lang-sep">/</span>
-			<a href="en.html">EN</a>
-		</div>
-		<a href="en/contact.html" class="contact-btn">CONTACT US</a>
-	</nav>
+<!-- KW:nav alt="index.html" -->
+<nav class="navbar">
+	<div class="menu-icon"><img src="images/menu_burger.svg"></div>
+	<a href="en.html" class="logo-wrapper">
+		<div class="logo"><img src="images/logo-sans-bureaux.png"></div>
+	</a>
+	<div class="nav-lang-switch">
+		<a href="index.html">FR</a>
+		<span class="lang-sep">/</span>
+		<a href="en.html">EN</a>
+	</div>
+	<a href="#" class="contact-btn">CONTACT US</a>
+</nav>
+<!-- /KW:nav -->
 
 	</header>
 
 <!-- MENU -->
+<!-- KW:menu -->
 <div class="side-menu" id="sideMenu">
 	<div class="side-menu-header">
 		<a href="en.html"><img src="images/logo-kwerk-noir.png" alt="Logo"></a>
@@ -83,7 +88,7 @@ f.parentNode.insertBefore(j, f);
 			<a href="en/adresses.html">OUR LOCATIONS</a>
 		</li>
 		<li>
-			<a href="en/maison-kwerk.html">YOUR BUILDING, MANAGED BY KWERK</a>
+			<a href="en/maison-kwerk.html">YOUR BUILDING<br>MANAGED BY KWERK</a>
 		</li>
 		<li>
 			<a href="en/event.html">YOUR EVENTS</a>
@@ -92,14 +97,14 @@ f.parentNode.insertBefore(j, f);
 
 </div>
 
-<!-- ADDRESSES SUBMENU -->
+<!-- SUBMENU ADDRESSES -->
 <div class="submenu-panel" id="submenuPRAdresses">
 	<div class="submenu-header">
 		<span class="close-submenu" data-back="true">
 			<img src="images/close_cross.svg" alt="close">
 		</span>
 	</div>
-	<img src="images/adresses.png" alt="Addresses" class="submenu-img">
+	<img src="images/adresses.png" alt="Our Addresses" class="submenu-img">
 	<div class="submenu-content">
 		<a href="en/adresses.html">
 			<h4>OUR LOCATIONS</h4>
@@ -130,12 +135,18 @@ f.parentNode.insertBefore(j, f);
 			<label>WHAT IS YOUR REQUEST? *</label>
 			<select name="produit" required>
 				<option value="" disabled selected>Please select</option>
-				<option>Executive Offices</option>
-				<option>Signature Suites</option>
-				<option>Private Floors</option>
-				<option>Your offices managed by Kwerk</option>
+				<option value="Bureaux">Executive Offices</option>
+				<option>Your building managed by Kwerk</option>
 				<option>Events</option>
 			</select>
+			<div class="error"></div>
+		</div>
+	</div>
+
+	<div class="ps-field-row single ps-field-row--desk" style="display:none;">
+		<div class="ps-field">
+			<label>HOW MANY DESKS DO YOU NEED? *</label>
+			<input type="number" name="desk" min="1" placeholder="Number of desks">
 			<div class="error"></div>
 		</div>
 	</div>
@@ -153,7 +164,7 @@ f.parentNode.insertBefore(j, f);
 				<option>Professional meeting at Kwerk</option>
 				<option>In the press</option>
 				<option>At a Kwerk event</option>
-				<option>During lunch at the Dana restaurant</option>
+				<option>During lunch at Le Dana restaurant</option>
 			</select>
 			<div class="error"></div>
 		</div>
@@ -200,8 +211,8 @@ f.parentNode.insertBefore(j, f);
 
 	<div class="ps-field-row single">
 		<div class="ps-field">
-			<label>YOUR COMPANY (IF APPLICABLE)</label>
-			<input type="text" name="company" placeholder="Company name">
+			<label>YOUR COMPANY *</label>
+			<input type="text" name="company" placeholder="Company name" required>
 			<div class="error"></div>
 		</div>
 	</div>
@@ -212,8 +223,9 @@ f.parentNode.insertBefore(j, f);
 		<button type="submit" class="submit-btn">SEND YOUR REQUEST</button>
 		<div class="success" id="successMessage"></div>
 	</div>
-</form>
+	</form>
 </div>
+<!-- /KW:menu -->
 
 <section class="exceptional-section">
 	<div class="exceptional-container" data-aos="fade-up">
@@ -275,6 +287,7 @@ f.parentNode.insertBefore(j, f);
 	<a href="en/galerie.html" class="exceptional-cta">SEE THE GALLERY</a>
 </div>
 
+<!-- KW:footer -->
 <footer class="footer">
 	<div class="footer-container">
 		<div class="footer-left">
@@ -300,7 +313,7 @@ f.parentNode.insertBefore(j, f);
 				</div>
 				<div class="footer-nav-col">
 					<div class="footer-nav-title">
-						<a href="en/maison-kwerk.html">YOUR BUILDING, MANAGED BY KWERK</a>
+						<a href="en/maison-kwerk.html">YOUR BUILDING MANAGED BY KWERK</a>
 					</div>
 				</div>
 				<div class="footer-nav-col">
@@ -316,20 +329,23 @@ f.parentNode.insertBefore(j, f);
 		<a href="en/mentions-legales.html">Legal Notice</a>
 	</div>
 </footer>
+<!-- /KW:footer -->
 
-<script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
-<script>
-	AOS.init({delay: 200, duration: 1500, anchorPlacement: 'center-center', once: true});
-</script>
-<!-- Start of HubSpot Embed Code -->
-<script type="text/javascript" id="hs-script-loader" async defer src="https://js-eu1.hs-scripts.com/26225487.js"></script>
-<!-- End of HubSpot Embed Code -->
-<script src="js/sticky.js"></script>
-<script src="js/contact.js"></script>
-<script src="js/form.js"></script>
-<script src="js/footer.js"></script>
-<script src="js/script.js"></script>
-<script src="js/loader.js"></script>
+<!-- KW:scripts -->
+		<script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+		<script>
+			AOS.init({delay: 200, duration: 1500, anchorPlacement: 'center-center', once: true});
+		</script>
+		<!-- Start of HubSpot Embed Code -->
+		<script type="text/javascript" id="hs-script-loader" async defer src="https://js-eu1.hs-scripts.com/26225487.js"></script>
+		<!-- End of HubSpot Embed Code -->
+		<script src="js/sticky.js"></script>
+		<script src="js/contact.js"></script>
+		<script src="js/form.js"></script>
+		<script src="js/footer.js"></script>
+		<script src="js/script.js"></script>
+		<script src="js/loader.js"></script>
+<!-- /KW:scripts -->
 
 </body>
 </html>

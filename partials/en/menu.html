@@ -1,0 +1,150 @@
+<div class="side-menu" id="sideMenu">
+	<div class="side-menu-header">
+		<a href="{{ASSET}}en.html"><img src="{{ASSET}}images/logo-kwerk-noir.png" alt="Logo"></a>
+		<span class="close-btn" id="closeMenu"><img src="{{ASSET}}images/close_cross.svg" alt="close"></span>
+	</div>
+	<ul class="side-menu-links">
+		<li>
+			<a href="{{LINK}}espaces.html">OUR OFFICES &amp; SERVICES</a>
+		</li>
+		<li>
+			<a href="{{LINK}}adresses.html">OUR LOCATIONS</a>
+		</li>
+		<li>
+			<a href="{{LINK}}maison-kwerk.html">YOUR BUILDING<br>MANAGED BY KWERK</a>
+		</li>
+		<li>
+			<a href="{{LINK}}event.html">YOUR EVENTS</a>
+		</li>
+	</ul>
+
+</div>
+
+<!-- SUBMENU ADDRESSES -->
+<div class="submenu-panel" id="submenuPRAdresses">
+	<div class="submenu-header">
+		<span class="close-submenu" data-back="true">
+			<img src="{{ASSET}}images/close_cross.svg" alt="close">
+		</span>
+	</div>
+	<img src="{{ASSET}}images/adresses.png" alt="Our Addresses" class="submenu-img">
+	<div class="submenu-content">
+		<a href="{{LINK}}adresses.html">
+			<h4>OUR LOCATIONS</h4>
+		</a>
+		<ul>
+			<li><a href="{{LINK}}adresses/messine.html">MESSINE</a></li>
+			<li><a href="{{LINK}}adresses/saint-honore.html">SAINT-HONORÉ</a></li>
+			<li><a href="{{LINK}}adresses/madeleine.html">MADELEINE</a></li>
+		</ul>
+	</div>
+</div>
+
+<!-- SIDE CONTACT FORM -->
+<div class="side-contact-form" id="sideContactForm">
+
+	<div class="contact-form-header">
+		<span class="close-contact-form" id="closeContactForm">
+			<img src="{{ASSET}}images/close_cross.svg" alt="close">
+		</span>
+	</div>
+	<form class="contact-form-fields">
+
+	<!-- YOUR REQUEST -->
+	<h3 class="contact-section-title">YOUR REQUEST</h3>
+
+	<div class="ps-field-row single">
+		<div class="ps-field ps-select">
+			<label>WHAT IS YOUR REQUEST? *</label>
+			<select name="produit" required>
+				<option value="" disabled selected>Please select</option>
+				<option value="Bureaux">Executive Offices</option>
+				<option>Your building managed by Kwerk</option>
+				<option>Events</option>
+			</select>
+			<div class="error"></div>
+		</div>
+	</div>
+
+	<div class="ps-field-row single ps-field-row--desk" style="display:none;">
+		<div class="ps-field">
+			<label>HOW MANY DESKS DO YOU NEED? *</label>
+			<input type="number" name="desk" min="1" placeholder="Number of desks">
+			<div class="error"></div>
+		</div>
+	</div>
+
+	<div class="ps-field-row single">
+		<div class="ps-field">
+			<label>HOW DID YOU HEAR ABOUT KWERK? *</label>
+			<select name="origine_de_la_piste" required>
+				<option value="" disabled selected>Please select</option>
+				<option>Recommendation from my network</option>
+				<option>Internet search</option>
+				<option>Recommendation from a Kwerk member</option>
+				<option>Referred by a broker</option>
+				<option>On social media</option>
+				<option>Professional meeting at Kwerk</option>
+				<option>In the press</option>
+				<option>At a Kwerk event</option>
+				<option>During lunch at Le Dana restaurant</option>
+			</select>
+			<div class="error"></div>
+		</div>
+	</div>
+
+	<div class="ps-field-row single">
+		<div class="ps-field">
+			<label>TELL US ABOUT YOUR PROJECT *</label>
+			<textarea name="description_de_la_transaction" placeholder="Tell us about your project" required></textarea>
+			<div class="error"></div>
+		</div>
+	</div>
+
+	<hr class="contact-separator">
+
+	<!-- YOUR DETAILS -->
+	<h3 class="contact-section-title">YOUR DETAILS</h3>
+
+	<div class="ps-field-row">
+		<div class="ps-field">
+			<label>YOUR FIRST NAME *</label>
+			<input type="text" name="firstname" placeholder="Your first name" required>
+			<div class="error"></div>
+		</div>
+		<div class="ps-field">
+			<label>YOUR LAST NAME *</label>
+			<input type="text" name="lastname" placeholder="Your last name" required>
+			<div class="error"></div>
+		</div>
+	</div>
+
+	<div class="ps-field-row">
+		<div class="ps-field">
+			<label>YOUR PHONE NUMBER *</label>
+			<input type="text" name="phone" placeholder="+XX X XX XX XX XX" required>
+			<div class="error"></div>
+		</div>
+		<div class="ps-field">
+			<label>YOUR EMAIL ADDRESS *</label>
+			<input type="email" name="email" placeholder="name@email.com" required>
+			<div class="error"></div>
+		</div>
+	</div>
+
+	<div class="ps-field-row single">
+		<div class="ps-field">
+			<label>YOUR COMPANY *</label>
+			<input type="text" name="company" placeholder="Company name" required>
+			<div class="error"></div>
+		</div>
+	</div>
+
+	<hr class="contact-separator">
+
+	<div class="form-footer">
+		<button type="submit" class="submit-btn">SEND YOUR REQUEST</button>
+		<div class="success" id="successMessage"></div>
+	</div>
+	</form>
+</div>
