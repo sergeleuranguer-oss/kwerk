@@ -1,4 +1,4 @@
-name: GTM + HubSpot + Axeptio Auto-Insert
+name: Build (analytics snippets + partials injection)
 
 on:
   push:
@@ -73,6 +73,7 @@ jobs:
               line.split('\t', 1)[1].strip()
               for line in result.stdout.splitlines()
               if line.startswith('A') and line.endswith('.html')
+              and not line.split('\t', 1)[1].strip().startswith('partials/')
           ]
 
           if not added_html:
@@ -141,6 +142,9 @@ jobs:
               print(f"\nTotal files modified: {len(modified)}")
           PYEOF
 
+      - name: Inject shared partials (header / nav / menu / footer / scripts)
+        run: python3 build/inject_partials.py
+
       - name: Commit modified HTML files
         run: |
           git config user.name "github-actions[bot]"
@@ -149,6 +153,6 @@ jobs:
           if git diff --cached --quiet; then
             echo "No changes to commit."
           else
-            git commit -m "GTM + HubSpot + Axeptio: auto-ajout snippets sur les pages HTML"
+            git commit -m "build: snippets analytics + injection des partials communs"
             git push origin preprod
           fi

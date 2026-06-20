@@ -1,0 +1,159 @@
+<div class="side-menu" id="sideMenu">
+	<div class="side-menu-header">
+		<a href="{{LINK}}index.html"><img src="{{ASSET}}images/logo-kwerk-noir.png" alt="Logo"></a>
+		<span class="close-btn" id="closeMenu"><img src="{{ASSET}}images/close_cross.svg" alt="close"></span>
+	</div>
+	<ul class="side-menu-links">
+		<li>
+			<a href="{{LINK}}espaces.html">BUREAUX</a>
+		</li>
+		<li>
+			<a href="{{LINK}}maison-kwerk.html">EXPÉRIENCE BY KWERK</a>
+		</li>
+		<li>
+			<a href="{{LINK}}event.html">ÉVÉNEMENTIEL</a>
+		</li>
+		<li class="side-menu-sep"></li>
+		<li>
+			<a href="{{LINK}}notre-histoire.html">NOTRE HISTOIRE</a>
+		</li>
+		<li>
+			<a href="{{LINK}}nos-services.html">LES SERVICES</a>
+		</li>
+		<li>
+			<a href="{{LINK}}adresses.html">LES ADRESSES</a>
+		</li>
+	</ul>
+	<a href="#" class="side-menu-cta">RÉSERVER UNE VISITE</a>
+
+</div>
+
+<!--SOUS MENU ADRESSES-->
+<div class="submenu-panel" id="submenuPRAdresses">
+	<div class="submenu-header">
+		<span class="close-submenu" data-back="true">
+			<img src="{{ASSET}}images/close_cross.svg" alt="close">
+		</span>
+	</div>
+	<img src="{{ASSET}}images/adresses.png" alt="Image PR Produit" class="submenu-img">
+	<div class="submenu-content">
+		<a href="{{LINK}}adresses.html">
+			<h4>NOS ADRESSES</h4>
+		</a>
+		<ul>
+			<li><a href="{{LINK}}adresses/messine.html">MESSINE</a></li>
+			<li><a href="{{LINK}}adresses/saint-honore.html">SAINT-HONORÉ</a></li>
+			<li><a href="{{LINK}}adresses/madeleine.html">MADELEINE</a></li>
+		</ul>
+	</div>
+</div>
+
+<!-- SIDE CONTACT FORM -->
+<div class="side-contact-form" id="sideContactForm">
+
+	<div class="contact-form-header">
+		<span class="close-contact-form" id="closeContactForm">
+			<img src="{{ASSET}}images/close_cross.svg" alt="close">
+		</span>
+	</div>
+		<form class="contact-form-fields">
+
+		<!-- VOTRE BESOIN -->
+		<h3 class="contact-section-title">VOTRE BESOIN</h3>
+
+		<div class="ps-field-row single">
+			<div class="ps-field ps-select">
+				<label>QUEL EST VOTRE BESOIN ? *</label>
+				<select name="produit" required>
+					<option value="" disabled selected>Veuillez choisir</option>
+					<option value="Bureaux">Bureaux</option>
+					<option>Expérience by Kwerk</option>
+					<option>Événementiel</option>
+					</select>
+				<div class="error"></div>
+			</div>
+		</div>
+
+		<div class="ps-field-row single ps-field-row--desk" style="display:none;">
+			<div class="ps-field">
+				<label>DE COMBIEN DE POSTES AVEZ-VOUS BESOIN ? *</label>
+				<input type="number" name="desk" min="1" placeholder="Nombre de postes">
+				<div class="error"></div>
+			</div>
+		</div>
+
+
+		<div class="ps-field-row single">
+			<div class="ps-field">
+				<label>EXPLIQUEZ-NOUS VOTRE PROJET *</label>
+				<textarea name="description_de_la_transaction" placeholder="Expliquez-nous votre projet" required></textarea>
+				<div class="error"></div>
+			</div>
+		</div>
+
+		<hr class="contact-separator">
+
+		<!-- VOS COORDONNÉES -->
+		<h3 class="contact-section-title">VOS COORDONNÉES</h3>
+
+		<div class="ps-field-row">
+			<div class="ps-field">
+				<label>VOTRE PRÉNOM *</label>
+				<input type="text" name="firstname" placeholder="Votre prénom" required>
+				<div class="error"></div>
+			</div>
+			<div class="ps-field">
+				<label>VOTRE NOM *</label>
+				<input type="text" name="lastname" placeholder="Votre nom" required>
+				<div class="error"></div>
+			</div>
+		</div>
+
+		<div class="ps-field-row">
+			<div class="ps-field">
+				<label>VOTRE NUMÉRO DE TÉLÉPHONE *</label>
+				<input type="text" name="phone" placeholder="+XX X XX XX XX XX" required>
+				<div class="error"></div>
+			</div>
+			<div class="ps-field">
+				<label>VOTRE ADRESSE E-MAIL *</label>
+				<input type="email" name="email" placeholder="nom@email.com" required>
+				<div class="error"></div>
+			</div>
+		</div>
+
+		<div class="ps-field-row single">
+			<div class="ps-field">
+				<label>VOTRE SOCIÉTÉ *</label>
+				<input type="text" name="company" placeholder="Nom de l'entreprise" required>
+				<div class="error"></div>
+			</div>
+		</div>
+
+		<div class="ps-field-row single">
+			<div class="ps-field">
+				<label>COMMENT AVEZ-VOUS CONNU KWERK ? *</label>
+				<select name="origine_de_la_piste" required>
+					<option value="" disabled selected>Veuillez choisir</option>
+					<option>Recommandation par mon réseau</option>
+					<option>Recherche internet</option>
+					<option>Recommandation par un membre Kwerk</option>
+					<option>Mis en relation par un broker</option>
+					<option>Sur les réseaux sociaux</option>
+					<option>Rendez-vous professionnel chez Kwerk</option>
+					<option>Dans la presse</option>
+					<option>Lors d&#039;un événement chez Kwerk</option>
+					<option>Au cours d&#039;un déjeuner au restaurant Le Dana</option>
+				</select>
+				<div class="error"></div>
+			</div>
+		</div>
+
+		<hr class="contact-separator">
+
+		<div class="form-footer">
+			<button type="submit" class="submit-btn">ENVOYER</button>
+			<div class="success" id="successMessage"></div>
+		</div>
+	</form>
+</div>
