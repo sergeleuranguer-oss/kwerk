@@ -2205,6 +2205,56 @@ a {
   grid-area: 5 / 1 / 7 / 4;
 }
 
+/* Dernier lot incomplet (< 7 images) : grille fluide, pas de rangées réservées
+   -> supprime le gros espace vide sous la dernière image. */
+/* Dernier lot incomplet : compo adaptée au nombre d'images (1 à 6) — pas d'espace vide,
+   tailles variées comme la mosaïque (grande image + petites). */
+/* 1 image : pleine largeur */
+.gallery-grid--n1 {
+  grid-template-columns: 1fr;
+  grid-template-rows: 520px;
+}
+.gallery-grid--n1 .item-1 {
+  grid-area: auto;
+}
+/* 2 images : deux grandes côte à côte */
+.gallery-grid--n2 {
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: 480px;
+}
+.gallery-grid--n2 .item-1,
+.gallery-grid--n2 .item-2 {
+  grid-area: auto;
+}
+/* 3 images : une grande (2x2) + deux petites empilées */
+.gallery-grid--n3 {
+  grid-template-rows: 300px 300px;
+}
+.gallery-grid--n3 .item-1 { grid-area: 1 / 1 / 3 / 3; }
+.gallery-grid--n3 .item-2 { grid-area: 1 / 3 / 2 / 4; }
+.gallery-grid--n3 .item-3 { grid-area: 2 / 3 / 3 / 4; }
+/* 4 images : trio (1 grande + 2 petites) + 1 très grande pleine largeur */
+.gallery-grid--n4 {
+  grid-template-rows: 300px 300px 400px;
+}
+.gallery-grid--n4 .item-1 { grid-area: 1 / 1 / 3 / 3; }
+.gallery-grid--n4 .item-2 { grid-area: 1 / 3 / 2 / 4; }
+.gallery-grid--n4 .item-3 { grid-area: 2 / 3 / 3 / 4; }
+.gallery-grid--n4 .item-4 { grid-area: 3 / 1 / 4 / 4; }
+/* 5 images : trio + deux grandes en bas */
+.gallery-grid--n5 {
+  grid-template-rows: 300px 300px 360px;
+}
+.gallery-grid--n5 .item-1 { grid-area: 1 / 1 / 3 / 3; }
+.gallery-grid--n5 .item-2 { grid-area: 1 / 3 / 2 / 4; }
+.gallery-grid--n5 .item-3 { grid-area: 2 / 3 / 3 / 4; }
+.gallery-grid--n5 .item-4 { grid-area: 3 / 1 / 4 / 3; }
+.gallery-grid--n5 .item-5 { grid-area: 3 / 3 / 4 / 4; }
+/* 6 images : mosaïque complète sans la dernière rangée (item-7) */
+.gallery-grid--n6 {
+  grid-template-rows: 300px 300px 250px 250px;
+}
+
 .btn-more {
   display: block;
   margin: 40px auto;

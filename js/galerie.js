@@ -3,7 +3,7 @@ document.addEventListener("DOMContentLoaded", function () {
   const filterLinks = document.querySelectorAll(".filter-menu a");
   const btnMore = document.querySelector(".btn-more");
 
-  const availableFilters = ["all", "messine", "madeleine", "haussmann", "saint-honore"];
+  const availableFilters = ["all", "messine", "madeleine", "saint-honore"];
   const urlFilter = new URLSearchParams(window.location.search).get("filter");
   let currentFilter = availableFilters.includes(urlFilter) ? urlFilter : "all";
   let page = 0;
@@ -23,19 +23,20 @@ document.addEventListener("DOMContentLoaded", function () {
     return array;
   }
 
-  // Mélanger les images "all" si ce n'est pas déjà fait côté PHP
+  // "all" reconstruit automatiquement à partir de toutes les adresses présentes
+  // (robuste : pas de clé en dur ; ignore une adresse absente comme haussmann).
   if (!images.all || images.all.length === 0) {
-    images.all = shuffle([
-      ...images.messine,
-      ...images.madeleine,
-      ...images.haussmann,
-      ...images["saint-honore"],
-    ]);
+    images.all = shuffle(
+      Object.keys(images)
+        .filter((k) => k !== "all")
+        .reduce((acc, k) => acc.concat(images[k] || []), [])
+    );
   }
 
   function renderGrid(imagesToShow) {
     const grid = document.createElement("div");
-    grid.className = "gallery-grid";
+    // Lot complet (7) = mosaïque ; lot incomplet = compo dédiée selon le nombre d'images
+    grid.className = "gallery-grid" + (imagesToShow.length < 7 ? " gallery-grid--n" + imagesToShow.length : "");
 
     imagesToShow.forEach((src, index) => {
       const img = document.createElement("img");
