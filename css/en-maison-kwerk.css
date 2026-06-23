@@ -710,7 +710,7 @@
 			display: block;
 			font-family: 'Helvetica Neue', HelveticaNeue, sans-serif;
 			font-weight: 300;
-			font-size: 20px;
+			font-size: 18px;
 			line-height: 1.7;
 			color: #222;
 			margin-bottom: 16px;
@@ -725,7 +725,7 @@
 		.mk-offer-title {
 			font-family: 'Helvetica Neue', HelveticaNeue, sans-serif;
 			font-weight: 300;
-			font-size: 20px;
+			font-size: 18px;
 			line-height: 1.7;
 			color: #222;
 			margin: 0 0 16px;
@@ -733,7 +733,7 @@
 		.mk-offer-body {
 			font-family: 'Helvetica Neue', HelveticaNeue, sans-serif;
 			font-weight: 300;
-			font-size: 20px;
+			font-size: 18px;
 			line-height: 1.7;
 			color: #222;
 			margin: 0;

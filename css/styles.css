@@ -161,7 +161,7 @@ a {
 .exceptional-heading {
   font-family: "Helvetica Neue", HelveticaNeue, sans-serif;
   font-weight: 300;
-  font-size: 40px;
+  font-size: 26px;
   line-height: 1.2;
   letter-spacing: -0.5px;
   color: #111;
@@ -171,7 +171,7 @@ a {
 .exceptional-body {
   font-family: "Helvetica Neue", HelveticaNeue, sans-serif;
   font-weight: 300;
-  font-size: 20px;
+  font-size: 18px;
   line-height: 1.7;
   color: #222;
   max-width: 660px;
@@ -240,7 +240,7 @@ a {
 .adresses-intro-title {
   font-family: "Helvetica Neue", HelveticaNeue, sans-serif;
   font-weight: 300;
-  font-size: 40px;
+  font-size: 26px;
   letter-spacing: -0.3px;
   color: #111;
   line-height: 1.2;
@@ -257,7 +257,7 @@ a {
 .adresses-intro-body {
   font-family: "Helvetica Neue", HelveticaNeue, sans-serif;
   font-weight: 300;
-  font-size: 20px;
+  font-size: 18px;
   color: #555;
   line-height: 1.7;
   margin: 0;
@@ -386,7 +386,7 @@ a {
   text-align: center;
   font-family: "Helvetica Neue", HelveticaNeue, sans-serif;
   font-weight: 300;
-  font-size: 40px;
+  font-size: 26px;
   letter-spacing: -0.5px;
   color: #111;
   padding: 80px 0 40px;
@@ -535,7 +535,7 @@ a {
   text-align: center;
   font-family: "Helvetica Neue", HelveticaNeue, sans-serif;
   font-weight: 300;
-  font-size: 20px;
+  font-size: 18px;
   color: #555;
   line-height: 1.7;
   max-width: 720px;
@@ -708,7 +708,7 @@ a {
 .cta-final-title {
   font-family: "Helvetica Neue", HelveticaNeue, sans-serif;
   font-weight: 300;
-  font-size: 40px;
+  font-size: 26px;
   letter-spacing: -0.5px;
   color: #111;
   margin: 0 0 40px;
@@ -780,7 +780,7 @@ a {
 .membres-title {
   font-family: "Helvetica Neue", HelveticaNeue, sans-serif;
   font-weight: 300;
-  font-size: 40px;
+  font-size: 26px;
   letter-spacing: -0.5px;
   color: #111;
   margin: 0;
@@ -1474,7 +1474,7 @@ a {
 .nos-adresses-title {
   font-family: "Helvetica Neue", HelveticaNeue, sans-serif;
   font-weight: 300;
-  font-size: 40px;
+  font-size: 26px;
   letter-spacing: -0.5px;
   color: #111;
   margin: 0;
@@ -1558,7 +1558,7 @@ a {
 }
 
 .adresse-details-desc {
-  font-size: 20px;
+  font-size: 18px;
   font-weight: 300;
   color: #222;
   margin-bottom: 18px;
@@ -1567,7 +1567,7 @@ a {
 }
 
 .adresse-details-section--home .adresse-details-desc {
-  font-size: 20px;
+  font-size: 18px;
 }
 
 .adresse-details-btn {
@@ -2881,7 +2881,7 @@ a {
 
 .etage-hero h1 {
   margin: 0;
-  font-size: 40px;
+  font-size: 26px;
   letter-spacing: 2.5px;
   text-transform: uppercase;
   color: #fff;
@@ -3273,7 +3273,7 @@ a {
 
 .about-hero h1 {
   margin: 0;
-  font-size: 40px;
+  font-size: 26px;
   letter-spacing: 2px;
   text-transform: uppercase;
 }
@@ -3791,7 +3791,7 @@ a {
 /* Exceptional section — transition fluide 900px → 700px → 480px */
 @media (max-width: 900px) {
   .exceptional-section { padding: 80px 0 90px; }
-  .exceptional-heading { font-size: 30px; }
+  .exceptional-heading { font-size: 26px; }
   .exceptional-body { font-size: 17px; }
 }
 /* Restauration des valeurs 700px (après la règle 900px pour gagner en cascade) */
