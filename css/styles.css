@@ -1957,8 +1957,13 @@ a {
 }
 .event-duo img {
   width: 100%;
+  aspect-ratio: 1638 / 2048;
   height: auto;
+  object-fit: cover;
   display: block;
+}
+.event-duo img:first-child {
+  object-position: bottom;
 }
 @media (max-width: 480px) {
   .event-duo {
