@@ -605,6 +605,7 @@ a {
   flex: 1 1 0;
   text-decoration: none;
   display: block;
+  margin: 0;
 }
 
 .service-vignette-img {
