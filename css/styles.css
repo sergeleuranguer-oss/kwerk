@@ -656,7 +656,7 @@ a {
 /*********************** CTA FINAL ****************************/
 
 .offres-section--adresses {
-  padding-bottom: 0;
+  padding-bottom: 80px;
 }
 
 .offres-section--adresses .offres-grid--adresses {
