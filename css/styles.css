@@ -609,11 +609,25 @@ a {
 }
 
 .service-vignette-img {
+  position: relative;
   width: 100%;
   aspect-ratio: 1 / 1;
   background: #111 center/cover no-repeat;
   filter: saturate(0.92);
   transition: transform 0.4s ease;
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+  padding: 28px 20px;
+  overflow: hidden;
+}
+
+.service-vignette-img::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.35);
+  z-index: 0;
 }
 
 .service-vignette:hover .service-vignette-img {
@@ -621,14 +635,17 @@ a {
 }
 
 .service-vignette figcaption {
-  margin-top: 16px;
+  position: relative;
+  z-index: 1;
   text-align: center;
   font-family: "Helvetica Neue", HelveticaNeue, sans-serif;
   font-weight: 300;
-  font-size: 13px;
-  letter-spacing: 2px;
+  font-size: 11px;
+  letter-spacing: 1.5px;
   text-transform: uppercase;
-  color: #111;
+  color: white;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.7);
+  padding-bottom: 2px;
 }
 
 .services-vignettes-link {
