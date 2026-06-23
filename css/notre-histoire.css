@@ -52,6 +52,9 @@
 		.nh-intro-equipe .exceptional-heading {
 			font-size: 30px;
 		}
+		.nh-manifeste .exceptional-body {
+			font-size: 18px;
+		}
 
 		/* ── L'HISTOIRE DE KWERK (photo unique fondateurs) ── */
 		.nh-histoire {
@@ -86,7 +89,7 @@
 		.nh-histoire-body p {
 			font-family: "Helvetica Neue", HelveticaNeue, sans-serif;
 			font-weight: 300;
-			font-size: 17px;
+			font-size: 18px;
 			line-height: 1.75;
 			color: #444;
 			margin: 0 0 18px;
@@ -151,7 +154,7 @@
 		.nh-founder-body p {
 			font-family: "Helvetica Neue", HelveticaNeue, sans-serif;
 			font-weight: 300;
-			font-size: 17px;
+			font-size: 18px;
 			line-height: 1.75;
 			color: #444;
 			margin: 0 0 18px;
