@@ -588,9 +588,9 @@ a {
   color: #fff;
   font-family: "Helvetica Neue", HelveticaNeue, sans-serif;
   font-weight: 300;
-  font-size: 11px;
+  font-size: 18px;
   letter-spacing: 1.5px;
-  text-transform: uppercase;
+  text-transform: lowercase;
   border-bottom: 1px solid rgba(255, 255, 255, 0.7);
   padding-bottom: 2px;
   margin: 0;
