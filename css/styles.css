@@ -453,7 +453,7 @@ a {
   color: white;
   font-family: "Helvetica Neue", HelveticaNeue, sans-serif;
   font-weight: 300;
-  font-size: 30px;
+  font-size: 26px;
   letter-spacing: -0.5px;
   text-transform: uppercase;
   text-align: center;
@@ -465,7 +465,7 @@ a {
   color: white;
   font-family: "Helvetica Neue", HelveticaNeue, sans-serif;
   font-weight: 300;
-  font-size: 14px;
+  font-size: 18px;
   letter-spacing: 0.05em;
   text-align: center;
   line-height: 1.4;
@@ -476,7 +476,7 @@ a {
   color: white;
   font-family: "Helvetica Neue", HelveticaNeue, sans-serif;
   font-weight: 300;
-  font-size: 11px;
+  font-size: 18px;
   letter-spacing: 1.5px;
   text-transform: uppercase;
   border-bottom: 1px solid rgba(255,255,255,0.7);
