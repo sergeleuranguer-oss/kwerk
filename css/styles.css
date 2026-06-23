@@ -616,7 +616,7 @@ a {
   filter: saturate(0.92);
   transition: transform 0.4s ease;
   display: flex;
-  align-items: flex-end;
+  align-items: center;
   justify-content: center;
   padding: 28px 20px;
   overflow: hidden;
@@ -640,12 +640,11 @@ a {
   text-align: center;
   font-family: "Helvetica Neue", HelveticaNeue, sans-serif;
   font-weight: 300;
-  font-size: 11px;
-  letter-spacing: 1.5px;
+  font-size: 26px;
+  line-height: 1.2;
+  letter-spacing: -0.5px;
   text-transform: uppercase;
   color: white;
-  border-bottom: 1px solid rgba(255, 255, 255, 0.7);
-  padding-bottom: 2px;
 }
 
 .services-vignettes-link {
