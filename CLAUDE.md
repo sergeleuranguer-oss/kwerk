@@ -8,6 +8,10 @@ Aucun outil à installer, **aucun Cloudflare**. Pour prévisualiser en local : `
 - Une fois validé → on promeut vers **`gh-pages`** → copié sur le **serveur de prod** (racine du domaine).
 - Le site doit donc marcher **à la fois** sous `/kwerk/` ET à la racine → **tous les liens sont RELATIFS**
   (`css/…`, `../images/…`). **Ne jamais écrire de lien absolu** commençant par `/` (ça casse sous `/kwerk/`).
+- ⚠️ **Pages EN = un cran plus profond** (`en/…`) : un chemin relatif y vaut `../`. Le HTML/CSS le gère
+  déjà. Mais **tout JS qui construit un chemin d'asset** doit en tenir compte, sinon ça casse en EN
+  seulement. Ex. réel : `js/galerie.js` rendait `/images/…` relatif → `en/images/…` (404) ; parade =
+  préfixe `../` si `location.pathname.includes('/en/')`, + bump du `?v=` sur les pages galerie (cache).
 
 ## ⚠️ Règle d'or : header / nav / menu / footer / scripts sont MUTUALISÉS
 Ces blocs ne sont **pas** à éditer dans les pages : ils sont **générés** à partir de `partials/`.
