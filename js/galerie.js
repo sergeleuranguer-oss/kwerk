@@ -3,6 +3,11 @@ document.addEventListener("DOMContentLoaded", function () {
   const filterLinks = document.querySelectorAll(".filter-menu a");
   const btnMore = document.querySelector(".btn-more");
 
+  // Les chemins d'images sont fournis en absolu (/images/...) puis rendus
+  // relatifs (on retire le "/"). Une page EN vit dans /en/, il faut donc
+  // remonter d'un cran. Marche en preprod (/kwerk/en/...) comme en prod (/en/...).
+  const base = window.location.pathname.includes("/en/") ? "../" : "";
+
   const availableFilters = ["all", "messine", "madeleine", "saint-honore"];
   const urlFilter = new URLSearchParams(window.location.search).get("filter");
   let currentFilter = availableFilters.includes(urlFilter) ? urlFilter : "all";
@@ -42,7 +47,7 @@ document.addEventListener("DOMContentLoaded", function () {
       const img = document.createElement("img");
       let path = src.startsWith('#') ? src.slice(1) : src;
       if (path.startsWith('/')) path = path.slice(1);
-      img.src = path;
+      img.src = base + path;
       img.className = "item-" + ((index % 7) + 1);
       grid.appendChild(img);
     });
