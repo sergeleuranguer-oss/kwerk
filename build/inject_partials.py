@@ -16,7 +16,7 @@ Idempotent. Usage :
     python3 build/inject_partials.py                # toutes les pages
     python3 build/inject_partials.py index.html ... # pages ciblées
 """
-import os, re, sys, glob
+import os, re, sys, glob, hashlib
 
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 SHARED = {"head", "scripts"}          # mêmes partials pour FR et EN
@@ -31,6 +31,31 @@ MARKER_RE = re.compile(
     re.DOTALL,
 )
 _partials = {}
+
+# Cache-busting AUTOMATIQUE. On garde la logique posée dans les partials
+# (?v= sur chaque css/js mutualisé) mais la VALEUR est calculée ici = hash du
+# CONTENU du fichier. Donc : plus rien à bumper à la main, aucun oubli possible,
+# et seul un fichier réellement modifié voit son URL changer (les autres restent
+# en cache). Le ?v= écrit dans le partial (?v=auto) n'est qu'un marqueur remplacé.
+VER_RE = re.compile(r"(\{\{ASSET\}\}((?:css|js)/[^\"'?\s]+?\.(?:css|js)))\?v=[^\"'\s]*")
+_asset_ver = {}
+
+
+def asset_ver(rel_url):
+    if rel_url not in _asset_ver:
+        try:
+            with open(os.path.join(ROOT, rel_url), "rb") as f:
+                _asset_ver[rel_url] = hashlib.sha1(f.read()).hexdigest()[:8]
+        except OSError:
+            _asset_ver[rel_url] = None       # asset absent : on laisse le ?v= tel quel
+    return _asset_ver[rel_url]
+
+
+def stamp_versions(text):
+    def sub(m):
+        ver = asset_ver(m.group(2))
+        return f"{m.group(1)}?v={ver}" if ver else m.group(0)
+    return VER_RE.sub(sub, text)
 
 
 def page_lang(rel):
@@ -81,11 +106,12 @@ def inject(rel):
         attrs = parse_attrs(raw_attrs)
         variant = attrs.get("variant", "standard")
         navcss = "navbar_galerie.css" if variant == "galerie" else "navbar.css"
+        body = partial_for(name, lang, variant).replace("{{NAVCSS}}", navcss)
+        body = stamp_versions(body)          # {{ASSET}}css/x.css?v=… -> hash(x.css)
         body = (
-            partial_for(name, lang, variant)
+            body
             .replace("{{ASSET}}", asset)
             .replace("{{LINK}}", link)
-            .replace("{{NAVCSS}}", navcss)
             .replace("{{SELF}}", os.path.basename(rel))
             .replace("{{ALT}}", attrs.get("alt", ""))
         )

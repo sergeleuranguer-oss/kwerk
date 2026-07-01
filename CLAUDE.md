@@ -13,6 +13,18 @@ Aucun outil à installer, **aucun Cloudflare**. Pour prévisualiser en local : `
   seulement. Ex. réel : `js/galerie.js` rendait `/images/…` relatif → `en/images/…` (404) ; parade =
   préfixe `../` si `location.pathname.includes('/en/')`, + bump du `?v=` sur les pages galerie (cache).
 
+## Cache-busting des CSS/JS : AUTOMATIQUE (rien à bumper à la main)
+En prod le fichier garde son URL → les navigateurs servent l'ancienne version en cache. Parade = un
+`?v=` sur l'URL des assets. **C'est géré tout seul par le build**, ne rien bumper manuellement :
+- Dans les partials (`head.html`, `scripts.html`), les CSS/JS mutualisés portent un marqueur `?v=auto`.
+- Au build (`inject_partials.py` → `stamp_versions`), `auto` est remplacé par le **hash du contenu**
+  du fichier (`styles.css?v=6691d2a6`). Un fichier modifié → hash différent → re-téléchargement ;
+  les autres gardent leur hash donc restent en cache. Profondeur `/en/` gérée (`../css/…`).
+- **Donc** : pour casser le cache, il suffit de **modifier le CSS/JS** — le `?v=` se met à jour seul.
+  Ne pas éditer la valeur après `?v=` à la main (elle est écrasée), et ne pas retirer le `?v=auto`.
+- **Hors périmètre** : `js/galerie.js?v=6` est référencé **dans les pages galerie** (hors partials,
+  hors zones `KW:`) → à bumper **à la main** dans ces pages si on modifie `galerie.js`.
+
 ## ⚠️ Règle d'or : header / nav / menu / footer / scripts sont MUTUALISÉS
 Ces blocs ne sont **pas** à éditer dans les pages : ils sont **générés** à partir de `partials/`.
 Dans chaque page ils sont entourés de marqueurs :
