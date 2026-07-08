@@ -19,13 +19,28 @@ class NavFormValidator {
     const produitSelect = this.form.querySelector('select[name="produit"]');
     const deskRow = this.form.querySelector('.ps-field-row--desk');
     const deskInput = this.form.querySelector('input[name="desk"]');
+    const eventsRow = this.form.querySelector('.ps-field-row--events');
+    const eventsInput = this.form.querySelector('input[name="nombre_de_personnes"]');
     if (!produitSelect || !deskRow || !deskInput) return;
 
     const toggle = () => {
       const isBureaux = produitSelect.value === 'Bureaux';
       deskRow.style.display = isBureaux ? '' : 'none';
       deskInput.required = isBureaux;
-      if (!isBureaux) deskInput.value = '';
+      if (!isBureaux) {
+        deskInput.value = '';
+        this.clearFieldError('desk');
+      }
+
+      if (eventsRow && eventsInput) {
+        const isEvents = produitSelect.value === 'Événementiel';
+        eventsRow.style.display = isEvents ? '' : 'none';
+        eventsInput.required = isEvents;
+        if (!isEvents) {
+          eventsInput.value = '';
+          this.clearFieldError('nombre_de_personnes');
+        }
+      }
     };
 
     produitSelect.addEventListener('change', toggle);
@@ -112,6 +127,20 @@ class NavFormValidator {
         ) {
           errorMessage =
             "Veuillez saisir un nombre de postes valide (minimum 1).";
+          isValid = false;
+        }
+        break;
+
+      case "nombre_de_personnes":
+        if (required && !trimmedValue) {
+          errorMessage = "Le nombre de personnes est obligatoire.";
+          isValid = false;
+        } else if (
+          trimmedValue &&
+          (isNaN(trimmedValue) || parseInt(trimmedValue) < 1)
+        ) {
+          errorMessage =
+            "Veuillez saisir un nombre de personnes valide (minimum 1).";
           isValid = false;
         }
         break;
@@ -254,6 +283,7 @@ class NavFormValidator {
         { name: "phone", value: formData.get("phone") || "" },
         { name: "company", value: formData.get("company") || "" },
         { name: "desk", value: formData.get("desk") || "" },
+        { name: "nombre_de_personnes", value: formData.get("nombre_de_personnes") || "" },
         { name: "origine_de_la_piste", value: formData.get("origine_de_la_piste") || "" },
         { name: "produit", value: formData.get("produit") || "" },
         { name: "description_de_la_transaction", value: formData.get("description_de_la_transaction") || "" },
