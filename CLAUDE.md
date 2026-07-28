@@ -3,9 +3,12 @@
 Site **statique** (HTML/CSS/JS, sans framework), repo **public**, hébergé sur **GitHub Pages**.
 Aucun outil à installer, **aucun Cloudflare**. Pour prévisualiser en local : `python3 -m http.server`.
 
-## Déploiement (à connaître)
-- Branche **`preprod`** → servie par GitHub Pages (`…/kwerk/`) = **aperçu de validation**.
-- Une fois validé → on promeut vers **`gh-pages`** → copié sur le **serveur de prod** (racine du domaine).
+## Déploiement — TROIS environnements, ne pas les confondre
+1. Branche **`preprod`** → servie par GitHub Pages (`demo-site2026.github.io/kwerk/`) =
+   **environnement de travail**. On y pousse librement ; **ce n'est PAS la prod**.
+2. Branche **`gh-pages`** = **versions validées** (promotion manuelle depuis `preprod`).
+3. Un **dev** récupère `gh-pages` et déploie sur le **vrai serveur** (`www.kwerk.fr`, racine du domaine).
+   ⛔ Cette dernière étape ne nous appartient pas — **ne jamais la proposer ni la déclencher**.
 - Le site doit donc marcher **à la fois** sous `/kwerk/` ET à la racine → **tous les liens sont RELATIFS**
   (`css/…`, `../images/…`). **Ne jamais écrire de lien absolu** commençant par `/` (ça casse sous `/kwerk/`).
 - ⚠️ **Pages EN = un cran plus profond** (`en/…`) : un chemin relatif y vaut `../`. Le HTML/CSS le gère
@@ -24,6 +27,32 @@ En prod le fichier garde son URL → les navigateurs servent l'ancienne version 
   Ne pas éditer la valeur après `?v=` à la main (elle est écrasée), et ne pas retirer le `?v=auto`.
 - **Hors périmètre** : `js/galerie.js?v=6` est référencé **dans les pages galerie** (hors partials,
   hors zones `KW:`) → à bumper **à la main** dans ces pages si on modifie `galerie.js`.
+
+## Images : règles établies le 28/07/2026 (passe d'allègement)
+Le dossier est passé de **266 à 91 Mo**. Pour ne pas le regonfler :
+- **Aucune image > 1920 px.** C'est la règle qui compte le plus, et elle ne se voit pas dans un audit
+  trié par poids : le navigateur décode en `largeur × hauteur × 4 octets`, **quelle que soit la
+  compression**. Un logo de 115 Ko en 5434 px, c'est **56 Mo de RAM** sur chaque page qui l'affiche.
+  Vérifier les **dimensions**, pas le poids du fichier.
+- **Photos → JPEG** (qualité 82-85, `optimize`, `progressive`). Pas de PNG pour une photo : q100 est
+  inutile (double le poids pour un écart de ~43 dB, invisible à l'œil).
+- **PNG réservé** aux visuels à **transparence réelle** (tester le canal alpha, pas le mode : un RGBA
+  peut être opaque) et aux pictos/logos — qu'on **redimensionne** sans changer de format.
+- Le **hero** de chaque page est une vraie `<img>` (pas un `background-image`) avec
+  `<link rel="preload" as="image">` **placé avant `<!-- KW:head -->`** et `fetchpriority="high"`.
+  Le diaporama (`data-hero-slides` + `js/script.js`) change son `src`.
+- Images de contenu : `loading="lazy" decoding="async"` — **sauf le hero et le logo du loader**
+  (un hero en lazy annule tout le bénéfice du preload). Fait sur `espaces.html` + `en/espaces.html`,
+  à étendre. ⚠️ Ces `<img>` n'ont pas de `width`/`height` : surveiller les sauts de mise en page.
+- Originaux archivés dans `/data/backups/kwerk/` (`images-orphelines-*`, `images-png-*`,
+  `images-jpg-resize-*`, `logos-*`) — restaurer de là plutôt que de fouiller l'historique git.
+
+### ⚠️ Avant de supprimer une image « non utilisée »
+Un `grep` du nom **ne prouve rien** : la galerie liste ses images dans un **objet JSON inliné** qui
+échappe les accents (`SALLEDERÉUNION…` sur une page, `SALLEDERÉUNION…` sur le disque). Une image
+utilisée a été supprimée comme ça le 28/07. Tester **toutes les écritures** du nom (littéral, `\uXXXX`,
+`%XX`, espaces encodés), et faire porter le contrôle d'intégrité sur `src`/`href`, **`url()` du CSS**,
+**`data-hero-slides`** et **le JSON de la galerie** (dont les chemins commencent par `/` ou `#`).
 
 ## ⚠️ Règle d'or : header / nav / menu / footer / scripts sont MUTUALISÉS
 Ces blocs ne sont **pas** à éditer dans les pages : ils sont **générés** à partir de `partials/`.
