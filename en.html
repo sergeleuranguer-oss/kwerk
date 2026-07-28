@@ -48,8 +48,13 @@ f.parentNode.insertBefore(j, f);
 }
 @media (prefers-reduced-motion: reduce) {
   .hero--fullscreen .hero-bg-video { display: none; }
-  .hero-scroll-cue::after { animation: none; }
 }
+.hero-sound-btn { position: absolute; bottom: 24px; right: 24px; z-index: 3; width: 44px; height: 44px; border-radius: 50%; border: 1.5px solid rgba(255,255,255,.7); background: rgba(0,0,0,.25); color: #fff; display: flex; align-items: center; justify-content: center; cursor: pointer; -webkit-backdrop-filter: blur(4px); backdrop-filter: blur(4px); transition: background .2s, border-color .2s; padding: 0; }
+.hero-sound-btn:hover { background: rgba(0,0,0,.45); border-color: #fff; }
+.hero-sound-btn svg { width: 20px; height: 20px; display: block; }
+.hero-sound-btn .icon-on { display: none; }
+.hero-sound-btn.is-on .icon-off { display: none; }
+.hero-sound-btn.is-on .icon-on { display: block; }
 </style>
 </head>
 <body>
@@ -78,6 +83,10 @@ f.parentNode.insertBefore(j, f);
 		<video class="hero-bg-video hero-bg-video--desktop" autoplay muted loop playsinline poster="images/kwerk-hero-desktop-poster.jpg"></video>
 		<video class="hero-bg-video hero-bg-video--mobile" autoplay muted loop playsinline poster="images/kwerk-hero-mobile-poster.jpg"></video>
 		<div class="hero-video-overlay"></div>
+		<button class="hero-sound-btn" type="button" aria-label="Enable sound">
+			<svg class="icon-off" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M11 5 6 9H2v6h4l5 4V5z"/><line x1="23" y1="9" x2="17" y2="15"/><line x1="17" y1="9" x2="23" y2="15"/></svg>
+			<svg class="icon-on" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M11 5 6 9H2v6h4l5 4V5z"/><path d="M15.5 8.5a5 5 0 0 1 0 7"/><path d="M18.5 5.5a9 9 0 0 1 0 13"/></svg>
+		</button>
 		<script>
 		(function(){
 			var mobile = window.matchMedia('(max-width:767px)').matches;
@@ -87,6 +96,15 @@ f.parentNode.insertBefore(j, f);
 			if (keep) { keep.src = src; keep.load(); var p = keep.play(); if (p && p.catch) p.catch(function(){}); }
 			var other = document.querySelector(mobile ? '.hero-bg-video--desktop' : '.hero-bg-video--mobile');
 			if (other) other.remove();
+			var btn = document.querySelector('.hero-sound-btn');
+			if (btn && keep) {
+				btn.addEventListener('click', function(){
+					keep.muted = !keep.muted;
+					if (!keep.muted) { keep.volume = 1; var pp = keep.play(); if (pp && pp.catch) pp.catch(function(){}); }
+					btn.classList.toggle('is-on', !keep.muted);
+					btn.setAttribute('aria-label', keep.muted ? 'Enable sound' : 'Mute');
+				});
+			}
 		})();
 		</script>
 
@@ -105,7 +123,6 @@ f.parentNode.insertBefore(j, f);
 </nav>
 <!-- /KW:nav -->
 
-	<a href="#offres" class="hero-scroll-cue" aria-label="Scroll"></a>
 	</header>
 
 <!-- MENU -->
