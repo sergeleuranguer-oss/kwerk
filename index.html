@@ -95,16 +95,32 @@ f.parentNode.insertBefore(j, f);
 				var keepSel = mobile ? '.hero-bg-video--mobile' : '.hero-bg-video--desktop';
 				var src = mobile ? 'images/kwerk-hero-mobile.mp4' : 'images/kwerk-hero-desktop.mp4';
 				var keep = document.querySelector(keepSel);
-				if (keep) { keep.src = src; keep.load(); var p = keep.play(); if (p && p.catch) p.catch(function(){}); }
 				var other = document.querySelector(mobile ? '.hero-bg-video--desktop' : '.hero-bg-video--mobile');
 				if (other) other.remove();
 				var btn = document.querySelector('.hero-sound-btn');
-				if (btn && keep) {
-					btn.addEventListener('click', function(){
+				function setBtn(on){ if (!btn) return; btn.classList.toggle('is-on', on); btn.setAttribute('aria-label', on ? 'Couper le son' : 'Activer le son'); }
+				if (!keep) return;
+				var GESTURES = ['pointerdown','click','touchstart','keydown','scroll','mousemove'];
+				keep.src = src;
+				keep.load();
+				keep.muted = false; keep.volume = 1;
+				var tryPlay = keep.play();
+				if (tryPlay && tryPlay.then) {
+					tryPlay.then(function(){ setBtn(true); }).catch(function(){
+						keep.muted = true; keep.play(); setBtn(false);
+						var unmute = function(){
+							keep.muted = false; keep.volume = 1; keep.play(); setBtn(true);
+							GESTURES.forEach(function(ev){ window.removeEventListener(ev, unmute); });
+						};
+						GESTURES.forEach(function(ev){ window.addEventListener(ev, unmute, { once: true, passive: true }); });
+					});
+				}
+				if (btn) {
+					btn.addEventListener('click', function(e){
+						e.stopPropagation();
 						keep.muted = !keep.muted;
 						if (!keep.muted) { keep.volume = 1; var pp = keep.play(); if (pp && pp.catch) pp.catch(function(){}); }
-						btn.classList.toggle('is-on', !keep.muted);
-						btn.setAttribute('aria-label', keep.muted ? 'Activer le son' : 'Couper le son');
+						setBtn(!keep.muted);
 					});
 				}
 			})();
