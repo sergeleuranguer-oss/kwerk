@@ -41,9 +41,6 @@ f.parentNode.insertBefore(j, f);
 .hero--fullscreen .hero-bg-video--mobile { display: none; }
 .hero--fullscreen .hero-video-overlay { position: absolute; inset: 0; z-index: 1; pointer-events: none; background: linear-gradient(to bottom, rgba(0,0,0,.30) 0%, rgba(0,0,0,0) 24%, rgba(0,0,0,0) 68%, rgba(0,0,0,.32) 100%); }
 .hero--fullscreen .navbar { z-index: 3; }
-.hero-scroll-cue { position: absolute; bottom: 26px; left: 50%; transform: translateX(-50%); z-index: 3; width: 26px; height: 42px; border: 2px solid rgba(255,255,255,.85); border-radius: 14px; }
-.hero-scroll-cue::after { content: ''; position: absolute; left: 50%; top: 7px; width: 3px; height: 8px; background: rgba(255,255,255,.9); border-radius: 2px; transform: translateX(-50%); animation: heroScroll 1.6s ease-in-out infinite; }
-@keyframes heroScroll { 0% { opacity: 0; transform: translate(-50%,0); } 40% { opacity: 1; } 80% { opacity: 0; transform: translate(-50%,12px); } 100% { opacity: 0; } }
 @media (max-width: 767px) {
   .hero--fullscreen .hero-bg-video--desktop { display: none; }
   .hero--fullscreen .hero-bg-video--mobile { display: block; }
@@ -51,7 +48,12 @@ f.parentNode.insertBefore(j, f);
 @media (prefers-reduced-motion: reduce) {
   .hero--fullscreen .hero-bg-video { display: none; }
 }
-.hero-sound-btn { position: absolute; bottom: 24px; left: 50%; transform: translateX(-50%); z-index: 3; width: 44px; height: 44px; border-radius: 50%; border: 1.5px solid rgba(255,255,255,.7); background: rgba(0,0,0,.25); color: #fff; display: flex; align-items: center; justify-content: center; cursor: pointer; -webkit-backdrop-filter: blur(4px); backdrop-filter: blur(4px); transition: background .2s, border-color .2s; padding: 0; }
+.hero-play-btn { position: absolute; top: 50%; left: 50%; transform: translate(-50%,-50%); z-index: 3; width: 86px; height: 86px; border-radius: 50%; border: 1.5px solid rgba(255,255,255,.85); background: rgba(0,0,0,.28); color: #fff; display: flex; align-items: center; justify-content: center; cursor: pointer; -webkit-backdrop-filter: blur(4px); backdrop-filter: blur(4px); transition: background .25s, transform .25s, opacity .4s, visibility .4s; padding: 0; }
+.hero-play-btn svg { width: 34px; height: 34px; margin-left: 4px; display: block; }
+.hero-play-btn:hover { background: rgba(0,0,0,.45); transform: translate(-50%,-50%) scale(1.06); }
+.hero-play-btn.is-hidden { opacity: 0; visibility: hidden; pointer-events: none; }
+.hero-sound-btn { position: absolute; bottom: 24px; left: 50%; transform: translateX(-50%); z-index: 3; width: 44px; height: 44px; border-radius: 50%; border: 1.5px solid rgba(255,255,255,.7); background: rgba(0,0,0,.25); color: #fff; display: flex; align-items: center; justify-content: center; cursor: pointer; -webkit-backdrop-filter: blur(4px); backdrop-filter: blur(4px); transition: opacity .35s, visibility .35s, background .2s, border-color .2s; padding: 0; opacity: 0; visibility: hidden; }
+.hero-sound-btn.is-visible { opacity: 1; visibility: visible; }
 .hero-sound-btn:hover { background: rgba(0,0,0,.45); border-color: #fff; }
 .hero-sound-btn svg { width: 20px; height: 20px; display: block; }
 .hero-sound-btn .icon-on { display: none; }
@@ -82,9 +84,12 @@ f.parentNode.insertBefore(j, f);
 		<!-- End Google Tag Manager (noscript) -->
 
 					<header class="hero hero--no-overlay hero--fullscreen" style="background: #000 url('images/kwerk-hero-desktop-poster.jpg') center/cover no-repeat;">
-			<video class="hero-bg-video hero-bg-video--desktop" autoplay muted loop playsinline poster="images/kwerk-hero-desktop-poster.jpg"></video>
-			<video class="hero-bg-video hero-bg-video--mobile" autoplay muted loop playsinline poster="images/kwerk-hero-mobile-poster.jpg"></video>
+			<video class="hero-bg-video hero-bg-video--desktop" loop playsinline preload="auto" poster="images/kwerk-hero-desktop-poster.jpg"></video>
+			<video class="hero-bg-video hero-bg-video--mobile" loop playsinline preload="auto" poster="images/kwerk-hero-mobile-poster.jpg"></video>
 			<div class="hero-video-overlay"></div>
+			<button class="hero-play-btn" type="button" aria-label="Lancer la vidéo">
+				<svg viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg>
+			</button>
 			<button class="hero-sound-btn" type="button" aria-label="Activer le son">
 				<svg class="icon-off" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M11 5 6 9H2v6h4l5 4V5z"/><line x1="23" y1="9" x2="17" y2="15"/><line x1="17" y1="9" x2="23" y2="15"/></svg>
 				<svg class="icon-on" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M11 5 6 9H2v6h4l5 4V5z"/><path d="M15.5 8.5a5 5 0 0 1 0 7"/><path d="M18.5 5.5a9 9 0 0 1 0 13"/></svg>
@@ -97,30 +102,26 @@ f.parentNode.insertBefore(j, f);
 				var keep = document.querySelector(keepSel);
 				var other = document.querySelector(mobile ? '.hero-bg-video--desktop' : '.hero-bg-video--mobile');
 				if (other) other.remove();
-				var btn = document.querySelector('.hero-sound-btn');
-				function setBtn(on){ if (!btn) return; btn.classList.toggle('is-on', on); btn.setAttribute('aria-label', on ? 'Couper le son' : 'Activer le son'); }
+				var playBtn = document.querySelector('.hero-play-btn');
+				var soundBtn = document.querySelector('.hero-sound-btn');
+				function setSound(on){ if (!soundBtn) return; soundBtn.classList.toggle('is-on', on); soundBtn.setAttribute('aria-label', on ? 'Couper le son' : 'Activer le son'); }
 				if (!keep) return;
-				var GESTURES = ['pointerdown','click','touchstart','keydown','scroll','mousemove'];
-				keep.src = src;
-				keep.load();
-				keep.muted = false; keep.volume = 1;
-				var tryPlay = keep.play();
-				if (tryPlay && tryPlay.then) {
-					tryPlay.then(function(){ setBtn(true); }).catch(function(){
-						keep.muted = true; keep.play(); setBtn(false);
-						var unmute = function(){
-							keep.muted = false; keep.volume = 1; keep.play(); setBtn(true);
-							GESTURES.forEach(function(ev){ window.removeEventListener(ev, unmute); });
-						};
-						GESTURES.forEach(function(ev){ window.addEventListener(ev, unmute, { once: true, passive: true }); });
+				keep.src = src; keep.load();
+				if (playBtn) {
+					playBtn.addEventListener('click', function(){
+						keep.muted = false; keep.volume = 1;
+						try { keep.currentTime = 0; } catch (e) {}
+						var p = keep.play(); if (p && p.catch) p.catch(function(){});
+						playBtn.classList.add('is-hidden');
+						if (soundBtn) { soundBtn.classList.add('is-visible'); setSound(true); }
 					});
 				}
-				if (btn) {
-					btn.addEventListener('click', function(e){
+				if (soundBtn) {
+					soundBtn.addEventListener('click', function(e){
 						e.stopPropagation();
 						keep.muted = !keep.muted;
 						if (!keep.muted) { keep.volume = 1; var pp = keep.play(); if (pp && pp.catch) pp.catch(function(){}); }
-						setBtn(!keep.muted);
+						setSound(!keep.muted);
 					});
 				}
 			})();
