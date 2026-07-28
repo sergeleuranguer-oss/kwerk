@@ -33,6 +33,24 @@ f.parentNode.insertBefore(j, f);
 <link rel="stylesheet" href="css/styles.css?v=6691d2a6" />
 <link rel="stylesheet" href="css/footer.css?v=341ce88c" />
 <!-- /KW:head -->
+<style>
+.hero.hero--fullscreen { height: 100vh; height: 100svh; min-height: 560px; }
+.hero--fullscreen .hero-bg-video { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; z-index: 0; }
+.hero--fullscreen .hero-bg-video--mobile { display: none; }
+.hero--fullscreen .hero-video-overlay { position: absolute; inset: 0; z-index: 1; pointer-events: none; background: linear-gradient(to bottom, rgba(0,0,0,.30) 0%, rgba(0,0,0,0) 24%, rgba(0,0,0,0) 68%, rgba(0,0,0,.32) 100%); }
+.hero--fullscreen .navbar { z-index: 3; }
+.hero-scroll-cue { position: absolute; bottom: 26px; left: 50%; transform: translateX(-50%); z-index: 3; width: 26px; height: 42px; border: 2px solid rgba(255,255,255,.85); border-radius: 14px; }
+.hero-scroll-cue::after { content: ''; position: absolute; left: 50%; top: 7px; width: 3px; height: 8px; background: rgba(255,255,255,.9); border-radius: 2px; transform: translateX(-50%); animation: heroScroll 1.6s ease-in-out infinite; }
+@keyframes heroScroll { 0% { opacity: 0; transform: translate(-50%,0); } 40% { opacity: 1; } 80% { opacity: 0; transform: translate(-50%,12px); } 100% { opacity: 0; } }
+@media (max-width: 767px) {
+  .hero--fullscreen .hero-bg-video--desktop { display: none; }
+  .hero--fullscreen .hero-bg-video--mobile { display: block; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .hero--fullscreen .hero-bg-video { display: none; }
+  .hero-scroll-cue::after { animation: none; }
+}
+</style>
 </head>
 <body>
 	<div id="pageLoader" class="page-loader">
@@ -56,8 +74,21 @@ f.parentNode.insertBefore(j, f);
 	</noscript>
 	<!-- End Google Tag Manager (noscript) -->
 
-	<header class="hero hero--no-overlay" style="background-color: #000;">
-		<div class="hero-video hero-slideshow" style="background-image: url('images/1-HP.jpg');" data-hero-slides="images/1-HP.jpg,images/2-HP.jpg,images/3-HP.jpg,images/4-HP.jpg,images/5-HP.jpg,images/6-HP.jpg,images/7-HP.jpg,images/8-HP.jpg"></div>
+	<header class="hero hero--no-overlay hero--fullscreen" style="background: #000 url('images/kwerk-hero-desktop-poster.jpg') center/cover no-repeat;">
+		<video class="hero-bg-video hero-bg-video--desktop" autoplay muted loop playsinline poster="images/kwerk-hero-desktop-poster.jpg"></video>
+		<video class="hero-bg-video hero-bg-video--mobile" autoplay muted loop playsinline poster="images/kwerk-hero-mobile-poster.jpg"></video>
+		<div class="hero-video-overlay"></div>
+		<script>
+		(function(){
+			var mobile = window.matchMedia('(max-width:767px)').matches;
+			var keepSel = mobile ? '.hero-bg-video--mobile' : '.hero-bg-video--desktop';
+			var src = mobile ? 'images/kwerk-hero-mobile.mp4' : 'images/kwerk-hero-desktop.mp4';
+			var keep = document.querySelector(keepSel);
+			if (keep) { keep.src = src; keep.load(); var p = keep.play(); if (p && p.catch) p.catch(function(){}); }
+			var other = document.querySelector(mobile ? '.hero-bg-video--desktop' : '.hero-bg-video--mobile');
+			if (other) other.remove();
+		})();
+		</script>
 
 <!-- KW:nav alt="index.html" -->
 <nav class="navbar">
@@ -74,6 +105,7 @@ f.parentNode.insertBefore(j, f);
 </nav>
 <!-- /KW:nav -->
 
+	<a href="#offres" class="hero-scroll-cue" aria-label="Scroll"></a>
 	</header>
 
 <!-- MENU -->

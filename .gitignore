@@ -4,3 +4,6 @@ images/KWERK VDEF 16.9.mp4
 .apex/*
 # ...sauf le plan d'architecture, versionné comme documentation (ADR)
 !.apex/implementation-plan.md
+
+# Originaux vidéo non compressés (trop lourds)
+images/KWERK_MAIN_*
