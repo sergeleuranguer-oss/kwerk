@@ -2,6 +2,10 @@
 <html lang="fr">
 <head>
 	<meta charset="UTF-8">
+	<!-- Page de repli sans JS : atteignable par un crawler depuis ~15 pages
+	     (href des boutons contact), jamais par un visiteur (le clic est
+	     intercepté et ouvre la modale sur place). Ne doit pas s'indexer. -->
+	<meta name="robots" content="noindex">
 	<meta http-equiv="refresh" content="0; url=index.html">
 	<title>Redirection – Kwerk</title>
 	<script>

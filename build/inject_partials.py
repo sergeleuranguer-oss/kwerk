@@ -12,6 +12,11 @@ résolvant les chemins RELATIFS (le site doit tourner sous /kwerk/ ET à la raci
     {{LINK}}   -> préfixe vers la racine de la langue (liens inter-pages)
     {{NAVCSS}} -> navbar.css | navbar_galerie.css selon variant
 
+Seule exception à la règle du relatif : {{CANONICAL}} et {{HREFLANG}}, qui sont des
+URLs ABSOLUES de production (ces balises n'ont pas de sens hors du domaine final).
+{{HREFLANG}} est déduit de l'attribut alt="…" du marqueur KW:nav — pas de seconde
+table à entretenir — et n'est émis que si l'appairage est réciproque.
+
 Idempotent. Usage :
     python3 build/inject_partials.py                # toutes les pages
     python3 build/inject_partials.py index.html ... # pages ciblées
@@ -19,8 +24,21 @@ Idempotent. Usage :
 import os, re, sys, glob, hashlib
 
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+
+# Domaine de PRODUCTION, en dur et volontairement : la canonical d'une page servie
+# depuis la preprod (demo-site2026.github.io/kwerk/) doit désigner l'URL de prod,
+# sinon la preprod s'indexe et concurrence le vrai site. En prod la balise se
+# désigne elle-même. Les URLs finales portent bien l'extension .html : le serveur
+# répond 200 sur /espaces.html et 301 sur /espaces (vérifié le 28/07/2026).
+SITE_URL = "https://www.kwerk.fr/"
+
 SHARED = {"head", "scripts"}          # mêmes partials pour FR et EN
 PER_LANG = {"nav", "menu", "footer"}  # contenu propre à chaque langue
+
+# Pages sans chrome partagé : redirections et fragments. Elles ne reçoivent aucun
+# bloc KW, et ne doivent jamais apparaître dans un hreflang (contact.html est en
+# noindex, en/index.html est une redirection).
+STUBS = {"contact.html", "en/index.html", "kwerk_bandeau.html"}
 
 REQUIRED = {                          # marqueurs attendus sur une page « complète »
     "head": True, "nav": True, "menu": True, "footer": True, "scripts": True,
@@ -66,6 +84,11 @@ def asset_prefix(rel):
     return "../" * rel.count("/")
 
 
+def canonical_url(rel):
+    # La home se déclare sur la racine nue, pas sur /index.html.
+    return SITE_URL + ("" if rel == "index.html" else rel.replace(os.sep, "/"))
+
+
 def link_prefix(rel):
     depth = rel.count("/")
     if page_lang(rel) == "en":
@@ -73,6 +96,49 @@ def link_prefix(rel):
             return "en/"
         return "../" * (depth - 1)
     return "../" * depth
+
+
+# --- hreflang ---------------------------------------------------------------
+# L'appairage FR/EN existe déjà : l'attribut alt="…" du marqueur KW:nav désigne la
+# page équivalente dans l'autre langue, relativement à la page courante. On le
+# réutilise plutôt que d'entretenir une seconde table qui divergerait.
+NAV_ALT_RE = re.compile(r'<!--\s*KW:nav([^>]*?)-->')
+_nav_alt = {}
+
+
+def pair_of(rel):
+    """Page équivalente dans l'autre langue, en chemin relatif au repo (ou None)."""
+    if rel not in _nav_alt:
+        try:
+            with open(os.path.join(ROOT, rel), encoding="utf-8") as f:
+                m = NAV_ALT_RE.search(f.read())
+        except OSError:
+            m = None
+        alt = parse_attrs(m.group(1)).get("alt") if m else None
+        _nav_alt[rel] = (
+            os.path.normpath(os.path.join(os.path.dirname(rel), alt)).replace(os.sep, "/")
+            if alt else None
+        )
+    return _nav_alt[rel]
+
+
+def hreflang_block(rel):
+    """Les 3 balises, IDENTIQUES sur les deux pages de la paire — sinon Google
+    ignore l'annotation entière. On n'émet rien dès qu'un doute subsiste."""
+    pair = pair_of(rel)
+    if not pair or rel in STUBS or pair in STUBS:
+        return ""                                   # pas d'équivalent réel
+    if not os.path.exists(os.path.join(ROOT, pair)):
+        return ""                                   # cible absente
+    if pair_of(pair) != rel:
+        return ""                                   # appairage non réciproque
+    fr, en = (rel, pair) if page_lang(rel) == "fr" else (pair, rel)
+    fr_url, en_url = canonical_url(fr), canonical_url(en)
+    return "\n".join([
+        f'<link rel="alternate" hreflang="fr" href="{fr_url}" />',
+        f'<link rel="alternate" hreflang="en" href="{en_url}" />',
+        f'<link rel="alternate" hreflang="x-default" href="{fr_url}" />',
+    ])
 
 
 def load(name):
@@ -108,11 +174,16 @@ def inject(rel):
         navcss = "navbar_galerie.css" if variant == "galerie" else "navbar.css"
         body = partial_for(name, lang, variant).replace("{{NAVCSS}}", navcss)
         body = stamp_versions(body)          # {{ASSET}}css/x.css?v=… -> hash(x.css)
+        hreflang = hreflang_block(rel)
+        if not hreflang:                     # pas de paire : on retire la ligne entière
+            body = re.sub(r"^[ \t]*\{\{HREFLANG\}\}[ \t]*\n?", "", body, flags=re.M)
         body = (
             body
+            .replace("{{HREFLANG}}", hreflang)
             .replace("{{ASSET}}", asset)
             .replace("{{LINK}}", link)
             .replace("{{SELF}}", os.path.basename(rel))
+            .replace("{{CANONICAL}}", canonical_url(rel))
             .replace("{{ALT}}", attrs.get("alt", ""))
         )
         return f"<!-- KW:{name}{raw_attrs}-->\n{body}\n<!-- /KW:{name} -->"
@@ -127,7 +198,6 @@ def inject(rel):
 
 def main():
     SKIP = ("partials/", "cdn-cgi", "ROOFTOP_MESSINE")
-    STUBS = {"contact.html", "en/index.html", "kwerk_bandeau.html"}
     targets = sys.argv[1:] or [
         rel
         for p in glob.glob(os.path.join(ROOT, "**", "*.html"), recursive=True)

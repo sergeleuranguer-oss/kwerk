@@ -53,6 +53,19 @@ Les liens dans les partials utilisent des **placeholders** résolus par page (ne
 - `{{ASSET}}` → vers la racine du repo (css/js/images) · `{{LINK}}` → vers la racine de la langue (liens entre pages)
 - `{{SELF}}` → la page courante (lien de langue) · `{{ALT}}` → la page équivalente dans l'autre langue
 - `{{NAVCSS}}` → `navbar.css` ou `navbar_galerie.css` selon la variante
+- `{{CANONICAL}}` → l'URL **absolue de production** de la page (`https://www.kwerk.fr/…`), pour la
+  balise `<link rel="canonical">`. **Seule exception à la règle du tout-relatif** : une canonical
+  relative n'a pas de sens hors du domaine final. Elle pointe volontairement vers la prod même
+  quand la page est servie depuis la preprod, pour que la preprod ne s'indexe pas à sa place.
+  La home se déclare sur la racine nue (`https://www.kwerk.fr/`), pas sur `/index.html`.
+- `{{HREFLANG}}` → le bloc `fr` / `en` / `x-default` (x-default = le FR), en URLs absolues.
+  **Déduit de l'`alt="…"` du marqueur `KW:nav`** : c'est la seule source d'appairage, il n'y a pas
+  de seconde table. Le bloc est **identique sur les deux pages** de la paire — c'est la condition
+  pour que Google le prenne en compte. Il n'est **pas** émis si l'appairage n'est pas réciproque
+  ou si la cible est un stub : `club.html` (sans version EN) et `en/contact.html` (dont le pendant
+  FR est une redirection en `noindex`) n'ont donc volontairement pas de hreflang.
+  → Conséquence : **un `alt="…"` faux casse le hreflang silencieusement**. Le vérifier en ajoutant
+  une page.
 
 ## Marqueurs : variante et langue
 - Page « galerie » (nav noire) : `<!-- KW:head variant=galerie -->` et `<!-- KW:nav variant=galerie alt="…" -->`.

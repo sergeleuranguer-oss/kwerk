@@ -201,8 +201,15 @@ function initHeroSlides() {
       setTimeout(() => {
         idx = (idx + 1) % slides.length;
         const path = slides[idx];
-        const url = path.startsWith("http") ? path : new URL(path, window.location.href).href;
-        el.style.backgroundImage = `url(${url})`;
+        // Le hero est une vraie <img> depuis le passage LCP (découverte au parsing
+        // + preload) : on change son src. La branche background reste pour tout
+        // hero qui serait encore un <div>.
+        if (el.tagName === "IMG") {
+          el.src = path;
+        } else {
+          const url = path.startsWith("http") ? path : new URL(path, window.location.href).href;
+          el.style.backgroundImage = `url(${url})`;
+        }
         el.style.opacity = 1;
       }, fadeDuration);
     }, 10000);

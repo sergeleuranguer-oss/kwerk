@@ -9,8 +9,18 @@ document.addEventListener("DOMContentLoaded", function () {
   const base = window.location.pathname.includes("/en/") ? "../" : "";
 
   const availableFilters = ["all", "messine", "madeleine", "saint-honore"];
-  const urlFilter = new URLSearchParams(window.location.search).get("filter");
-  let currentFilter = availableFilters.includes(urlFilter) ? urlFilter : "all";
+
+  // Le filtre voyage dans le hash : galerie.html#madeleine. Une seule page, une
+  // URL partageable par adresse, et rien à recharger. L'ancien ?filter= reste lu
+  // en secours (liens externes, favoris, pages galerie dupliquées).
+  function filterFromUrl() {
+    const hash = decodeURIComponent(window.location.hash.replace(/^#/, "")).toLowerCase();
+    if (availableFilters.includes(hash)) return hash;
+    const legacy = new URLSearchParams(window.location.search).get("filter");
+    return availableFilters.includes(legacy) ? legacy : "all";
+  }
+
+  let currentFilter = filterFromUrl();
   let page = 0;
   const limit = 7;
 
@@ -74,28 +84,45 @@ document.addEventListener("DOMContentLoaded", function () {
     updateBtnMore();
   }
 
-  // Set initial active filter based on URL param if present
-  filterLinks.forEach((link) => {
-    const filter = link.getAttribute("data-filter");
-    if (filter === currentFilter) {
-      link.classList.add("active");
-    } else {
-      link.classList.remove("active");
+  function markActive(filter) {
+    filterLinks.forEach((link) => {
+      link.classList.toggle("active", link.getAttribute("data-filter") === filter);
+    });
+  }
+
+  // writeUrl : au clic on inscrit le filtre dans l'URL ; au hashchange non (l'URL
+  // est déjà à jour). replaceState plutôt que pushState pour ne pas transformer
+  // le bouton Retour en historique de filtres.
+  function applyFilter(filter, writeUrl) {
+    currentFilter = filter;
+    page = 0;
+    galleryContainer.innerHTML = "";
+    markActive(filter);
+    if (writeUrl) {
+      // "all" = état par défaut : pas d'ancre, l'URL canonique reste nue.
+      const url = filter === "all"
+        ? window.location.pathname + window.location.search
+        : "#" + filter;
+      // replaceState lève une SecurityError si la page est ouverte en file:// —
+      // le filtre doit continuer de marcher, seule l'URL ne suit pas.
+      try { history.replaceState(null, "", url); } catch (e) {}
     }
+    loadImages();
+  }
+
+  markActive(currentFilter);
+
+  filterLinks.forEach((link) => {
+    link.addEventListener("click", (event) => {
+      event.preventDefault();
+      applyFilter(link.getAttribute("data-filter"), true);
+    });
   });
 
-  filterLinks.forEach((link) => {
-    link.addEventListener("click", () => {
-      document
-        .querySelector(".filter-menu .active")
-        ?.classList.remove("active");
-      link.classList.add("active");
-
-      currentFilter = link.getAttribute("data-filter");
-      page = 0;
-      galleryContainer.innerHTML = "";
-      loadImages();
-    });
+  // Lien entrant vers #madeleine, bouton Retour, ou URL éditée à la main.
+  window.addEventListener("hashchange", () => {
+    const filter = filterFromUrl();
+    if (filter !== currentFilter) applyFilter(filter, false);
   });
 
   btnMore.addEventListener("click", loadImages);
