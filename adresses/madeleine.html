@@ -26,15 +26,18 @@ f.parentNode.insertBefore(j, f);
 		<!-- End Google Tag Manager -->
 
 		<!-- Import Google Fonts (Roboto) -->
-		<link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&amp;display=swap" rel="stylesheet">
-		<link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
-		<link rel="icon" type="image/svg+xml" href="../favicon.ico">
-		
-									<link rel="stylesheet" href="../css/navbar.css">
-							<!-- Votre fichier CSS “pixel-perfect” -->
-		<link rel="stylesheet" href="../css/styles.css">
-
-		<link rel="stylesheet" href="../css/footer.css">
+<!-- KW:head -->
+<!-- Import Google Fonts (Roboto) -->
+<link
+  href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&amp;display=swap"
+  rel="stylesheet"
+/>
+<link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
+<link rel="icon" type="image/svg+xml" href="../favicon.ico" />
+<link rel="stylesheet" href="../css/navbar.css?v=3ee742fe" />
+<link rel="stylesheet" href="../css/styles.css?v=6691d2a6" />
+<link rel="stylesheet" href="../css/footer.css?v=341ce88c" />
+<!-- /KW:head -->
 </head>
 	<body>
 		<div id="pageLoader" class="page-loader">
@@ -61,47 +64,49 @@ f.parentNode.insertBefore(j, f);
 					<header class="hero" style="background-color: #000;">
 			<div class="hero-video hero-slideshow" style="background-image: url('../images/content/Lobby_Mad_1.jpg');" data-hero-slides="../images/content/Lobby_Mad_1.jpg,../images/content/Lobby_Mad_3.png,../images/content/Rooftop_Mad_1.png,../images/content/Rooftop_Madeleine_IA_1.png"></div>
 		
-	<nav class="navbar">
-		<div class="menu-icon"><img src="../images/menu_burger.svg"></div>
-		<a href="../index.html" class="logo-wrapper">
-			<div class="logo"><img src="../images/logo-sans-bureaux.png"></div>
-			
-		</a>
-		<div class="nav-lang-switch">
-			<a href="madeleine.html">FR</a>
-			<span class="lang-sep">/</span>
-			<a href="../en/adresses/madeleine.html">EN</a>
-		</div>
-		<a href="#" class="contact-btn">CONTACTEZ-NOUS</a>
-	</nav>
+<!-- KW:nav alt="../en/adresses/madeleine.html" -->
+<nav class="navbar">
+	<div class="menu-icon"><img src="../images/menu_burger.svg"></div>
+	<a href="../index.html" class="logo-wrapper">
+		<div class="logo"><img src="../images/logo-sans-bureaux.png"></div>
+	</a>
+	<div class="nav-lang-switch">
+		<a href="madeleine.html">FR</a>
+		<span class="lang-sep">/</span>
+		<a href="../en/adresses/madeleine.html">EN</a>
+	</div>
+	<a href="#" class="contact-btn">CONTACTEZ-NOUS</a>
+</nav>
+<!-- /KW:nav -->
 
 	</header>
 
 <!-- MENU---------------------------->
+<!-- KW:menu -->
 <div class="side-menu" id="sideMenu">
 	<div class="side-menu-header">
 		<a href="../index.html"><img src="../images/logo-kwerk-noir.png" alt="Logo"></a>
 		<span class="close-btn" id="closeMenu"><img src="../images/close_cross.svg" alt="close"></span>
 	</div>
-		<ul class="side-menu-links">
+	<ul class="side-menu-links">
 		<li>
-			<a href="../espaces.html">LES BUREAUX</a>
+			<a href="../espaces.html">NOS ESPACES</a>
 		</li>
 		<li>
 			<a href="../maison-kwerk.html">EXPÉRIENCE BY KWERK</a>
 		</li>
 		<li>
-			<a href="../event.html">L'ÉVÉNEMENTIEL</a>
+			<a href="../event.html">VOS ÉVÉNEMENTS</a>
 		</li>
 		<li class="side-menu-sep"></li>
 		<li>
-			<a href="#">NOTRE HISTOIRE</a>
+			<a href="../adresses.html">NOS ADRESSES</a>
 		</li>
 		<li>
-			<a href="../nos-services.html">LES SERVICES</a>
+			<a href="../nos-services.html">NOS SERVICES</a>
 		</li>
 		<li>
-			<a href="../adresses.html">LES ADRESSES</a>
+			<a href="../notre-histoire.html">NOTRE HISTOIRE</a>
 		</li>
 	</ul>
 	<a href="#" class="side-menu-cta">RÉSERVER UNE VISITE</a>
@@ -121,9 +126,9 @@ f.parentNode.insertBefore(j, f);
 			<h4>NOS ADRESSES</h4>
 		</a>
 		<ul>
-			<li><a href="messine.html">MESSINE</a></li>
-			<li><a href="saint-honore.html">SAINT-HONORÉ</a></li>
-			<li><a href="madeleine.html">MADELEINE</a></li>
+			<li><a href="../adresses/messine.html">MESSINE</a></li>
+			<li><a href="../adresses/saint-honore.html">SAINT-HONORÉ</a></li>
+			<li><a href="../adresses/madeleine.html">MADELEINE</a></li>
 		</ul>
 	</div>
 </div>
@@ -138,105 +143,114 @@ f.parentNode.insertBefore(j, f);
 	</div>
 		<form class="contact-form-fields">
 
-	<!-- VOTRE BESOIN -->
-	<h3 class="contact-section-title">VOTRE BESOIN</h3>
+		<!-- VOTRE BESOIN -->
+		<h3 class="contact-section-title">VOTRE BESOIN</h3>
 
-	<div class="ps-field-row single">
-		<div class="ps-field ps-select">
-			<label>QUEL EST VOTRE BESOIN ? *</label>
-			<select name="produit" required>
-				<option value="" disabled selected>Veuillez choisir</option>
-				<option value="Bureaux">Bureaux</option>
-				<option>Expérience by Kwerk</option>
-				<option>Événementiel</option>
+		<div class="ps-field-row single">
+			<div class="ps-field ps-select">
+				<label>QUEL EST VOTRE BESOIN ? *</label>
+				<select name="produit" required>
+					<option value="" disabled selected>Veuillez choisir</option>
+					<option value="Bureaux">Bureaux</option>
+					<option>Expérience by Kwerk</option>
+					<option>Événementiel</option>
+					</select>
+				<div class="error"></div>
+			</div>
+		</div>
+
+		<div class="ps-field-row single ps-field-row--desk" style="display:none;">
+			<div class="ps-field">
+				<label>DE COMBIEN DE POSTES AVEZ-VOUS BESOIN ? *</label>
+				<input type="number" name="desk" min="1" placeholder="Nombre de postes">
+				<div class="error"></div>
+			</div>
+		</div>
+
+		<div class="ps-field-row single ps-field-row--events" style="display:none;">
+			<div class="ps-field">
+				<label>POUR COMBIEN DE PERSONNES ? *</label>
+				<input type="number" name="nombre_de_personnes" min="1" placeholder="Nombre de personnes">
+				<div class="error"></div>
+			</div>
+		</div>
+
+
+		<div class="ps-field-row single">
+			<div class="ps-field">
+				<label>EXPLIQUEZ-NOUS VOTRE PROJET *</label>
+				<textarea name="description_de_la_transaction" placeholder="Expliquez-nous votre projet" required></textarea>
+				<div class="error"></div>
+			</div>
+		</div>
+
+		<hr class="contact-separator">
+
+		<!-- VOS COORDONNÉES -->
+		<h3 class="contact-section-title">VOS COORDONNÉES</h3>
+
+		<div class="ps-field-row">
+			<div class="ps-field">
+				<label>VOTRE PRÉNOM *</label>
+				<input type="text" name="firstname" placeholder="Votre prénom" required>
+				<div class="error"></div>
+			</div>
+			<div class="ps-field">
+				<label>VOTRE NOM *</label>
+				<input type="text" name="lastname" placeholder="Votre nom" required>
+				<div class="error"></div>
+			</div>
+		</div>
+
+		<div class="ps-field-row">
+			<div class="ps-field">
+				<label>VOTRE NUMÉRO DE TÉLÉPHONE *</label>
+				<input type="text" name="phone" placeholder="+XX X XX XX XX XX" required>
+				<div class="error"></div>
+			</div>
+			<div class="ps-field">
+				<label>VOTRE ADRESSE E-MAIL *</label>
+				<input type="email" name="email" placeholder="nom@email.com" required>
+				<div class="error"></div>
+			</div>
+		</div>
+
+		<div class="ps-field-row single">
+			<div class="ps-field">
+				<label>VOTRE SOCIÉTÉ *</label>
+				<input type="text" name="company" placeholder="Nom de l'entreprise" required>
+				<div class="error"></div>
+			</div>
+		</div>
+
+		<div class="ps-field-row single">
+			<div class="ps-field">
+				<label>COMMENT AVEZ-VOUS CONNU KWERK ? *</label>
+				<select name="origine_de_la_piste" required>
+					<option value="" disabled selected>Veuillez choisir</option>
+					<option>Recommandation par mon réseau</option>
+					<option>Recherche internet</option>
+					<option>Recommandation par un membre Kwerk</option>
+					<option>Mis en relation par un broker</option>
+					<option>Sur les réseaux sociaux</option>
+					<option>Rendez-vous professionnel chez Kwerk</option>
+					<option>Dans la presse</option>
+					<option>Lors d&#039;un événement chez Kwerk</option>
+					<option>Au cours d&#039;un déjeuner au restaurant Le Dana</option>
 				</select>
-			<div class="error"></div>
+				<div class="error"></div>
+			</div>
 		</div>
-	</div>
 
-	<div class="ps-field-row single ps-field-row--desk" style="display:none;">
-		<div class="ps-field">
-			<label>DE COMBIEN DE POSTES AVEZ-VOUS BESOIN ? *</label>
-			<input type="number" name="desk" min="1" placeholder="Nombre de postes">
-			<div class="error"></div>
+		<hr class="contact-separator">
+
+		<div class="form-footer">
+			<button type="submit" class="submit-btn">ENVOYER</button>
+			<div class="success" id="successMessage"></div>
 		</div>
-	</div>
-
-
-	<div class="ps-field-row single">
-		<div class="ps-field">
-			<label>EXPLIQUEZ-NOUS VOTRE PROJET *</label>
-			<textarea name="description_de_la_transaction" placeholder="Expliquez-nous votre projet" required></textarea>
-			<div class="error"></div>
-		</div>
-	</div>
-
-	<hr class="contact-separator">
-
-	<!-- VOS COORDONNÉES -->
-	<h3 class="contact-section-title">VOS COORDONNÉES</h3>
-
-	<div class="ps-field-row">
-		<div class="ps-field">
-			<label>VOTRE PRÉNOM *</label>
-			<input type="text" name="firstname" placeholder="Votre prénom" required>
-			<div class="error"></div>
-		</div>
-		<div class="ps-field">
-			<label>VOTRE NOM *</label>
-			<input type="text" name="lastname" placeholder="Votre nom" required>
-			<div class="error"></div>
-		</div>
-	</div>
-
-	<div class="ps-field-row">
-		<div class="ps-field">
-			<label>VOTRE NUMÉRO DE TÉLÉPHONE *</label>
-			<input type="text" name="phone" placeholder="+XX X XX XX XX XX" required>
-			<div class="error"></div>
-		</div>
-		<div class="ps-field">
-			<label>VOTRE ADRESSE E-MAIL *</label>
-			<input type="email" name="email" placeholder="nom@email.com" required>
-			<div class="error"></div>
-		</div>
-	</div>
-
-	<div class="ps-field-row single">
-		<div class="ps-field">
-			<label>VOTRE SOCIÉTÉ *</label>
-			<input type="text" name="company" placeholder="Nom de l'entreprise" required>
-			<div class="error"></div>
-		</div>
-	</div>
-
-	<div class="ps-field-row single">
-		<div class="ps-field">
-			<label>COMMENT AVEZ-VOUS CONNU KWERK ? *</label>
-			<select name="origine_de_la_piste" required>
-				<option value="" disabled selected>Veuillez choisir</option>
-				<option>Recommandation par mon réseau</option>
-				<option>Recherche internet</option>
-				<option>Recommandation par un membre Kwerk</option>
-				<option>Mis en relation par un broker</option>
-				<option>Sur les réseaux sociaux</option>
-				<option>Rendez-vous professionnel chez Kwerk</option>
-				<option>Dans la presse</option>
-				<option>Lors d&#039;un événement chez Kwerk</option>
-				<option>Au cours d&#039;un déjeuner au restaurant Le Dana</option>
-			</select>
-			<div class="error"></div>
-		</div>
-	</div>
-
-	<hr class="contact-separator">
-
-	<div class="form-footer">
-		<button type="submit" class="submit-btn">ENVOYER</button>
-		<div class="success" id="successMessage"></div>
-	</div>
 	</form>
 </div>
+<!-- /KW:menu -->
 					<section class="adresse-citation-section" data-aos="fade-right">
 		<div class="adresse-citation-inner">
 			<div class="adresse-citation-star">
@@ -341,11 +355,11 @@ f.parentNode.insertBefore(j, f);
 	<a href="../contact.html" class="contact-btn-mobile-sticky">CONTACTEZ-NOUS</a>
 </div>
 
+<!-- KW:footer -->
 <footer class="footer">
 	<div class="footer-container">
 		<div class="footer-left">
 			<img src="../images/logo-kwerk-noir.png" alt="Kwerk" class="footer-logo"/>
-			<a href="#" class="footer-contact-btn">CONTACTEZ-NOUS</a>
 			<div class="footer-socials">
 				<a href="https://www.instagram.com/kwerkparis/" target="_blank" rel="noreferrer noopener" aria-label="Instagram"><img src="../images/footer_social/instagram.svg"/></a>
 				<a href="https://www.linkedin.com/company/kwerk/" target="_blank" rel="noreferrer noopener" aria-label="LinkedIn"><img src="../images/footer_social/linkedin.svg"/></a>
@@ -354,51 +368,69 @@ f.parentNode.insertBefore(j, f);
 
 		<div class="footer-right">
 			<nav class="footer-nav">
-				<div class="footer-nav-col" data-links="produits">
-					<div class="footer-nav-title"><a href="../espaces.html">NOS BUREAUX</a></div>
+				<div class="footer-nav-col" data-links="offres">
+					<div class="footer-nav-title active">NOS OFFRES</div>
+					<ul class="footer-nav-links show">
+						<a href="../espaces.html"><li>NOS ESPACES</li></a>
+						<a href="../maison-kwerk.html"><li>EXPÉRIENCE BY KWERK</li></a>
+						<a href="../event.html"><li>VOS ÉVÉNEMENTS</li></a>
+					</ul>
 				</div>
-				<div class="footer-nav-col">
-					<div class="footer-nav-title"><a href="../nos-services.html">NOS SERVICES</a></div>
+				<div class="footer-nav-col" data-links="decouvrir">
+					<div class="footer-nav-title">DÉCOUVRIR</div>
+					<ul class="footer-nav-links">
+						<a href="../adresses.html"><li>LES ADRESSES</li></a>
+						<a href="../nos-services.html"><li>LES SERVICES</li></a>
+						<a href="../notre-histoire.html"><li>NOTRE HISTOIRE</li></a>
+						<a href="../galerie.html"><li>LA GALERIE</li></a>
+					</ul>
 				</div>
 				<div class="footer-nav-col" data-links="adresses">
-					<div class="footer-nav-title active">NOS ADRESSES</div>
-					<ul class="footer-nav-links show">
+					<div class="footer-nav-title">NOS ADRESSES</div>
+					<ul class="footer-nav-links">
 						<a href="../adresses/messine.html"><li>MESSINE</li></a>
 						<a href="../adresses/saint-honore.html"><li>SAINT-HONORÉ</li></a>
 						<a href="../adresses/madeleine.html"><li>MADELEINE</li></a>
 					</ul>
 				</div>
-				<div class="footer-nav-col">
-					<div class="footer-nav-title">
-						<a href="../maison-kwerk.html">EXPÉRIENCE BY KWERK</a>
-					</div>
-				</div>
-				<div class="footer-nav-col">
-					<div class="footer-nav-title">
-						<a href="../event.html">VOS ÉVÉNEMENTS</a>
-					</div>
-				</div>
 			</nav>
 		</div>
 	</div>
 	<div class="footer-bottom">
-		<a href="../cgu.html">Conditions générales d'utilisation</a>
-		<a href="../mentions-legales.html">Mentions légales</a>
+		<span class="footer-copy">© Kwerk</span>
+		<div class="footer-legal">
+			<a href="../cgu.html">Conditions générales d'utilisation</a>
+			<a href="../mentions-legales.html">Mentions légales</a>
+		</div>
 	</div>
 </footer>
-		<script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
-		<script>
-			AOS.init({delay: 200, duration: 1500, anchorPlacement: 'center-center', once: true});
-		</script>
-		<!-- Start of HubSpot Embed Code -->
-		<script type="text/javascript" id="hs-script-loader" async defer src="https://js-eu1.hs-scripts.com/26225487.js"></script>
-		<!-- End of HubSpot Embed Code -->
-		<script src="../js/sticky.js"></script>
-		<script src="../js/contact.js"></script>
-		<script src="../js/form.js"></script>
-		<script src="../js/footer.js"></script>
-		<script src="../js/script.js"></script>
-		<script src="../js/loader.js"></script>
+<!-- /KW:footer -->
+<!-- KW:scripts -->
+<script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+<script>
+  AOS.init({
+    delay: 200,
+    duration: 1500,
+    anchorPlacement: "center-center",
+    once: true,
+  });
+</script>
+<!-- Start of HubSpot Embed Code -->
+<script
+  type="text/javascript"
+  id="hs-script-loader"
+  async
+  defer
+  src="https://js-eu1.hs-scripts.com/26225487.js"
+></script>
+<!-- End of HubSpot Embed Code -->
+<script src="../js/sticky.js?v=ea0324d9"></script>
+<script src="../js/contact.js?v=b3862227"></script>
+<script src="../js/form.js?v=fc393c9b"></script>
+<script src="../js/footer.js?v=7d45f877"></script>
+<script src="../js/script.js?v=dd2bfe7e"></script>
+<script src="../js/loader.js?v=edc20bed"></script>
+<!-- /KW:scripts -->
 </body>
 
 <!-- Mirrored from www.kwerk.fr/adresses/madeleine by HTTrack Website Copier/3.x [XR&CO'2014], Mon, 09 Mar 2026 14:52:20 GMT -->

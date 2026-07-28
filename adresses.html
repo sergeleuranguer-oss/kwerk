@@ -23,15 +23,18 @@ f.parentNode.insertBefore(j, f);
 		<!-- End Google Tag Manager -->
 
 		<!-- Import Google Fonts (Roboto) -->
-		<link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&amp;display=swap" rel="stylesheet">
-		<link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
-		<link rel="icon" type="image/svg+xml" href="favicon.ico">
-		
-									<link rel="stylesheet" href="css/navbar.css">
-							<!-- Votre fichier CSS “pixel-perfect” -->
-		<link rel="stylesheet" href="css/styles.css">
-
-		<link rel="stylesheet" href="css/footer.css">
+<!-- KW:head -->
+<!-- Import Google Fonts (Roboto) -->
+<link
+  href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&amp;display=swap"
+  rel="stylesheet"
+/>
+<link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
+<link rel="icon" type="image/svg+xml" href="favicon.ico" />
+<link rel="stylesheet" href="css/navbar.css?v=3ee742fe" />
+<link rel="stylesheet" href="css/styles.css?v=6691d2a6" />
+<link rel="stylesheet" href="css/footer.css?v=341ce88c" />
+<!-- /KW:head -->
 </head>
 	<body>
 		<div id="pageLoader" class="page-loader">
@@ -58,19 +61,20 @@ f.parentNode.insertBefore(j, f);
 					<header class="hero" style="background-color: #000;">
 			<div class="hero-video hero-slideshow" style="background-image: url('images/content/ROOFTOP_MESSINE(4).jpg');"  data-hero-slides="images/content/ROOFTOP_MESSINE(4).jpg,images/content/Rooftop_Sho_IA_1.png,images/content/Rooftop_Sho_2.jpg,images/content/Rooftop_4_TE.png" ></div>
 		
-	<nav class="navbar">
-		<div class="menu-icon"><img src="images/menu_burger.svg"></div>
-		<a href="index.html" class="logo-wrapper">
-			<div class="logo"><img src="images/logo-sans-bureaux.png"></div>
-			
-		</a>
-		<div class="nav-lang-switch">
-			<a href="adresses.html">FR</a>
-			<span class="lang-sep">/</span>
-			<a href="en/adresses.html">EN</a>
-		</div>
-		<a href="#" class="contact-btn">CONTACTEZ-NOUS</a>
-	</nav>
+<!-- KW:nav alt="en/adresses.html" -->
+<nav class="navbar">
+	<div class="menu-icon"><img src="images/menu_burger.svg"></div>
+	<a href="index.html" class="logo-wrapper">
+		<div class="logo"><img src="images/logo-sans-bureaux.png"></div>
+	</a>
+	<div class="nav-lang-switch">
+		<a href="adresses.html">FR</a>
+		<span class="lang-sep">/</span>
+		<a href="en/adresses.html">EN</a>
+	</div>
+	<a href="#" class="contact-btn">CONTACTEZ-NOUS</a>
+</nav>
+<!-- /KW:nav -->
 
 			<div class="hero-text hero-text--desktop-title-center hero-text--mobile-center">
 			
@@ -80,6 +84,7 @@ f.parentNode.insertBefore(j, f);
 	</header>
 
 <!-- MENU---------------------------->
+<!-- KW:menu -->
 <div class="side-menu" id="sideMenu">
 	<div class="side-menu-header">
 		<a href="index.html"><img src="images/logo-kwerk-noir.png" alt="Logo"></a>
@@ -87,23 +92,23 @@ f.parentNode.insertBefore(j, f);
 	</div>
 	<ul class="side-menu-links">
 		<li>
-			<a href="espaces.html">LES BUREAUX</a>
+			<a href="espaces.html">NOS ESPACES</a>
 		</li>
 		<li>
 			<a href="maison-kwerk.html">EXPÉRIENCE BY KWERK</a>
 		</li>
 		<li>
-			<a href="event.html">L'ÉVÉNEMENTIEL</a>
+			<a href="event.html">VOS ÉVÉNEMENTS</a>
 		</li>
 		<li class="side-menu-sep"></li>
 		<li>
-			<a href="#">NOTRE HISTOIRE</a>
+			<a href="adresses.html">NOS ADRESSES</a>
 		</li>
 		<li>
-			<a href="nos-services.html">LES SERVICES</a>
+			<a href="nos-services.html">NOS SERVICES</a>
 		</li>
 		<li>
-			<a href="adresses.html">LES ADRESSES</a>
+			<a href="notre-histoire.html">NOTRE HISTOIRE</a>
 		</li>
 	</ul>
 	<a href="#" class="side-menu-cta">RÉSERVER UNE VISITE</a>
@@ -151,7 +156,7 @@ f.parentNode.insertBefore(j, f);
 					<option value="Bureaux">Bureaux</option>
 					<option>Expérience by Kwerk</option>
 					<option>Événementiel</option>
-				</select>
+					</select>
 				<div class="error"></div>
 			</div>
 		</div>
@@ -160,6 +165,14 @@ f.parentNode.insertBefore(j, f);
 			<div class="ps-field">
 				<label>DE COMBIEN DE POSTES AVEZ-VOUS BESOIN ? *</label>
 				<input type="number" name="desk" min="1" placeholder="Nombre de postes">
+				<div class="error"></div>
+			</div>
+		</div>
+
+		<div class="ps-field-row single ps-field-row--events" style="display:none;">
+			<div class="ps-field">
+				<label>POUR COMBIEN DE PERSONNES ? *</label>
+				<input type="number" name="nombre_de_personnes" min="1" placeholder="Nombre de personnes">
 				<div class="error"></div>
 			</div>
 		</div>
@@ -239,10 +252,12 @@ f.parentNode.insertBefore(j, f);
 		</div>
 	</form>
 </div>
+<!-- /KW:menu -->
 				
 	<section class="exceptional-section">
-		<div class="exceptional-container" data-aos="fade-up">
-			<h2 class="exceptional-heading">Kwerk vous accueille dans ses trois adresses signature,<br>toutes au coeur du 8e arrondissement de Paris</h2>
+		<div class="exceptional-container" data-aos="fade-up" style="max-width: 1080px;">
+			<h2 class="exceptional-heading">Kwerk vous accueille dans ses trois adresses signature</h2>
+			<p class="section-sub">toutes au coeur du 8e arrondissement de Paris</p>
 			<div style="width: 1px; height: 56px; background: #1a1a1a; margin: 32px auto;"></div>
 			<p class="exceptional-body">Nous nous occupons de chaque instant de votre journée au bureau :<br>accueil, restauration, sport, événementiel, soin des espaces.</p>
 		</div>
@@ -257,9 +272,9 @@ f.parentNode.insertBefore(j, f);
 				<div class="adresse-details-street">16 AVENUE DE MESSINE, 75008 PARIS</div>
 				<h2 class="adresse-details-title">MESSINE — L’HÉRITAGE SUBLIMÉ</h2>
 				<p class="adresse-details-desc">
-					<strong>La matière première : l’histoire du lieu</strong><br>
-					L’immeuble porte une mémoire. Au XIXe siècle, il appartenait à une famille de tapissiers — une histoire qui continue d’habiter les espaces aujourd’hui.<br>
-					<strong>Le geste central : la coupole de tissu</strong><br>
+					<strong>L’histoire du lieu</strong><br>
+					L’immeuble porte une mémoire. Au XIXe siècle, il appartenait à une famille de tapissiers, une histoire qui continue d’habiter les espaces aujourd’hui.<br>
+					<strong>La coupole de tissu</strong><br>
 					Dans le lobby, une coupole de tissu suspendue au-dessus du puits de lumière dessine une présence aérienne. Les moulures textiles composent une sculpture presque immatérielle, à la fois hommage à ce passé artisanal et expression contemporaine.<br>
 					<strong>Un dialogue de contrastes</strong><br>
 					Face à cette légèreté, des blocs massifs de pierre accueillent des assises creusées, aux lignes généreuses. L’opposition est assumée : le lourd et le léger, le minéral et le textile, l’immuable et l’éphémère.
@@ -326,11 +341,11 @@ f.parentNode.insertBefore(j, f);
 </div>
 
 
+<!-- KW:footer -->
 <footer class="footer">
 	<div class="footer-container">
 		<div class="footer-left">
 			<img src="images/logo-kwerk-noir.png" alt="Kwerk" class="footer-logo"/>
-			<a href="#" class="footer-contact-btn">CONTACTEZ-NOUS</a>
 			<div class="footer-socials">
 				<a href="https://www.instagram.com/kwerkparis/" target="_blank" rel="noreferrer noopener" aria-label="Instagram"><img src="images/footer_social/instagram.svg"/></a>
 				<a href="https://www.linkedin.com/company/kwerk/" target="_blank" rel="noreferrer noopener" aria-label="LinkedIn"><img src="images/footer_social/linkedin.svg"/></a>
@@ -339,51 +354,69 @@ f.parentNode.insertBefore(j, f);
 
 		<div class="footer-right">
 			<nav class="footer-nav">
-				<div class="footer-nav-col" data-links="produits">
-					<div class="footer-nav-title"><a href="espaces.html">NOS BUREAUX</a></div>
+				<div class="footer-nav-col" data-links="offres">
+					<div class="footer-nav-title active">NOS OFFRES</div>
+					<ul class="footer-nav-links show">
+						<a href="espaces.html"><li>NOS ESPACES</li></a>
+						<a href="maison-kwerk.html"><li>EXPÉRIENCE BY KWERK</li></a>
+						<a href="event.html"><li>VOS ÉVÉNEMENTS</li></a>
+					</ul>
 				</div>
-				<div class="footer-nav-col">
-					<div class="footer-nav-title"><a href="nos-services.html">NOS SERVICES</a></div>
+				<div class="footer-nav-col" data-links="decouvrir">
+					<div class="footer-nav-title">DÉCOUVRIR</div>
+					<ul class="footer-nav-links">
+						<a href="adresses.html"><li>LES ADRESSES</li></a>
+						<a href="nos-services.html"><li>LES SERVICES</li></a>
+						<a href="notre-histoire.html"><li>NOTRE HISTOIRE</li></a>
+						<a href="galerie.html"><li>LA GALERIE</li></a>
+					</ul>
 				</div>
 				<div class="footer-nav-col" data-links="adresses">
-					<div class="footer-nav-title active">NOS ADRESSES</div>
-					<ul class="footer-nav-links show">
+					<div class="footer-nav-title">NOS ADRESSES</div>
+					<ul class="footer-nav-links">
 						<a href="adresses/messine.html"><li>MESSINE</li></a>
 						<a href="adresses/saint-honore.html"><li>SAINT-HONORÉ</li></a>
 						<a href="adresses/madeleine.html"><li>MADELEINE</li></a>
 					</ul>
 				</div>
-				<div class="footer-nav-col">
-					<div class="footer-nav-title">
-						<a href="maison-kwerk.html">EXPÉRIENCE BY KWERK</a>
-					</div>
-				</div>
-				<div class="footer-nav-col">
-					<div class="footer-nav-title">
-						<a href="event.html">VOS ÉVÉNEMENTS</a>
-					</div>
-				</div>
 			</nav>
 		</div>
 	</div>
 	<div class="footer-bottom">
-		<a href="cgu.html">Conditions générales d'utilisation</a>
-		<a href="mentions-legales.html">Mentions légales</a>
+		<span class="footer-copy">© Kwerk</span>
+		<div class="footer-legal">
+			<a href="cgu.html">Conditions générales d'utilisation</a>
+			<a href="mentions-legales.html">Mentions légales</a>
+		</div>
 	</div>
 </footer>
-		<script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
-		<script>
-			AOS.init({delay: 200, duration: 1500, anchorPlacement: 'center-center', once: true});
-		</script>
-		<!-- Start of HubSpot Embed Code -->
-		<script type="text/javascript" id="hs-script-loader" async defer src="https://js-eu1.hs-scripts.com/26225487.js"></script>
-		<!-- End of HubSpot Embed Code -->
-		<script src="js/sticky.js"></script>
-		<script src="js/contact.js"></script>
-		<script src="js/form.js"></script>
-		<script src="js/footer.js"></script>
-		<script src="js/script.js"></script>
-		<script src="js/loader.js"></script>
+<!-- /KW:footer -->
+<!-- KW:scripts -->
+<script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+<script>
+  AOS.init({
+    delay: 200,
+    duration: 1500,
+    anchorPlacement: "center-center",
+    once: true,
+  });
+</script>
+<!-- Start of HubSpot Embed Code -->
+<script
+  type="text/javascript"
+  id="hs-script-loader"
+  async
+  defer
+  src="https://js-eu1.hs-scripts.com/26225487.js"
+></script>
+<!-- End of HubSpot Embed Code -->
+<script src="js/sticky.js?v=ea0324d9"></script>
+<script src="js/contact.js?v=b3862227"></script>
+<script src="js/form.js?v=fc393c9b"></script>
+<script src="js/footer.js?v=7d45f877"></script>
+<script src="js/script.js?v=dd2bfe7e"></script>
+<script src="js/loader.js?v=edc20bed"></script>
+<!-- /KW:scripts -->
 </body>
 
 <!-- Mirrored from www.kwerk.fr/adresses by HTTrack Website Copier/3.x [XR&CO'2014], Mon, 09 Mar 2026 14:52:15 GMT -->

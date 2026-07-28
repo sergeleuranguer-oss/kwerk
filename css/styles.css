@@ -171,7 +171,7 @@ a {
 .exceptional-body {
   font-family: "Helvetica Neue", HelveticaNeue, sans-serif;
   font-weight: 300;
-  font-size: 20px;
+  font-size: 18px;
   line-height: 1.7;
   color: #222;
   max-width: 660px;
@@ -229,6 +229,14 @@ a {
   background: #fff;
 }
 
+.adresses-intro-section--compact {
+  padding: 80px 40px 40px;
+}
+
+.adresses-intro-section--compact .adresses-intro-title {
+  margin-bottom: 40px;
+}
+
 .adresses-intro-title {
   font-family: "Helvetica Neue", HelveticaNeue, sans-serif;
   font-weight: 300;
@@ -249,7 +257,7 @@ a {
 .adresses-intro-body {
   font-family: "Helvetica Neue", HelveticaNeue, sans-serif;
   font-weight: 300;
-  font-size: 20px;
+  font-size: 18px;
   color: #555;
   line-height: 1.7;
   margin: 0;
@@ -445,7 +453,7 @@ a {
   color: white;
   font-family: "Helvetica Neue", HelveticaNeue, sans-serif;
   font-weight: 300;
-  font-size: 30px;
+  font-size: 26px;
   letter-spacing: -0.5px;
   text-transform: uppercase;
   text-align: center;
@@ -453,13 +461,24 @@ a {
   margin-top: auto;
 }
 
+.offre-bloc .offre-sub {
+  color: white;
+  font-family: "Helvetica Neue", HelveticaNeue, sans-serif;
+  font-weight: 300;
+  font-size: 18px;
+  letter-spacing: 0.05em;
+  text-align: center;
+  line-height: 1.4;
+  margin-top: 8px;
+}
+
 .offre-bloc .offre-link {
   color: white;
   font-family: "Helvetica Neue", HelveticaNeue, sans-serif;
   font-weight: 300;
-  font-size: 11px;
+  font-size: 18px;
   letter-spacing: 1.5px;
-  text-transform: uppercase;
+  text-transform: none;
   border-bottom: 1px solid rgba(255,255,255,0.7);
   padding-bottom: 2px;
   margin-top: auto;
@@ -474,6 +493,12 @@ a {
   .offres-title {
     font-size: 26px;
     padding: 20px 24px 20px;
+  }
+  .adresses-intro-title {
+    font-size: 26px;
+  }
+  .adresses-intro-section--compact .adresses-intro-title {
+    margin-bottom: 24px;
   }
   .offres-grid {
     display: grid;
@@ -492,7 +517,7 @@ a {
     background-image: url('../images/maison-kwerk-mobile.jpg') !important;
   }
   .offres-grid:not(.offres-grid--adresses) .offre-bloc:nth-child(3) {
-    background-image: url('../images/evenementiel-mobile.png') !important;
+    background-image: url('../images/eventwinter.jpg') !important;
   }
   .offre-bloc .offre-label {
     font-size: 16px;
@@ -512,7 +537,7 @@ a {
   font-weight: 300;
   font-size: 18px;
   color: #555;
-  line-height: 1.6;
+  line-height: 1.7;
   max-width: 720px;
   margin: -20px auto 48px;
   padding: 0 40px;
@@ -563,9 +588,9 @@ a {
   color: #fff;
   font-family: "Helvetica Neue", HelveticaNeue, sans-serif;
   font-weight: 300;
-  font-size: 11px;
+  font-size: 18px;
   letter-spacing: 1.5px;
-  text-transform: uppercase;
+  text-transform: none;
   border-bottom: 1px solid rgba(255, 255, 255, 0.7);
   padding-bottom: 2px;
   margin: 0;
@@ -591,14 +616,29 @@ a {
   flex: 1 1 0;
   text-decoration: none;
   display: block;
+  margin: 0;
 }
 
 .service-vignette-img {
+  position: relative;
   width: 100%;
-  height: 280px;
+  aspect-ratio: 1 / 1;
   background: #111 center/cover no-repeat;
   filter: saturate(0.92);
   transition: transform 0.4s ease;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 28px 20px;
+  overflow: hidden;
+}
+
+.service-vignette-img::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.35);
+  z-index: 0;
 }
 
 .service-vignette:hover .service-vignette-img {
@@ -606,14 +646,16 @@ a {
 }
 
 .service-vignette figcaption {
-  margin-top: 16px;
+  position: relative;
+  z-index: 1;
   text-align: center;
   font-family: "Helvetica Neue", HelveticaNeue, sans-serif;
   font-weight: 300;
-  font-size: 13px;
-  letter-spacing: 2px;
+  font-size: 26px;
+  line-height: 1.2;
+  letter-spacing: -0.5px;
   text-transform: uppercase;
-  color: #111;
+  color: white;
 }
 
 .services-vignettes-link {
@@ -624,9 +666,9 @@ a {
 .link-underline {
   font-family: "Helvetica Neue", HelveticaNeue, sans-serif;
   font-weight: 300;
-  font-size: 13px;
+  font-size: 18px;
   letter-spacing: 1.5px;
-  text-transform: uppercase;
+  text-transform: none;
   color: #111;
   text-decoration: none;
   border-bottom: 1px solid #111;
@@ -641,11 +683,19 @@ a {
 
 /*********************** CTA FINAL ****************************/
 
+.offres-section--adresses {
+  padding-bottom: 80px;
+}
+
+.offres-section--adresses .offres-grid--adresses {
+  padding-bottom: 0;
+}
+
 .cta-final-section {
   width: 100vw;
   background: #fff;
   text-align: center;
-  padding: 90px 40px 110px;
+  padding: 40px 40px 110px;
 }
 
 .cta-final-sep {
@@ -701,9 +751,6 @@ a {
   }
   .service-vignette {
     flex: 1 1 calc(50% - 8px);
-  }
-  .service-vignette-img {
-    height: 180px;
   }
   .service-vignette figcaption {
     font-size: 11px;
@@ -1511,7 +1558,7 @@ a {
 }
 
 .adresse-details-desc {
-  font-size: 20px;
+  font-size: 18px;
   font-weight: 300;
   color: #222;
   margin-bottom: 18px;
@@ -1520,7 +1567,7 @@ a {
 }
 
 .adresse-details-section--home .adresse-details-desc {
-  font-size: 20px;
+  font-size: 18px;
 }
 
 .adresse-details-btn {
@@ -1910,8 +1957,13 @@ a {
 }
 .event-duo img {
   width: 100%;
+  aspect-ratio: 1638 / 2048;
   height: auto;
+  object-fit: cover;
   display: block;
+}
+.event-duo img:first-child {
+  object-position: bottom;
 }
 @media (max-width: 480px) {
   .event-duo {
@@ -2184,6 +2236,56 @@ a {
 }
 .item-7 {
   grid-area: 5 / 1 / 7 / 4;
+}
+
+/* Dernier lot incomplet (< 7 images) : grille fluide, pas de rangées réservées
+   -> supprime le gros espace vide sous la dernière image. */
+/* Dernier lot incomplet : compo adaptée au nombre d'images (1 à 6) — pas d'espace vide,
+   tailles variées comme la mosaïque (grande image + petites). */
+/* 1 image : pleine largeur */
+.gallery-grid--n1 {
+  grid-template-columns: 1fr;
+  grid-template-rows: 520px;
+}
+.gallery-grid--n1 .item-1 {
+  grid-area: auto;
+}
+/* 2 images : deux grandes côte à côte */
+.gallery-grid--n2 {
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: 480px;
+}
+.gallery-grid--n2 .item-1,
+.gallery-grid--n2 .item-2 {
+  grid-area: auto;
+}
+/* 3 images : une grande (2x2) + deux petites empilées */
+.gallery-grid--n3 {
+  grid-template-rows: 300px 300px;
+}
+.gallery-grid--n3 .item-1 { grid-area: 1 / 1 / 3 / 3; }
+.gallery-grid--n3 .item-2 { grid-area: 1 / 3 / 2 / 4; }
+.gallery-grid--n3 .item-3 { grid-area: 2 / 3 / 3 / 4; }
+/* 4 images : trio (1 grande + 2 petites) + 1 très grande pleine largeur */
+.gallery-grid--n4 {
+  grid-template-rows: 300px 300px 400px;
+}
+.gallery-grid--n4 .item-1 { grid-area: 1 / 1 / 3 / 3; }
+.gallery-grid--n4 .item-2 { grid-area: 1 / 3 / 2 / 4; }
+.gallery-grid--n4 .item-3 { grid-area: 2 / 3 / 3 / 4; }
+.gallery-grid--n4 .item-4 { grid-area: 3 / 1 / 4 / 4; }
+/* 5 images : trio + deux grandes en bas */
+.gallery-grid--n5 {
+  grid-template-rows: 300px 300px 360px;
+}
+.gallery-grid--n5 .item-1 { grid-area: 1 / 1 / 3 / 3; }
+.gallery-grid--n5 .item-2 { grid-area: 1 / 3 / 2 / 4; }
+.gallery-grid--n5 .item-3 { grid-area: 2 / 3 / 3 / 4; }
+.gallery-grid--n5 .item-4 { grid-area: 3 / 1 / 4 / 3; }
+.gallery-grid--n5 .item-5 { grid-area: 3 / 3 / 4 / 4; }
+/* 6 images : mosaïque complète sans la dernière rangée (item-7) */
+.gallery-grid--n6 {
+  grid-template-rows: 300px 300px 250px 250px;
 }
 
 .btn-more {

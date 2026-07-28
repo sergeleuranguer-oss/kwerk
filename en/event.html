@@ -22,112 +22,19 @@ f.parentNode.insertBefore(j, f);
 		<!-- End Google Tag Manager -->
 
 		<!-- Import Google Fonts (Roboto) -->
-		<link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&amp;display=swap" rel="stylesheet">
-		<link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
-		<link rel="icon" type="image/svg+xml" href="../favicon.ico">
-
-								<link rel="stylesheet" href="../css/navbar.css">
-						<!-- Your pixel-perfect CSS file -->
-		<link rel="stylesheet" href="../css/styles.css">
-
-		<link rel="stylesheet" href="../css/footer.css">
-	<style>
-		/* ── EVENT details-section ── */
-		.details-images--event .image-large img { height: 320px; }
-		.details-images--event ~ .details-text { align-self: flex-start; }
-		.details-section .details-text { padding-top: 0; }
-		.video-section { margin-top: 80px; }
-
-		/* ── ROOFTOP SECTION ── */
-		.event-rooftop-title {
-			font-size: 40px;
-			font-weight: 300;
-			letter-spacing: -0.5px;
-			line-height: 1.15;
-			color: #1a1a1a;
-			margin: 0 0 30px;
-		}
-		.event-rooftop-desc {
-			font-size: 17px;
-			font-weight: 300;
-			line-height: 1.85;
-			color: #444;
-			margin: 0 0 22px;
-		}
-		.event-rooftop-desc:last-of-type { margin-bottom: 0; }
-		.event-rooftop-img {
-			overflow: hidden;
-			height: 520px;
-		}
-		.event-rooftop-img img {
-			width: 100%;
-			height: 100%;
-			object-fit: cover;
-			object-position: center center;
-			display: block;
-		}
-		/* ── DANA SECTION: 2 photos side by side on the left ── */
-		.event-dana-imgs {
-			display: grid;
-			grid-template-columns: 1fr 1fr;
-			gap: 12px;
-			height: 520px;
-			overflow: hidden;
-		}
-		.event-dana-imgs img {
-			width: 100%;
-			height: 100%;
-			object-fit: cover;
-			object-position: center center;
-			display: block;
-		}
-		@media (max-width: 900px) {
-			.event-rooftop-title { font-size: 28px; }
-			.event-rooftop-img { height: 300px; }
-			.event-dana-imgs { height: auto; grid-template-columns: 1fr; }
-			.event-dana-imgs img { height: 260px; }
-		}
-
-		/* ── STATS BANNER ── */
-		.exceptional-section {
-			padding-bottom: 40px !important;
-		}
-		.event-count-heading {
-			text-align: center;
-			padding: 40px 40px 50px;
-		}
-		.event-stats-banner {
-			background: #162032;
-			padding: 65px 100px;
-			text-align: center;
-		}
-		.event-stats-line {
-			font-family: "Helvetica Neue", HelveticaNeue, sans-serif;
-			font-size: 17px;
-			font-weight: 300;
-			color: #ddd5c0;
-			line-height: 1;
-			margin: 0 0 30px;
-			letter-spacing: 0.01em;
-		}
-		.event-stats-line:last-child { margin-bottom: 0; }
-		.event-stats-num {
-			color: #c9a870;
-			font-style: normal;
-		}
-		.event-stats-sep {
-			color: #c9a870;
-			margin: 0 22px;
-			font-style: normal;
-			font-weight: 300;
-		}
-		@media (max-width: 768px) {
-			.event-stats-banner { padding: 50px 30px; }
-			.event-stats-line { font-size: 18px; margin-bottom: 22px; }
-			.event-stats-sep { display: none; }
-			.event-stats-line { display: flex; flex-direction: column; gap: 10px; }
-		}
-	</style>
+<!-- KW:head -->
+<!-- Import Google Fonts (Roboto) -->
+<link
+  href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&amp;display=swap"
+  rel="stylesheet"
+/>
+<link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
+<link rel="icon" type="image/svg+xml" href="../favicon.ico" />
+<link rel="stylesheet" href="../css/navbar.css?v=3ee742fe" />
+<link rel="stylesheet" href="../css/styles.css?v=6691d2a6" />
+<link rel="stylesheet" href="../css/footer.css?v=341ce88c" />
+<!-- /KW:head -->
+	<link rel="stylesheet" href="../css/en-event.css">
 </head>
 	<body class="event-page">
 		<div id="pageLoader" class="page-loader">
@@ -154,19 +61,20 @@ f.parentNode.insertBefore(j, f);
 				<header class="hero" style="background-color: #000;">
 			<div class="hero-video hero-slideshow" style="background-image: url('../images/eventwinter.jpg');" data-hero-slides="../images/eventwinter.jpg"></div>
 
-	<nav class="navbar">
-		<div class="menu-icon"><img src="../images/menu_burger.svg"></div>
-		<a href="../en.html" class="logo-wrapper">
-			<div class="logo"><img src="../images/logo-sans-bureaux.png"></div>
-
-		</a>
-		<div class="nav-lang-switch">
-			<a href="../event.html">FR</a>
-			<span class="lang-sep">/</span>
-			<a href="event.html">EN</a>
-		</div>
-		<a href="#" class="contact-btn">CONTACT US</a>
-	</nav>
+<!-- KW:nav alt="../event.html" -->
+<nav class="navbar">
+	<div class="menu-icon"><img src="../images/menu_burger.svg"></div>
+	<a href="../en.html" class="logo-wrapper">
+		<div class="logo"><img src="../images/logo-sans-bureaux.png"></div>
+	</a>
+	<div class="nav-lang-switch">
+		<a href="../event.html">FR</a>
+		<span class="lang-sep">/</span>
+		<a href="event.html">EN</a>
+	</div>
+	<a href="#" class="contact-btn">CONTACT US</a>
+</nav>
+<!-- /KW:nav -->
 
 			<div class="hero-text hero-text--desktop-title-center hero-text--mobile-center">
 			<a href="#" class="btn contact-btn">CONTACT US</a>
@@ -175,6 +83,7 @@ f.parentNode.insertBefore(j, f);
 	</header>
 
 <!-- MENU---------------------------->
+<!-- KW:menu -->
 <div class="side-menu" id="sideMenu">
 	<div class="side-menu-header">
 		<a href="../en.html"><img src="../images/logo-kwerk-noir.png" alt="Logo"></a>
@@ -182,10 +91,7 @@ f.parentNode.insertBefore(j, f);
 	</div>
 	<ul class="side-menu-links">
 		<li>
-			<a href="espaces.html">OUR OFFICES &amp; SERVICES</a>
-		</li>
-		<li>
-			<a href="adresses.html">OUR LOCATIONS</a>
+			<a href="espaces.html">OUR OFFICES</a>
 		</li>
 		<li>
 			<a href="maison-kwerk.html">YOUR BUILDING<br>MANAGED BY KWERK</a>
@@ -193,18 +99,29 @@ f.parentNode.insertBefore(j, f);
 		<li>
 			<a href="event.html">YOUR EVENTS</a>
 		</li>
+		<li class="side-menu-sep"></li>
+		<li>
+			<a href="adresses.html">OUR LOCATIONS</a>
+		</li>
+		<li>
+			<a href="services.html">OUR SERVICES</a>
+		</li>
+		<li>
+			<a href="our-story.html">OUR STORY</a>
+		</li>
 	</ul>
+	<a href="#" class="side-menu-cta">BOOK A VISIT</a>
 
 </div>
 
-<!--SOUS MENU ADRESSES-->
+<!-- SUBMENU ADDRESSES -->
 <div class="submenu-panel" id="submenuPRAdresses">
 	<div class="submenu-header">
 		<span class="close-submenu" data-back="true">
 			<img src="../images/close_cross.svg" alt="close">
 		</span>
 	</div>
-	<img src="../images/adresses.png" alt="Image PR Produit" class="submenu-img">
+	<img src="../images/adresses.png" alt="Our Addresses" class="submenu-img">
 	<div class="submenu-content">
 		<a href="adresses.html">
 			<h4>OUR LOCATIONS</h4>
@@ -225,141 +142,146 @@ f.parentNode.insertBefore(j, f);
 			<img src="../images/close_cross.svg" alt="close">
 		</span>
 	</div>
-		<form class="contact-form-fields">
+	<form class="contact-form-fields">
 
-		<!-- YOUR REQUEST -->
-		<h3 class="contact-section-title">YOUR REQUEST</h3>
+	<!-- YOUR REQUEST -->
+	<h3 class="contact-section-title">YOUR REQUEST</h3>
 
-		<div class="ps-field-row single">
-			<div class="ps-field ps-select">
-				<label>WHAT IS YOUR REQUEST? *</label>
-				<select name="produit" required>
-					<option value="" disabled selected>Please select</option>
-					<option value="Bureaux">Executive Offices</option>
-					<option>Events</option>
-					<option>Your building managed by Kwerk</option>
-				</select>
-				<div class="error"></div>
-			</div>
+	<div class="ps-field-row single">
+		<div class="ps-field ps-select">
+			<label>WHAT IS YOUR REQUEST? *</label>
+			<select name="produit" required>
+				<option value="" disabled selected>Please select</option>
+				<option value="Bureaux">Executive Offices</option>
+				<option value="Expérience by Kwerk">Your building managed by Kwerk</option>
+				<option value="Événementiel">Events</option>
+			</select>
+			<div class="error"></div>
 		</div>
+	</div>
 
-		<div class="ps-field-row single ps-field-row--desk" style="display:none;">
-			<div class="ps-field">
-				<label>HOW MANY DESKS DO YOU NEED? *</label>
-				<input type="number" name="desk" min="1" placeholder="Number of desks">
-				<div class="error"></div>
-			</div>
+	<div class="ps-field-row single ps-field-row--desk" style="display:none;">
+		<div class="ps-field">
+			<label>HOW MANY DESKS DO YOU NEED? *</label>
+			<input type="number" name="desk" min="1" placeholder="Number of desks">
+			<div class="error"></div>
 		</div>
+	</div>
 
-		<div class="ps-field-row single">
-			<div class="ps-field">
-				<label>HOW DID YOU HEAR ABOUT KWERK? *</label>
-				<select name="origine_de_la_piste" required>
-					<option value="" disabled selected>Please select</option>
-					<option>Recommendation from my network</option>
-					<option>Internet search</option>
-					<option>Recommendation from a Kwerk member</option>
-					<option>Referred by a broker</option>
-					<option>On social media</option>
-					<option>Professional meeting at Kwerk</option>
-					<option>In the press</option>
-					<option>At a Kwerk event</option>
-					<option>During lunch at the Dana restaurant</option>
-				</select>
-				<div class="error"></div>
-			</div>
+	<div class="ps-field-row single ps-field-row--events" style="display:none;">
+		<div class="ps-field">
+			<label>FOR HOW MANY PEOPLE? *</label>
+			<input type="number" name="nombre_de_personnes" min="1" placeholder="Number of people">
+			<div class="error"></div>
 		</div>
+	</div>
 
-		<div class="ps-field-row single">
-			<div class="ps-field">
-				<label>TELL US ABOUT YOUR PROJECT *</label>
-				<textarea name="description_de_la_transaction" placeholder="Tell us about your project" required></textarea>
-				<div class="error"></div>
-			</div>
+	<div class="ps-field-row single">
+		<div class="ps-field">
+			<label>TELL US ABOUT YOUR PROJECT *</label>
+			<textarea name="description_de_la_transaction" placeholder="Tell us about your project" required></textarea>
+			<div class="error"></div>
 		</div>
+	</div>
 
-		<hr class="contact-separator">
+	<hr class="contact-separator">
 
-		<!-- YOUR DETAILS -->
-		<h3 class="contact-section-title">YOUR DETAILS</h3>
+	<!-- YOUR DETAILS -->
+	<h3 class="contact-section-title">YOUR DETAILS</h3>
 
-		<div class="ps-field-row">
-			<div class="ps-field">
-				<label>YOUR FIRST NAME *</label>
-				<input type="text" name="firstname" placeholder="Your first name" required>
-				<div class="error"></div>
-			</div>
-			<div class="ps-field">
-				<label>YOUR LAST NAME *</label>
-				<input type="text" name="lastname" placeholder="Your last name" required>
-				<div class="error"></div>
-			</div>
+	<div class="ps-field-row">
+		<div class="ps-field">
+			<label>YOUR FIRST NAME *</label>
+			<input type="text" name="firstname" placeholder="Your first name" required>
+			<div class="error"></div>
 		</div>
-
-		<div class="ps-field-row">
-			<div class="ps-field">
-				<label>YOUR PHONE NUMBER *</label>
-				<input type="text" name="phone" placeholder="+XX X XX XX XX XX" required>
-				<div class="error"></div>
-			</div>
-			<div class="ps-field">
-				<label>YOUR EMAIL ADDRESS *</label>
-				<input type="email" name="email" placeholder="name@email.com" required>
-				<div class="error"></div>
-			</div>
+		<div class="ps-field">
+			<label>YOUR LAST NAME *</label>
+			<input type="text" name="lastname" placeholder="Your last name" required>
+			<div class="error"></div>
 		</div>
+	</div>
 
-		<div class="ps-field-row single">
-			<div class="ps-field">
-				<label>YOUR COMPANY *</label>
-				<input type="text" name="company" placeholder="Company name" required>
-				<div class="error"></div>
-			</div>
+	<div class="ps-field-row">
+		<div class="ps-field">
+			<label>YOUR PHONE NUMBER *</label>
+			<input type="text" name="phone" placeholder="+XX X XX XX XX XX" required>
+			<div class="error"></div>
 		</div>
-
-		<hr class="contact-separator">
-
-		<div class="form-footer">
-			<button type="submit" class="submit-btn">SEND YOUR REQUEST</button>
-			<div class="success" id="successMessage"></div>
+		<div class="ps-field">
+			<label>YOUR EMAIL ADDRESS *</label>
+			<input type="email" name="email" placeholder="name@email.com" required>
+			<div class="error"></div>
 		</div>
+	</div>
+
+	<div class="ps-field-row single">
+		<div class="ps-field">
+			<label>YOUR COMPANY *</label>
+			<input type="text" name="company" placeholder="Company name" required>
+			<div class="error"></div>
+		</div>
+	</div>
+
+	<div class="ps-field-row single">
+		<div class="ps-field">
+			<label>HOW DID YOU HEAR ABOUT KWERK? *</label>
+			<select name="origine_de_la_piste" required>
+				<option value="" disabled selected>Please select</option>
+				<option value="Recommandation par mon réseau">Recommendation from my network</option>
+				<option value="Recherche internet">Internet search</option>
+				<option value="Recommandation par un membre Kwerk">Recommendation from a Kwerk member</option>
+				<option value="Mis en relation par un broker">Referred by a broker</option>
+				<option value="Sur les réseaux sociaux">On social media</option>
+				<option value="Rendez-vous professionnel chez Kwerk">Professional meeting at Kwerk</option>
+				<option value="Dans la presse">In the press</option>
+				<option value="Lors d&#039;un événement chez Kwerk">At a Kwerk event</option>
+				<option value="Au cours d&#039;un déjeuner au restaurant Le Dana">During lunch at Le Dana restaurant</option>
+			</select>
+			<div class="error"></div>
+		</div>
+	</div>
+
+	<hr class="contact-separator">
+
+	<div class="form-footer">
+		<button type="submit" class="submit-btn">SEND YOUR REQUEST</button>
+		<div class="success" id="successMessage"></div>
+	</div>
 	</form>
 </div>
+<!-- /KW:menu -->
 
 	<section class="exceptional-section">
 		<div class="exceptional-container" data-aos="fade-up">
-			<h2 class="exceptional-heading">Hosting Events at a Kwerk Address</h2>
+			<h2 class="exceptional-heading">Hosting with Kwerk</h2>
 			<div style="width: 1px; height: 56px; background: #1a1a1a; margin: 32px auto;"></div>
-			<p class="exceptional-body">All four of our Paris addresses are available for private hire. Our teams design and manage every event with the same care they bring to the spaces themselves — creating an atmosphere that feels genuinely like home.</p>
+			<p class="exceptional-body">All three of our Paris addresses are available for private hire. Our teams design and manage every event with the same care they bring to the spaces themselves, creating an atmosphere that feels genuinely like home. We also organise events beyond our own addresses.</p>
 		</div>
 	</section>
 
-	<div class="event-count-heading">
-		<h2 class="exceptional-heading">+400 events hosted each year</h2>
-	</div>
-
-	<div class="event-stats-banner">
-		<p class="event-stats-line">
-			<span class="event-stats-num">5,000 m²</span> of event space
-			<span class="event-stats-sep">|</span>
-			<span class="event-stats-num">4 rooftops</span>, up to 150 guests
-			<span class="event-stats-sep">|</span>
-			<span class="event-stats-num">4 privatisable lobbies</span>, up to 250 guests
-		</p>
-		<p class="event-stats-line">
-			<span class="event-stats-num">20 meeting rooms</span> (including a 100-person conference centre)
-		</p>
-		<p class="event-stats-line">
-			<span class="event-stats-num">1 restaurant</span> — Le Dana, up to 80 covers, indoor and terrace
-		</p>
-	</div>
-
+	<section class="offres-section">
+		<div class="offres-grid offres-grid--adresses offres-grid--event">
+			<div class="offre-bloc" style="background-image: url('../images/SOIREE1.jpg');">
+				<span class="offre-label">Private evening</span>
+			</div>
+			<div class="offre-bloc" style="background-image: url('../images/francesenegal.jpeg');">
+				<span class="offre-label">Rooftop screening</span>
+			</div>
+			<div class="offre-bloc" style="background-image: url('../images/CONF1.jpg');">
+				<span class="offre-label">Conference</span>
+			</div>
+			<div class="offre-bloc" style="background-image: url('../images/reception.jpg');">
+				<span class="offre-label">Cocktails &amp; receptions</span>
+			</div>
+		</div>
+	</section>
 
 	<section class="details-section">
 		<div class="details-container">
 			<div class="details-text" data-aos="fade-right">
 				<h2 class="event-rooftop-title">The Rooftops</h2>
-				<p class="event-rooftop-desc">Four sky-high venues in the heart of the 8th arrondissement, with sweeping views over Paris's most iconic landmarks, from early morning to sunset.</p>
+				<p class="event-rooftop-desc">Three sky-high venues in the heart of the 8th arrondissement, with sweeping views over Paris's most iconic landmarks, from early morning to sunset.</p>
 				<p class="event-rooftop-desc">Sundowner cocktails, dinner under the Parisian sky, a DJ set, a mixology workshop, a pop-up installation: every event is shaped around the atmosphere and rhythm you have in mind.</p>
 			</div>
 			<div class="event-rooftop-img" data-aos="fade-left">
@@ -376,7 +298,7 @@ f.parentNode.insertBefore(j, f);
 			</div>
 			<div class="details-text" data-aos="fade-left">
 				<h2 class="event-rooftop-title">Restaurant Le Dana</h2>
-				<p class="event-rooftop-desc">Our executive chef, Laís Borba, crafts a personal, produce-driven menu using seasonal French ingredients, made entirely in-house.</p>
+				<p class="event-rooftop-desc">A signature cuisine crafted by our executive chef, using French, seasonal and homemade produce.</p>
 				<p class="event-rooftop-desc">Eighty covers: fifty inside, thirty on the quiet, open terrace. The restaurant accommodates up to one hundred guests for a standing cocktail reception and can be taken over exclusively for a seated dinner or an evening with a DJ.</p>
 			</div>
 		</div>
@@ -402,28 +324,17 @@ f.parentNode.insertBefore(j, f);
 			</div>
 			<div class="details-text" data-aos="fade-left">
 				<h2 class="event-rooftop-title">The Lobbies</h2>
-				<p class="event-rooftop-desc">Four lobbies, available for private hire in the evenings. High ceilings, designer furniture, bars staffed by our team. Up to 250 standing guests for a launch, an investor evening, a product reveal.</p>
+				<p class="event-rooftop-desc">Three lobbies, available for private hire in the evenings. High ceilings, designer furniture, bars staffed by our team. Up to 250 standing guests for a launch, an investor evening, a product reveal.</p>
 				<p class="event-rooftop-desc">Furniture, tableware, sound, lighting: everything is in-house.</p>
 			</div>
 		</div>
 	</section>
 
-	<section class="offres-section">
-		<div class="offres-grid offres-grid--adresses offres-grid--event">
-			<div class="offre-bloc" style="background-image: url('../images/SOIREE1.jpg');">
-				<span class="offre-label">Evening</span>
-			</div>
-			<div class="offre-bloc" style="background-image: url('../images/COCKTAIL1.png');">
-				<span class="offre-label">Cocktail &amp; Reception</span>
-			</div>
-			<div class="offre-bloc" style="background-image: url('../images/CONF1.jpg');">
-				<span class="offre-label">Conference</span>
-			</div>
-			<div class="offre-bloc" style="background-image: url('../images/DINER1.jpg');">
-				<span class="offre-label">Seated Dinner</span>
-			</div>
-		</div>
-	</section>
+	<div class="event-cta-banner">
+		<h2 class="event-cta-banner-title">Hosting with Kwerk</h2>
+		<p class="event-cta-banner-desc">We review every request with our events team and get back to you within 24 hours.</p>
+		<a href="#" class="contact-btn event-cta-banner-btn">VISIT US</a>
+	</div>
 
 	<section class="video-section">
 		<div class="video-container">
@@ -443,11 +354,11 @@ f.parentNode.insertBefore(j, f);
 </div>
 
 
+<!-- KW:footer -->
 <footer class="footer">
 	<div class="footer-container">
 		<div class="footer-left">
 			<img src="../images/logo-kwerk-noir.png" alt="Kwerk" class="footer-logo"/>
-			<a href="#" class="footer-contact-btn">CONTACT US</a>
 			<div class="footer-socials">
 				<a href="https://www.instagram.com/kwerkparis/" target="_blank" rel="noreferrer noopener" aria-label="Instagram"><img src="../images/footer_social/instagram.svg"/></a>
 				<a href="https://www.linkedin.com/company/kwerk/" target="_blank" rel="noreferrer noopener" aria-label="LinkedIn"><img src="../images/footer_social/linkedin.svg"/></a>
@@ -456,48 +367,69 @@ f.parentNode.insertBefore(j, f);
 
 		<div class="footer-right">
 			<nav class="footer-nav">
-				<div class="footer-nav-col" data-links="produits">
-					<div class="footer-nav-title"><a href="espaces.html">OUR OFFICES &amp; SERVICES</a></div>
+				<div class="footer-nav-col" data-links="offres">
+					<div class="footer-nav-title active">OUR OFFERS</div>
+					<ul class="footer-nav-links show">
+						<a href="espaces.html"><li>OUR OFFICES</li></a>
+						<a href="maison-kwerk.html"><li>YOUR BUILDING MANAGED BY KWERK</li></a>
+						<a href="event.html"><li>YOUR EVENTS</li></a>
+					</ul>
+				</div>
+				<div class="footer-nav-col" data-links="decouvrir">
+					<div class="footer-nav-title">DISCOVER</div>
+					<ul class="footer-nav-links">
+						<a href="adresses.html"><li>OUR LOCATIONS</li></a>
+						<a href="services.html"><li>OUR SERVICES</li></a>
+						<a href="our-story.html"><li>OUR STORY</li></a>
+						<a href="galerie.html"><li>THE GALLERY</li></a>
+					</ul>
 				</div>
 				<div class="footer-nav-col" data-links="adresses">
-					<div class="footer-nav-title active">OUR LOCATIONS</div>
-					<ul class="footer-nav-links show">
+					<div class="footer-nav-title">OUR ADDRESSES</div>
+					<ul class="footer-nav-links">
 						<a href="adresses/messine.html"><li>MESSINE</li></a>
 						<a href="adresses/saint-honore.html"><li>SAINT-HONORÉ</li></a>
 						<a href="adresses/madeleine.html"><li>MADELEINE</li></a>
 					</ul>
 				</div>
-				<div class="footer-nav-col">
-					<div class="footer-nav-title">
-						<a href="maison-kwerk.html">YOUR BUILDING MANAGED BY KWERK</a>
-					</div>
-				</div>
-				<div class="footer-nav-col">
-					<div class="footer-nav-title">
-						<a href="event.html">YOUR EVENTS</a>
-					</div>
-				</div>
 			</nav>
 		</div>
 	</div>
 	<div class="footer-bottom">
-		<a href="cgu.html">Terms of Use</a>
-		<a href="mentions-legales.html">Legal Notice</a>
+		<span class="footer-copy">© Kwerk</span>
+		<div class="footer-legal">
+			<a href="cgu.html">Terms of Use</a>
+			<a href="mentions-legales.html">Legal Notice</a>
+		</div>
 	</div>
 </footer>
-		<script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
-		<script>
-			AOS.init({delay: 200, duration: 1500, anchorPlacement: 'center-center', once: true});
-		</script>
-		<!-- Start of HubSpot Embed Code -->
-		<script type="text/javascript" id="hs-script-loader" async defer src="https://js-eu1.hs-scripts.com/26225487.js"></script>
-		<!-- End of HubSpot Embed Code -->
-		<script src="../js/sticky.js"></script>
-		<script src="../js/contact.js"></script>
-		<script src="../js/form.js"></script>
-		<script src="../js/footer.js"></script>
-		<script src="../js/script.js"></script>
-		<script src="../js/loader.js"></script>
+<!-- /KW:footer -->
+<!-- KW:scripts -->
+<script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+<script>
+  AOS.init({
+    delay: 200,
+    duration: 1500,
+    anchorPlacement: "center-center",
+    once: true,
+  });
+</script>
+<!-- Start of HubSpot Embed Code -->
+<script
+  type="text/javascript"
+  id="hs-script-loader"
+  async
+  defer
+  src="https://js-eu1.hs-scripts.com/26225487.js"
+></script>
+<!-- End of HubSpot Embed Code -->
+<script src="../js/sticky.js?v=ea0324d9"></script>
+<script src="../js/contact.js?v=b3862227"></script>
+<script src="../js/form.js?v=fc393c9b"></script>
+<script src="../js/footer.js?v=7d45f877"></script>
+<script src="../js/script.js?v=dd2bfe7e"></script>
+<script src="../js/loader.js?v=edc20bed"></script>
+<!-- /KW:scripts -->
 </body>
 
 </html>

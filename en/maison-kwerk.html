@@ -20,768 +20,20 @@ f.parentNode.insertBefore(j, f);
 	</script>
 	<!-- End Google Tag Manager -->
 
-	<link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&amp;display=swap" rel="stylesheet">
-	<link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
-	<link rel="icon" type="image/svg+xml" href="../favicon.ico">
-	<link rel="stylesheet" href="../css/navbar.css">
-	<link rel="stylesheet" href="../css/styles.css">
-	<link rel="stylesheet" href="../css/footer.css">
+<!-- KW:head -->
+<!-- Import Google Fonts (Roboto) -->
+<link
+  href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&amp;display=swap"
+  rel="stylesheet"
+/>
+<link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
+<link rel="icon" type="image/svg+xml" href="../favicon.ico" />
+<link rel="stylesheet" href="../css/navbar.css?v=3ee742fe" />
+<link rel="stylesheet" href="../css/styles.css?v=6691d2a6" />
+<link rel="stylesheet" href="../css/footer.css?v=341ce88c" />
+<!-- /KW:head -->
 
-	<style>
-		/* ================================================
-		   LA MAISON — PAGE STYLES
-		   ================================================ */
-
-		/* Shared typography helpers */
-		.mk-eyebrow {
-			display: block;
-			font-size: 10px;
-			letter-spacing: 3px;
-			color: #999;
-			text-transform: uppercase;
-			margin-bottom: 20px;
-			font-family: 'Helvetica Neue', HelveticaNeue, sans-serif;
-		}
-		.mk-section-title {
-			font-size: 26px;
-			font-weight: 300;
-			letter-spacing: 2px;
-			text-transform: uppercase;
-			color: #1a1a1a;
-			margin-bottom: 24px;
-			line-height: 1.4;
-			font-family: 'Helvetica Neue', HelveticaNeue, sans-serif;
-		}
-		.mk-section-body {
-			font-size: 15px;
-			color: #666;
-			line-height: 1.9;
-			font-weight: 300;
-			font-family: 'Helvetica Neue', HelveticaNeue, sans-serif;
-		}
-
-		/* ── INTRO ── */
-		.mk-intro {
-			background: #fff;
-			padding: 100px 0 90px;
-		}
-		.mk-intro-inner {
-			max-width: 820px;
-			margin: 0 auto;
-			padding: 0 40px;
-			text-align: center;
-		}
-		.mk-intro-ctas {
-			display: flex;
-			gap: 20px;
-			justify-content: center;
-			flex-wrap: wrap;
-			margin-top: 44px;
-		}
-		.mk-btn-dark {
-			display: inline-block;
-			padding: 15px 40px;
-			background: #1a1a1a;
-			color: #fff;
-			font-size: 10px;
-			letter-spacing: 2.5px;
-			text-transform: uppercase;
-			font-family: 'Helvetica Neue', HelveticaNeue, sans-serif;
-			transition: background 0.3s;
-		}
-		.mk-btn-dark:hover { background: #333; color: #fff; }
-		.mk-btn-outline {
-			display: inline-block;
-			padding: 15px 40px;
-			border: 1px solid #1a1a1a;
-			color: #1a1a1a;
-			font-size: 10px;
-			letter-spacing: 2.5px;
-			text-transform: uppercase;
-			font-family: 'Helvetica Neue', HelveticaNeue, sans-serif;
-			transition: all 0.3s;
-		}
-		.mk-btn-outline:hover { background: #1a1a1a; color: #fff; }
-
-		/* ── STATS ── */
-		.mk-stats {
-			background: #111;
-			padding: 80px 0;
-		}
-		.mk-stats-inner {
-			max-width: 1140px;
-			margin: 0 auto;
-			padding: 0 60px;
-		}
-		.mk-stats-lbl {
-			text-align: center;
-			font-size: 10px;
-			letter-spacing: 3px;
-			color: #444;
-			text-transform: uppercase;
-			margin-bottom: 56px;
-			font-family: 'Helvetica Neue', HelveticaNeue, sans-serif;
-		}
-		.mk-stats-grid {
-			display: grid;
-			grid-template-columns: repeat(3, 1fr);
-		}
-		.mk-stat {
-			text-align: center;
-			padding: 32px 24px;
-			border-right: 1px solid #1e1e1e;
-		}
-		.mk-stat:nth-child(3),
-		.mk-stat:nth-child(6) { border-right: none; }
-		.mk-stat-num {
-			display: block;
-			font-size: 48px;
-			font-weight: 200;
-			color: #fff;
-			letter-spacing: -1px;
-			margin-bottom: 10px;
-			font-family: 'Helvetica Neue', HelveticaNeue, sans-serif;
-			line-height: 1;
-		}
-		.mk-stat-lbl {
-			font-size: 10px;
-			color: #666;
-			letter-spacing: 1.5px;
-			text-transform: uppercase;
-			line-height: 1.6;
-			font-family: 'Helvetica Neue', HelveticaNeue, sans-serif;
-		}
-
-		/* ── PILLARS ── */
-		.mk-pillars {
-			background: #fff;
-			padding: 60px 0 90px;
-		}
-		.mk-pillars-inner {
-			max-width: 1200px;
-			margin: 0 auto;
-			padding: 0 40px;
-		}
-		.mk-pillars-header {
-			text-align: center;
-			max-width: 720px;
-			margin: 0 auto 64px;
-		}
-		.mk-pillars-sub {
-			font-size: 14px;
-			color: #888;
-			line-height: 1.8;
-			font-weight: 300;
-			margin-top: 16px;
-			font-family: 'Helvetica Neue', HelveticaNeue, sans-serif;
-		}
-		.mk-pillars-grid {
-			display: grid;
-			grid-template-columns: repeat(3, 1fr);
-			gap: 3px;
-		}
-		.mk-pillar {
-			background: #fff;
-			padding: 48px 40px 52px;
-		}
-		.mk-pillar-num {
-			display: block;
-			font-size: 10px;
-			letter-spacing: 2px;
-			color: #ccc;
-			text-transform: uppercase;
-			margin-bottom: 28px;
-			font-family: 'Helvetica Neue', HelveticaNeue, sans-serif;
-		}
-		.mk-pillar-bar {
-			width: 28px;
-			height: 1px;
-			background: #1a1a1a;
-			display: block;
-			margin-bottom: 24px;
-		}
-		.mk-pillar-title {
-			font-size: 15px;
-			font-weight: 300;
-			color: #1a1a1a;
-			letter-spacing: 2.5px;
-			text-transform: uppercase;
-			margin-bottom: 16px;
-			font-family: 'Helvetica Neue', HelveticaNeue, sans-serif;
-		}
-		.mk-pillar-body {
-			font-size: 13px;
-			color: #888;
-			line-height: 1.8;
-			margin-bottom: 28px;
-			font-family: 'Helvetica Neue', HelveticaNeue, sans-serif;
-			font-weight: 300;
-		}
-		.mk-pillar-list {
-			list-style: none;
-			padding: 0;
-			margin: 0;
-		}
-		.mk-pillar-list li {
-			font-size: 10px;
-			letter-spacing: 1.5px;
-			text-transform: uppercase;
-			color: #aaa;
-			padding: 10px 0;
-			border-bottom: 1px solid #f2f2f2;
-			font-family: 'Helvetica Neue', HelveticaNeue, sans-serif;
-		}
-		.mk-pillar-list li:last-child { border-bottom: none; }
-
-		/* ── SERVICE TAG (in adresse-details-sections) ── */
-		.mk-service-tag {
-			display: inline-block;
-			font-size: 9px;
-			letter-spacing: 2px;
-			text-transform: uppercase;
-			color: #aaa;
-			border: 1px solid #e5e5e5;
-			padding: 6px 14px;
-			margin-bottom: 10px;
-			font-family: 'Helvetica Neue', HelveticaNeue, sans-serif;
-		}
-		.mk-service-items {
-			margin-top: 24px;
-		}
-		.mk-service-item {
-			display: flex;
-			align-items: center;
-			gap: 14px;
-			padding: 11px 0;
-			border-bottom: 1px solid #f2f2f2;
-			font-size: 10px;
-			letter-spacing: 1.5px;
-			text-transform: uppercase;
-			color: #999;
-			font-family: 'Helvetica Neue', HelveticaNeue, sans-serif;
-		}
-		.mk-service-item:last-child { border-bottom: none; }
-		.mk-service-item::before {
-			content: '';
-			width: 14px;
-			height: 1px;
-			background: #ccc;
-			flex-shrink: 0;
-		}
-
-		/* ── CLIENT / QRT ── */
-		.mk-client {
-			background: #111;
-			padding: 90px 0;
-		}
-		.mk-client-inner {
-			max-width: 1200px;
-			margin: 0 auto;
-			padding: 0 40px;
-			display: grid;
-			grid-template-columns: 1fr 1fr;
-			gap: 80px;
-			align-items: center;
-		}
-		.mk-client-eyebrow {
-			display: block;
-			font-size: 10px;
-			letter-spacing: 3px;
-			color: #555;
-			text-transform: uppercase;
-			margin-bottom: 18px;
-			font-family: 'Helvetica Neue', HelveticaNeue, sans-serif;
-		}
-		.mk-client-title {
-			font-size: 24px;
-			font-weight: 300;
-			color: #fff;
-			letter-spacing: 1.5px;
-			text-transform: uppercase;
-			margin-bottom: 22px;
-			line-height: 1.4;
-			font-family: 'Helvetica Neue', HelveticaNeue, sans-serif;
-		}
-		.mk-client-body {
-			font-size: 14px;
-			color: #888;
-			line-height: 1.9;
-			margin-bottom: 40px;
-			font-weight: 300;
-			font-family: 'Helvetica Neue', HelveticaNeue, sans-serif;
-		}
-		.mk-client-metrics {
-			display: grid;
-			grid-template-columns: repeat(2, 1fr);
-			gap: 3px;
-			margin-bottom: 3px;
-		}
-		.mk-metric {
-			background: #1a1a1a;
-			padding: 24px 20px;
-		}
-		.mk-metric-num {
-			display: block;
-			font-size: 30px;
-			font-weight: 200;
-			color: #fff;
-			margin-bottom: 6px;
-			font-family: 'Helvetica Neue', HelveticaNeue, sans-serif;
-			letter-spacing: -0.5px;
-		}
-		.mk-metric-lbl {
-			font-size: 10px;
-			color: #555;
-			letter-spacing: 1.5px;
-			text-transform: uppercase;
-			font-family: 'Helvetica Neue', HelveticaNeue, sans-serif;
-		}
-		.mk-score-block {
-			background: #1a1a1a;
-			padding: 28px 20px;
-			display: flex;
-			align-items: center;
-			gap: 28px;
-		}
-		.mk-score-num {
-			display: block;
-			font-size: 54px;
-			font-weight: 200;
-			color: #fff;
-			letter-spacing: -2px;
-			line-height: 1;
-			flex-shrink: 0;
-			font-family: 'Helvetica Neue', HelveticaNeue, sans-serif;
-		}
-		.mk-score-detail {
-			display: flex;
-			flex-direction: column;
-			gap: 6px;
-		}
-		.mk-score-main {
-			font-size: 11px;
-			color: #aaa;
-			letter-spacing: 1.5px;
-			text-transform: uppercase;
-			font-family: 'Helvetica Neue', HelveticaNeue, sans-serif;
-		}
-		.mk-score-sub {
-			font-size: 11px;
-			color: #444;
-			letter-spacing: 1px;
-			font-family: 'Helvetica Neue', HelveticaNeue, sans-serif;
-			line-height: 1.6;
-		}
-		.mk-client-img {
-			width: 100%;
-			height: 540px;
-			object-fit: cover;
-		}
-
-		/* ── APP ── */
-		.mk-app {
-			background: #fff;
-			padding: 90px 0;
-		}
-		.mk-app-inner {
-			max-width: 1200px;
-			margin: 0 auto;
-			padding: 0 40px;
-			display: grid;
-			grid-template-columns: 1fr 1fr;
-			gap: 80px;
-			align-items: center;
-		}
-		.mk-app-img {
-			width: 100%;
-			height: 460px;
-			object-fit: cover;
-		}
-		.mk-app-feats {
-			margin-top: 32px;
-		}
-		.mk-app-feat {
-			display: flex;
-			align-items: flex-start;
-			gap: 18px;
-			padding: 14px 0;
-			border-bottom: 1px solid #f2f2f2;
-		}
-		.mk-app-feat:last-child { border-bottom: none; }
-		.mk-app-feat-dot {
-			width: 5px;
-			height: 5px;
-			background: #1a1a1a;
-			border-radius: 50%;
-			margin-top: 7px;
-			flex-shrink: 0;
-		}
-		.mk-app-feat-text {
-			font-size: 13px;
-			color: #777;
-			line-height: 1.6;
-			font-family: 'Helvetica Neue', HelveticaNeue, sans-serif;
-			font-weight: 300;
-		}
-
-		/* ── RSE ── */
-		.mk-rse {
-			background: #f7f7f7;
-			padding: 80px 0;
-		}
-		.mk-rse-inner {
-			max-width: 1200px;
-			margin: 0 auto;
-			padding: 0 40px;
-		}
-		.mk-rse-header {
-			text-align: center;
-			margin-bottom: 52px;
-		}
-		.mk-rse-grid {
-			display: grid;
-			grid-template-columns: repeat(5, 1fr);
-			gap: 3px;
-		}
-		.mk-rse-item {
-			background: #fff;
-			padding: 36px 20px;
-			text-align: center;
-		}
-		.mk-rse-num {
-			display: block;
-			font-size: 36px;
-			font-weight: 200;
-			color: #1a1a1a;
-			margin-bottom: 10px;
-			font-family: 'Helvetica Neue', HelveticaNeue, sans-serif;
-			letter-spacing: -1px;
-		}
-		.mk-rse-lbl {
-			font-size: 10px;
-			color: #999;
-			letter-spacing: 1.5px;
-			text-transform: uppercase;
-			line-height: 1.6;
-			font-family: 'Helvetica Neue', HelveticaNeue, sans-serif;
-		}
-
-		/* ── CTA FINAL ── */
-		.mk-cta-section {
-			position: relative;
-			min-height: 850px;
-			display: flex;
-			align-items: center;
-			justify-content: center;
-			overflow: hidden;
-		}
-		.mk-cta-bg {
-			position: absolute;
-			inset: 0;
-			background-image: url('../images/content/Rooftop_Mes_1.jpg');
-			background-size: cover;
-			background-position: center;
-		}
-		.mk-cta-overlay {
-			position: absolute;
-			inset: 0;
-			background: rgba(0, 0, 0, 0.62);
-		}
-		.mk-cta-content {
-			position: relative;
-			z-index: 2;
-			text-align: center;
-			padding: 80px 40px;
-		}
-		.mk-cta-title {
-			font-size: 28px;
-			font-weight: 300;
-			color: #fff;
-			letter-spacing: 1px;
-			text-transform: none;
-			margin-bottom: 32px;
-			line-height: 1.4;
-			font-family: 'Helvetica Neue', HelveticaNeue, sans-serif;
-		}
-		.mk-cta-btn {
-			position: relative;
-			display: inline-block;
-			border: 1px solid white;
-			padding: 8px 16px;
-			text-decoration: none;
-			color: white;
-			font-size: 12px;
-			text-transform: uppercase;
-			letter-spacing: 1.2px;
-			font-family: 'Helvetica Neue', HelveticaNeue, sans-serif;
-			font-weight: 200;
-			transition: border-color 0.2s ease, color 0.2s ease;
-		}
-		.mk-cta-btn:hover {
-			border-color: transparent;
-			border-bottom: 1px solid white;
-		}
-
-		/* ── SCROLLING BANNER ── */
-		@keyframes mkScroll {
-			0%   { transform: translateX(0) translateZ(0); }
-			100% { transform: translateX(-50%) translateZ(0); }
-		}
-		.mk-banner-container {
-			position: absolute;
-			bottom: 0;
-			left: 0;
-			width: 100%;
-			background: #000;
-			overflow: hidden;
-			height: 60px;
-			z-index: 1;
-			margin: 0;
-		}
-		.mk-banner-track {
-			display: flex;
-			align-items: center;
-			height: 100%;
-			animation: mkScroll 25s linear infinite;
-			white-space: nowrap;
-			will-change: transform;
-			backface-visibility: hidden;
-			transform: translateZ(0);
-		}
-		.mk-banner-item {
-			display: inline-block;
-			font-size: 10px;
-			letter-spacing: 3px;
-			text-transform: uppercase;
-			color: #fff;
-			font-family: 'Helvetica Neue', HelveticaNeue, sans-serif;
-			font-weight: 300;
-			padding: 0 40px;
-		}
-		.mk-banner-sep {
-			display: inline-block;
-			width: 4px;
-			height: 4px;
-			border-radius: 50%;
-			background: #555;
-			vertical-align: middle;
-			flex-shrink: 0;
-		}
-
-		/* ── DETAILS-LIST OVERRIDE (no underline on h4) ── */
-		.adresse-details-text .details-list h4 {
-			border-bottom: none;
-			padding-bottom: 0;
-		}
-
-		/* ── ACCUEIL SECTION — image heights + top alignment ── */
-		.details-section .details-container {
-			align-items: start;
-		}
-		.details-section .details-text {
-			padding-top: 0;
-		}
-		.details-section .image-large {
-			height: 340px;
-			overflow: hidden;
-		}
-		.details-section .image-large img {
-			width: 100%;
-			height: 100%;
-			object-fit: cover;
-		}
-
-		/* ── CUISINE SECTION ── */
-		.mk-cuisine-section {
-			padding-bottom: 0 !important;
-		}
-
-		/* ── ENTRETIEN — image unique sans rognage ── */
-		.mk-entretien-img {
-			display: block !important;
-		}
-		.mk-entretien-img .image-large {
-			height: auto;
-		}
-		.mk-entretien-img .image-large img {
-			width: 100%;
-			height: auto;
-			object-fit: unset;
-		}
-
-		/* ── ÉVÉNEMENTIEL — image complète sans rognage ── */
-		.mk-event-img {
-			display: block !important;
-		}
-		.mk-event-img .image-large {
-			height: auto;
-		}
-		.mk-event-img .image-large img {
-			width: 100%;
-			height: auto;
-			object-fit: unset;
-		}
-		/* ── APPLICATION DIGITALE — image complète sans rognage ── */
-		.mk-digital-img {
-			display: block !important;
-		}
-		.mk-digital-img .image-large {
-			height: auto;
-		}
-		.mk-digital-img .image-large img {
-			width: 100%;
-			height: auto;
-			object-fit: unset;
-		}
-
-		/* ── RSE STANDALONE BANNER ── */
-		.mk-rse-banner-outer {
-			width: 100%;
-			background: #000;
-			overflow: hidden;
-			height: 60px;
-		}
-		.mk-rse-track {
-			animation-duration: 30s;
-		}
-
-		/* ── RESPONSIVE ── */
-		@media (max-width: 1000px) {
-			.mk-pillars-grid { grid-template-columns: 1fr; gap: 3px; }
-			.mk-client-inner { grid-template-columns: 1fr; gap: 48px; }
-			.mk-app-inner { grid-template-columns: 1fr; gap: 48px; }
-			.mk-rse-grid { grid-template-columns: repeat(3, 1fr); }
-		}
-		@media (max-width: 768px) {
-			.mk-stats-grid { grid-template-columns: repeat(2, 1fr); }
-			.mk-stat { border-right: none; }
-			.mk-stat:nth-child(odd) { border-right: 1px solid #1e1e1e; }
-			.mk-client-img { height: 300px; }
-			.mk-rse-grid { grid-template-columns: repeat(2, 1fr); }
-			.mk-cta-title { font-size: 26px; }
-			/* banner mobile */
-			.mk-banner-container { height: 48px; }
-			.mk-banner-item { font-size: 9px; padding: 0 24px; }
-			/* intro + cta */
-			.mk-intro { padding: 60px 0; }
-			.mk-intro-inner { padding: 0 24px; }
-			.mk-stats-inner { padding: 0 24px; }
-			.mk-pillars-inner { padding: 0 24px; }
-			.mk-cta-section { min-height: 60vh; }
-			.mk-cta-content { padding: 50px 24px; }
-		}
-		@media (max-width: 480px) {
-			.mk-stats-grid { grid-template-columns: 1fr 1fr; }
-			.mk-stat-num { font-size: 36px; }
-			.mk-intro-ctas { flex-direction: column; align-items: center; }
-			.mk-client-metrics { grid-template-columns: 1fr 1fr; }
-			.mk-score-block { flex-direction: column; align-items: flex-start; gap: 12px; }
-			/* top alignment reset on mobile */
-			.details-section .details-text { padding-top: 0; }
-			.details-section .details-container { align-items: stretch; }
-			/* banner extra-small */
-			.mk-banner-container { height: 44px; }
-			.mk-banner-item { font-size: 8px; letter-spacing: 2px; padding: 0 18px; }
-			/* intro + stats + pillars extra-small */
-			.mk-intro { padding: 40px 0; }
-			.mk-intro-inner { padding: 0 16px; }
-			.mk-stats-inner { padding: 0 16px; }
-			.mk-pillars-inner { padding: 0 16px; }
-			.mk-rse-grid { grid-template-columns: 1fr 1fr; }
-			/* cta extra-small */
-			.mk-cta-section { min-height: 50vh; }
-			.mk-cta-title { font-size: 18px; }
-			.mk-cta-content { padding: 32px 16px; }
-		}
-		/* ── Grille images services : conserver la grille desktop sur mobile ── */
-		@media (max-width: 900px) {
-			.details-section .details-images {
-				grid-template-columns: repeat(2, 1fr);
-			}
-			/* Alternance image → texte forcée sur mobile */
-			.details-section .details-images,
-			.details-section .event-duo { order: 1; }
-			.details-section .details-text { order: 2; }
-		}
-		@media (max-width: 768px) {
-			.details-section .details-images .image-small {
-				display: block;
-			}
-		}
-
-		/* ── UNE OFFRE, DEUX REGARDS ── */
-		.mk-offer-section {
-			background: #fff;
-			padding: 20px 0 60px;
-		}
-		.mk-offer-container {
-			max-width: 1200px;
-			margin: 0 auto;
-			padding: 0 40px;
-			text-align: center;
-		}
-		.mk-offer-grid {
-			display: grid;
-			grid-template-columns: 1fr 1fr;
-			gap: 0;
-			background: transparent;
-			margin-top: 24px;
-			text-align: center;
-		}
-		.mk-offer-card {
-			background: #fff;
-			padding: 32px 40px;
-			display: flex;
-			flex-direction: column;
-			align-items: center;
-		}
-		.mk-offer-eyebrow {
-			display: block;
-			font-family: 'Helvetica Neue', HelveticaNeue, sans-serif;
-			font-weight: 300;
-			font-size: 20px;
-			line-height: 1.7;
-			color: #222;
-			margin-bottom: 16px;
-		}
-		.mk-offer-bar {
-			display: block;
-			width: 28px;
-			height: 1px;
-			background: #1a1a1a;
-			margin: 0 auto 20px;
-		}
-		.mk-offer-title {
-			font-family: 'Helvetica Neue', HelveticaNeue, sans-serif;
-			font-weight: 300;
-			font-size: 20px;
-			line-height: 1.7;
-			color: #222;
-			margin: 0 0 16px;
-		}
-		.mk-offer-body {
-			font-family: 'Helvetica Neue', HelveticaNeue, sans-serif;
-			font-weight: 300;
-			font-size: 20px;
-			line-height: 1.7;
-			color: #222;
-			margin: 0;
-		}
-		@media (max-width: 900px) {
-			.mk-offer-grid { grid-template-columns: 1fr; }
-			.mk-offer-card { padding: 28px 24px; }
-			.mk-offer-section { padding: 12px 0 40px; }
-			.mk-offer-container { padding: 0 24px; }
-			.mk-offer-eyebrow,
-			.mk-offer-title,
-			.mk-offer-body { font-size: 17px; }
-		}
-		@media (max-width: 700px) {
-			.mk-offer-eyebrow,
-			.mk-offer-title,
-			.mk-offer-body { font-size: 15px; line-height: 1.75; }
-		}
-	</style>
+	<link rel="stylesheet" href="../css/en-maison-kwerk.css">
 </head>
 <body>
 	<div id="pageLoader" class="page-loader">
@@ -808,23 +60,26 @@ f.parentNode.insertBefore(j, f);
 	<header class="hero hero--no-overlay" style="background-color: #000;">
 		<div class="hero-video hero-slideshow" style="background-image: url('../images/FACADE.jpg');"></div>
 
-	<nav class="navbar">
-		<div class="menu-icon"><img src="../images/menu_burger.svg"></div>
-		<a href="../en.html" class="logo-wrapper">
-			<div class="logo"><img src="../images/logo-sans-bureaux.png"></div>
-		</a>
-		<div class="nav-lang-switch">
-			<a href="../maison-kwerk.html">FR</a>
-			<span class="lang-sep">/</span>
-			<a href="maison-kwerk.html">EN</a>
-		</div>
-		<a href="#" class="contact-btn">CONTACT US</a>
-	</nav>
+<!-- KW:nav alt="../maison-kwerk.html" -->
+<nav class="navbar">
+	<div class="menu-icon"><img src="../images/menu_burger.svg"></div>
+	<a href="../en.html" class="logo-wrapper">
+		<div class="logo"><img src="../images/logo-sans-bureaux.png"></div>
+	</a>
+	<div class="nav-lang-switch">
+		<a href="../maison-kwerk.html">FR</a>
+		<span class="lang-sep">/</span>
+		<a href="maison-kwerk.html">EN</a>
+	</div>
+	<a href="#" class="contact-btn">CONTACT US</a>
+</nav>
+<!-- /KW:nav -->
 
 
 	</header>
 
 <!-- MENU -->
+<!-- KW:menu -->
 <div class="side-menu" id="sideMenu">
 	<div class="side-menu-header">
 		<a href="../en.html"><img src="../images/logo-kwerk-noir.png" alt="Logo"></a>
@@ -832,28 +87,37 @@ f.parentNode.insertBefore(j, f);
 	</div>
 	<ul class="side-menu-links">
 		<li>
-			<a href="espaces.html">OUR OFFICES &amp; SERVICES</a>
+			<a href="espaces.html">OUR OFFICES</a>
 		</li>
 		<li>
-			<a href="adresses.html">OUR LOCATIONS</a>
-		</li>
-		<li>
-			<a href="maison-kwerk.html">YOUR BUILDING, MANAGED BY KWERK</a>
+			<a href="maison-kwerk.html">YOUR BUILDING<br>MANAGED BY KWERK</a>
 		</li>
 		<li>
 			<a href="event.html">YOUR EVENTS</a>
 		</li>
+		<li class="side-menu-sep"></li>
+		<li>
+			<a href="adresses.html">OUR LOCATIONS</a>
+		</li>
+		<li>
+			<a href="services.html">OUR SERVICES</a>
+		</li>
+		<li>
+			<a href="our-story.html">OUR STORY</a>
+		</li>
 	</ul>
+	<a href="#" class="side-menu-cta">BOOK A VISIT</a>
+
 </div>
 
-<!-- SOUS MENU ADRESSES -->
+<!-- SUBMENU ADDRESSES -->
 <div class="submenu-panel" id="submenuPRAdresses">
 	<div class="submenu-header">
 		<span class="close-submenu" data-back="true">
 			<img src="../images/close_cross.svg" alt="close">
 		</span>
 	</div>
-	<img src="../images/adresses.png" alt="Addresses" class="submenu-img">
+	<img src="../images/adresses.png" alt="Our Addresses" class="submenu-img">
 	<div class="submenu-content">
 		<a href="adresses.html">
 			<h4>OUR LOCATIONS</h4>
@@ -868,111 +132,121 @@ f.parentNode.insertBefore(j, f);
 
 <!-- SIDE CONTACT FORM -->
 <div class="side-contact-form" id="sideContactForm">
+
 	<div class="contact-form-header">
 		<span class="close-contact-form" id="closeContactForm">
 			<img src="../images/close_cross.svg" alt="close">
 		</span>
 	</div>
-		<form class="contact-form-fields">
+	<form class="contact-form-fields">
 
-		<!-- YOUR REQUEST -->
-		<h3 class="contact-section-title">YOUR REQUEST</h3>
+	<!-- YOUR REQUEST -->
+	<h3 class="contact-section-title">YOUR REQUEST</h3>
 
-		<div class="ps-field-row single">
-			<div class="ps-field ps-select">
-				<label>WHAT IS YOUR REQUEST? *</label>
-				<select name="produit" required>
-					<option value="" disabled selected>Please select</option>
-					<option value="Executive Offices">Executive Offices</option>
-					<option>Your building managed by Kwerk</option>
-					<option>Events</option>
-				</select>
-				<div class="error"></div>
-			</div>
+	<div class="ps-field-row single">
+		<div class="ps-field ps-select">
+			<label>WHAT IS YOUR REQUEST? *</label>
+			<select name="produit" required>
+				<option value="" disabled selected>Please select</option>
+				<option value="Bureaux">Executive Offices</option>
+				<option value="Expérience by Kwerk">Your building managed by Kwerk</option>
+				<option value="Événementiel">Events</option>
+			</select>
+			<div class="error"></div>
 		</div>
+	</div>
 
-		<div class="ps-field-row single ps-field-row--desk" style="display:none;">
-			<div class="ps-field">
-				<label>HOW MANY DESKS DO YOU NEED? *</label>
-				<input type="number" name="desk" min="1" placeholder="Number of desks">
-				<div class="error"></div>
-			</div>
+	<div class="ps-field-row single ps-field-row--desk" style="display:none;">
+		<div class="ps-field">
+			<label>HOW MANY DESKS DO YOU NEED? *</label>
+			<input type="number" name="desk" min="1" placeholder="Number of desks">
+			<div class="error"></div>
 		</div>
+	</div>
 
-		<div class="ps-field-row single">
-			<div class="ps-field">
-				<label>HOW DID YOU HEAR ABOUT KWERK? *</label>
-				<select name="origine_de_la_piste" required>
-					<option value="" disabled selected>Please select</option>
-					<option>Recommendation from my network</option>
-					<option>Internet search</option>
-					<option>Recommendation from a Kwerk member</option>
-					<option>Referred by a broker</option>
-					<option>On social media</option>
-					<option>Professional meeting at Kwerk</option>
-					<option>In the press</option>
-					<option>At a Kwerk event</option>
-					<option>During lunch at the Dana restaurant</option>
-				</select>
-				<div class="error"></div>
-			</div>
+	<div class="ps-field-row single ps-field-row--events" style="display:none;">
+		<div class="ps-field">
+			<label>FOR HOW MANY PEOPLE? *</label>
+			<input type="number" name="nombre_de_personnes" min="1" placeholder="Number of people">
+			<div class="error"></div>
 		</div>
+	</div>
 
-		<div class="ps-field-row single">
-			<div class="ps-field">
-				<label>TELL US ABOUT YOUR PROJECT *</label>
-				<textarea name="description_de_la_transaction" placeholder="Tell us about your project" required></textarea>
-				<div class="error"></div>
-			</div>
+	<div class="ps-field-row single">
+		<div class="ps-field">
+			<label>TELL US ABOUT YOUR PROJECT *</label>
+			<textarea name="description_de_la_transaction" placeholder="Tell us about your project" required></textarea>
+			<div class="error"></div>
 		</div>
+	</div>
 
-		<hr class="contact-separator">
+	<hr class="contact-separator">
 
-		<!-- YOUR DETAILS -->
-		<h3 class="contact-section-title">YOUR DETAILS</h3>
+	<!-- YOUR DETAILS -->
+	<h3 class="contact-section-title">YOUR DETAILS</h3>
 
-		<div class="ps-field-row">
-			<div class="ps-field">
-				<label>YOUR FIRST NAME *</label>
-				<input type="text" name="firstname" placeholder="Your first name" required>
-				<div class="error"></div>
-			</div>
-			<div class="ps-field">
-				<label>YOUR LAST NAME *</label>
-				<input type="text" name="lastname" placeholder="Your last name" required>
-				<div class="error"></div>
-			</div>
+	<div class="ps-field-row">
+		<div class="ps-field">
+			<label>YOUR FIRST NAME *</label>
+			<input type="text" name="firstname" placeholder="Your first name" required>
+			<div class="error"></div>
 		</div>
-
-		<div class="ps-field-row">
-			<div class="ps-field">
-				<label>YOUR PHONE NUMBER *</label>
-				<input type="text" name="phone" placeholder="+XX X XX XX XX XX" required>
-				<div class="error"></div>
-			</div>
-			<div class="ps-field">
-				<label>YOUR EMAIL ADDRESS *</label>
-				<input type="email" name="email" placeholder="name@email.com" required>
-				<div class="error"></div>
-			</div>
+		<div class="ps-field">
+			<label>YOUR LAST NAME *</label>
+			<input type="text" name="lastname" placeholder="Your last name" required>
+			<div class="error"></div>
 		</div>
+	</div>
 
-		<div class="ps-field-row single">
-			<div class="ps-field">
-				<label>YOUR COMPANY *</label>
-				<input type="text" name="company" placeholder="Company name" required>
-				<div class="error"></div>
-			</div>
+	<div class="ps-field-row">
+		<div class="ps-field">
+			<label>YOUR PHONE NUMBER *</label>
+			<input type="text" name="phone" placeholder="+XX X XX XX XX XX" required>
+			<div class="error"></div>
 		</div>
-
-		<hr class="contact-separator">
-
-		<div class="form-footer">
-			<button type="submit" class="submit-btn">SEND YOUR REQUEST</button>
-			<div class="success" id="successMessage"></div>
+		<div class="ps-field">
+			<label>YOUR EMAIL ADDRESS *</label>
+			<input type="email" name="email" placeholder="name@email.com" required>
+			<div class="error"></div>
 		</div>
+	</div>
+
+	<div class="ps-field-row single">
+		<div class="ps-field">
+			<label>YOUR COMPANY *</label>
+			<input type="text" name="company" placeholder="Company name" required>
+			<div class="error"></div>
+		</div>
+	</div>
+
+	<div class="ps-field-row single">
+		<div class="ps-field">
+			<label>HOW DID YOU HEAR ABOUT KWERK? *</label>
+			<select name="origine_de_la_piste" required>
+				<option value="" disabled selected>Please select</option>
+				<option value="Recommandation par mon réseau">Recommendation from my network</option>
+				<option value="Recherche internet">Internet search</option>
+				<option value="Recommandation par un membre Kwerk">Recommendation from a Kwerk member</option>
+				<option value="Mis en relation par un broker">Referred by a broker</option>
+				<option value="Sur les réseaux sociaux">On social media</option>
+				<option value="Rendez-vous professionnel chez Kwerk">Professional meeting at Kwerk</option>
+				<option value="Dans la presse">In the press</option>
+				<option value="Lors d&#039;un événement chez Kwerk">At a Kwerk event</option>
+				<option value="Au cours d&#039;un déjeuner au restaurant Le Dana">During lunch at Le Dana restaurant</option>
+			</select>
+			<div class="error"></div>
+		</div>
+	</div>
+
+	<hr class="contact-separator">
+
+	<div class="form-footer">
+		<button type="submit" class="submit-btn">SEND YOUR REQUEST</button>
+		<div class="success" id="successMessage"></div>
+	</div>
 	</form>
 </div>
+<!-- /KW:menu -->
 
 
 <!-- ============================================================
@@ -1035,7 +309,7 @@ f.parentNode.insertBefore(j, f);
 		<div class="details-text" data-aos="fade-right">
 			<h3 class="details-title">HOSPITALITY</h3>
 			<p class="details-description">
-				Our teams cultivate the art of personalised service, drawing inspiration from the codes of the world's finest hotels. With consistency and genuine care, they support your employees and their guests each day, turning every moment at the office into an experience that meets your highest expectations.
+				Our teams cultivate the art of personalised service, drawing inspiration from the codes of the world's finest hotels. They support your employees and their guests each day, turning every moment at the office into an experience that meets your highest expectations.
 			</p>
 			<div class="details-list">
 				<h4>RECEPTION</h4>
@@ -1224,11 +498,11 @@ f.parentNode.insertBefore(j, f);
 </div>
 
 
+<!-- KW:footer -->
 <footer class="footer">
 	<div class="footer-container">
 		<div class="footer-left">
 			<img src="../images/logo-kwerk-noir.png" alt="Kwerk" class="footer-logo"/>
-			<a href="#" class="footer-contact-btn">CONTACT US</a>
 			<div class="footer-socials">
 				<a href="https://www.instagram.com/kwerkparis/" target="_blank" rel="noreferrer noopener" aria-label="Instagram"><img src="../images/footer_social/instagram.svg"/></a>
 				<a href="https://www.linkedin.com/company/kwerk/" target="_blank" rel="noreferrer noopener" aria-label="LinkedIn"><img src="../images/footer_social/linkedin.svg"/></a>
@@ -1237,48 +511,69 @@ f.parentNode.insertBefore(j, f);
 
 		<div class="footer-right">
 			<nav class="footer-nav">
-				<div class="footer-nav-col" data-links="produits">
-					<div class="footer-nav-title"><a href="espaces.html">OUR OFFICES &amp; SERVICES</a></div>
+				<div class="footer-nav-col" data-links="offres">
+					<div class="footer-nav-title active">OUR OFFERS</div>
+					<ul class="footer-nav-links show">
+						<a href="espaces.html"><li>OUR OFFICES</li></a>
+						<a href="maison-kwerk.html"><li>YOUR BUILDING MANAGED BY KWERK</li></a>
+						<a href="event.html"><li>YOUR EVENTS</li></a>
+					</ul>
+				</div>
+				<div class="footer-nav-col" data-links="decouvrir">
+					<div class="footer-nav-title">DISCOVER</div>
+					<ul class="footer-nav-links">
+						<a href="adresses.html"><li>OUR LOCATIONS</li></a>
+						<a href="services.html"><li>OUR SERVICES</li></a>
+						<a href="our-story.html"><li>OUR STORY</li></a>
+						<a href="galerie.html"><li>THE GALLERY</li></a>
+					</ul>
 				</div>
 				<div class="footer-nav-col" data-links="adresses">
-					<div class="footer-nav-title active">OUR LOCATIONS</div>
-					<ul class="footer-nav-links show">
+					<div class="footer-nav-title">OUR ADDRESSES</div>
+					<ul class="footer-nav-links">
 						<a href="adresses/messine.html"><li>MESSINE</li></a>
 						<a href="adresses/saint-honore.html"><li>SAINT-HONORÉ</li></a>
 						<a href="adresses/madeleine.html"><li>MADELEINE</li></a>
 					</ul>
 				</div>
-				<div class="footer-nav-col">
-					<div class="footer-nav-title">
-						<a href="maison-kwerk.html">YOUR BUILDING, MANAGED BY KWERK</a>
-					</div>
-				</div>
-				<div class="footer-nav-col">
-					<div class="footer-nav-title">
-						<a href="event.html">YOUR EVENTS</a>
-					</div>
-				</div>
 			</nav>
 		</div>
 	</div>
 	<div class="footer-bottom">
-		<a href="cgu.html">Terms of Use</a>
-		<a href="mentions-legales.html">Legal Notice</a>
+		<span class="footer-copy">© Kwerk</span>
+		<div class="footer-legal">
+			<a href="cgu.html">Terms of Use</a>
+			<a href="mentions-legales.html">Legal Notice</a>
+		</div>
 	</div>
 </footer>
+<!-- /KW:footer -->
 
-	<script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
-	<script>
-		AOS.init({delay: 200, duration: 1500, anchorPlacement: 'center-center', once: true});
-	</script>
-	<!-- Start of HubSpot Embed Code -->
-	<script type="text/javascript" id="hs-script-loader" async defer src="https://js-eu1.hs-scripts.com/26225487.js"></script>
-	<!-- End of HubSpot Embed Code -->
-	<script src="../js/sticky.js"></script>
-	<script src="../js/contact.js"></script>
-	<script src="../js/form.js"></script>
-	<script src="../js/footer.js"></script>
-	<script src="../js/script.js"></script>
-	<script src="../js/loader.js"></script>
+<!-- KW:scripts -->
+<script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+<script>
+  AOS.init({
+    delay: 200,
+    duration: 1500,
+    anchorPlacement: "center-center",
+    once: true,
+  });
+</script>
+<!-- Start of HubSpot Embed Code -->
+<script
+  type="text/javascript"
+  id="hs-script-loader"
+  async
+  defer
+  src="https://js-eu1.hs-scripts.com/26225487.js"
+></script>
+<!-- End of HubSpot Embed Code -->
+<script src="../js/sticky.js?v=ea0324d9"></script>
+<script src="../js/contact.js?v=b3862227"></script>
+<script src="../js/form.js?v=fc393c9b"></script>
+<script src="../js/footer.js?v=7d45f877"></script>
+<script src="../js/script.js?v=dd2bfe7e"></script>
+<script src="../js/loader.js?v=edc20bed"></script>
+<!-- /KW:scripts -->
 </body>
 </html>

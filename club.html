@@ -19,219 +19,19 @@ f.parentNode.insertBefore(j, f);
 })(window, document, 'script', 'dataLayer', 'GTM-MK4BS4GL');
 	</script>
 	<!-- End Google Tag Manager -->
-	<link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
-	<link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
-	<link rel="icon" type="image/svg+xml" href="favicon.ico">
-	<link rel="stylesheet" href="css/navbar.css">
-	<link rel="stylesheet" href="css/styles.css">
-	<link rel="stylesheet" href="css/footer.css">
-	<style>
-		/* ── MOSAÏQUE CLUB ── */
-		.adresse-details-img:has(.club-mosaic) {
-			background: none;
-			padding: 0;
-			align-items: stretch;
-		}
-		.adresse-details-img:has(.club-mosaic) img {
-			height: auto;
-		}
-		.club-mosaic {
-			display: grid;
-			grid-template-columns: 1fr 1fr;
-			column-gap: 6px;
-			row-gap: 4px;
-			width: 100%;
-		}
-		.club-mosaic img {
-			width: 100%;
-			height: 240px;
-			object-fit: cover;
-			display: block;
-		}
-		/* ── TEXTE EN HAUT + TYPO DETAILS-LIST ── */
-		.adresse-details-text {
-			justify-content: flex-start;
-			gap: 12px;
-			padding-top: 0;
-			margin-top: -10px;
-		}
-		.adresse-details-text .details-list h4 {
-			font-size: 17px;
-			font-weight: 300;
-			text-transform: uppercase;
-			letter-spacing: 2px;
-			color: #222;
-			margin-top: 22px;
-			margin-bottom: 10px;
-			border-bottom: 1px solid #ccc;
-			padding-bottom: 8px;
-			font-family: "Helvetica Neue", HelveticaNeue, sans-serif;
-		}
-		.adresse-details-text .details-list h4:first-of-type {
-			margin-top: 0;
-		}
-		.adresse-details-text .details-list ul {
-			list-style: none;
-			padding-left: 0;
-		}
-		.adresse-details-text .details-list ul li {
-			font-size: 17px;
-			line-height: 1.85;
-			color: #444;
-			font-family: "Helvetica Neue", HelveticaNeue, sans-serif;
-			font-weight: 300;
-		}
-		@media (max-width: 768px) {
-			.club-mosaic img { height: 130px; }
-		}
-
-		.error {
-			color: #d00000;
-			font-size: 12px;
-			margin-top: 4px;
-			display: none;
-		}
-		.field input.error-field,
-		.field textarea.error-field,
-		.field select.error-field {
-			border-bottom-color: #d00000;
-		}
-		.contact-page {
-			display: flex;
-			gap: 24px;
-			padding-left: 60px;
-			padding-right: 60px;
-			background: #fff;
-			min-height: calc(100vh - 120px);
-			align-items: stretch;
-			font-family: "Helvetica Neue", HelveticaNeue, sans-serif;
-		}
-		.contact-panel {
-			flex: 1;
-			background: #fff;
-			border-radius: 0;
-			padding: 48px;
-			box-shadow: none;
-			display: flex;
-			flex-direction: column;
-			gap: 10px;
-		}
-		.contact-media {
-			flex: 1;
-			min-height: 520px;
-			border-radius: 0;
-			overflow: hidden;
-			position: relative;
-			box-shadow: none;
-		}
-		.contact-title {
-			font-size: 24px;
-			letter-spacing: 1px;
-			text-transform: uppercase;
-			margin-bottom: 8px;
-			color: #111;
-		}
-		.contact-subtitle {
-			font-size: 14px;
-			color: #444;
-			margin-bottom: 24px;
-			line-height: 1.6;
-		}
-		.contact-form {
-			display: flex;
-			flex-direction: column;
-			gap: 14px;
-		}
-		.field-row {
-			display: grid;
-			grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-			gap: 18px;
-		}
-		.field label {
-			font-size: 13px;
-			letter-spacing: 2px;
-			text-transform: uppercase;
-			font-weight: 500;
-			margin-bottom: 4px;
-			color: #333;
-		}
-		.field input,
-		.field textarea,
-		.field select {
-			border: none;
-			border-bottom: 1px solid #222;
-			padding: 8px 6px;
-			font-size: 15px;
-			background: transparent;
-			outline: none;
-			color: #222;
-			margin: 6px 0;
-			transition: border-color 0.2s;
-		}
-		.field textarea {
-			resize: vertical;
-			min-height: 120px;
-		}
-		.field input:focus,
-		.field textarea:focus,
-		.field select:focus {
-			border-bottom: 1.5px solid #111;
-		}
-		.field input[type="number"] {
-			-moz-appearance: textfield;
-		}
-		.field input[type="number"]::-webkit-inner-spin-button,
-		.field input[type="number"]::-webkit-outer-spin-button {
-			-webkit-appearance: none;
-			margin: 0;
-		}
-		.contact-actions {
-			display: flex;
-			align-items: center;
-			gap: 18px;
-			margin-top: 10px;
-			flex-wrap: wrap;
-		}
-		.contact-submit {
-			background: #111;
-			color: #fff;
-			text-transform: uppercase;
-			padding: 14px 30px;
-			border: none;
-			font-size: 15px;
-			letter-spacing: 1px;
-			cursor: pointer;
-			transition: background 0.2s;
-		}
-		.contact-submit:hover {
-			background: #333;
-		}
-		.contact-phone {
-			border: 1px solid #222;
-			padding: 12px 26px;
-			font-size: 14px;
-			background: transparent;
-			color: #222;
-			letter-spacing: 1px;
-			border-radius: 2px;
-			text-transform: uppercase;
-		}
-		@media(max-width: 900px) {
-			.contact-page {
-				flex-direction: column;
-				padding-left: 24px;
-				padding-right: 24px;
-			}
-			.contact-panel {
-				padding: 32px;
-			}
-		}
-		@media(max-width: 600px) {
-			.contact-panel {
-				padding: 24px;
-			}
-		}
-	</style>
+<!-- KW:head -->
+<!-- Import Google Fonts (Roboto) -->
+<link
+  href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&amp;display=swap"
+  rel="stylesheet"
+/>
+<link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
+<link rel="icon" type="image/svg+xml" href="favicon.ico" />
+<link rel="stylesheet" href="css/navbar.css?v=3ee742fe" />
+<link rel="stylesheet" href="css/styles.css?v=6691d2a6" />
+<link rel="stylesheet" href="css/footer.css?v=341ce88c" />
+<!-- /KW:head -->
+	<link rel="stylesheet" href="css/club.css">
 </head>
 <body>
 	<div id="pageLoader" class="page-loader">
@@ -259,79 +59,83 @@ f.parentNode.insertBefore(j, f);
 	<header class="hero" style="background-color: #000;">
 		<div class="hero-video hero-slideshow" style="background-image: url('images/content/Rooftop_Mes_1.jpg');" data-hero-slides="images/content/Rooftop_Mes_1.jpg,images/content/Sport_Mes_1.jpg,images/content/Rooftop_Sho_2.jpg,images/content/Dome_Lobby_Mes_1.jpg"></div>
 
-	<nav class="navbar">
-		<div class="menu-icon"><img src="images/menu_burger.svg"></div>
-		<a href="index.html" class="logo-wrapper">
-			<div class="logo"><img src="images/logo-sans-bureaux.png"></div>
-			
-		</a>
-		<div class="nav-lang-switch">
-			<a href="club.html">FR</a>
-			<span class="lang-sep">/</span>
-			<a href="en/index.html">EN</a>
-		</div>
-		<a href="#" class="contact-btn">CONTACTEZ-NOUS</a>
-	</nav>
+<!-- KW:nav alt="en/index.html" -->
+<nav class="navbar">
+	<div class="menu-icon"><img src="images/menu_burger.svg"></div>
+	<a href="index.html" class="logo-wrapper">
+		<div class="logo"><img src="images/logo-sans-bureaux.png"></div>
+	</a>
+	<div class="nav-lang-switch">
+		<a href="club.html">FR</a>
+		<span class="lang-sep">/</span>
+		<a href="en/index.html">EN</a>
+	</div>
+	<a href="#" class="contact-btn">CONTACTEZ-NOUS</a>
+</nav>
+<!-- /KW:nav -->
 	</header>
 
 	<!-- MENU -->
-	<div class="side-menu" id="sideMenu">
-		<div class="side-menu-header">
-			<a href="index.html"><img src="images/logo-kwerk-noir.png" alt="Logo"></a>
-			<span class="close-btn" id="closeMenu"><img src="images/close_cross.svg" alt="close"></span>
-		</div>
-		<ul class="side-menu-links">
+<!-- KW:menu -->
+<div class="side-menu" id="sideMenu">
+	<div class="side-menu-header">
+		<a href="index.html"><img src="images/logo-kwerk-noir.png" alt="Logo"></a>
+		<span class="close-btn" id="closeMenu"><img src="images/close_cross.svg" alt="close"></span>
+	</div>
+	<ul class="side-menu-links">
 		<li>
-			<a href="espaces.html">LES BUREAUX</a>
+			<a href="espaces.html">NOS ESPACES</a>
 		</li>
 		<li>
 			<a href="maison-kwerk.html">EXPÉRIENCE BY KWERK</a>
 		</li>
 		<li>
-			<a href="event.html">L'ÉVÉNEMENTIEL</a>
+			<a href="event.html">VOS ÉVÉNEMENTS</a>
 		</li>
 		<li class="side-menu-sep"></li>
 		<li>
-			<a href="#">NOTRE HISTOIRE</a>
+			<a href="adresses.html">NOS ADRESSES</a>
 		</li>
 		<li>
-			<a href="nos-services.html">LES SERVICES</a>
+			<a href="nos-services.html">NOS SERVICES</a>
 		</li>
 		<li>
-			<a href="adresses.html">LES ADRESSES</a>
+			<a href="notre-histoire.html">NOTRE HISTOIRE</a>
 		</li>
 	</ul>
 	<a href="#" class="side-menu-cta">RÉSERVER UNE VISITE</a>
-	</div>
 
-	<!-- SOUS MENU LOCALISATIONS -->
-	<div class="submenu-panel" id="submenuPRAdresses">
-		<div class="submenu-header">
-			<span class="close-submenu" data-back="true">
-				<img src="images/close_cross.svg" alt="close">
-			</span>
-		</div>
-		<img src="images/adresses.png" alt="Image PR Produit" class="submenu-img">
-		<div class="submenu-content">
-			<a href="adresses.html">
-				<h4>NOS ADRESSES</h4>
-			</a>
-			<ul>
-				<li><a href="adresses/messine.html">MESSINE</a></li>
-				<li><a href="adresses/saint-honore.html">SAINT-HONORÉ</a></li>
-				<li><a href="adresses/madeleine.html">MADELEINE</a></li>
-			</ul>
-		</div>
-	</div>
+</div>
 
-	<!-- SIDE CONTACT FORM -->
-	<div class="side-contact-form" id="sideContactForm">
-		<div class="contact-form-header">
-			<span class="close-contact-form" id="closeContactForm">
-				<img src="images/close_cross.svg" alt="close">
-			</span>
-		</div>
-			<form class="contact-form-fields">
+<!--SOUS MENU ADRESSES-->
+<div class="submenu-panel" id="submenuPRAdresses">
+	<div class="submenu-header">
+		<span class="close-submenu" data-back="true">
+			<img src="images/close_cross.svg" alt="close">
+		</span>
+	</div>
+	<img src="images/adresses.png" alt="Image PR Produit" class="submenu-img">
+	<div class="submenu-content">
+		<a href="adresses.html">
+			<h4>NOS ADRESSES</h4>
+		</a>
+		<ul>
+			<li><a href="adresses/messine.html">MESSINE</a></li>
+			<li><a href="adresses/saint-honore.html">SAINT-HONORÉ</a></li>
+			<li><a href="adresses/madeleine.html">MADELEINE</a></li>
+		</ul>
+	</div>
+</div>
+
+<!-- SIDE CONTACT FORM -->
+<div class="side-contact-form" id="sideContactForm">
+
+	<div class="contact-form-header">
+		<span class="close-contact-form" id="closeContactForm">
+			<img src="images/close_cross.svg" alt="close">
+		</span>
+	</div>
+		<form class="contact-form-fields">
 
 		<!-- VOTRE BESOIN -->
 		<h3 class="contact-section-title">VOTRE BESOIN</h3>
@@ -344,8 +148,7 @@ f.parentNode.insertBefore(j, f);
 					<option value="Bureaux">Bureaux</option>
 					<option>Expérience by Kwerk</option>
 					<option>Événementiel</option>
-					<option>Le Club</option>
-				</select>
+					</select>
 				<div class="error"></div>
 			</div>
 		</div>
@@ -354,6 +157,14 @@ f.parentNode.insertBefore(j, f);
 			<div class="ps-field">
 				<label>DE COMBIEN DE POSTES AVEZ-VOUS BESOIN ? *</label>
 				<input type="number" name="desk" min="1" placeholder="Nombre de postes">
+				<div class="error"></div>
+			</div>
+		</div>
+
+		<div class="ps-field-row single ps-field-row--events" style="display:none;">
+			<div class="ps-field">
+				<label>POUR COMBIEN DE PERSONNES ? *</label>
+				<input type="number" name="nombre_de_personnes" min="1" placeholder="Nombre de personnes">
 				<div class="error"></div>
 			</div>
 		</div>
@@ -432,7 +243,8 @@ f.parentNode.insertBefore(j, f);
 			<div class="success" id="successMessage"></div>
 		</div>
 	</form>
-	</div>
+</div>
+<!-- /KW:menu -->
 
 	<section class="exceptional-section">
 		<div class="exceptional-container" data-aos="fade-up">
@@ -498,84 +310,6 @@ f.parentNode.insertBefore(j, f);
 		<a href="#" class="adresse-details-btn contact-btn">CONTACTEZ-NOUS</a>
 	</section>
 
-	<style>
-		.prestations-section {
-			background: #111;
-			color: #fff;
-			padding: 80px 60px;
-			font-family: "Helvetica Neue", HelveticaNeue, sans-serif;
-		}
-		.prestations-header {
-			text-align: center;
-			margin-bottom: 60px;
-		}
-		.prestations-title {
-			font-size: 28px;
-			letter-spacing: 3px;
-			text-transform: uppercase;
-			font-weight: 700;
-			margin-bottom: 16px;
-			color: #fff;
-		}
-		.prestations-subtitle {
-			font-size: 15px;
-			color: #aaa;
-			letter-spacing: 0.5px;
-			max-width: 560px;
-			margin: 0 auto;
-			line-height: 1.7;
-		}
-		.prestations-grid {
-			display: grid;
-			grid-template-columns: repeat(6, 1fr);
-			gap: 40px 20px;
-		}
-		.prestation-item {
-			display: flex;
-			flex-direction: column;
-			align-items: center;
-			gap: 14px;
-		}
-		.prestation-icon {
-			width: 52px;
-			height: 52px;
-			color: #fff;
-		}
-		.prestation-icon svg {
-			width: 100%;
-			height: 100%;
-		}
-		.prestation-label {
-			font-size: 12px;
-			letter-spacing: 1.5px;
-			text-transform: uppercase;
-			color: #ccc;
-			text-align: center;
-			line-height: 1.4;
-		}
-		@media (max-width: 1100px) {
-			.prestations-grid {
-				grid-template-columns: repeat(4, 1fr);
-			}
-		}
-		@media (max-width: 700px) {
-			.prestations-section {
-				padding: 60px 24px;
-			}
-			.prestations-grid {
-				grid-template-columns: repeat(3, 1fr);
-				gap: 32px 16px;
-			}
-			.prestations-title {
-				font-size: 20px;
-			}
-		}
-		@media (max-width: 480px) {
-			.prestations-grid {
-				grid-template-columns: repeat(2, 1fr);
-			}
-		}
-	</style>
 
 
 	<!-- BLOC 5 : CAROUSEL D'IMAGES DÉFILANT (depuis home) -->
@@ -585,66 +319,83 @@ f.parentNode.insertBefore(j, f);
 	</div>
 
 	
+<!-- KW:footer -->
 <footer class="footer">
-		<div class="footer-container">
-			<div class="footer-left">
-				<img src="images/logo-kwerk-noir.png" alt="Kwerk" class="footer-logo"/>
-				<a href="#" class="footer-contact-btn">CONTACTEZ-NOUS</a>
-				<div class="footer-socials">
-					<a href="https://www.instagram.com/kwerkparis/" target="_blank" rel="noreferrer noopener" aria-label="Instagram"><img src="images/footer_social/instagram.svg"/></a>
-					<a href="https://www.linkedin.com/company/kwerk/" target="_blank" rel="noreferrer noopener" aria-label="LinkedIn"><img src="images/footer_social/linkedin.svg"/></a>
-				</div>
-			</div>
-			<div class="footer-right">
-								<nav class="footer-nav">
-					<div class="footer-nav-col" data-links="adresses">
-						<div class="footer-nav-title active">NOS ADRESSES</div>
-						<ul class="footer-nav-links show">
-							<a href="adresses/messine.html"><li>MESSINE</li></a>
-							<a href="adresses/saint-honore.html"><li>SAINT-HONORÉ</li></a>
-							<a href="adresses/madeleine.html"><li>MADELEINE</li></a>
-						</ul>
-					</div>
-					<div class="footer-nav-col" data-links="produits">
-						<div class="footer-nav-title"><a href="espaces.html">NOS BUREAUX</a></div>
-					</div>
-					<div class="footer-nav-col">
-						<div class="footer-nav-title">
-							<a href="maison-kwerk.html">EXPÉRIENCE BY KWERK</a>
-						</div>
-					</div>
-					<div class="footer-nav-col">
-						<div class="footer-nav-title">
-							<a href="event.html">VOS ÉVÉNEMENTS</a>
-						</div>
-					</div>
-					<div class="footer-nav-col">
-						<div class="footer-nav-title">
-							<a href="club.html">LE CLUB</a>
-						</div>
-					</div>
-				</nav>
+	<div class="footer-container">
+		<div class="footer-left">
+			<img src="images/logo-kwerk-noir.png" alt="Kwerk" class="footer-logo"/>
+			<div class="footer-socials">
+				<a href="https://www.instagram.com/kwerkparis/" target="_blank" rel="noreferrer noopener" aria-label="Instagram"><img src="images/footer_social/instagram.svg"/></a>
+				<a href="https://www.linkedin.com/company/kwerk/" target="_blank" rel="noreferrer noopener" aria-label="LinkedIn"><img src="images/footer_social/linkedin.svg"/></a>
 			</div>
 		</div>
-		<div class="footer-bottom">
+
+		<div class="footer-right">
+			<nav class="footer-nav">
+				<div class="footer-nav-col" data-links="offres">
+					<div class="footer-nav-title active">NOS OFFRES</div>
+					<ul class="footer-nav-links show">
+						<a href="espaces.html"><li>NOS ESPACES</li></a>
+						<a href="maison-kwerk.html"><li>EXPÉRIENCE BY KWERK</li></a>
+						<a href="event.html"><li>VOS ÉVÉNEMENTS</li></a>
+					</ul>
+				</div>
+				<div class="footer-nav-col" data-links="decouvrir">
+					<div class="footer-nav-title">DÉCOUVRIR</div>
+					<ul class="footer-nav-links">
+						<a href="adresses.html"><li>LES ADRESSES</li></a>
+						<a href="nos-services.html"><li>LES SERVICES</li></a>
+						<a href="notre-histoire.html"><li>NOTRE HISTOIRE</li></a>
+						<a href="galerie.html"><li>LA GALERIE</li></a>
+					</ul>
+				</div>
+				<div class="footer-nav-col" data-links="adresses">
+					<div class="footer-nav-title">NOS ADRESSES</div>
+					<ul class="footer-nav-links">
+						<a href="adresses/messine.html"><li>MESSINE</li></a>
+						<a href="adresses/saint-honore.html"><li>SAINT-HONORÉ</li></a>
+						<a href="adresses/madeleine.html"><li>MADELEINE</li></a>
+					</ul>
+				</div>
+			</nav>
+		</div>
+	</div>
+	<div class="footer-bottom">
+		<span class="footer-copy">© Kwerk</span>
+		<div class="footer-legal">
 			<a href="cgu.html">Conditions générales d'utilisation</a>
 			<a href="mentions-legales.html">Mentions légales</a>
 		</div>
-	</footer>
+	</div>
+</footer>
+<!-- /KW:footer -->
 
-	<script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
-	<script>
-		AOS.init({delay: 200, duration: 1500, anchorPlacement: 'center-center', once: true});
-	</script>
-	<!-- Start of HubSpot Embed Code -->
-	<script type="text/javascript" id="hs-script-loader" async defer src="https://js-eu1.hs-scripts.com/26225487.js"></script>
-	<!-- End of HubSpot Embed Code -->
-	<script src="js/sticky.js"></script>
-	<script src="js/contact.js"></script>
-	<script src="js/form.js"></script>
-	<script src="js/footer.js"></script>
-	<script src="js/script.js"></script>
-	<script src="js/loader.js"></script>
+<!-- KW:scripts -->
+<script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+<script>
+  AOS.init({
+    delay: 200,
+    duration: 1500,
+    anchorPlacement: "center-center",
+    once: true,
+  });
+</script>
+<!-- Start of HubSpot Embed Code -->
+<script
+  type="text/javascript"
+  id="hs-script-loader"
+  async
+  defer
+  src="https://js-eu1.hs-scripts.com/26225487.js"
+></script>
+<!-- End of HubSpot Embed Code -->
+<script src="js/sticky.js?v=ea0324d9"></script>
+<script src="js/contact.js?v=b3862227"></script>
+<script src="js/form.js?v=fc393c9b"></script>
+<script src="js/footer.js?v=7d45f877"></script>
+<script src="js/script.js?v=dd2bfe7e"></script>
+<script src="js/loader.js?v=edc20bed"></script>
+<!-- /KW:scripts -->
 
 </body>
 </html>

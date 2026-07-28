@@ -8,6 +8,7 @@
 		<meta name="viewport" content="width=device-width, initial-scale=1.0">
 		<title>Kwerk – Bureaux d'exception et suites prestige à Paris</title>
 		<meta name="description" content="Kwerk crée des bureaux d&#039;exception au cœur de Paris, où hospitalité, discrétion et art de recevoir façonnent une expérience de travail unique.">		<!-- Google Tag Manager -->
+		<meta name="google-site-verification" content="EoSZxUCvHDdPNu4MdauGZTmucCCiS5oLe3DNjdszQJM" />
 		<script>
 			(function (w, d, s, l, i) {
 w[l] = w[l] || [];
@@ -22,16 +23,18 @@ f.parentNode.insertBefore(j, f);
 		</script>
 		<!-- End Google Tag Manager -->
 
-		<!-- Import Google Fonts (Roboto) -->
-		<link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&amp;display=swap" rel="stylesheet">
-		<link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
-		<link rel="icon" type="image/svg+xml" href="favicon.ico">
-		
-									<link rel="stylesheet" href="css/navbar.css">
-							<!-- Votre fichier CSS “pixel-perfect” -->
-		<link rel="stylesheet" href="css/styles.css">
-
-		<link rel="stylesheet" href="css/footer.css">
+<!-- KW:head -->
+<!-- Import Google Fonts (Roboto) -->
+<link
+  href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&amp;display=swap"
+  rel="stylesheet"
+/>
+<link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
+<link rel="icon" type="image/svg+xml" href="favicon.ico" />
+<link rel="stylesheet" href="css/navbar.css?v=3ee742fe" />
+<link rel="stylesheet" href="css/styles.css?v=6691d2a6" />
+<link rel="stylesheet" href="css/footer.css?v=341ce88c" />
+<!-- /KW:head -->
 </head>
 	<body>
 		<div id="pageLoader" class="page-loader">
@@ -58,23 +61,25 @@ f.parentNode.insertBefore(j, f);
 					<header class="hero hero--no-overlay" style="background-color: #000;">
 			<div class="hero-video hero-slideshow" style="background-image: url('images/1-HP.jpg');" data-hero-slides="images/1-HP.jpg,images/2-HP.jpg,images/3-HP.jpg,images/4-HP.jpg,images/5-HP.jpg,images/6-HP.jpg,images/7-HP.jpg,images/8-HP.jpg"></div>
 		
-	<nav class="navbar">
-		<div class="menu-icon"><img src="images/menu_burger.svg"></div>
-		<a href="index.html" class="logo-wrapper">
-			<div class="logo"><img src="images/logo-sans-bureaux.png"></div>
-			
-		</a>
-		<div class="nav-lang-switch">
-			<a href="index.html">FR</a>
-			<span class="lang-sep">/</span>
-			<a href="en.html">EN</a>
-		</div>
-		<a href="#" class="contact-btn">CONTACTEZ-NOUS</a>
-	</nav>
+	<!-- KW:nav alt="en.html" -->
+<nav class="navbar">
+	<div class="menu-icon"><img src="images/menu_burger.svg"></div>
+	<a href="index.html" class="logo-wrapper">
+		<div class="logo"><img src="images/logo-sans-bureaux.png"></div>
+	</a>
+	<div class="nav-lang-switch">
+		<a href="index.html">FR</a>
+		<span class="lang-sep">/</span>
+		<a href="en.html">EN</a>
+	</div>
+	<a href="#" class="contact-btn">CONTACTEZ-NOUS</a>
+</nav>
+<!-- /KW:nav -->
 
 	</header>
 
 <!-- MENU---------------------------->
+<!-- KW:menu -->
 <div class="side-menu" id="sideMenu">
 	<div class="side-menu-header">
 		<a href="index.html"><img src="images/logo-kwerk-noir.png" alt="Logo"></a>
@@ -82,23 +87,23 @@ f.parentNode.insertBefore(j, f);
 	</div>
 	<ul class="side-menu-links">
 		<li>
-			<a href="espaces.html">LES BUREAUX</a>
+			<a href="espaces.html">NOS ESPACES</a>
 		</li>
 		<li>
 			<a href="maison-kwerk.html">EXPÉRIENCE BY KWERK</a>
 		</li>
 		<li>
-			<a href="event.html">L'ÉVÉNEMENTIEL</a>
+			<a href="event.html">VOS ÉVÉNEMENTS</a>
 		</li>
 		<li class="side-menu-sep"></li>
 		<li>
-			<a href="#">NOTRE HISTOIRE</a>
+			<a href="adresses.html">NOS ADRESSES</a>
 		</li>
 		<li>
-			<a href="nos-services.html">LES SERVICES</a>
+			<a href="nos-services.html">NOS SERVICES</a>
 		</li>
 		<li>
-			<a href="adresses.html">LES ADRESSES</a>
+			<a href="notre-histoire.html">NOTRE HISTOIRE</a>
 		</li>
 	</ul>
 	<a href="#" class="side-menu-cta">RÉSERVER UNE VISITE</a>
@@ -155,6 +160,14 @@ f.parentNode.insertBefore(j, f);
 			<div class="ps-field">
 				<label>DE COMBIEN DE POSTES AVEZ-VOUS BESOIN ? *</label>
 				<input type="number" name="desk" min="1" placeholder="Nombre de postes">
+				<div class="error"></div>
+			</div>
+		</div>
+
+		<div class="ps-field-row single ps-field-row--events" style="display:none;">
+			<div class="ps-field">
+				<label>POUR COMBIEN DE PERSONNES ? *</label>
+				<input type="number" name="nombre_de_personnes" min="1" placeholder="Nombre de personnes">
 				<div class="error"></div>
 			</div>
 		</div>
@@ -234,10 +247,11 @@ f.parentNode.insertBefore(j, f);
 		</div>
 	</form>
 </div>
+<!-- /KW:menu -->
 				
 	<section class="exceptional-section">
 		<div class="exceptional-container" data-aos="fade-up">
-			<h2 class="exceptional-heading">Réenchanter l'expérience au travail</h2>
+			<h2 class="exceptional-heading">Là où le travail devient expérience</h2>
 			<div style="width: 1px; height: 56px; background: #1a1a1a; margin: 32px auto;"></div>
 			<p class="exceptional-body">Depuis plus de dix ans, nous opérons à Paris nos adresses de bureau et celles que des entreprises et des propriétaires nous confient.<br><br>Accueil et conciergerie, restauration, sport et bien-être, événementiel, soin des espaces : nous proposons des expériences qui transforment vos bureaux en lieux de vie.</p>
 		</div>
@@ -247,83 +261,87 @@ f.parentNode.insertBefore(j, f);
 		<h2 class="offres-title">Nos offres</h2>
 		<div class="offres-grid">
 			<a href="espaces.html" class="offre-bloc" style="background-image: url('images/bureaux.jpg');">
-				<span class="offre-label">LES BUREAUX</span>
-				<span class="offre-link">EN SAVOIR PLUS</span>
+				<span class="offre-label">NOS ESPACES</span>
+				<span class="offre-sub">Vos bureaux au coeur de nos adresses</span>
+				<span class="offre-link">En savoir plus</span>
 			</a>
 			<a href="maison-kwerk.html" class="offre-bloc" style="background-image: url('images/maison-kwerk.jpg');">
 				<span class="offre-label">EXPÉRIENCE BY KWERK</span>
-				<span class="offre-link">EN SAVOIR PLUS</span>
+				<span class="offre-sub">Nos services déployés au sein de votre adresse</span>
+				<span class="offre-link">En savoir plus</span>
 			</a>
 			<a href="event.html" class="offre-bloc" style="background-image: url('images/vosevenements.jpg');">
-				<span class="offre-label">L'ÉVÉNEMENTIEL</span>
-				<span class="offre-link">EN SAVOIR PLUS</span>
+				<span class="offre-label">VOS ÉVÉNEMENTS</span>
+				<span class="offre-sub">Recevoir avec Kwerk</span>
+				<span class="offre-link">En savoir plus</span>
 			</a>
+		</div>
+	</section>
+
+	<section class="adresses-intro-section adresses-intro-section--compact">
+		<h2 class="adresses-intro-title">Kwerk vous accueille dans ses trois adresses signature</h2>
+		<p class="section-sub">toutes au coeur du 8e arrondissement de Paris</p>
+	</section>
+
+	<section class="offres-section offres-section--adresses">
+		<div class="offres-grid offres-grid--adresses">
+			<a href="adresses/messine.html" class="offre-bloc" style="background-image: url('images/content/Lobby_Mes_1.jpg');">
+				<span class="offre-label">MESSINE</span>
+				<span class="offre-sub">16 avenue de Messine, Paris 8e</span>
+				<span class="offre-link">En savoir plus</span>
+			</a>
+			<a href="adresses/saint-honore.html" class="offre-bloc" style="background-image: url('images/content/Escalier_SHO_1.jpg');">
+				<span class="offre-label">SAINT-HONORÉ</span>
+				<span class="offre-sub">18 rue de Courcelles, Paris 8e</span>
+				<span class="offre-link">En savoir plus</span>
+			</a>
+			<a href="adresses/madeleine.html" class="offre-bloc" style="background-image: url('images/content/Lobby_Mad_1.jpg');">
+				<span class="offre-label">MADELEINE</span>
+				<span class="offre-sub">22 boulevard Malesherbes, Paris 8e</span>
+				<span class="offre-link">En savoir plus</span>
+			</a>		</div>
+	</section>
+
+	<section class="services-vignettes-section">
+		<h2 class="offres-title">Nos services</h2>
+		<p class="section-sub">Nous nous occupons de chaque instant de votre journée au bureau.</p>
+		<div class="services-vignettes-grid">
+			<figure class="service-vignette">
+				<div class="service-vignette-img" style="background-image: url('images/Aurelien.jpg');">
+					<figcaption>ACCUEIL &amp; CONCIERGERIE</figcaption>
+				</div>
+			</figure>
+			<figure class="service-vignette">
+				<div class="service-vignette-img" style="background-image: url('images/plats.jpeg'); background-position: center 15%;">
+					<figcaption>RESTAURATION</figcaption>
+				</div>
+			</figure>
+			<figure class="service-vignette">
+				<div class="service-vignette-img" style="background-image: url('images/sbete.jpg');">
+					<figcaption>SPORT &amp; BIEN-ÊTRE</figcaption>
+				</div>
+			</figure>
+			<figure class="service-vignette">
+				<div class="service-vignette-img" style="background-image: url('images/soin1.png');">
+					<figcaption>SOIN DES ESPACES</figcaption>
+				</div>
+			</figure>
+		</div>
+		<div class="services-vignettes-link">
+			<a href="nos-services.html" class="link-underline">En savoir plus</a>
 		</div>
 	</section>
 
 	<section class="histoire-section">
 		<h2 class="offres-title">Notre histoire</h2>
-		<p class="section-sub">Depuis plus de dix ans, nous réinventons l'expérience au bureau.</p>
-		<a href="#" class="histoire-card" style="background-image: url('images/content/Escalier_SHO_1.jpg');">
-			<span class="offre-link">EN SAVOIR PLUS</span>
+		<p class="section-sub">Depuis 2015, nous réinventons l'expérience au bureau.</p>
+		<a href="notre-histoire.html" class="histoire-card" style="background-image: url('images/LOBBY(1)-2.jpg');">
+			<span class="offre-link">En savoir plus</span>
 		</a>
 	</section>
 
-	<section class="services-vignettes-section">
-		<h2 class="offres-title">Les services</h2>
-		<p class="section-sub">Accueil et conciergerie, restauration, sport et bien-être, soin des espaces.</p>
-		<div class="services-vignettes-grid">
-			<a href="nos-services.html" class="service-vignette">
-				<div class="service-vignette-img" style="background-image: url('images/conciergerie.jpg');"></div>
-				<figcaption>ACCUEIL &amp; CONCIERGERIE</figcaption>
-			</a>
-			<a href="nos-services.html" class="service-vignette">
-				<div class="service-vignette-img" style="background-image: url('images/dana2.jpg');"></div>
-				<figcaption>RESTAURATION</figcaption>
-			</a>
-			<a href="nos-services.html" class="service-vignette">
-				<div class="service-vignette-img" style="background-image: url('images/wellness1.jpg');"></div>
-				<figcaption>SPORT &amp; BIEN-ÊTRE</figcaption>
-			</a>
-			<a href="nos-services.html" class="service-vignette">
-				<div class="service-vignette-img" style="background-image: url('images/content/Lobby_Hsm_1.jpg');"></div>
-				<figcaption>SOIN DES ESPACES</figcaption>
-			</a>
-		</div>
-		<div class="services-vignettes-link">
-			<a href="nos-services.html" class="link-underline">DÉCOUVRIR</a>
-		</div>
-	</section>
-
-	<section class="adresses-intro-section">
-		<h2 class="adresses-intro-title">Kwerk vous accueille dans ses trois adresses signature,<br>toutes au coeur du 8e arrondissement de Paris</h2>
-		<div class="adresses-intro-sep"></div>
-	<p class="adresses-intro-body">Nous nous occupons de chaque instant de votre journée au bureau :<br>accueil, restauration, sport, événementiel, soin des espaces.</p>
-	</section>
-
-	<section class="offres-section">
-		<div class="offres-grid offres-grid--adresses">
-			<a href="adresses/messine.html" class="offre-bloc" style="background-image: url('images/content/Lobby_Mes_1.jpg');">
-				<span class="offre-label">MESSINE</span>
-				<span style="display:block; color:#fff; font-size:13px; font-weight:300; letter-spacing:0.05em; margin-top:6px;">16 avenue de Messine, Paris 8e</span>
-				<span class="offre-link">EN SAVOIR PLUS</span>
-			</a>
-			<a href="adresses/saint-honore.html" class="offre-bloc" style="background-image: url('images/content/Escalier_SHO_1.jpg');">
-				<span class="offre-label">SAINT-HONORÉ</span>
-				<span style="display:block; color:#fff; font-size:13px; font-weight:300; letter-spacing:0.05em; margin-top:6px;">18 rue de Courcelles, Paris 8e</span>
-				<span class="offre-link">EN SAVOIR PLUS</span>
-			</a>
-			<a href="adresses/madeleine.html" class="offre-bloc" style="background-image: url('images/content/Lobby_Mad_1.jpg');">
-				<span class="offre-label">MADELEINE</span>
-				<span style="display:block; color:#fff; font-size:13px; font-weight:300; letter-spacing:0.05em; margin-top:6px;">22 boulevard Malesherbes, Paris 8e</span>
-				<span class="offre-link">EN SAVOIR PLUS</span>
-			</a>		</div>
-	</section>
-
 	<section class="cta-final-section">
-		<div class="cta-final-sep"></div>
-		<h2 class="cta-final-title">Découvrir Kwerk</h2>
-		<a href="#" class="cta-final-btn">RÉSERVER UNE VISITE</a>
+		<a href="#" class="cta-final-btn">DÉCOUVRIR KWERK</a>
 	</section>
 
 
@@ -392,15 +410,11 @@ f.parentNode.insertBefore(j, f);
 	<a href="contact.html" class="contact-btn-mobile-sticky">CONTACTEZ-NOUS</a>
 </div>
 
-<div style="text-align:center; padding: 10px 0 60px;">
-	<a href="galerie.html" class="exceptional-cta">VOIR LA GALERIE</a>
-</div>
-
+<!-- KW:footer -->
 <footer class="footer">
 	<div class="footer-container">
 		<div class="footer-left">
 			<img src="images/logo-kwerk-noir.png" alt="Kwerk" class="footer-logo"/>
-			<a href="#" class="footer-contact-btn">CONTACTEZ-NOUS</a>
 			<div class="footer-socials">
 				<a href="https://www.instagram.com/kwerkparis/" target="_blank" rel="noreferrer noopener" aria-label="Instagram"><img src="images/footer_social/instagram.svg"/></a>
 				<a href="https://www.linkedin.com/company/kwerk/" target="_blank" rel="noreferrer noopener" aria-label="LinkedIn"><img src="images/footer_social/linkedin.svg"/></a>
@@ -409,51 +423,69 @@ f.parentNode.insertBefore(j, f);
 
 		<div class="footer-right">
 			<nav class="footer-nav">
-				<div class="footer-nav-col" data-links="produits">
-					<div class="footer-nav-title"><a href="espaces.html">NOS BUREAUX</a></div>
+				<div class="footer-nav-col" data-links="offres">
+					<div class="footer-nav-title active">NOS OFFRES</div>
+					<ul class="footer-nav-links show">
+						<a href="espaces.html"><li>NOS ESPACES</li></a>
+						<a href="maison-kwerk.html"><li>EXPÉRIENCE BY KWERK</li></a>
+						<a href="event.html"><li>VOS ÉVÉNEMENTS</li></a>
+					</ul>
 				</div>
-				<div class="footer-nav-col">
-					<div class="footer-nav-title"><a href="nos-services.html">NOS SERVICES</a></div>
+				<div class="footer-nav-col" data-links="decouvrir">
+					<div class="footer-nav-title">DÉCOUVRIR</div>
+					<ul class="footer-nav-links">
+						<a href="adresses.html"><li>LES ADRESSES</li></a>
+						<a href="nos-services.html"><li>LES SERVICES</li></a>
+						<a href="notre-histoire.html"><li>NOTRE HISTOIRE</li></a>
+						<a href="galerie.html"><li>LA GALERIE</li></a>
+					</ul>
 				</div>
 				<div class="footer-nav-col" data-links="adresses">
-					<div class="footer-nav-title active">NOS ADRESSES</div>
-					<ul class="footer-nav-links show">
+					<div class="footer-nav-title">NOS ADRESSES</div>
+					<ul class="footer-nav-links">
 						<a href="adresses/messine.html"><li>MESSINE</li></a>
 						<a href="adresses/saint-honore.html"><li>SAINT-HONORÉ</li></a>
 						<a href="adresses/madeleine.html"><li>MADELEINE</li></a>
 					</ul>
 				</div>
-				<div class="footer-nav-col">
-					<div class="footer-nav-title">
-						<a href="maison-kwerk.html">EXPÉRIENCE BY KWERK</a>
-					</div>
-				</div>
-				<div class="footer-nav-col">
-					<div class="footer-nav-title">
-						<a href="event.html">VOS ÉVÉNEMENTS</a>
-					</div>
-				</div>
 			</nav>
 		</div>
 	</div>
 	<div class="footer-bottom">
-		<a href="cgu.html">Conditions générales d'utilisation</a>
-		<a href="mentions-legales.html">Mentions légales</a>
+		<span class="footer-copy">© Kwerk</span>
+		<div class="footer-legal">
+			<a href="cgu.html">Conditions générales d'utilisation</a>
+			<a href="mentions-legales.html">Mentions légales</a>
+		</div>
 	</div>
 </footer>
-		<script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
-		<script>
-			AOS.init({delay: 200, duration: 1500, anchorPlacement: 'center-center', once: true});
-		</script>
-		<!-- Start of HubSpot Embed Code -->
-		<script type="text/javascript" id="hs-script-loader" async defer src="https://js-eu1.hs-scripts.com/26225487.js"></script>
-		<!-- End of HubSpot Embed Code -->
-		<script src="js/sticky.js"></script>
-		<script src="js/contact.js"></script>
-		<script src="js/form.js"></script>
-		<script src="js/footer.js"></script>
-		<script src="js/script.js"></script>
-		<script src="js/loader.js"></script>
+<!-- /KW:footer -->
+<!-- KW:scripts -->
+<script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+<script>
+  AOS.init({
+    delay: 200,
+    duration: 1500,
+    anchorPlacement: "center-center",
+    once: true,
+  });
+</script>
+<!-- Start of HubSpot Embed Code -->
+<script
+  type="text/javascript"
+  id="hs-script-loader"
+  async
+  defer
+  src="https://js-eu1.hs-scripts.com/26225487.js"
+></script>
+<!-- End of HubSpot Embed Code -->
+<script src="js/sticky.js?v=ea0324d9"></script>
+<script src="js/contact.js?v=b3862227"></script>
+<script src="js/form.js?v=fc393c9b"></script>
+<script src="js/footer.js?v=7d45f877"></script>
+<script src="js/script.js?v=dd2bfe7e"></script>
+<script src="js/loader.js?v=edc20bed"></script>
+<!-- /KW:scripts -->
 
 
 	</body>

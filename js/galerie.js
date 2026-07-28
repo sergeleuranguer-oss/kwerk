@@ -3,7 +3,12 @@ document.addEventListener("DOMContentLoaded", function () {
   const filterLinks = document.querySelectorAll(".filter-menu a");
   const btnMore = document.querySelector(".btn-more");
 
-  const availableFilters = ["all", "messine", "madeleine", "haussmann", "saint-honore"];
+  // Les chemins d'images sont fournis en absolu (/images/...) puis rendus
+  // relatifs (on retire le "/"). Une page EN vit dans /en/, il faut donc
+  // remonter d'un cran. Marche en preprod (/kwerk/en/...) comme en prod (/en/...).
+  const base = window.location.pathname.includes("/en/") ? "../" : "";
+
+  const availableFilters = ["all", "messine", "madeleine", "saint-honore"];
   const urlFilter = new URLSearchParams(window.location.search).get("filter");
   let currentFilter = availableFilters.includes(urlFilter) ? urlFilter : "all";
   let page = 0;
@@ -23,25 +28,26 @@ document.addEventListener("DOMContentLoaded", function () {
     return array;
   }
 
-  // Mélanger les images "all" si ce n'est pas déjà fait côté PHP
+  // "all" reconstruit automatiquement à partir de toutes les adresses présentes
+  // (robuste : pas de clé en dur ; ignore une adresse absente comme haussmann).
   if (!images.all || images.all.length === 0) {
-    images.all = shuffle([
-      ...images.messine,
-      ...images.madeleine,
-      ...images.haussmann,
-      ...images["saint-honore"],
-    ]);
+    images.all = shuffle(
+      Object.keys(images)
+        .filter((k) => k !== "all")
+        .reduce((acc, k) => acc.concat(images[k] || []), [])
+    );
   }
 
   function renderGrid(imagesToShow) {
     const grid = document.createElement("div");
-    grid.className = "gallery-grid";
+    // Lot complet (7) = mosaïque ; lot incomplet = compo dédiée selon le nombre d'images
+    grid.className = "gallery-grid" + (imagesToShow.length < 7 ? " gallery-grid--n" + imagesToShow.length : "");
 
     imagesToShow.forEach((src, index) => {
       const img = document.createElement("img");
       let path = src.startsWith('#') ? src.slice(1) : src;
       if (path.startsWith('/')) path = path.slice(1);
-      img.src = path;
+      img.src = base + path;
       img.className = "item-" + ((index % 7) + 1);
       grid.appendChild(img);
     });

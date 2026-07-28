@@ -24,253 +24,20 @@ f.parentNode.insertBefore(j, f);
 		<!-- End Google Tag Manager -->
 
 		<!-- Import Google Fonts (Roboto) -->
-		<link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&amp;display=swap" rel="stylesheet">
-		<link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
-		<link rel="icon" type="image/svg+xml" href="favicon.ico">
-		
-									<link rel="stylesheet" href="css/navbar.css">
-							<!-- Votre fichier CSS “pixel-perfect” -->
-		<link rel="stylesheet" href="css/styles.css">
+<!-- KW:head -->
+<!-- Import Google Fonts (Roboto) -->
+<link
+  href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&amp;display=swap"
+  rel="stylesheet"
+/>
+<link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
+<link rel="icon" type="image/svg+xml" href="favicon.ico" />
+<link rel="stylesheet" href="css/navbar.css?v=3ee742fe" />
+<link rel="stylesheet" href="css/styles.css?v=6691d2a6" />
+<link rel="stylesheet" href="css/footer.css?v=341ce88c" />
+<!-- /KW:head -->
 
-		<link rel="stylesheet" href="css/footer.css">
-
-	<style>
-		/* ── ESPACES — Section Layout ── */
-		.esp-section {
-			padding: 80px 0;
-			background: #fff;
-		}
-
-		.esp-inner {
-			max-width: 1280px;
-			margin: 0 auto;
-			padding: 0 60px;
-			display: grid;
-			grid-template-columns: 7fr 5fr;
-			gap: 64px;
-			align-items: start;
-		}
-		.esp-inner.esp-reverse {
-			grid-template-columns: 5fr 7fr;
-		}
-
-		/* Text side */
-		.esp-text { padding-top: 16px; }
-		.esp-eyebrow {
-			display: block;
-			font-size: 10px;
-			letter-spacing: 3px;
-			color: #999;
-			text-transform: uppercase;
-			margin-bottom: 18px;
-			font-family: 'Helvetica Neue', HelveticaNeue, sans-serif;
-		}
-		.esp-title {
-			font-size: 26px;
-			font-weight: 300;
-			letter-spacing: 2px;
-			text-transform: uppercase;
-			color: #1a1a1a;
-			line-height: 1.3;
-			font-family: 'Helvetica Neue', HelveticaNeue, sans-serif;
-			margin-bottom: 0;
-		}
-		.esp-bar {
-			display: block;
-			width: 28px;
-			height: 1px;
-			background: #1a1a1a;
-			margin: 22px 0 24px;
-		}
-		.esp-desc {
-			font-size: 17px;
-			color: #666;
-			line-height: 1.85;
-			font-weight: 300;
-			font-family: 'Helvetica Neue', HelveticaNeue, sans-serif;
-			margin-bottom: 32px;
-		}
-		.esp-features {
-			list-style: none;
-			padding: 0;
-			margin: 0;
-		}
-		.esp-features li {
-			font-size: 10px;
-			letter-spacing: 1.5px;
-			text-transform: uppercase;
-			color: #999;
-			padding: 12px 0;
-			border-bottom: 1px solid #f2f2f2;
-			font-family: 'Helvetica Neue', HelveticaNeue, sans-serif;
-			display: flex;
-			align-items: center;
-			gap: 14px;
-		}
-		.esp-features li::before {
-			content: '';
-			width: 16px;
-			height: 1px;
-			background: #ccc;
-			flex-shrink: 0;
-		}
-		.esp-features li:last-child { border-bottom: none; }
-
-		/* Photo mosaic */
-		.esp-mosaic {
-			display: flex;
-			flex-direction: column;
-			gap: 4px;
-		}
-		.esp-mosaic-main {
-			width: 100%;
-			height: 420px;
-			object-fit: cover;
-			display: block;
-		}
-		.esp-mosaic-strip {
-			display: grid;
-			grid-template-columns: repeat(3, 1fr);
-			gap: 4px;
-		}
-		.esp-mosaic-strip img {
-			width: 100%;
-			height: 195px;
-			object-fit: cover;
-			display: block;
-		}
-
-		/* Responsive */
-		@media (max-width: 1000px) {
-			.esp-inner,
-			.esp-inner.esp-reverse {
-				grid-template-columns: 1fr;
-				padding: 0 32px;
-				gap: 40px;
-			}
-			.esp-inner.esp-reverse .esp-mosaic { order: 1; }
-			.esp-inner.esp-reverse .esp-text { order: 2; }
-		}
-		@media (max-width: 768px) {
-			.esp-mosaic-main { height: 260px; }
-			.esp-mosaic-strip img { height: 120px; }
-			.esp-section { padding: 60px 0; }
-		}
-		@media (max-width: 480px) {
-			.esp-mosaic-main { height: 200px; }
-			.esp-mosaic-strip img { height: 90px; }
-			.esp-inner, .esp-inner.esp-reverse { padding: 0 20px; }
-		}
-	/* ── CTA FINAL BANDEAU ── */
-	.mk-cta-section {
-		position: relative;
-		min-height: 850px;
-		display: flex;
-		align-items: center;
-		justify-content: center;
-		overflow: hidden;
-	}
-	.mk-cta-bg {
-		position: absolute;
-		inset: 0;
-		background-image: url('images/ROOFTOP.jpg');
-		background-size: cover;
-		background-position: center;
-	}
-	.mk-cta-overlay {
-		position: absolute;
-		inset: 0;
-		background: rgba(0, 0, 0, 0.62);
-	}
-	.mk-cta-content {
-		position: relative;
-		z-index: 2;
-		text-align: center;
-		padding: 80px 40px;
-	}
-	.mk-cta-title {
-		font-size: 28px;
-		font-weight: 300;
-		color: #fff;
-		letter-spacing: 1px;
-		text-transform: none;
-		margin-bottom: 32px;
-		line-height: 1.4;
-		font-family: 'Helvetica Neue', HelveticaNeue, sans-serif;
-	}
-	.mk-cta-btn {
-		position: relative;
-		display: inline-block;
-		border: 1px solid white;
-		padding: 8px 16px;
-		text-decoration: none;
-		color: white;
-		font-size: 12px;
-		text-transform: uppercase;
-		letter-spacing: 1.2px;
-		font-family: 'Helvetica Neue', HelveticaNeue, sans-serif;
-		font-weight: 200;
-		transition: border-color 0.2s ease, color 0.2s ease;
-	}
-	.mk-cta-btn:hover { border-color: transparent; border-bottom: 1px solid white; }
-
-	/* ── SERVICES (from maison-kwerk) ── */
-	.details-section .details-container { align-items: start; }
-	.details-section .details-text { padding-top: 0; }
-	.details-section .image-large { height: 340px; overflow: hidden; }
-	.details-section .image-large img { width: 100%; height: 100%; object-fit: cover; }
-	.mk-cuisine-section { padding-bottom: 0 !important; }
-	.mk-entretien-img { display: block !important; }
-	.mk-entretien-img .image-large { height: auto; }
-	.mk-entretien-img .image-large img { width: 100%; height: auto; object-fit: unset; }
-	.mk-event-img { display: block !important; }
-	.mk-event-img .image-large { height: auto; }
-	.mk-event-img .image-large img { width: 100%; height: auto; object-fit: unset; }
-	.mk-digital-img { display: block !important; }
-	.mk-digital-img .image-large { height: auto; }
-	.mk-digital-img .image-large img { width: 100%; height: auto; object-fit: unset; }
-	@media (max-width: 480px) { .details-section .details-text { padding-top: 0; } .details-section .details-container { align-items: stretch; } }
-	/* Alternance image → texte forcée sur mobile + grille images conservée */
-	@media (max-width: 900px) {
-		.details-section .details-images,
-		.details-section .event-duo { order: 1; }
-		.details-section .details-text { order: 2; }
-		.details-section .details-images {
-			grid-template-columns: repeat(2, 1fr);
-		}
-	}
-	@media (max-width: 768px) {
-		.details-section .details-images .image-small {
-			display: block;
-		}
-	}
-
-	/* ── CTA SECTION RESPONSIVE ── */
-	@media (max-width: 900px) {
-		.mk-cta-section { min-height: 60vh; }
-		.mk-cta-title { font-size: 22px; }
-		.mk-cta-content { padding: 50px 24px; }
-	}
-	@media (max-width: 480px) {
-		.mk-cta-section { min-height: 50vh; }
-		.mk-cta-title { font-size: 18px; }
-		.mk-cta-content { padding: 32px 16px; }
-	}
-	</style>
-    <!-- Axeptio -->
-<script>
-window.axeptioSettings = {
-  clientId: "67b4575ea6e9c7674834e1e1",
-  cookiesVersion: "custom_Cp",
-};
-
-(function(d, s) {
-  var t = d.getElementsByTagName(s)[0], e = d.createElement(s);
-  e.async = true; e.src = "//static.axept.io/sdk.js";
-  t.parentNode.insertBefore(e, t);
-})(document, "script");
-</script>
-<!-- End Axeptio -->
+	<link rel="stylesheet" href="css/espaces.css">
 </head>
 	<body>
 		<div id="pageLoader" class="page-loader">
@@ -295,25 +62,27 @@ window.axeptioSettings = {
 		<!-- End Google Tag Manager (noscript) -->
 
 					<header class="hero" style="background-color: #000;">
-			<div class="hero-video hero-slideshow" style="background-image: url('images/nosservices.jpg');"></div>
+			<div class="hero-video hero-slideshow" style="background-image: url('images/services4.jpg');"></div>
 		
-	<nav class="navbar">
-		<div class="menu-icon"><img src="images/menu_burger.svg"></div>
-		<a href="index.html" class="logo-wrapper">
-			<div class="logo"><img src="images/logo-sans-bureaux.png"></div>
-			
-		</a>
-		<div class="nav-lang-switch">
-			<a href="nos-services.html">FR</a>
-			<span class="lang-sep">/</span>
-			<a href="en/espaces.html">EN</a>
-		</div>
-		<a href="#" class="contact-btn">CONTACTEZ-NOUS</a>
-	</nav>
+<!-- KW:nav alt="en/espaces.html" -->
+<nav class="navbar">
+	<div class="menu-icon"><img src="images/menu_burger.svg"></div>
+	<a href="index.html" class="logo-wrapper">
+		<div class="logo"><img src="images/logo-sans-bureaux.png"></div>
+	</a>
+	<div class="nav-lang-switch">
+		<a href="nos-services.html">FR</a>
+		<span class="lang-sep">/</span>
+		<a href="en/espaces.html">EN</a>
+	</div>
+	<a href="#" class="contact-btn">CONTACTEZ-NOUS</a>
+</nav>
+<!-- /KW:nav -->
 
 			</header>
 
 <!-- MENU---------------------------->
+<!-- KW:menu -->
 <div class="side-menu" id="sideMenu">
 	<div class="side-menu-header">
 		<a href="index.html"><img src="images/logo-kwerk-noir.png" alt="Logo"></a>
@@ -321,23 +90,23 @@ window.axeptioSettings = {
 	</div>
 	<ul class="side-menu-links">
 		<li>
-			<a href="espaces.html">LES BUREAUX</a>
+			<a href="espaces.html">NOS ESPACES</a>
 		</li>
 		<li>
 			<a href="maison-kwerk.html">EXPÉRIENCE BY KWERK</a>
 		</li>
 		<li>
-			<a href="event.html">L'ÉVÉNEMENTIEL</a>
+			<a href="event.html">VOS ÉVÉNEMENTS</a>
 		</li>
 		<li class="side-menu-sep"></li>
 		<li>
-			<a href="#">NOTRE HISTOIRE</a>
+			<a href="adresses.html">NOS ADRESSES</a>
 		</li>
 		<li>
-			<a href="nos-services.html">LES SERVICES</a>
+			<a href="nos-services.html">NOS SERVICES</a>
 		</li>
 		<li>
-			<a href="adresses.html">LES ADRESSES</a>
+			<a href="notre-histoire.html">NOTRE HISTOIRE</a>
 		</li>
 	</ul>
 	<a href="#" class="side-menu-cta">RÉSERVER UNE VISITE</a>
@@ -385,7 +154,7 @@ window.axeptioSettings = {
 					<option value="Bureaux">Bureaux</option>
 					<option>Expérience by Kwerk</option>
 					<option>Événementiel</option>
-				</select>
+					</select>
 				<div class="error"></div>
 			</div>
 		</div>
@@ -394,6 +163,14 @@ window.axeptioSettings = {
 			<div class="ps-field">
 				<label>DE COMBIEN DE POSTES AVEZ-VOUS BESOIN ? *</label>
 				<input type="number" name="desk" min="1" placeholder="Nombre de postes">
+				<div class="error"></div>
+			</div>
+		</div>
+
+		<div class="ps-field-row single ps-field-row--events" style="display:none;">
+			<div class="ps-field">
+				<label>POUR COMBIEN DE PERSONNES ? *</label>
+				<input type="number" name="nombre_de_personnes" min="1" placeholder="Nombre de personnes">
 				<div class="error"></div>
 			</div>
 		</div>
@@ -473,6 +250,7 @@ window.axeptioSettings = {
 		</div>
 	</form>
 </div>
+<!-- /KW:menu -->
 				
 
 
@@ -483,12 +261,12 @@ window.axeptioSettings = {
 <!-- ============================================================
      SERVICES EXPÉRIENCE BY KWERK
      ============================================================ -->
-<section class="exceptional-section">
+<section class="exceptional-section" style="padding-bottom: 30px;">
 	<div class="exceptional-container" data-aos="fade-up">
-		<h2 class="exceptional-heading">Les services inclus dans vos espaces au quotidien</h2>
+		<h2 class="exceptional-heading">Nous nous occupons de chaque instant de votre journée au bureau</h2>
 		<div style="width: 1px; height: 56px; background: #1a1a1a; margin: 32px auto;"></div>
 		<p class="exceptional-body">
-			Accueil et conciergerie, restauration, sport et bien-être, événementiel, entretien, application digitale : chaque service est opéré avec le même niveau d'exigence pour une expérience unique.
+			Accueil et conciergerie, restauration, sport et bien-être, événementiel, entretien, application digitale : chaque service est opéré pour vous offrir une expérience unique.
 		</p>
 	</div>
 </section>
@@ -510,7 +288,7 @@ window.axeptioSettings = {
 		<div class="details-text" data-aos="fade-right">
 			<h3 class="details-title">ACCUEIL &amp; CONCIERGERIE</h3>
 			<p class="details-description">
-				Nos équipes cultivent l'art du service personnalisé, inspirées des codes des plus grandes maisons hôtelières parisiennes. Avec constance et attention, elles accompagnent vos collaborateurs et leurs invités au quotidien — pour faire de chaque instant au bureau une expérience douce, fluide et mémorable.
+				Nos équipes cultivent l'art du service personnalisé, inspirées des codes des plus grandes maisons hôtelières parisiennes. Elles accompagnent vos collaborateurs et leurs invités au quotidien.
 			</p>
 			<div class="details-list">
 				<h4>ACCUEIL</h4>
@@ -536,7 +314,7 @@ window.axeptioSettings = {
 		<div class="details-text" data-aos="fade-right">
 			<h3 class="details-title">RESTAURATION</h3>
 			<p class="details-description">
-				Nos chefs et nutritionnistes imaginent l'intégralité de la restauration — de la table semi-gastronomique à la boulangerie, de la brasserie au barista. Chaque carte reflète les équipes, chaque menu suit le rythme des saisons, tout est frais et 100&nbsp;% maison.
+				Une table, c'est le cœur d'une maison. Chez Kwerk, nos chefs et notre nutritionniste signent ensemble une cuisine fraîche, de saison, 100&nbsp;% faite maison. À chaque adresse son format, à chaque équipe son rythme : du café du matin au déjeuner attendu, du restaurant du quotidien à des formats plus signature pour vos rendez-vous. Une cuisine accessible et juste, qui sait aussi être généreuse.
 			</p>
 			<div class="details-list">
 				<h4>RESTAURANT EXÉCUTIF</h4>
@@ -574,7 +352,7 @@ window.axeptioSettings = {
 	</div>
 </section>
 
-<div style="text-align:center; padding: 40px 0 20px;">
+<div style="text-align:center; padding: 0 0 20px;">
 	<a href="restaurant-dana.html" class="exceptional-cta">DÉCOUVRIR NOTRE RESTAURANT LE DANA</a>
 </div>
 
@@ -622,7 +400,7 @@ window.axeptioSettings = {
 		<div class="details-text" data-aos="fade-right">
 			<h3 class="details-title">ÉVÉNEMENTIEL</h3>
 			<p class="details-description">
-				Nous concevons et orchestrons des expériences complètes en intégrant scénographie, technique et coordination. De la création des décors à la production (son, lumière, vidéo), jusqu'au pilotage des équipes sur site, nous assurons une exécution fluide et exigeante. Nos scénographies sur-mesure, associées à l'expertise de nos techniciens et à une coordination rigoureuse, garantissent des événements parfaitement maîtrisés.
+				Nous concevons et orchestrons des expériences complètes en intégrant scénographie, technique et coordination. De la création des décors à la production (son, lumière, vidéo), jusqu'au pilotage des équipes sur site, nous assurons une exécution fluide et exigeante.
 			</p>
 			<div class="details-list">
 				<h4>ANIMATIONS</h4>
@@ -637,7 +415,7 @@ window.axeptioSettings = {
 			</div>
 		</div>
 		<div class="event-duo" data-aos="fade-left">
-			<img src="images/Lizette-event.jpg" alt="Événementiel Kwerk">
+			<img src="images/francesenegal.jpeg" alt="Événementiel Kwerk">
 			<img src="images/soiree.jpg" alt="Événementiel Kwerk">
 		</div>
 	</div>
@@ -705,11 +483,11 @@ window.axeptioSettings = {
 </div>
 
 
+<!-- KW:footer -->
 <footer class="footer">
 	<div class="footer-container">
 		<div class="footer-left">
 			<img src="images/logo-kwerk-noir.png" alt="Kwerk" class="footer-logo"/>
-			<a href="#" class="footer-contact-btn">CONTACTEZ-NOUS</a>
 			<div class="footer-socials">
 				<a href="https://www.instagram.com/kwerkparis/" target="_blank" rel="noreferrer noopener" aria-label="Instagram"><img src="images/footer_social/instagram.svg"/></a>
 				<a href="https://www.linkedin.com/company/kwerk/" target="_blank" rel="noreferrer noopener" aria-label="LinkedIn"><img src="images/footer_social/linkedin.svg"/></a>
@@ -718,51 +496,69 @@ window.axeptioSettings = {
 
 		<div class="footer-right">
 			<nav class="footer-nav">
-				<div class="footer-nav-col" data-links="produits">
-					<div class="footer-nav-title"><a href="espaces.html">NOS BUREAUX</a></div>
+				<div class="footer-nav-col" data-links="offres">
+					<div class="footer-nav-title active">NOS OFFRES</div>
+					<ul class="footer-nav-links show">
+						<a href="espaces.html"><li>NOS ESPACES</li></a>
+						<a href="maison-kwerk.html"><li>EXPÉRIENCE BY KWERK</li></a>
+						<a href="event.html"><li>VOS ÉVÉNEMENTS</li></a>
+					</ul>
 				</div>
-				<div class="footer-nav-col">
-					<div class="footer-nav-title"><a href="nos-services.html">NOS SERVICES</a></div>
+				<div class="footer-nav-col" data-links="decouvrir">
+					<div class="footer-nav-title">DÉCOUVRIR</div>
+					<ul class="footer-nav-links">
+						<a href="adresses.html"><li>LES ADRESSES</li></a>
+						<a href="nos-services.html"><li>LES SERVICES</li></a>
+						<a href="notre-histoire.html"><li>NOTRE HISTOIRE</li></a>
+						<a href="galerie.html"><li>LA GALERIE</li></a>
+					</ul>
 				</div>
 				<div class="footer-nav-col" data-links="adresses">
-					<div class="footer-nav-title active">NOS ADRESSES</div>
-					<ul class="footer-nav-links show">
+					<div class="footer-nav-title">NOS ADRESSES</div>
+					<ul class="footer-nav-links">
 						<a href="adresses/messine.html"><li>MESSINE</li></a>
 						<a href="adresses/saint-honore.html"><li>SAINT-HONORÉ</li></a>
 						<a href="adresses/madeleine.html"><li>MADELEINE</li></a>
 					</ul>
 				</div>
-				<div class="footer-nav-col">
-					<div class="footer-nav-title">
-						<a href="maison-kwerk.html">EXPÉRIENCE BY KWERK</a>
-					</div>
-				</div>
-				<div class="footer-nav-col">
-					<div class="footer-nav-title">
-						<a href="event.html">VOS ÉVÉNEMENTS</a>
-					</div>
-				</div>
 			</nav>
 		</div>
 	</div>
 	<div class="footer-bottom">
-		<a href="cgu.html">Conditions générales d'utilisation</a>
-		<a href="mentions-legales.html">Mentions légales</a>
+		<span class="footer-copy">© Kwerk</span>
+		<div class="footer-legal">
+			<a href="cgu.html">Conditions générales d'utilisation</a>
+			<a href="mentions-legales.html">Mentions légales</a>
+		</div>
 	</div>
 </footer>
-		<script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
-		<script>
-			AOS.init({delay: 200, duration: 1500, anchorPlacement: 'center-center', once: true});
-		</script>
-		<!-- Start of HubSpot Embed Code -->
-		<script type="text/javascript" id="hs-script-loader" async defer src="https://js-eu1.hs-scripts.com/26225487.js"></script>
-		<!-- End of HubSpot Embed Code -->
-		<script src="js/sticky.js"></script>
-		<script src="js/contact.js"></script>
-		<script src="js/form.js"></script>
-		<script src="js/footer.js"></script>
-		<script src="js/script.js"></script>
-		<script src="js/loader.js"></script>
+<!-- /KW:footer -->
+<!-- KW:scripts -->
+<script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+<script>
+  AOS.init({
+    delay: 200,
+    duration: 1500,
+    anchorPlacement: "center-center",
+    once: true,
+  });
+</script>
+<!-- Start of HubSpot Embed Code -->
+<script
+  type="text/javascript"
+  id="hs-script-loader"
+  async
+  defer
+  src="https://js-eu1.hs-scripts.com/26225487.js"
+></script>
+<!-- End of HubSpot Embed Code -->
+<script src="js/sticky.js?v=ea0324d9"></script>
+<script src="js/contact.js?v=b3862227"></script>
+<script src="js/form.js?v=fc393c9b"></script>
+<script src="js/footer.js?v=7d45f877"></script>
+<script src="js/script.js?v=dd2bfe7e"></script>
+<script src="js/loader.js?v=edc20bed"></script>
+<!-- /KW:scripts -->
 </body>
 
 <!-- Mirrored from www.kwerk.fr/espaces by HTTrack Website Copier/3.x [XR&CO'2014], Mon, 09 Mar 2026 14:52:11 GMT -->

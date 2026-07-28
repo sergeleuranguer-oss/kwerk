@@ -23,15 +23,18 @@ f.parentNode.insertBefore(j, f);
 		<!-- End Google Tag Manager -->
 
 		<!-- Import Google Fonts (Roboto) -->
-		<link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&amp;display=swap" rel="stylesheet">
-		<link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
-		<link rel="icon" type="image/svg+xml" href="favicon.ico">
-		
-									<link rel="stylesheet" href="css/navbar_galerie.css">
-							<!-- Votre fichier CSS “pixel-perfect” -->
-		<link rel="stylesheet" href="css/styles.css">
-
-		<link rel="stylesheet" href="css/footer.css">
+<!-- KW:head variant=galerie -->
+<!-- Import Google Fonts (Roboto) -->
+<link
+  href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&amp;display=swap"
+  rel="stylesheet"
+/>
+<link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
+<link rel="icon" type="image/svg+xml" href="favicon.ico" />
+<link rel="stylesheet" href="css/navbar_galerie.css?v=bccee1c8" />
+<link rel="stylesheet" href="css/styles.css?v=6691d2a6" />
+<link rel="stylesheet" href="css/footer.css?v=341ce88c" />
+<!-- /KW:head -->
 </head>
 	<body>
 		<div id="pageLoader" class="page-loader">
@@ -57,22 +60,25 @@ f.parentNode.insertBefore(j, f);
 
 					<header class="hero">
 
-	<nav class="navbar">
-		<div class="menu-icon"><img src="images/menu_burger_noir.svg"></div>
-		<div class="logo">
-			<a href="index.html"><img src="images/logo-kwerk-noir.png"></a>
-		</div>
-		<div class="nav-lang-switch">
-			<a href="galerie00dc.html?filter=saint-honore" class="active">FR</a>
-			<span class="lang-sep">/</span>
-			<a href="en/galerie00dc.html?filter=saint-honore" >EN</a>
-		</div>
-		<a href="contact.html" class="contact-btn ">CONTACTEZ-NOUS</a>
-	</nav>
+<!-- KW:nav variant=galerie alt="en/galerie00dc.html?filter=saint-honore" -->
+<nav class="navbar">
+	<div class="menu-icon"><img src="images/menu_burger_noir.svg"></div>
+	<div class="logo">
+		<a href="index.html"><img src="images/logo-kwerk-noir.png"></a>
+	</div>
+	<div class="nav-lang-switch">
+		<a href="galerie00dc.html" class="active">FR</a>
+		<span class="lang-sep">/</span>
+		<a href="en/galerie00dc.html?filter=saint-honore">EN</a>
+	</div>
+	<a href="contact.html" class="contact-btn">CONTACTEZ-NOUS</a>
+</nav>
+<!-- /KW:nav -->
 
 </header>
 
 <!-- MENU---------------------------->
+<!-- KW:menu -->
 <div class="side-menu" id="sideMenu">
 	<div class="side-menu-header">
 		<a href="index.html"><img src="images/logo-kwerk-noir.png" alt="Logo"></a>
@@ -80,23 +86,23 @@ f.parentNode.insertBefore(j, f);
 	</div>
 	<ul class="side-menu-links">
 		<li>
-			<a href="espaces.html">LES BUREAUX</a>
+			<a href="espaces.html">NOS ESPACES</a>
 		</li>
 		<li>
 			<a href="maison-kwerk.html">EXPÉRIENCE BY KWERK</a>
 		</li>
 		<li>
-			<a href="event.html">L'ÉVÉNEMENTIEL</a>
+			<a href="event.html">VOS ÉVÉNEMENTS</a>
 		</li>
 		<li class="side-menu-sep"></li>
 		<li>
-			<a href="#">NOTRE HISTOIRE</a>
+			<a href="adresses.html">NOS ADRESSES</a>
 		</li>
 		<li>
-			<a href="nos-services.html">LES SERVICES</a>
+			<a href="nos-services.html">NOS SERVICES</a>
 		</li>
 		<li>
-			<a href="adresses.html">LES ADRESSES</a>
+			<a href="notre-histoire.html">NOTRE HISTOIRE</a>
 		</li>
 	</ul>
 	<a href="#" class="side-menu-cta">RÉSERVER UNE VISITE</a>
@@ -144,7 +150,7 @@ f.parentNode.insertBefore(j, f);
 					<option value="Bureaux">Bureaux</option>
 					<option>Expérience by Kwerk</option>
 					<option>Événementiel</option>
-				</select>
+					</select>
 				<div class="error"></div>
 			</div>
 		</div>
@@ -153,6 +159,14 @@ f.parentNode.insertBefore(j, f);
 			<div class="ps-field">
 				<label>DE COMBIEN DE POSTES AVEZ-VOUS BESOIN ? *</label>
 				<input type="number" name="desk" min="1" placeholder="Nombre de postes">
+				<div class="error"></div>
+			</div>
+		</div>
+
+		<div class="ps-field-row single ps-field-row--events" style="display:none;">
+			<div class="ps-field">
+				<label>POUR COMBIEN DE PERSONNES ? *</label>
+				<input type="number" name="nombre_de_personnes" min="1" placeholder="Nombre de personnes">
 				<div class="error"></div>
 			</div>
 		</div>
@@ -232,6 +246,7 @@ f.parentNode.insertBefore(j, f);
 		</div>
 	</form>
 </div>
+<!-- /KW:menu -->
 				
 	<nav class="filter-menu">
 		<a class="active" data-filter="all">Tout</a>
@@ -245,10 +260,10 @@ f.parentNode.insertBefore(j, f);
 	<button class="btn-more">VOIR PLUS</button>
 
 	<script>
-		const images = {"messine":["\/images\/galerie\/messine\/BARISTAMESSINE(2).jpg","#\/images\/galerie\/messine\/ESPACEWELLNESSMESSINE(5).jpg","#\/images\/galerie\/messine\/SportMes1.jpg","#\/images\/galerie\/messine\/SalledereunionMes1.jpg","#\/images\/galerie\/messine\/BUREAUMESSINE.jpg","#\/images\/galerie\/messine\/ROOFTOPMESSINE(4).jpg","#\/images\/galerie\/messine\/RooftopMes1.jpg","#\/images\/galerie\/messine\/LobbyMes1.jpg","#\/images\/galerie\/messine\/DomeLobbyMes1.jpg","#\/images\/galerie\/messine\/LobbyMes2Barista.jpg","#\/images\/galerie\/messine\/LobbyMes2.jpg","#\/images\/galerie\/messine\/SALLEDER\u00c9UNIONMESSINE(10).jpg","\/images\/galerie\/messine\/SAUNAINFRAROUGEMESSINE.jpg"],"madeleine":["\/images\/galerie\/madeleine\/RooftopMad1.png","#\/images\/galerie\/madeleine\/LobbyMad3.png","#\/images\/galerie\/madeleine\/LobbybaristaMad1.jpg","#\/images\/galerie\/madeleine\/AccueilMad1.png","#\/images\/galerie\/madeleine\/RooftopMadeleineIA1.png","#\/images\/galerie\/madeleine\/PasserelleMad1.png","#\/images\/galerie\/madeleine\/Privatifs_Bureau_MAD.png","#\/images\/galerie\/madeleine\/SallecommuneMad1.png","#\/images\/galerie\/madeleine\/LobbyMad2.jpg","#\/images\/galerie\/madeleine\/YogaMad1.png","\/images\/galerie\/madeleine\/LobbyMad1.jpg"],"saint-honore":["\/images\/galerie\/saint-honore\/SuiteSHOv2.png","#\/images\/galerie\/saint-honore\/RooftopSho2.jpg","#\/images\/galerie\/saint-honore\/RooftopShoIA1.png","#\/images\/galerie\/saint-honore\/EscalierSHO1.jpg","#\/images\/galerie\/saint-honore\/SuiteSHO2.png","#\/images\/galerie\/saint-honore\/LOBBY_SHO_LOUNGE.jpg","#\/images\/galerie\/saint-honore\/Barista-SHO.png","#\/images\/galerie\/saint-honore\/Traiteur.jpg","#\/images\/galerie\/saint-honore\/KWERK-STHONORE-JUILLET-22_082_FA.jpg","#\/images\/galerie\/saint-honore\/LobbyShotisaniere.jpg","#\/images\/galerie\/saint-honore\/Traiteur_2.jpg","#\/images\/galerie\/saint-honore\/DANA(10)(1).jpg","#\/images\/galerie\/saint-honore\/SportSho1.jpg","#\/images\/galerie\/saint-honore\/KWERK-STHONORE-JUILLET-22_006_FA.jpg","#\/images\/galerie\/saint-honore\/SHOprivatifs.png","#\/images\/galerie\/saint-honore\/SHO_8EME.jpeg","#\/images\/galerie\/saint-honore\/Dana1.jpg","#\/images\/galerie\/saint-honore\/Event_SHO_Lobby.png","#\/images\/galerie\/saint-honore\/SuitesignatureSHO1IA.png","#\/images\/galerie\/saint-honore\/LobbySHOaccueil.jpg","#\/images\/galerie\/saint-honore\/RooftopSHOTE.jpg","\/images\/galerie\/saint-honore\/Danaheader.jpg"],"all":[,"#\/images\/galerie\/madeleine\/LobbyMad3.png","#\/images\/galerie\/saint-honore\/Traiteur.jpg","#\/images\/galerie\/madeleine\/AccueilMad1.png","#\/images\/galerie\/madeleine\/LobbyMad2.jpg","#\/images\/galerie\/saint-honore\/SuiteSHO2.png","#\/images\/galerie\/saint-honore\/Barista-SHO.png","#\/images\/galerie\/saint-honore\/SuiteSHOv2.png","#\/images\/galerie\/messine\/RooftopMes1.jpg","#\/images\/galerie\/saint-honore\/LobbySHOaccueil.jpg","#\/images\/galerie\/saint-honore\/SuitesignatureSHO1IA.png","#\/images\/galerie\/saint-honore\/RooftopShoIA1.png","#\/images\/galerie\/messine\/ROOFTOPMESSINE(4).jpg","#\/images\/galerie\/saint-honore\/SHOprivatifs.png","#\/images\/galerie\/messine\/SportMes1.jpg","#\/images\/galerie\/madeleine\/RooftopMad1.png","#\/images\/galerie\/messine\/BARISTAMESSINE(2).jpg","#\/images\/galerie\/messine\/SALLEDER\u00c9UNIONMESSINE(10).jpg","#\/images\/galerie\/saint-honore\/Event_SHO_Lobby.png","#\/images\/galerie\/messine\/BUREAUMESSINE.jpg","#\/images\/galerie\/saint-honore\/KWERK-STHONORE-JUILLET-22_082_FA.jpg","#\/images\/galerie\/saint-honore\/DANA(10)(1).jpg","#\/images\/galerie\/saint-honore\/Traiteur_2.jpg","#\/images\/galerie\/madeleine\/Privatifs_Bureau_MAD.png","#\/images\/galerie\/saint-honore\/EscalierSHO1.jpg","#\/images\/galerie\/madeleine\/RooftopMadeleineIA1.png","#\/images\/galerie\/madeleine\/SallecommuneMad1.png","#\/images\/galerie\/messine\/DomeLobbyMes1.jpg","#\/images\/galerie\/saint-honore\/Danaheader.jpg","#\/images\/galerie\/saint-honore\/RooftopSho2.jpg","#\/images\/galerie\/saint-honore\/KWERK-STHONORE-JUILLET-22_006_FA.jpg","#\/images\/galerie\/madeleine\/LobbybaristaMad1.jpg","#\/images\/galerie\/messine\/ESPACEWELLNESSMESSINE(5).jpg","#\/images\/galerie\/messine\/SalledereunionMes1.jpg","#\/images\/galerie\/madeleine\/YogaMad1.png","#\/images\/galerie\/messine\/LobbyMes1.jpg","#\/images\/galerie\/messine\/SAUNAINFRAROUGEMESSINE.jpg","#\/images\/galerie\/messine\/LobbyMes2Barista.jpg","#\/images\/galerie\/madeleine\/PasserelleMad1.png","#\/images\/galerie\/saint-honore\/Dana1.jpg","#\/images\/galerie\/saint-honore\/RooftopSHOTE.jpg","#\/images\/galerie\/saint-honore\/SportSho1.jpg","#\/images\/galerie\/saint-honore\/SHO_8EME.jpeg","#\/images\/galerie\/saint-honore\/LobbyShotisaniere.jpg","#\/images\/galerie\/madeleine\/LobbyMad1.jpg","#\/images\/galerie\/messine\/LobbyMes2.jpg","\/images\/galerie\/saint-honore\/LOBBY_SHO_LOUNGE.jpg"]};
+		const images = {"messine":["\/images\/galerie\/messine\/BARISTAMESSINE(2).jpg","#\/images\/galerie\/messine\/ESPACEWELLNESSMESSINE(5).jpg","#\/images\/galerie\/messine\/SportMes1.jpg","#\/images\/galerie\/messine\/SalledereunionMes1.jpg","#\/images\/galerie\/messine\/BUREAUMESSINE.jpg","#\/images\/galerie\/messine\/ROOFTOPMESSINE(4).jpg","#\/images\/galerie\/messine\/RooftopMes1.jpg","#\/images\/galerie\/messine\/LobbyMes1.jpg","#\/images\/galerie\/messine\/DomeLobbyMes1.jpg","#\/images\/galerie\/messine\/LobbyMes2Barista.jpg","#\/images\/galerie\/messine\/LobbyMes2.jpg","#\/images\/galerie\/messine\/SALLEDER\u00c9UNIONMESSINE(10).jpg","\/images\/galerie\/messine\/SAUNAINFRAROUGEMESSINE.jpg"],"madeleine":["\/images\/galerie\/madeleine\/RooftopMad1.png","#\/images\/galerie\/madeleine\/LobbyMad3.png","#\/images\/galerie\/madeleine\/LobbybaristaMad1.jpg","#\/images\/galerie\/madeleine\/AccueilMad1.png","#\/images\/galerie\/madeleine\/RooftopMadeleineIA1.png","#\/images\/galerie\/madeleine\/PasserelleMad1.png","#\/images\/galerie\/madeleine\/Privatifs_Bureau_MAD.png","#\/images\/galerie\/madeleine\/SallecommuneMad1.png","#\/images\/galerie\/madeleine\/LobbyMad2.jpg","#\/images\/galerie\/madeleine\/YogaMad1.png","\/images\/galerie\/madeleine\/LobbyMad1.jpg"],"saint-honore":["\/images\/galerie\/saint-honore\/SuiteSHOv2.png","#\/images\/galerie\/saint-honore\/RooftopSho2.jpg","#\/images\/galerie\/saint-honore\/RooftopShoIA1.png","#\/images\/galerie\/saint-honore\/EscalierSHO1.jpg","#\/images\/galerie\/saint-honore\/SuiteSHO2.png","#\/images\/galerie\/saint-honore\/LOBBY_SHO_LOUNGE.jpg","#\/images\/galerie\/saint-honore\/Barista-SHO.png","#\/images\/galerie\/saint-honore\/Traiteur.jpg","#\/images\/galerie\/saint-honore\/KWERK-STHONORE-JUILLET-22_082_FA.jpg","#\/images\/galerie\/saint-honore\/LobbyShotisaniere.jpg","#\/images\/galerie\/saint-honore\/Traiteur_2.jpg","#\/images\/galerie\/saint-honore\/DANA(10)(1).jpg","#\/images\/galerie\/saint-honore\/SportSho1.jpg","#\/images\/galerie\/saint-honore\/KWERK-STHONORE-JUILLET-22_006_FA.jpg","#\/images\/galerie\/saint-honore\/SHOprivatifs.png","#\/images\/galerie\/saint-honore\/SHO_8EME.jpeg","#\/images\/galerie\/saint-honore\/Dana1.jpg","#\/images\/galerie\/saint-honore\/Event_SHO_Lobby.png","#\/images\/galerie\/saint-honore\/SuitesignatureSHO1IA.png","#\/images\/galerie\/saint-honore\/LobbySHOaccueil.jpg","#\/images\/galerie\/saint-honore\/RooftopSHOTE.jpg","\/images\/galerie\/saint-honore\/Danaheader.jpg"],"all": []};
 	</script>
 
-	<script src="js/galerie.js?v=2"></script>
+	<script src="js/galerie.js?v=6"></script>
 
 
 
@@ -256,11 +271,11 @@ f.parentNode.insertBefore(j, f);
 	<a href="contact.html" class="contact-btn-mobile-sticky">CONTACTEZ-NOUS</a>
 </div>
 
+<!-- KW:footer -->
 <footer class="footer">
 	<div class="footer-container">
 		<div class="footer-left">
 			<img src="images/logo-kwerk-noir.png" alt="Kwerk" class="footer-logo"/>
-			<a href="#" class="footer-contact-btn">CONTACTEZ-NOUS</a>
 			<div class="footer-socials">
 				<a href="https://www.instagram.com/kwerkparis/" target="_blank" rel="noreferrer noopener" aria-label="Instagram"><img src="images/footer_social/instagram.svg"/></a>
 				<a href="https://www.linkedin.com/company/kwerk/" target="_blank" rel="noreferrer noopener" aria-label="LinkedIn"><img src="images/footer_social/linkedin.svg"/></a>
@@ -269,51 +284,69 @@ f.parentNode.insertBefore(j, f);
 
 		<div class="footer-right">
 			<nav class="footer-nav">
-				<div class="footer-nav-col" data-links="produits">
-					<div class="footer-nav-title"><a href="espaces.html">NOS BUREAUX</a></div>
+				<div class="footer-nav-col" data-links="offres">
+					<div class="footer-nav-title active">NOS OFFRES</div>
+					<ul class="footer-nav-links show">
+						<a href="espaces.html"><li>NOS ESPACES</li></a>
+						<a href="maison-kwerk.html"><li>EXPÉRIENCE BY KWERK</li></a>
+						<a href="event.html"><li>VOS ÉVÉNEMENTS</li></a>
+					</ul>
 				</div>
-				<div class="footer-nav-col">
-					<div class="footer-nav-title"><a href="nos-services.html">NOS SERVICES</a></div>
+				<div class="footer-nav-col" data-links="decouvrir">
+					<div class="footer-nav-title">DÉCOUVRIR</div>
+					<ul class="footer-nav-links">
+						<a href="adresses.html"><li>LES ADRESSES</li></a>
+						<a href="nos-services.html"><li>LES SERVICES</li></a>
+						<a href="notre-histoire.html"><li>NOTRE HISTOIRE</li></a>
+						<a href="galerie.html"><li>LA GALERIE</li></a>
+					</ul>
 				</div>
 				<div class="footer-nav-col" data-links="adresses">
-					<div class="footer-nav-title active">NOS ADRESSES</div>
-					<ul class="footer-nav-links show">
+					<div class="footer-nav-title">NOS ADRESSES</div>
+					<ul class="footer-nav-links">
 						<a href="adresses/messine.html"><li>MESSINE</li></a>
 						<a href="adresses/saint-honore.html"><li>SAINT-HONORÉ</li></a>
 						<a href="adresses/madeleine.html"><li>MADELEINE</li></a>
 					</ul>
 				</div>
-				<div class="footer-nav-col">
-					<div class="footer-nav-title">
-						<a href="maison-kwerk.html">EXPÉRIENCE BY KWERK</a>
-					</div>
-				</div>
-				<div class="footer-nav-col">
-					<div class="footer-nav-title">
-						<a href="event.html">VOS ÉVÉNEMENTS</a>
-					</div>
-				</div>
 			</nav>
 		</div>
 	</div>
 	<div class="footer-bottom">
-		<a href="cgu.html">Conditions générales d'utilisation</a>
-		<a href="mentions-legales.html">Mentions légales</a>
+		<span class="footer-copy">© Kwerk</span>
+		<div class="footer-legal">
+			<a href="cgu.html">Conditions générales d'utilisation</a>
+			<a href="mentions-legales.html">Mentions légales</a>
+		</div>
 	</div>
 </footer>
-		<script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
-		<script>
-			AOS.init({delay: 200, duration: 1500, anchorPlacement: 'center-center', once: true});
-		</script>
-		<!-- Start of HubSpot Embed Code -->
-		<script type="text/javascript" id="hs-script-loader" async defer src="https://js-eu1.hs-scripts.com/26225487.js"></script>
-		<!-- End of HubSpot Embed Code -->
-		<script src="js/sticky.js"></script>
-		<script src="js/contact.js"></script>
-		<script src="js/form.js"></script>
-		<script src="js/footer.js"></script>
-		<script src="js/script.js"></script>
-		<script src="js/loader.js"></script>
+<!-- /KW:footer -->
+<!-- KW:scripts -->
+<script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+<script>
+  AOS.init({
+    delay: 200,
+    duration: 1500,
+    anchorPlacement: "center-center",
+    once: true,
+  });
+</script>
+<!-- Start of HubSpot Embed Code -->
+<script
+  type="text/javascript"
+  id="hs-script-loader"
+  async
+  defer
+  src="https://js-eu1.hs-scripts.com/26225487.js"
+></script>
+<!-- End of HubSpot Embed Code -->
+<script src="js/sticky.js?v=ea0324d9"></script>
+<script src="js/contact.js?v=b3862227"></script>
+<script src="js/form.js?v=fc393c9b"></script>
+<script src="js/footer.js?v=7d45f877"></script>
+<script src="js/script.js?v=dd2bfe7e"></script>
+<script src="js/loader.js?v=edc20bed"></script>
+<!-- /KW:scripts -->
 
 
 	</body>

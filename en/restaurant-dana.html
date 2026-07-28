@@ -21,65 +21,19 @@ f.parentNode.insertBefore(j, f);
 	<!-- End Google Tag Manager -->
 
 	<!-- Import Google Fonts (Roboto) -->
-	<link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&amp;display=swap" rel="stylesheet">
-	<link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
-	<link rel="icon" type="image/svg+xml" href="../favicon.ico">
-
-	<link rel="stylesheet" href="../css/navbar.css">
-	<link rel="stylesheet" href="../css/styles.css">
-	<link rel="stylesheet" href="../css/footer.css">
-	<style>
-		/* ── CTA BANDEAU DANAOUT ── */
-		.dana-cta-section {
-			position: relative;
-			min-height: 850px;
-			display: flex;
-			align-items: center;
-			justify-content: center;
-			overflow: hidden;
-		}
-		.dana-cta-bg {
-			position: absolute;
-			inset: 0;
-			background-image: url('../images/danaout.jpg');
-			background-size: cover;
-			background-position: center;
-		}
-		.dana-cta-overlay {
-			position: absolute;
-			inset: 0;
-			background: rgba(0, 0, 0, 0.42);
-		}
-		.dana-cta-content {
-			position: relative;
-			z-index: 2;
-			text-align: center;
-			padding: 80px 40px;
-		}
-		.dana-cta-btn {
-			position: relative;
-			display: inline-block;
-			border: 1px solid white;
-			padding: 8px 16px;
-			text-decoration: none;
-			color: white;
-			font-size: 12px;
-			text-transform: uppercase;
-			letter-spacing: 1.2px;
-			font-family: 'Helvetica Neue', HelveticaNeue, sans-serif;
-			font-weight: 200;
-			transition: border-color 0.2s ease, color 0.2s ease;
-		}
-		.dana-cta-btn:hover { border-color: transparent; border-bottom: 1px solid white; }
-		@media (max-width: 900px) {
-			.dana-cta-section { min-height: 60vh; }
-			.dana-cta-content { padding: 50px 24px; }
-		}
-		@media (max-width: 480px) {
-			.dana-cta-section { min-height: 50vh; }
-			.dana-cta-content { padding: 32px 16px; }
-		}
-	</style>
+<!-- KW:head -->
+<!-- Import Google Fonts (Roboto) -->
+<link
+  href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&amp;display=swap"
+  rel="stylesheet"
+/>
+<link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
+<link rel="icon" type="image/svg+xml" href="../favicon.ico" />
+<link rel="stylesheet" href="../css/navbar.css?v=3ee742fe" />
+<link rel="stylesheet" href="../css/styles.css?v=6691d2a6" />
+<link rel="stylesheet" href="../css/footer.css?v=341ce88c" />
+<!-- /KW:head -->
+	<link rel="stylesheet" href="../css/restaurant-dana.css">
 </head>
 <body>
 	<div id="pageLoader" class="page-loader">
@@ -106,33 +60,36 @@ f.parentNode.insertBefore(j, f);
 	<header class="hero" style="background-color: #000;">
 		<div class="hero-video hero-slideshow" style="background-image: url('../images/danaheader.jpg');"></div>
 
-	<nav class="navbar">
-		<div class="menu-icon"><img src="../images/menu_burger.svg"></div>
-		<a href="../en.html" class="logo-wrapper">
-			<div class="logo"><img src="../images/logo-sans-bureaux.png"></div>
-		</a>
-		<div class="nav-lang-switch">
-			<a href="../restaurant-dana.html">FR</a>
-			<span class="lang-sep">/</span>
-			<a href="restaurant-dana.html">EN</a>
-		</div>
-		<a href="#" class="contact-btn">CONTACT US</a>
-	</nav>
+<!-- KW:nav alt="../restaurant-dana.html" -->
+<nav class="navbar">
+	<div class="menu-icon"><img src="../images/menu_burger.svg"></div>
+	<a href="../en.html" class="logo-wrapper">
+		<div class="logo"><img src="../images/logo-sans-bureaux.png"></div>
+	</a>
+	<div class="nav-lang-switch">
+		<a href="../restaurant-dana.html">FR</a>
+		<span class="lang-sep">/</span>
+		<a href="restaurant-dana.html">EN</a>
+	</div>
+	<a href="#" class="contact-btn">CONTACT US</a>
+</nav>
+<!-- /KW:nav -->
 
 		<div class="hero-text hero-text--desktop-title-center hero-text--mobile-center">
 			<a href="#" class="btn contact-btn">GET IN TOUCH</a>
 		</div>
 	</header>
 
-	<section class="exceptional-section">
+	<section class="exceptional-section" style="padding-bottom: 30px;">
 		<div class="exceptional-container" data-aos="fade-up">
 			<h2 class="exceptional-heading">Gastronomy as a daily ritual</h2>
 			<div style="width: 1px; height: 56px; background: #1a1a1a; margin: 32px auto;"></div>
-			<p class="exceptional-body">Le Dana, an executive restaurant reserved for Kwerk members and their guests.<br>A dining experience that transforms every lunch into a moment of genuine distinction.</p>
+			<p class="exceptional-body">Le Dana, an executive restaurant reserved for Kwerk members and their guests.</p>
 		</div>
 	</section>
 
 <!-- MENU -->
+<!-- KW:menu -->
 <div class="side-menu" id="sideMenu">
 	<div class="side-menu-header">
 		<a href="../en.html"><img src="../images/logo-kwerk-noir.png" alt="Logo"></a>
@@ -140,28 +97,37 @@ f.parentNode.insertBefore(j, f);
 	</div>
 	<ul class="side-menu-links">
 		<li>
-			<a href="espaces.html">OUR OFFICES &amp; SERVICES</a>
+			<a href="espaces.html">OUR OFFICES</a>
 		</li>
 		<li>
-			<a href="adresses.html">OUR LOCATIONS</a>
-		</li>
-		<li>
-			<a href="maison-kwerk.html">YOUR BUILDING, MANAGED BY KWERK</a>
+			<a href="maison-kwerk.html">YOUR BUILDING<br>MANAGED BY KWERK</a>
 		</li>
 		<li>
 			<a href="event.html">YOUR EVENTS</a>
 		</li>
+		<li class="side-menu-sep"></li>
+		<li>
+			<a href="adresses.html">OUR LOCATIONS</a>
+		</li>
+		<li>
+			<a href="services.html">OUR SERVICES</a>
+		</li>
+		<li>
+			<a href="our-story.html">OUR STORY</a>
+		</li>
 	</ul>
+	<a href="#" class="side-menu-cta">BOOK A VISIT</a>
+
 </div>
 
-<!-- SOUS MENU ADRESSES -->
+<!-- SUBMENU ADDRESSES -->
 <div class="submenu-panel" id="submenuPRAdresses">
 	<div class="submenu-header">
 		<span class="close-submenu" data-back="true">
 			<img src="../images/close_cross.svg" alt="close">
 		</span>
 	</div>
-	<img src="../images/adresses.png" alt="Addresses" class="submenu-img">
+	<img src="../images/adresses.png" alt="Our Addresses" class="submenu-img">
 	<div class="submenu-content">
 		<a href="adresses.html">
 			<h4>OUR LOCATIONS</h4>
@@ -176,103 +142,121 @@ f.parentNode.insertBefore(j, f);
 
 <!-- SIDE CONTACT FORM -->
 <div class="side-contact-form" id="sideContactForm">
+
 	<div class="contact-form-header">
 		<span class="close-contact-form" id="closeContactForm">
 			<img src="../images/close_cross.svg" alt="close">
 		</span>
 	</div>
-		<form class="contact-form-fields">
+	<form class="contact-form-fields">
 
-		<!-- YOUR REQUEST -->
-		<h3 class="contact-section-title">YOUR REQUEST</h3>
+	<!-- YOUR REQUEST -->
+	<h3 class="contact-section-title">YOUR REQUEST</h3>
 
-		<div class="ps-field-row single">
-			<div class="ps-field ps-select">
-				<label>WHAT IS YOUR REQUEST? *</label>
-				<select name="produit" required>
-					<option value="" disabled selected>Please select</option>
-					<option value="Executive Offices">Executive Offices</option>
-					<option>Your building managed by Kwerk</option>
-					<option>Events</option>
-				</select>
-				<div class="error"></div>
-			</div>
+	<div class="ps-field-row single">
+		<div class="ps-field ps-select">
+			<label>WHAT IS YOUR REQUEST? *</label>
+			<select name="produit" required>
+				<option value="" disabled selected>Please select</option>
+				<option value="Bureaux">Executive Offices</option>
+				<option value="Expérience by Kwerk">Your building managed by Kwerk</option>
+				<option value="Événementiel">Events</option>
+			</select>
+			<div class="error"></div>
 		</div>
+	</div>
 
-		<div class="ps-field-row single">
-			<div class="ps-field">
-				<label>HOW DID YOU HEAR ABOUT KWERK? *</label>
-				<select name="origine_de_la_piste" required>
-					<option value="" disabled selected>Please select</option>
-					<option>Recommendation from my network</option>
-					<option>Internet search</option>
-					<option>Recommendation from a Kwerk member</option>
-					<option>Referred by a broker</option>
-					<option>On social media</option>
-					<option>Professional meeting at Kwerk</option>
-					<option>In the press</option>
-					<option>At a Kwerk event</option>
-					<option>During lunch at the Dana restaurant</option>
-				</select>
-				<div class="error"></div>
-			</div>
+	<div class="ps-field-row single ps-field-row--desk" style="display:none;">
+		<div class="ps-field">
+			<label>HOW MANY DESKS DO YOU NEED? *</label>
+			<input type="number" name="desk" min="1" placeholder="Number of desks">
+			<div class="error"></div>
 		</div>
+	</div>
 
-		<div class="ps-field-row single">
-			<div class="ps-field">
-				<label>TELL US ABOUT YOUR PROJECT *</label>
-				<textarea name="description_de_la_transaction" placeholder="Tell us about your project" required></textarea>
-				<div class="error"></div>
-			</div>
+	<div class="ps-field-row single ps-field-row--events" style="display:none;">
+		<div class="ps-field">
+			<label>FOR HOW MANY PEOPLE? *</label>
+			<input type="number" name="nombre_de_personnes" min="1" placeholder="Number of people">
+			<div class="error"></div>
 		</div>
+	</div>
 
-		<hr class="contact-separator">
-
-		<!-- YOUR DETAILS -->
-		<h3 class="contact-section-title">YOUR DETAILS</h3>
-
-		<div class="ps-field-row">
-			<div class="ps-field">
-				<label>YOUR FIRST NAME *</label>
-				<input type="text" name="firstname" placeholder="Your first name" required>
-				<div class="error"></div>
-			</div>
-			<div class="ps-field">
-				<label>YOUR LAST NAME *</label>
-				<input type="text" name="lastname" placeholder="Your last name" required>
-				<div class="error"></div>
-			</div>
+	<div class="ps-field-row single">
+		<div class="ps-field">
+			<label>TELL US ABOUT YOUR PROJECT *</label>
+			<textarea name="description_de_la_transaction" placeholder="Tell us about your project" required></textarea>
+			<div class="error"></div>
 		</div>
+	</div>
 
-		<div class="ps-field-row">
-			<div class="ps-field">
-				<label>YOUR PHONE NUMBER *</label>
-				<input type="text" name="phone" placeholder="+XX X XX XX XX XX" required>
-				<div class="error"></div>
-			</div>
-			<div class="ps-field">
-				<label>YOUR EMAIL ADDRESS *</label>
-				<input type="email" name="email" placeholder="name@email.com" required>
-				<div class="error"></div>
-			</div>
+	<hr class="contact-separator">
+
+	<!-- YOUR DETAILS -->
+	<h3 class="contact-section-title">YOUR DETAILS</h3>
+
+	<div class="ps-field-row">
+		<div class="ps-field">
+			<label>YOUR FIRST NAME *</label>
+			<input type="text" name="firstname" placeholder="Your first name" required>
+			<div class="error"></div>
 		</div>
-
-		<div class="ps-field-row single">
-			<div class="ps-field">
-				<label>YOUR COMPANY *</label>
-				<input type="text" name="company" placeholder="Company name" required>
-				<div class="error"></div>
-			</div>
+		<div class="ps-field">
+			<label>YOUR LAST NAME *</label>
+			<input type="text" name="lastname" placeholder="Your last name" required>
+			<div class="error"></div>
 		</div>
+	</div>
 
-		<hr class="contact-separator">
-
-		<div class="form-footer">
-			<button type="submit" class="submit-btn">SEND YOUR REQUEST</button>
-			<div class="success" id="successMessage"></div>
+	<div class="ps-field-row">
+		<div class="ps-field">
+			<label>YOUR PHONE NUMBER *</label>
+			<input type="text" name="phone" placeholder="+XX X XX XX XX XX" required>
+			<div class="error"></div>
 		</div>
+		<div class="ps-field">
+			<label>YOUR EMAIL ADDRESS *</label>
+			<input type="email" name="email" placeholder="name@email.com" required>
+			<div class="error"></div>
+		</div>
+	</div>
+
+	<div class="ps-field-row single">
+		<div class="ps-field">
+			<label>YOUR COMPANY *</label>
+			<input type="text" name="company" placeholder="Company name" required>
+			<div class="error"></div>
+		</div>
+	</div>
+
+	<div class="ps-field-row single">
+		<div class="ps-field">
+			<label>HOW DID YOU HEAR ABOUT KWERK? *</label>
+			<select name="origine_de_la_piste" required>
+				<option value="" disabled selected>Please select</option>
+				<option value="Recommandation par mon réseau">Recommendation from my network</option>
+				<option value="Recherche internet">Internet search</option>
+				<option value="Recommandation par un membre Kwerk">Recommendation from a Kwerk member</option>
+				<option value="Mis en relation par un broker">Referred by a broker</option>
+				<option value="Sur les réseaux sociaux">On social media</option>
+				<option value="Rendez-vous professionnel chez Kwerk">Professional meeting at Kwerk</option>
+				<option value="Dans la presse">In the press</option>
+				<option value="Lors d&#039;un événement chez Kwerk">At a Kwerk event</option>
+				<option value="Au cours d&#039;un déjeuner au restaurant Le Dana">During lunch at Le Dana restaurant</option>
+			</select>
+			<div class="error"></div>
+		</div>
+	</div>
+
+	<hr class="contact-separator">
+
+	<div class="form-footer">
+		<button type="submit" class="submit-btn">SEND YOUR REQUEST</button>
+		<div class="success" id="successMessage"></div>
+	</div>
 	</form>
 </div>
+<!-- /KW:menu -->
 
 	<section class="adresse-details-section">
 		<div class="adresse-details-block">
@@ -306,7 +290,7 @@ f.parentNode.insertBefore(j, f);
 
 
 
-	<section class="exceptional-section carte-intro">
+	<section class="exceptional-section carte-intro" style="padding: 40px 0 30px;">
 		<div class="exceptional-container" data-aos="fade-up">
 			<h2 class="exceptional-heading">The menu</h2>
 			<div style="width: 1px; height: 56px; background: #1a1a1a; margin: 32px auto;"></div>
@@ -367,65 +351,90 @@ f.parentNode.insertBefore(j, f);
 <section class="dana-cta-section">
 	<div class="dana-cta-bg"></div>
 	<div class="dana-cta-overlay"></div>
+	<div class="dana-cta-content">
+		<a href="#" class="dana-cta-btn contact-btn">VISIT US</a>
+	</div>
 </section>
 <div class="sticky-btn-contact">
 	<a href="contact.html" class="contact-btn-mobile-sticky">CONTACT US</a>
 </div>
 
 
+<!-- KW:footer -->
 <footer class="footer">
 	<div class="footer-container">
 		<div class="footer-left">
 			<img src="../images/logo-kwerk-noir.png" alt="Kwerk" class="footer-logo"/>
-			<a href="#" class="footer-contact-btn">CONTACT US</a>
 			<div class="footer-socials">
 				<a href="https://www.instagram.com/kwerkparis/" target="_blank" rel="noreferrer noopener" aria-label="Instagram"><img src="../images/footer_social/instagram.svg"/></a>
 				<a href="https://www.linkedin.com/company/kwerk/" target="_blank" rel="noreferrer noopener" aria-label="LinkedIn"><img src="../images/footer_social/linkedin.svg"/></a>
 			</div>
 		</div>
+
 		<div class="footer-right">
 			<nav class="footer-nav">
-				<div class="footer-nav-col" data-links="produits">
-					<div class="footer-nav-title"><a href="espaces.html">OUR OFFICES &amp; SERVICES</a></div>
+				<div class="footer-nav-col" data-links="offres">
+					<div class="footer-nav-title active">OUR OFFERS</div>
+					<ul class="footer-nav-links show">
+						<a href="espaces.html"><li>OUR OFFICES</li></a>
+						<a href="maison-kwerk.html"><li>YOUR BUILDING MANAGED BY KWERK</li></a>
+						<a href="event.html"><li>YOUR EVENTS</li></a>
+					</ul>
+				</div>
+				<div class="footer-nav-col" data-links="decouvrir">
+					<div class="footer-nav-title">DISCOVER</div>
+					<ul class="footer-nav-links">
+						<a href="adresses.html"><li>OUR LOCATIONS</li></a>
+						<a href="services.html"><li>OUR SERVICES</li></a>
+						<a href="our-story.html"><li>OUR STORY</li></a>
+						<a href="galerie.html"><li>THE GALLERY</li></a>
+					</ul>
 				</div>
 				<div class="footer-nav-col" data-links="adresses">
-					<div class="footer-nav-title active">OUR LOCATIONS</div>
-					<ul class="footer-nav-links show">
+					<div class="footer-nav-title">OUR ADDRESSES</div>
+					<ul class="footer-nav-links">
 						<a href="adresses/messine.html"><li>MESSINE</li></a>
 						<a href="adresses/saint-honore.html"><li>SAINT-HONORÉ</li></a>
 						<a href="adresses/madeleine.html"><li>MADELEINE</li></a>
 					</ul>
 				</div>
-				<div class="footer-nav-col">
-					<div class="footer-nav-title">
-						<a href="maison-kwerk.html">YOUR BUILDING, MANAGED BY KWERK</a>
-					</div>
-				</div>
-				<div class="footer-nav-col">
-					<div class="footer-nav-title">
-						<a href="event.html">YOUR EVENTS</a>
-					</div>
-				</div>
 			</nav>
 		</div>
 	</div>
 	<div class="footer-bottom">
-		<a href="cgu.html">Terms of Use</a>
-		<a href="mentions-legales.html">Legal Notice</a>
+		<span class="footer-copy">© Kwerk</span>
+		<div class="footer-legal">
+			<a href="cgu.html">Terms of Use</a>
+			<a href="mentions-legales.html">Legal Notice</a>
+		</div>
 	</div>
 </footer>
-	<script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
-	<script>
-		AOS.init({delay: 200, duration: 1500, anchorPlacement: 'center-center', once: true});
-	</script>
-	<!-- Start of HubSpot Embed Code -->
-	<script type="text/javascript" id="hs-script-loader" async defer src="https://js-eu1.hs-scripts.com/26225487.js"></script>
-	<!-- End of HubSpot Embed Code -->
-	<script src="../js/sticky.js"></script>
-	<script src="../js/contact.js"></script>
-	<script src="../js/form.js"></script>
-	<script src="../js/footer.js"></script>
-	<script src="../js/script.js"></script>
-	<script src="../js/loader.js"></script>
+<!-- /KW:footer -->
+<!-- KW:scripts -->
+<script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+<script>
+  AOS.init({
+    delay: 200,
+    duration: 1500,
+    anchorPlacement: "center-center",
+    once: true,
+  });
+</script>
+<!-- Start of HubSpot Embed Code -->
+<script
+  type="text/javascript"
+  id="hs-script-loader"
+  async
+  defer
+  src="https://js-eu1.hs-scripts.com/26225487.js"
+></script>
+<!-- End of HubSpot Embed Code -->
+<script src="../js/sticky.js?v=ea0324d9"></script>
+<script src="../js/contact.js?v=b3862227"></script>
+<script src="../js/form.js?v=fc393c9b"></script>
+<script src="../js/footer.js?v=7d45f877"></script>
+<script src="../js/script.js?v=dd2bfe7e"></script>
+<script src="../js/loader.js?v=edc20bed"></script>
+<!-- /KW:scripts -->
 </body>
 </html>

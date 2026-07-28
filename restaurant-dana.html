@@ -21,65 +21,19 @@ f.parentNode.insertBefore(j, f);
 	<!-- End Google Tag Manager -->
 
 	<!-- Import Google Fonts (Roboto) -->
-	<link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&amp;display=swap" rel="stylesheet">
-	<link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
-	<link rel="icon" type="image/svg+xml" href="favicon.ico">
-
-	<link rel="stylesheet" href="css/navbar.css">
-	<link rel="stylesheet" href="css/styles.css">
-	<link rel="stylesheet" href="css/footer.css">
-	<style>
-		/* ── CTA BANDEAU DANAOUT ── */
-		.dana-cta-section {
-			position: relative;
-			min-height: 850px;
-			display: flex;
-			align-items: center;
-			justify-content: center;
-			overflow: hidden;
-		}
-		.dana-cta-bg {
-			position: absolute;
-			inset: 0;
-			background-image: url('images/danaout.jpg');
-			background-size: cover;
-			background-position: center;
-		}
-		.dana-cta-overlay {
-			position: absolute;
-			inset: 0;
-			background: rgba(0, 0, 0, 0.42);
-		}
-		.dana-cta-content {
-			position: relative;
-			z-index: 2;
-			text-align: center;
-			padding: 80px 40px;
-		}
-		.dana-cta-btn {
-			position: relative;
-			display: inline-block;
-			border: 1px solid white;
-			padding: 8px 16px;
-			text-decoration: none;
-			color: white;
-			font-size: 12px;
-			text-transform: uppercase;
-			letter-spacing: 1.2px;
-			font-family: 'Helvetica Neue', HelveticaNeue, sans-serif;
-			font-weight: 200;
-			transition: border-color 0.2s ease, color 0.2s ease;
-		}
-		.dana-cta-btn:hover { border-color: transparent; border-bottom: 1px solid white; }
-		@media (max-width: 900px) {
-			.dana-cta-section { min-height: 60vh; }
-			.dana-cta-content { padding: 50px 24px; }
-		}
-		@media (max-width: 480px) {
-			.dana-cta-section { min-height: 50vh; }
-			.dana-cta-content { padding: 32px 16px; }
-		}
-	</style>
+<!-- KW:head -->
+<!-- Import Google Fonts (Roboto) -->
+<link
+  href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&amp;display=swap"
+  rel="stylesheet"
+/>
+<link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
+<link rel="icon" type="image/svg+xml" href="favicon.ico" />
+<link rel="stylesheet" href="css/navbar.css?v=3ee742fe" />
+<link rel="stylesheet" href="css/styles.css?v=6691d2a6" />
+<link rel="stylesheet" href="css/footer.css?v=341ce88c" />
+<!-- /KW:head -->
+	<link rel="stylesheet" href="css/restaurant-dana.css">
 </head>
 <body>
 	<div id="pageLoader" class="page-loader">
@@ -106,33 +60,36 @@ f.parentNode.insertBefore(j, f);
 	<header class="hero" style="background-color: #000;">
 		<div class="hero-video hero-slideshow" style="background-image: url('images/danaheader.jpg');"></div>
 
-	<nav class="navbar">
-		<div class="menu-icon"><img src="images/menu_burger.svg"></div>
-		<a href="index.html" class="logo-wrapper">
-			<div class="logo"><img src="images/logo-sans-bureaux.png"></div>
-		</a>
-		<div class="nav-lang-switch">
-			<a href="restaurant-dana.html">FR</a>
-			<span class="lang-sep">/</span>
-			<a href="en/restaurant-dana.html">EN</a>
-		</div>
-		<a href="#" class="contact-btn">CONTACTEZ-NOUS</a>
-	</nav>
+<!-- KW:nav alt="en/restaurant-dana.html" -->
+<nav class="navbar">
+	<div class="menu-icon"><img src="images/menu_burger.svg"></div>
+	<a href="index.html" class="logo-wrapper">
+		<div class="logo"><img src="images/logo-sans-bureaux.png"></div>
+	</a>
+	<div class="nav-lang-switch">
+		<a href="restaurant-dana.html">FR</a>
+		<span class="lang-sep">/</span>
+		<a href="en/restaurant-dana.html">EN</a>
+	</div>
+	<a href="#" class="contact-btn">CONTACTEZ-NOUS</a>
+</nav>
+<!-- /KW:nav -->
 
 		<div class="hero-text hero-text--desktop-title-center hero-text--mobile-center">
 			
 		</div>
 	</header>
 
-	<section class="exceptional-section">
+	<section class="exceptional-section" style="padding-bottom: 30px;">
 		<div class="exceptional-container" data-aos="fade-up">
 			<h2 class="exceptional-heading">La gastronomie s'invite au quotidien</h2>
 			<div style="width: 1px; height: 56px; background: #1a1a1a; margin: 32px auto;"></div>
-			<p class="exceptional-body">Le Dana, restaurant exécutif réservé aux membres Kwerk et à leurs invités.<br>Une table qui fait du déjeuner un moment d'exception.</p>
+			<p class="exceptional-body">Le Dana, restaurant exécutif réservé aux membres Kwerk et à leurs invités.</p>
 		</div>
 	</section>
 
 <!-- MENU---------------------------->
+<!-- KW:menu -->
 <div class="side-menu" id="sideMenu">
 	<div class="side-menu-header">
 		<a href="index.html"><img src="images/logo-kwerk-noir.png" alt="Logo"></a>
@@ -140,26 +97,27 @@ f.parentNode.insertBefore(j, f);
 	</div>
 	<ul class="side-menu-links">
 		<li>
-			<a href="espaces.html">LES BUREAUX</a>
+			<a href="espaces.html">NOS ESPACES</a>
 		</li>
 		<li>
 			<a href="maison-kwerk.html">EXPÉRIENCE BY KWERK</a>
 		</li>
 		<li>
-			<a href="event.html">L'ÉVÉNEMENTIEL</a>
+			<a href="event.html">VOS ÉVÉNEMENTS</a>
 		</li>
 		<li class="side-menu-sep"></li>
 		<li>
-			<a href="#">NOTRE HISTOIRE</a>
+			<a href="adresses.html">NOS ADRESSES</a>
 		</li>
 		<li>
-			<a href="nos-services.html">LES SERVICES</a>
+			<a href="nos-services.html">NOS SERVICES</a>
 		</li>
 		<li>
-			<a href="adresses.html">LES ADRESSES</a>
+			<a href="notre-histoire.html">NOTRE HISTOIRE</a>
 		</li>
 	</ul>
 	<a href="#" class="side-menu-cta">RÉSERVER UNE VISITE</a>
+
 </div>
 
 <!--SOUS MENU ADRESSES-->
@@ -184,6 +142,7 @@ f.parentNode.insertBefore(j, f);
 
 <!-- SIDE CONTACT FORM -->
 <div class="side-contact-form" id="sideContactForm">
+
 	<div class="contact-form-header">
 		<span class="close-contact-form" id="closeContactForm">
 			<img src="images/close_cross.svg" alt="close">
@@ -202,7 +161,7 @@ f.parentNode.insertBefore(j, f);
 					<option value="Bureaux">Bureaux</option>
 					<option>Expérience by Kwerk</option>
 					<option>Événementiel</option>
-				</select>
+					</select>
 				<div class="error"></div>
 			</div>
 		</div>
@@ -211,6 +170,14 @@ f.parentNode.insertBefore(j, f);
 			<div class="ps-field">
 				<label>DE COMBIEN DE POSTES AVEZ-VOUS BESOIN ? *</label>
 				<input type="number" name="desk" min="1" placeholder="Nombre de postes">
+				<div class="error"></div>
+			</div>
+		</div>
+
+		<div class="ps-field-row single ps-field-row--events" style="display:none;">
+			<div class="ps-field">
+				<label>POUR COMBIEN DE PERSONNES ? *</label>
+				<input type="number" name="nombre_de_personnes" min="1" placeholder="Nombre de personnes">
 				<div class="error"></div>
 			</div>
 		</div>
@@ -290,6 +257,7 @@ f.parentNode.insertBefore(j, f);
 		</div>
 	</form>
 </div>
+<!-- /KW:menu -->
 
 	<section class="adresse-details-section">
 		<div class="adresse-details-block">
@@ -298,7 +266,7 @@ f.parentNode.insertBefore(j, f);
 			</div>
 			<div class="adresse-details-text" data-aos="fade-left">
 				<div class="adresse-details-street">RESTAURANT PRIVÉ — 18 rue de Courcelles 75008 — Kwerk Saint-Honoré</div>
-				<h2 class="adresse-details-title" style="font-weight: 700;">LÀ OÙ CHAQUE DÉJEUNER DEVIENT UNE EXPÉRIENCE UNIQUE</h2>
+				<h2 class="adresse-details-title" style="font-weight: 700;">UNE CUISINE FRANÇAISE, OUVERTE SUR LE MONDE</h2>
 				<p class="adresse-details-desc">
 					Le Dana est le lieu où la gastronomie s'invite au quotidien. Un cadre raffiné et chaleureux, chaque déjeuner s'élève au rang d'expérience — qu'il s'agisse de recevoir des clients importants, de partager un moment d'équipe privilégié ou de s'offrir une parenthèse de qualité au cœur de la journée.<br><br>Les produits sont soigneusement sourcés auprès de producteurs locaux et les menus renouvelés chaque semaine pour suivre le rythme des saisons. Chaque carte est travaillée pour allier équilibre et plaisir sans jamais sacrifier l'un au détriment de l'autre.
 				</p>
@@ -306,24 +274,7 @@ f.parentNode.insertBefore(j, f);
 		</div>
 	</section>
 
-	<section class="adresse-details-section">
-		<div class="adresse-details-block reverse">
-			<div class="adresse-details-text" data-aos="fade-right">
-				<div class="adresse-details-street">LAÍS BORBA - CHEFFE EXÉCUTIVE DU DANA</div>
-				<h2 class="adresse-details-title" style="font-weight: 700;">UNE CUISINE FRANÇAISE, OUVERTE SUR LE MONDE</h2>
-				<p class="adresse-details-desc">
-					Sous la direction de Laís Borba, la carte puise dans les grands classiques français pour mieux les réinventer. Une touche contemporaine et voyageuse vient surprendre sans jamais dérouter, faisant de chaque assiette une invitation à la découverte autant qu'un moment de réconfort.<br><br>Avec plus de 10 ans d'expérience dans la restauration, Laís a exercé dans plusieurs restaurants gastronomiques et lieux de prestige, notamment à Hong Kong dans le groupe Meraki, avant de rejoindre Kwerk il y a quatre ans. Spécialiste de la fusion, elle conjugue maîtrise des classiques français et inspirations internationales avec exigence et créativité.
-				</p>
-			</div>
-			<div class="adresse-details-img" data-aos="fade-left">
-				<img src="images/lais.png" alt="Laís Borba, Cheffe Exécutive Le Dana"/>
-			</div>
-		</div>
-	</section>
-
-
-	
-	<section class="exceptional-section carte-intro">
+	<section class="exceptional-section carte-intro" style="padding: 40px 0 30px;">
 		<div class="exceptional-container" data-aos="fade-up">
 			<h2 class="exceptional-heading">La carte</h2>
 			<div style="width: 1px; height: 56px; background: #1a1a1a; margin: 32px auto;"></div>
@@ -384,68 +335,90 @@ f.parentNode.insertBefore(j, f);
 <section class="dana-cta-section">
 	<div class="dana-cta-bg"></div>
 	<div class="dana-cta-overlay"></div>
+	<div class="dana-cta-content">
+		<a href="#" class="dana-cta-btn contact-btn">NOUS RENDRE VISITE</a>
+	</div>
 </section>
 <div class="sticky-btn-contact">
 	<a href="contact.html" class="contact-btn-mobile-sticky">CONTACTEZ-NOUS</a>
 </div>
 
 
+<!-- KW:footer -->
 <footer class="footer">
 	<div class="footer-container">
 		<div class="footer-left">
 			<img src="images/logo-kwerk-noir.png" alt="Kwerk" class="footer-logo"/>
-			<a href="#" class="footer-contact-btn">CONTACTEZ-NOUS</a>
 			<div class="footer-socials">
 				<a href="https://www.instagram.com/kwerkparis/" target="_blank" rel="noreferrer noopener" aria-label="Instagram"><img src="images/footer_social/instagram.svg"/></a>
 				<a href="https://www.linkedin.com/company/kwerk/" target="_blank" rel="noreferrer noopener" aria-label="LinkedIn"><img src="images/footer_social/linkedin.svg"/></a>
 			</div>
 		</div>
+
 		<div class="footer-right">
 			<nav class="footer-nav">
-				<div class="footer-nav-col" data-links="produits">
-					<div class="footer-nav-title"><a href="espaces.html">NOS BUREAUX</a></div>
+				<div class="footer-nav-col" data-links="offres">
+					<div class="footer-nav-title active">NOS OFFRES</div>
+					<ul class="footer-nav-links show">
+						<a href="espaces.html"><li>NOS ESPACES</li></a>
+						<a href="maison-kwerk.html"><li>EXPÉRIENCE BY KWERK</li></a>
+						<a href="event.html"><li>VOS ÉVÉNEMENTS</li></a>
+					</ul>
 				</div>
-				<div class="footer-nav-col">
-					<div class="footer-nav-title"><a href="nos-services.html">NOS SERVICES</a></div>
+				<div class="footer-nav-col" data-links="decouvrir">
+					<div class="footer-nav-title">DÉCOUVRIR</div>
+					<ul class="footer-nav-links">
+						<a href="adresses.html"><li>LES ADRESSES</li></a>
+						<a href="nos-services.html"><li>LES SERVICES</li></a>
+						<a href="notre-histoire.html"><li>NOTRE HISTOIRE</li></a>
+						<a href="galerie.html"><li>LA GALERIE</li></a>
+					</ul>
 				</div>
 				<div class="footer-nav-col" data-links="adresses">
-					<div class="footer-nav-title active">NOS ADRESSES</div>
-					<ul class="footer-nav-links show">
+					<div class="footer-nav-title">NOS ADRESSES</div>
+					<ul class="footer-nav-links">
 						<a href="adresses/messine.html"><li>MESSINE</li></a>
 						<a href="adresses/saint-honore.html"><li>SAINT-HONORÉ</li></a>
 						<a href="adresses/madeleine.html"><li>MADELEINE</li></a>
 					</ul>
 				</div>
-				<div class="footer-nav-col">
-					<div class="footer-nav-title">
-						<a href="maison-kwerk.html">EXPÉRIENCE BY KWERK</a>
-					</div>
-				</div>
-				<div class="footer-nav-col">
-					<div class="footer-nav-title">
-						<a href="event.html">VOS ÉVÉNEMENTS</a>
-					</div>
-				</div>
 			</nav>
 		</div>
 	</div>
 	<div class="footer-bottom">
-		<a href="cgu.html">Conditions générales d'utilisation</a>
-		<a href="mentions-legales.html">Mentions légales</a>
+		<span class="footer-copy">© Kwerk</span>
+		<div class="footer-legal">
+			<a href="cgu.html">Conditions générales d'utilisation</a>
+			<a href="mentions-legales.html">Mentions légales</a>
+		</div>
 	</div>
 </footer>
-	<script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
-	<script>
-		AOS.init({delay: 200, duration: 1500, anchorPlacement: 'center-center', once: true});
-	</script>
-	<!-- Start of HubSpot Embed Code -->
-	<script type="text/javascript" id="hs-script-loader" async defer src="https://js-eu1.hs-scripts.com/26225487.js"></script>
-	<!-- End of HubSpot Embed Code -->
-	<script src="js/sticky.js"></script>
-	<script src="js/contact.js"></script>
-	<script src="js/form.js"></script>
-	<script src="js/footer.js"></script>
-	<script src="js/script.js"></script>
-	<script src="js/loader.js"></script>
+<!-- /KW:footer -->
+<!-- KW:scripts -->
+<script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+<script>
+  AOS.init({
+    delay: 200,
+    duration: 1500,
+    anchorPlacement: "center-center",
+    once: true,
+  });
+</script>
+<!-- Start of HubSpot Embed Code -->
+<script
+  type="text/javascript"
+  id="hs-script-loader"
+  async
+  defer
+  src="https://js-eu1.hs-scripts.com/26225487.js"
+></script>
+<!-- End of HubSpot Embed Code -->
+<script src="js/sticky.js?v=ea0324d9"></script>
+<script src="js/contact.js?v=b3862227"></script>
+<script src="js/form.js?v=fc393c9b"></script>
+<script src="js/footer.js?v=7d45f877"></script>
+<script src="js/script.js?v=dd2bfe7e"></script>
+<script src="js/loader.js?v=edc20bed"></script>
+<!-- /KW:scripts -->
 </body>
 </html>
