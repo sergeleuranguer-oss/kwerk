@@ -58,6 +58,8 @@ document.addEventListener("DOMContentLoaded", function () {
       let path = src.startsWith('#') ? src.slice(1) : src;
       if (path.startsWith('/')) path = path.slice(1);
       img.src = base + path;
+      img.loading = "lazy";
+      img.decoding = "async";
       img.className = "item-" + ((index % 7) + 1);
       grid.appendChild(img);
     });
