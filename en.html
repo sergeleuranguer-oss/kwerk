@@ -50,12 +50,7 @@ f.parentNode.insertBefore(j, f);
 @media (prefers-reduced-motion: reduce) {
   .hero--fullscreen .hero-bg-video { display: none; }
 }
-.hero-play-btn { position: absolute; top: 50%; left: 50%; transform: translate(-50%,-50%); z-index: 3; width: 86px; height: 86px; border-radius: 50%; border: 1.5px solid rgba(255,255,255,.85); background: rgba(0,0,0,.28); color: #fff; display: flex; align-items: center; justify-content: center; cursor: pointer; -webkit-backdrop-filter: blur(4px); backdrop-filter: blur(4px); transition: background .25s, transform .25s, opacity .4s, visibility .4s; padding: 0; }
-.hero-play-btn svg { width: 34px; height: 34px; margin-left: 4px; display: block; }
-.hero-play-btn:hover { background: rgba(0,0,0,.45); transform: translate(-50%,-50%) scale(1.06); }
-.hero-play-btn.is-hidden { opacity: 0; visibility: hidden; pointer-events: none; }
-.hero-sound-btn { position: absolute; bottom: 24px; left: 50%; transform: translateX(-50%); z-index: 3; width: 44px; height: 44px; border-radius: 50%; border: 1.5px solid rgba(255,255,255,.7); background: rgba(0,0,0,.25); color: #fff; display: flex; align-items: center; justify-content: center; cursor: pointer; -webkit-backdrop-filter: blur(4px); backdrop-filter: blur(4px); transition: opacity .35s, visibility .35s, background .2s, border-color .2s; padding: 0; opacity: 0; visibility: hidden; }
-.hero-sound-btn.is-visible { opacity: 1; visibility: visible; }
+.hero-sound-btn { position: absolute; bottom: 24px; left: 50%; transform: translateX(-50%); z-index: 3; width: 44px; height: 44px; border-radius: 50%; border: 1.5px solid rgba(255,255,255,.7); background: rgba(0,0,0,.25); color: #fff; display: flex; align-items: center; justify-content: center; cursor: pointer; -webkit-backdrop-filter: blur(4px); backdrop-filter: blur(4px); transition: background .2s, border-color .2s; padding: 0; }
 .hero-sound-btn:hover { background: rgba(0,0,0,.45); border-color: #fff; }
 .hero-sound-btn svg { width: 20px; height: 20px; display: block; }
 .hero-sound-btn .icon-on { display: none; }
@@ -86,12 +81,9 @@ f.parentNode.insertBefore(j, f);
 	<!-- End Google Tag Manager (noscript) -->
 
 	<header class="hero hero--no-overlay hero--fullscreen" style="background: #000 url('images/kwerk-hero-desktop-poster.jpg') center/cover no-repeat;">
-		<video class="hero-bg-video hero-bg-video--desktop" loop playsinline preload="auto" poster="images/kwerk-hero-desktop-poster.jpg"></video>
-		<video class="hero-bg-video hero-bg-video--mobile" loop playsinline preload="auto" poster="images/kwerk-hero-mobile-poster.jpg"></video>
+		<video class="hero-bg-video hero-bg-video--desktop" loop playsinline autoplay muted preload="auto" poster="images/kwerk-hero-desktop-poster.jpg"></video>
+		<video class="hero-bg-video hero-bg-video--mobile" loop playsinline autoplay muted preload="auto" poster="images/kwerk-hero-mobile-poster.jpg"></video>
 		<div class="hero-video-overlay"></div>
-		<button class="hero-play-btn" type="button" aria-label="Play video">
-			<svg viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg>
-		</button>
 		<button class="hero-sound-btn" type="button" aria-label="Enable sound">
 			<svg class="icon-off" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M11 5 6 9H2v6h4l5 4V5z"/><line x1="23" y1="9" x2="17" y2="15"/><line x1="17" y1="9" x2="23" y2="15"/></svg>
 			<svg class="icon-on" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M11 5 6 9H2v6h4l5 4V5z"/><path d="M15.5 8.5a5 5 0 0 1 0 7"/><path d="M18.5 5.5a9 9 0 0 1 0 13"/></svg>
@@ -104,20 +96,12 @@ f.parentNode.insertBefore(j, f);
 			var keep = document.querySelector(keepSel);
 			var other = document.querySelector(mobile ? '.hero-bg-video--desktop' : '.hero-bg-video--mobile');
 			if (other) other.remove();
-			var playBtn = document.querySelector('.hero-play-btn');
 			var soundBtn = document.querySelector('.hero-sound-btn');
 			function setSound(on){ if (!soundBtn) return; soundBtn.classList.toggle('is-on', on); soundBtn.setAttribute('aria-label', on ? 'Mute' : 'Enable sound'); }
 			if (!keep) return;
+			keep.muted = true;
 			keep.src = src; keep.load();
-			if (playBtn) {
-				playBtn.addEventListener('click', function(){
-					keep.muted = false; keep.volume = 1;
-					try { keep.currentTime = 0; } catch (e) {}
-					var p = keep.play(); if (p && p.catch) p.catch(function(){});
-					playBtn.classList.add('is-hidden');
-					if (soundBtn) { soundBtn.classList.add('is-visible'); setSound(true); }
-				});
-			}
+			var p = keep.play(); if (p && p.catch) p.catch(function(){});
 			if (soundBtn) {
 				soundBtn.addEventListener('click', function(e){
 					e.stopPropagation();
