@@ -61,6 +61,25 @@ utilisée a été supprimée comme ça le 28/07. Tester **toutes les écritures*
 `%XX`, espaces encodés), et faire porter le contrôle d'intégrité sur `src`/`href`, **`url()` du CSS**,
 **`data-hero-slides`** et **le JSON de la galerie** (dont les chemins commencent par `/` ou `#`).
 
+Le contrôle d'intégrité a l'angle mort inverse : il **ne saute pas les commentaires HTML**. Les 8
+`<img>` du carrousel de `index.html` (bloc commenté, lignes ~413-459) remontent en « cible
+manquante » alors qu'aucun navigateur ne les charge. Une alerte peut donc désigner du **code mort** :
+regarder le contexte avant d'agir.
+
+### ⛔ Ne PAS dédupliquer `images/galerie/` ↔ `images/content/`
+Les copies sont **volontaires**. Sur les 46 images de galerie, **25 ont un jumeau** ailleurs dans
+`images/` et **21 sont propres à la galerie** : la galerie reprend les images de contenu quand elles
+existent, et ajoute ses propres prises. Aucun des deux exemplaires n'est orphelin — **les deux sont
+réellement référencés**, par des pages différentes. Fusionner les fichiers pour gagner ~7 Mo casserait
+ce dispositif.
+
+Deux pièges si on cherche quand même à mesurer la duplication :
+- un **hash d'octets** ne voit que les copies exactes. `galerie/madeleine/LobbyMad3.png` et
+  `content/Lobby_Mad_3.jpg` sont la **même photo** à deux encodages → invisibles au SHA1. Il faut une
+  comparaison **perceptuelle** (vignette 32×32 normalisée) pour les apparier.
+- le jumeau n'est pas forcément le fichier le plus lourd : ici le `content/` était **plus grand**
+  (1369×903 contre 1000×660) et **5× plus léger**.
+
 ## ⚠️ Règle d'or : header / nav / menu / footer / scripts sont MUTUALISÉS
 Ces blocs ne sont **pas** à éditer dans les pages : ils sont **générés** à partir de `partials/`.
 Dans chaque page ils sont entourés de marqueurs :
