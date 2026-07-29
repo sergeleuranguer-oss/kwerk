@@ -76,6 +76,26 @@ def stamp_versions(text):
     return VER_RE.sub(sub, text)
 
 
+# Même principe, pour les css/js référencés EN DUR dans une page, hors zones KW
+# (cas réel : js/galerie.js dans galerie.html). Différence : le corps d'un partial
+# est relu à chaque build donc son marqueur ?v=auto survit ; une page, elle, est
+# réécrite en place, donc le marqueur disparaît au premier build. On re-tamponne
+# donc quelle que soit la valeur trouvée, ce qui rend l'opération idempotente
+# (repasser sur une zone KW déjà tamponnée recalcule le même hash = no-op).
+# Ancré sur le guillemet ouvrant : une URL externe qui contiendrait /js/x.js?v=1
+# n'est jamais capturée.
+PAGE_VER_RE = re.compile(
+    r"""(?<=["'])((?:\.\./)*(?:css|js)/[^"'?\s]+?\.(?:css|js))\?v=[^"'\s]*"""
+)
+
+
+def stamp_page_versions(text):
+    def sub(m):
+        ver = asset_ver(re.sub(r"^(?:\.\./)+", "", m.group(1)))
+        return f"{m.group(1)}?v={ver}" if ver else m.group(0)
+    return PAGE_VER_RE.sub(sub, text)
+
+
 def page_lang(rel):
     return "en" if rel == "en.html" or rel.startswith("en/") else "fr"
 
@@ -188,7 +208,7 @@ def inject(rel):
         )
         return f"<!-- KW:{name}{raw_attrs}-->\n{body}\n<!-- /KW:{name} -->"
 
-    new = MARKER_RE.sub(repl, html)
+    new = stamp_page_versions(MARKER_RE.sub(repl, html))
     missing = [k for k in REQUIRED if k not in seen]
     if new != html:
         with open(path, "w", encoding="utf-8") as f:

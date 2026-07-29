@@ -25,8 +25,15 @@ En prod le fichier garde son URL → les navigateurs servent l'ancienne version 
   les autres gardent leur hash donc restent en cache. Profondeur `/en/` gérée (`../css/…`).
 - **Donc** : pour casser le cache, il suffit de **modifier le CSS/JS** — le `?v=` se met à jour seul.
   Ne pas éditer la valeur après `?v=` à la main (elle est écrasée), et ne pas retirer le `?v=auto`.
-- **Hors périmètre** : `js/galerie.js?v=6` est référencé **dans les pages galerie** (hors partials,
-  hors zones `KW:`) → à bumper **à la main** dans ces pages si on modifie `galerie.js`.
+- **Plus aucune exception** (depuis le 29/07/2026) : un css/js référencé **en dur dans une page**,
+  hors partials et hors zones `KW:`, est tamponné lui aussi. C'était le cas de `js/galerie.js` dans
+  `galerie.html` / `en/galerie.html`, seul fichier à bumper à la main — il ne l'est plus.
+  Deux tampons cohabitent dans `inject_partials.py` : `stamp_versions` (marqueur `{{ASSET}}…?v=auto`
+  dans un partial) et `stamp_page_versions` (page entière, après injection). Le second re-tamponne
+  **quelle que soit la valeur trouvée** : une page est réécrite en place, donc son marqueur `?v=auto`
+  ne survit pas au premier build — d'où la nécessité de ne pas dépendre du marqueur. C'est idempotent
+  (repasser sur une zone `KW:` déjà tamponnée recalcule le même hash).
+  → Pour un nouveau css/js appelé depuis une page : l'écrire `?v=auto`, le build fait le reste.
 
 ## Images : règles établies le 28/07/2026 (passe d'allègement)
 Le dossier est passé de **266 à 91 Mo**. Pour ne pas le regonfler :
