@@ -38,7 +38,9 @@ f.parentNode.insertBefore(j, f);
 <link rel="stylesheet" href="css/footer.css?v=48e2bbcd" />
 <!-- /KW:head -->
 <style>
-.hero.hero--fullscreen { height: 100vh; height: 100dvh; min-height: 560px; }
+/* lvh et pas dvh : dvh se redimensionne quand la barre d'URL se rétracte, le
+   hero s'étire pendant le scroll et tout le contenu se décale. lvh est fixe. */
+.hero.hero--fullscreen { height: 100vh; height: 100lvh; min-height: 560px; }
 .hero--fullscreen .hero-bg-video { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; z-index: 0; }
 .hero--fullscreen .hero-bg-video--mobile { display: none; }
 .hero--fullscreen .hero-video-overlay { position: absolute; inset: 0; z-index: 1; pointer-events: none; background: linear-gradient(to bottom, rgba(0,0,0,.30) 0%, rgba(0,0,0,0) 24%, rgba(0,0,0,0) 68%, rgba(0,0,0,.32) 100%); }
@@ -56,6 +58,11 @@ f.parentNode.insertBefore(j, f);
 .hero-sound-btn .icon-on { display: none; }
 .hero-sound-btn.is-on .icon-off { display: none; }
 .hero-sound-btn.is-on .icon-on { display: block; }
+/* Le hero (100lvh) déborde sous la barre d'URL à l'arrivée : on remonte le
+   bouton de la hauteur de cette barre. Vaut 0 sur desktop, donc sans effet. */
+@supports (height: 100svh) {
+  .hero--fullscreen .hero-sound-btn { bottom: calc(24px + (100lvh - 100svh)); }
+}
 </style>
 </head>
 <body>
