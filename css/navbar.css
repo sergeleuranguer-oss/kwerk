@@ -886,10 +886,14 @@ p.subtitle {
     z-index: 1002;
     background: rgba(0, 0, 0, 0.92); /* noir fade */
     box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.24);
-    transition:
-      background 0.3s ease,
-      top 0.5s ease;
-    animation: fadeInNavbar 0.7s ease-out;
+    /* Même padding que .navbar au repos : sans ça on hérite du 50px 40px de la
+       règle globale, la barre passe de 60 à 100px et le logo saute au scroll. */
+    padding: 0 40px;
+    /* Pas de transition sur top : la position bascule de absolute à fixed au
+       même instant, le référentiel change et le glissement part de travers.
+       Seul le fond s'anime, via l'opacité de fadeInNavbar. */
+    transition: background 0.3s ease;
+    animation: fadeInNavbar 0.35s ease-out;
   }
 
   /* Pour éviter que le contenu soit caché sous la navbar sticky */
