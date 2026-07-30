@@ -179,10 +179,8 @@ grep -rn "club\.html" --include=*.html --include=*.js --include=*.css . | grep -
 L'exclusion est indispensable : le sélecteur de langue d'une page pointe sur elle-même et fausse le
 compte.
 
-⚠️ **Une page orpheline peut exister en prod.** `www.kwerk.fr/club.html` répondait `200`. La
-supprimer du dépôt crée un 404 sur une URL publique → prévoir une **redirection côté dev** (liste
-dans `~/inbox/kwerk-redirections-galerie.xlsx`). Il n'y a **ni `sitemap.xml` ni `robots.txt` dans le
-dépôt** ; celui de la prod n'autorise ni n'interdit quoi que ce soit page par page.
+Il n'y a **ni `sitemap.xml` ni `robots.txt` dans le dépôt** ; celui de la prod n'autorise ni
+n'interdit quoi que ce soit page par page.
 
 ---
 
