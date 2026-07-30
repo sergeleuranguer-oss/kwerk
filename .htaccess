@@ -2,6 +2,12 @@ ErrorDocument 404 /index.html
 ErrorDocument 403 /index.html
 
 RewriteEngine On
+
+# Canonicalisation : forcer https + www → https://www.kwerk.fr
+RewriteCond %{HTTPS} off [OR]
+RewriteCond %{HTTP_HOST} !^www\. [NC]
+RewriteRule ^ https://www.kwerk.fr%{REQUEST_URI} [R=301,L]
+
 RewriteRule ^\.git(/|$) - [F,L]
 RewriteRule ^espaces/haussmann/?$ /adresses/haussmann.html [R=301,L]
 RewriteRule ^espaces/messine/?$ /adresses/messine.html [R=301,L]
@@ -22,4 +28,39 @@ RewriteRule ^event/?$ /event.html [R=301,L]
 RewriteRule ^en/services/?$ /en/espaces.html [R=301,L]
 RewriteRule ^en/espaces/?$ /en/espaces.html [R=301,L]
 RewriteRule ^en/event/?$ /en/event.html [R=301,L]
-RewriteRule ^en/galerie/?$ /en/galerie.html [R=301,L]
+RewriteRule ^en/galerie/?$ /en/galerie.html? [R=301,L]
+
+# --- Anciennes URLs (site historique) → nouvelles pages ---------------------
+
+# Home / pages disparues → accueil
+RewriteRule ^fr/?$ / [R=301,L]
+RewriteRule ^fr/home/?$ / [R=301,L]
+RewriteRule ^contact/?$ / [R=301,L]
+RewriteRule ^landing-pages/kwerk-marque/?$ / [R=301,L]
+RewriteRule ^articles/pourquoi-notre-cerveau-a-besoin-de-repos-meme-au-travail/?$ / [R=301,L]
+
+# Bienfaisance & Haussmann → liste des adresses (pas de page dédiée conservée)
+RewriteRule ^bienfaisance/?$ /adresses.html [R=301,L]
+RewriteRule ^espaces/bienfaisance/?$ /adresses.html [R=301,L]
+RewriteRule ^en/espaces/bienfaisance/?$ /en/adresses.html [R=301,L]
+RewriteRule ^haussmann(/.*)?$ /adresses.html [R=301,L]
+RewriteRule ^fr/haussmann(/.*)?$ /adresses.html [R=301,L]
+RewriteRule ^fr/lieux/haussmann/?$ /adresses.html [R=301,L]
+RewriteRule ^fr/espaces/haussmann/?$ /adresses.html [R=301,L]
+RewriteRule ^en/places/haussmann/?$ /en/adresses.html [R=301,L]
+
+# Tour First → liste des adresses
+RewriteRule ^tour-first/?$ /adresses.html [R=301,L]
+RewriteRule ^fr/tour-first/?$ /adresses.html [R=301,L]
+
+# Bien-être → espaces
+RewriteRule ^fr/bien-etre/?$ /espaces.html [R=301,L]
+
+# Anciennes galeries filtrées → galerie unique (on purge le ?filter=)
+RewriteRule ^galerie00dc\.html$ /galerie.html [R=301,L]
+RewriteRule ^galeriec5cd\.html$ /galerie.html [R=301,L]
+RewriteRule ^galeried757\.html$ /galerie.html [R=301,L]
+RewriteRule ^en/galerie00dc\.html$ /en/galerie.html [R=301,L]
+RewriteRule ^en/galeriec5cd\.html$ /en/galerie.html [R=301,L]
+RewriteRule ^en/galeried757\.html$ /en/galerie.html [R=301,L]
+RewriteRule ^galerie/?$ /galerie.html? [R=301,L]
