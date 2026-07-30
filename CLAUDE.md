@@ -34,6 +34,13 @@ En prod le fichier garde son URL → les navigateurs servent l'ancienne version 
   ne survit pas au premier build — d'où la nécessité de ne pas dépendre du marqueur. C'est idempotent
   (repasser sur une zone `KW:` déjà tamponnée recalcule le même hash).
   → Pour un nouveau css/js appelé depuis une page : l'écrire `?v=auto`, le build fait le reste.
+- ⚠️ **Le seul trou restant** (constaté le 30/07/2026) : un css/js écrit **sans aucun `?v=`** n'est
+  jamais tamponné. `PAGE_VER_RE` exige un `?v=` déjà présent pour le recalculer — pas de `?v=`, pas
+  de match, silence total. **16 pages** sont dans ce cas (`espaces.css`, `event.css`, `legal.css`,
+  `club.css`, `maison-kwerk.css`, `notre-histoire.css`, `restaurant-dana.css`, `en-event.css`,
+  `en-maison-kwerk.css`). Tant qu'on ne les modifie pas c'est sans effet ; le jour où on en touche
+  un, les visiteurs récurrents gardent l'ancienne version. Parade = y écrire `?v=auto` une fois.
+  Contrôle : chercher `href="css/…\.css"` sans `?v=` dans les pages.
 
 ## Images : règles établies le 28/07/2026 (passe d'allègement)
 Le dossier est passé de **266 à 91 Mo**. Pour ne pas le regonfler :
@@ -80,6 +87,66 @@ Deux pièges si on cherche quand même à mesurer la duplication :
 - le jumeau n'est pas forcément le fichier le plus lourd : ici le `content/` était **plus grand**
   (1369×903 contre 1000×660) et **5× plus léger**.
 
+## Vidéos : réencoder un master pour le web (30/07/2026)
+Le hero de la home a deux fichiers, `kwerk-hero-desktop.mp4` (16:9) et `kwerk-hero-mobile-v6.mp4`
+(9:16), choisis au chargement par le script inliné dans `index.html` / `en.html`.
+- **Baisser la résolution ne suffit pas à alléger, c'est le CRF qui travaille.** Sur ce montage
+  (ciel en dégradé, treillis de la tour Eiffel, panoramiques lents), 720×1280 en CRF 24 pesait
+  **plus lourd** que le fichier 1080×1920 déjà en ligne. Le bon réglage était 720×1280 **CRF 28** :
+  8,6 → 4,3 Mo. Toujours mesurer, jamais présumer qu'un downscale allège.
+- Recette : `-c:v libx264 -preset slow -crf 28 -profile:v high -pix_fmt yuv420p -g 50
+  -movflags +faststart -c:a aac -b:a 96k`. Vérifier ensuite que `moov` précède `mdat`
+  (sinon la lecture attend le fichier entier) et **garder la piste audio** : le bouton son en dépend.
+- **Le poster se tire de la frame 0 du fichier final**, pas du master : le master est grainé, son
+  grain fait doubler le JPEG (283 Ko contre 72 Ko) et introduit un écart visible au démarrage.
+  Le mettre à la résolution de la vidéo.
+- **Le cache-busting ne couvre pas les `.mp4`** (uniquement css/js). À contenu changé et nom
+  identique, les visiteurs récurrents gardent l'ancien fichier → **changer le nom** (`-v6`) et
+  mettre à jour les deux pages.
+- Comparer deux encodages avec `ffmpeg … -filter_complex ssim` : un SSIM moyen ~0,99 et **sans
+  décrochage local** prouve que c'est le même montage. Un logo incrusté ou un plan différent ferait
+  tomber les frames concernées à 0,6-0,8. Attention, le SSIM **pénalise le débruitage** : un 720p
+  qui lisse le grain du master perd des points tout en étant plus propre à l'œil.
+
+## CSS : pièges de cascade et de viewport (30/07/2026)
+Trois bugs de la même famille en une session : **le symptôme visible ne désignait pas la cause**.
+Réflexe général — quand une propriété « ne prend pas », chercher `!important` dans les CSS mutualisés
+**avant** de suspecter le contenu, l'asset ou le JS.
+
+- **Une règle générique en `!important` bat une déclaration de page plus spécifique.**
+  `navbar.css` imposait `.hero { height: 45vh !important }` sous 900 px. Le hero plein écran de la
+  home, déclaré `100svh` dans le `<style>` de la page, était donc écrasé : la vidéo verticale
+  n'occupait que la moitié de l'écran et `object-fit: cover` la rognait haut/bas — **le fichier vidéo
+  était intact**, on a d'abord cru à un mauvais encodage. Parade : scoper la règle générique en
+  `.hero:not(.hero--fullscreen)` plutôt que surenchérir en `!important`.
+- **Un bloc mobile qui redéfinit une classe n'hérite pas de ce qu'il omet — il hérite du desktop.**
+  `.sticky-navbar` était redéclarée dans le bloc `max-width:900px` sans `padding` : elle gardait le
+  `padding: 50px 40px` de la règle globale. Avec `box-sizing: border-box` et `height: 60px`, un
+  padding vertical de 100 px l'emporte → la barre passait de **60 à 100 px** au scroll, d'où un saut
+  du logo. Vérifier que l'état sticky a la **même géométrie** que l'état repos.
+- **`dvh` ≠ `lvh` pour un hero plein écran.** `100dvh` se redimensionne en continu quand la barre
+  d'URL mobile se rétracte : le hero s'étire pendant le scroll et décale tout le contenu.
+  → **Utiliser `100lvh`**, valeur fixe pour un appareil donné. Le hero déborde un peu sous la barre
+  à l'arrivée, sans conséquence en `object-fit: cover`. Conséquence à traiter : un élément ancré en
+  `bottom:` passe sous la barre → le remonter de `calc(100lvh - 100svh)`, qui vaut **0 sur desktop**.
+  (`100svh` donne l'effet inverse : un trou en bas dès que la barre disparaît.)
+- **Un `style="…"` inline ne se surcharge pas en CSS** sans `!important`. Le fond de repli du hero
+  était inline sur le `<header>` et servait le poster desktop 16:9 même sur mobile. Plutôt qu'un
+  `!important`, sortir la déclaration vers le `<style>` de la page — la variante mobile devient une
+  règle normale. ⚠️ Dans un `<style>` de page, les `url()` sont relatives à **la page**, pas au CSS.
+- **Transitionner `top` pendant un passage `absolute` → `fixed` ne marche pas** : le référentiel
+  change au même instant, l'animation part de travers. N'animer que ce qui reste dans le même
+  référentiel (ici le `background`).
+
+## Pages orphelines : vérifier les liens entrants, pas l'existence
+`club.html` a vécu des mois sans qu'aucun lien du site n'y mène (ni menu, ni footer, ni page), tout
+en restant indexable — supprimée le 30/07/2026. Pour détecter ce cas : `grep -rn "page\.html"` en
+excluant la page elle-même (son propre sélecteur de langue s'auto-référence et fausse le compte).
+⚠️ Une page orpheline **peut exister en prod** (`www.kwerk.fr/club.html` répondait 200) : la
+supprimer crée un 404 sur une URL publique → prévoir une **redirection côté dev**
+(liste dans `~/inbox/kwerk-redirections-galerie.xlsx`). Il n'y a **ni `sitemap.xml` ni `robots.txt`
+dans le dépôt** ; celui de la prod n'autorise/interdit rien par page.
+
 ## ⚠️ Règle d'or : header / nav / menu / footer / scripts sont MUTUALISÉS
 Ces blocs ne sont **pas** à éditer dans les pages : ils sont **générés** à partir de `partials/`.
 Dans chaque page ils sont entourés de marqueurs :
@@ -117,8 +184,9 @@ Les liens dans les partials utilisent des **placeholders** résolus par page (ne
   **Déduit de l'`alt="…"` du marqueur `KW:nav`** : c'est la seule source d'appairage, il n'y a pas
   de seconde table. Le bloc est **identique sur les deux pages** de la paire — c'est la condition
   pour que Google le prenne en compte. Il n'est **pas** émis si l'appairage n'est pas réciproque
-  ou si la cible est un stub : `club.html` (sans version EN) et `en/contact.html` (dont le pendant
-  FR est une redirection en `noindex`) n'ont donc volontairement pas de hreflang.
+  ou si la cible est un stub : `en/contact.html` (dont le pendant FR est une redirection en
+  `noindex`) n'a donc volontairement pas de hreflang. Au 30/07/2026 : **15 paires réciproques,
+  blocs identiques des deux côtés** — c'est l'état de référence à retrouver après un ajout de page.
   → Conséquence : **un `alt="…"` faux casse le hreflang silencieusement**. Le vérifier en ajoutant
   une page.
 
