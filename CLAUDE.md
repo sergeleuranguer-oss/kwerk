@@ -47,7 +47,7 @@ Ces blocs sont **générés** à partir de `partials/` et délimités dans chaqu
 - **Toute modif à l'intérieur d'une zone `KW:` sera ÉCRASÉE** au prochain push (la CI régénère).
 - Le **contenu propre à une page** (sections, textes, images) se modifie normalement, **hors** zones.
 
-### Où se trouvent les partials
+## Les partials : où ils sont, comment ils marchent
 
 ```
 partials/
@@ -79,7 +79,7 @@ paire pour que Google le prenne en compte, et n'est pas émis si l'appairage n'e
 → **Un `alt="…"` faux casse le hreflang silencieusement.** État de référence au 30/07/2026 :
 **15 paires réciproques**, blocs identiques.
 
-### Marqueurs : variante et langue
+## Marqueurs : variante et langue
 
 - Page « galerie » (nav noire) : `<!-- KW:head variant=galerie -->` et
   `<!-- KW:nav variant=galerie alt="…" -->`.
@@ -87,13 +87,13 @@ paire pour que Google le prenne en compte, et n'est pas émis si l'appairage n'e
   C'est le **seul** réglage par page ; le reste vient du partial.
 - La langue est déduite du chemin (`en/…` = EN).
 
-### Régénération
+## Régénération
 
 - **Automatique** : à chaque push sur `preprod`, GitHub Actions lance `build/inject_partials.py`
   (workflow `.github/workflows/gtm-check.yml`) et recommite les pages régénérées.
 - **Manuel**, avant de committer : `python3 build/inject_partials.py`.
 
-### Ajouter une nouvelle page
+## Ajouter une nouvelle page
 
 1. **Copier une page existante du même type** (standard ou galerie) pour garder les marqueurs `KW:`.
 2. Mettre à jour le contenu (hors zones `KW:`), le `<title>` et la `<meta description>`.
