@@ -9,11 +9,13 @@ document.addEventListener("DOMContentLoaded", function () {
     //console.log("scrollY:", window.scrollY);
     //console.log("scrolled:", scrolled);
 
-    if (scrolled) {
-      navbar.classList.add("sticky-navbar");
-    } else {
-      navbar.classList.remove("sticky-navbar");
+    if (navbar) {
+      navbar.classList.toggle("sticky-navbar", scrolled);
     }
+
+    // Même seuil pour le CTA sticky mobile : sur les pages à hero plein écran,
+    // il reste masqué à l'arrivée (cf. .sticky-btn-contact dans footer.css).
+    document.body.classList.toggle("is-scrolled", scrolled);
   }
 
   // 👇 Ajout du listener principal

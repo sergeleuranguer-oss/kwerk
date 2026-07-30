@@ -163,6 +163,30 @@ a {
     background-color: #fff;
     z-index: 999;
   }
+
+  /* Pages à hero plein écran (home FR/EN) : le CTA sticky ne s'affiche qu'au
+     premier scroll, pour ne pas rogner la vidéo ni masquer le bouton son.
+     En :has() plutôt qu'en JS pour éviter tout clignotement au chargement ;
+     un navigateur sans :has() ignore la règle et garde le comportement actuel. */
+  body:has(.hero--fullscreen) .sticky-btn-contact {
+    transform: translateY(100%);
+    opacity: 0;
+    pointer-events: none;
+    transition:
+      transform 0.35s ease,
+      opacity 0.35s ease;
+  }
+  body:has(.hero--fullscreen).is-scrolled .sticky-btn-contact {
+    transform: none;
+    opacity: 1;
+    pointer-events: auto;
+  }
+  @media (prefers-reduced-motion: reduce) {
+    body:has(.hero--fullscreen) .sticky-btn-contact {
+      transition: none;
+    }
+  }
+
   .footer {
     margin-bottom: 10vh;
   }
