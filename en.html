@@ -82,7 +82,7 @@ f.parentNode.insertBefore(j, f);
 
 	<header class="hero hero--no-overlay hero--fullscreen" style="background: #000 url('images/kwerk-hero-desktop-poster.jpg') center/cover no-repeat;">
 		<video class="hero-bg-video hero-bg-video--desktop" loop playsinline autoplay muted preload="auto" poster="images/kwerk-hero-desktop-poster.jpg"></video>
-		<video class="hero-bg-video hero-bg-video--mobile" loop playsinline autoplay muted preload="auto" poster="images/kwerk-hero-mobile-poster.jpg"></video>
+		<video class="hero-bg-video hero-bg-video--mobile" loop playsinline autoplay muted preload="auto" poster="images/kwerk-hero-mobile-v6-poster.jpg"></video>
 		<div class="hero-video-overlay"></div>
 		<button class="hero-sound-btn" type="button" aria-label="Enable sound">
 			<svg class="icon-off" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M11 5 6 9H2v6h4l5 4V5z"/><line x1="23" y1="9" x2="17" y2="15"/><line x1="17" y1="9" x2="23" y2="15"/></svg>
@@ -92,7 +92,7 @@ f.parentNode.insertBefore(j, f);
 		(function(){
 			var mobile = window.matchMedia('(max-width:767px)').matches;
 			var keepSel = mobile ? '.hero-bg-video--mobile' : '.hero-bg-video--desktop';
-			var src = mobile ? 'images/kwerk-hero-mobile.mp4' : 'images/kwerk-hero-desktop.mp4';
+			var src = mobile ? 'images/kwerk-hero-mobile-v6.mp4' : 'images/kwerk-hero-desktop.mp4';
 			var keep = document.querySelector(keepSel);
 			var other = document.querySelector(mobile ? '.hero-bg-video--desktop' : '.hero-bg-video--mobile');
 			if (other) other.remove();
