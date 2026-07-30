@@ -554,7 +554,8 @@ p.subtitle {
   color: #ccc;
 }
 @media (max-width: 900px) {
-  .hero {
+  /* Le hero plein écran (home FR/EN) garde sa hauteur : voir le <style> de la page. */
+  .hero:not(.hero--fullscreen) {
     height: 45vh !important;
     min-height: 260px !important;
   }
@@ -892,7 +893,7 @@ p.subtitle {
   }
 
   /* Pour éviter que le contenu soit caché sous la navbar sticky */
-  .hero {
+  .hero:not(.hero--fullscreen) {
     padding-top: 60px;
   }
 }
