@@ -43,6 +43,10 @@ f.parentNode.insertBefore(j, f);
 /* lvh et pas dvh : dvh se redimensionne quand la barre d'URL se rétracte, le
    hero s'étire pendant le scroll et tout le contenu se décale. lvh est fixe. */
 .hero.hero--fullscreen { height: 100vh; height: 100lvh; min-height: 560px; }
+/* Fond de repli du hero : visible avant le chargement de la vidéo et quand
+   celle-ci est masquée (prefers-reduced-motion). En CSS et non en style inline,
+   pour que la variante mobile ci-dessous puisse le surcharger sans !important. */
+.hero--fullscreen { background: #000 url('images/kwerk-hero-desktop-poster.jpg') center/cover no-repeat; }
 .hero--fullscreen .hero-bg-video { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; z-index: 0; }
 .hero--fullscreen .hero-bg-video--mobile { display: none; }
 .hero--fullscreen .hero-video-overlay { position: absolute; inset: 0; z-index: 1; pointer-events: none; background: linear-gradient(to bottom, rgba(0,0,0,.30) 0%, rgba(0,0,0,0) 24%, rgba(0,0,0,0) 68%, rgba(0,0,0,.32) 100%); }
@@ -50,6 +54,8 @@ f.parentNode.insertBefore(j, f);
 @media (max-width: 767px) {
   .hero--fullscreen .hero-bg-video--desktop { display: none; }
   .hero--fullscreen .hero-bg-video--mobile { display: block; }
+  /* Sinon le repli servirait le poster desktop 16:9 sur un écran vertical. */
+  .hero--fullscreen { background-image: url('images/kwerk-hero-mobile-v6-poster.jpg'); }
 }
 @media (prefers-reduced-motion: reduce) {
   .hero--fullscreen .hero-bg-video { display: none; }
@@ -89,7 +95,7 @@ f.parentNode.insertBefore(j, f);
 		</noscript>
 		<!-- End Google Tag Manager (noscript) -->
 
-					<header class="hero hero--no-overlay hero--fullscreen" style="background: #000 url('images/kwerk-hero-desktop-poster.jpg') center/cover no-repeat;">
+					<header class="hero hero--no-overlay hero--fullscreen">
 			<video class="hero-bg-video hero-bg-video--desktop" loop playsinline autoplay muted preload="auto" poster="images/kwerk-hero-desktop-poster.jpg"></video>
 			<video class="hero-bg-video hero-bg-video--mobile" loop playsinline autoplay muted preload="auto" poster="images/kwerk-hero-mobile-v6-poster.jpg"></video>
 			<div class="hero-video-overlay"></div>
