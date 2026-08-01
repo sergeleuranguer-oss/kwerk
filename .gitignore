@@ -1,9 +1,9 @@
 images/KWERK VDEF 16.9.mp4
 
-# Scratch de réflexion Apex (non versionné par défaut)
-.apex/*
 # ...sauf le plan d'architecture, versionné comme documentation (ADR)
-!.apex/implementation-plan.md
 
 # Originaux vidéo non compressés (trop lourds)
 images/KWERK_MAIN_*
+
+# Apex = brouillon de session, jetable. Ce qui survit part dans DECISIONS.md / README.md / ref/.
+.apex/
