@@ -107,9 +107,28 @@ prune_type "kwerk-prod-content"
 # ---------------- 3) MANIFEST (scanné par conso.lab39.dev) ----------------
 # >>> L'étape qui manquait quand le backup était fait à la main : conso à jour à tous les coups.
 python3 /data/backups/_lib/manifest.py write --project kwerk --dest "$DEST" \
-  --frequence "ponctuel (manuel)" --retention "manuelle (prune-2)" \
+  --frequence "quotidien" --retention "prune-2" \
   --offsite "originaux images → My Cloud Home (.34) ; code/contenu = GitHub" \
   --note "repo-mirror (preprod+gh-pages+historique) + contenu preprod ($SHA) + contenu PROD gh-pages ($SHA_PROD, version stable). Backup via backup.sh." \
   >/dev/null || echo "   ⚠ manifest non mis à jour" >&2
 
 echo "✅ Terminé — total kwerk suivi : $(ls -1 "$DEST"/kwerk-*-*.tar.gz | wc -l) archives."
+
+# ---------------- 4) DEAD-MAN'S SWITCH ----------------
+# Le détecteur vit chez Cloudflare EXPRÈS : un cron absent n'échoue pas, il ne se passe RIEN — et un
+# garde-fou logé dans le crontab surveillé partirait avec lui. Deux règles : on ne ping QUE si le
+# backup est sain (sinon on se tait, et le silence alerte), et le ping ne doit JAMAIS faire échouer
+# le backup (`|| true`, timeout court). Seuil côté worker : 36 h.
+ping_worker() {
+  local sec code
+  sec=$(grep -m1 '^export SYNC_SECRET=' ~/.bashrc 2>/dev/null | cut -d= -f2- | tr -d "\"'") || true
+  if [ -z "$sec" ]; then echo "   ⚠ ping worker ignoré (SYNC_SECRET absent de ~/.bashrc)"; return 0; fi
+  code=$(curl -s -o /dev/null -w '%{http_code}' --max-time 20 \
+    -X POST 'https://mews-proxy.serge-leuranguer.workers.dev/backup-ping' \
+    -H "x-sync-secret: $sec" -H 'Content-Type: application/json' \
+    -d "{\"project\":\"kwerk\",\"snapshot\":\"$STAMP\",\"host\":\"$(hostname)\"}" 2>/dev/null) || true
+  if [ "$code" = "200" ]; then echo "   ✓ ping worker OK (backup_health à jour)"
+  else echo "   ⚠ ping worker KO (HTTP ${code:-timeout}) — backup conservé ; alerte possible demain 8h"; fi
+  return 0
+}
+ping_worker
