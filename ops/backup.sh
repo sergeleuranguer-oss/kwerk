@@ -6,8 +6,26 @@
 #  daté avant un chantier risqué), local, prune-2. On sauvegarde depuis le
 #  REMOTE GitHub (= la vérité déployée), pas la copie de travail locale.
 #
-#  Lancement : /data/backups/kwerk/backup.sh
-#  → produit 2 archives horodatées + met À JOUR le manifest (donc conso) tout seul.
+#  Lancement : /data/backups/kwerk/backup.sh   (cron quotidien 7h30)
+#  → INCRÉMENTAL : ne produit des archives QUE si le dépôt a bougé depuis la dernière fois.
+#
+#  Pourquoi : ce script a d'abord été écrit pour un usage ponctuel, où re-télécharger tout le dépôt
+#  ne coûtait rien. En quotidien, c'était 780 Mo tirés de GitHub et 1,1 Go réécrits sur le disque
+#  chaque nuit pour un site qui bouge quelques fois par mois. Deux corrections :
+#    1. MIROIR PERMANENT `.mirror.git` + `git remote update` → seuls les objets nouveaux transitent ;
+#    2. EMPREINTE DE TOUTES LES RÉFÉRENCES comparée à la précédente → sans changement, aucune archive.
+#
+#  ⚠️ Conséquences à connaître, elles se tiennent :
+#   - le manifest n'est réécrit QUE les jours où une archive est produite. L'écrire tous les jours
+#     ferait diverger sa date de celle du dernier artefact — c'est exactement ce que conso appelle
+#     un « drift » (backup tombé en silence). Ici les deux dates restent alignées ;
+#   - la fréquence déclarée est « quotidien (si changement) », valeur pour laquelle le scanner ne
+#     calcule PAS d'alerte d'âge : sans elle, un mois sans commit passerait kwerk en rouge ;
+#   - le ping du dead-man's switch part TOUS LES JOURS, y compris quand il n'y a rien à faire. C'est
+#     bien le signal recherché : « le cron a tourné et le contrôle est bon », pas « un fichier est né » ;
+#   - le miroir est CACHÉ (`.mirror.git`) pour rester hors du scan du manifest, comme
+#     `.archives-images-*` : un dossier remis à jour chaque nuit passerait pour l'artefact le plus
+#     récent du dossier et déclencherait un faux drift.
 #
 #  Périmètre :
 #    - kwerk-repo-mirror-…  : git clone --mirror (toutes branches preprod+gh-pages
@@ -47,28 +65,71 @@ on_exit() {
 }
 trap on_exit EXIT
 
+# ---------------- 4) DEAD-MAN'S SWITCH ----------------
+# Le détecteur vit chez Cloudflare EXPRÈS : un cron absent n'échoue pas, il ne se passe RIEN — et un
+# garde-fou logé dans le crontab surveillé partirait avec lui. Deux règles : on ne ping QUE si le
+# backup est sain (sinon on se tait, et le silence alerte), et le ping ne doit JAMAIS faire échouer
+# le backup (`|| true`, timeout court). Seuil côté worker : 36 h.
+ping_worker() {
+  local sec code
+  sec=$(grep -m1 '^export SYNC_SECRET=' ~/.bashrc 2>/dev/null | cut -d= -f2- | tr -d "\"'") || true
+  if [ -z "$sec" ]; then echo "   ⚠ ping worker ignoré (SYNC_SECRET absent de ~/.bashrc)"; return 0; fi
+  code=$(curl -s -o /dev/null -w '%{http_code}' --max-time 20 \
+    -X POST 'https://mews-proxy.serge-leuranguer.workers.dev/backup-ping' \
+    -H "x-sync-secret: $sec" -H 'Content-Type: application/json' \
+    -d "{\"project\":\"kwerk\",\"snapshot\":\"$STAMP\",\"host\":\"$(hostname)\"}" 2>/dev/null) || true
+  if [ "$code" = "200" ]; then echo "   ✓ ping worker OK (backup_health à jour)"
+  else echo "   ⚠ ping worker KO (HTTP ${code:-timeout}) — backup conservé ; alerte possible demain 8h"; fi
+  return 0
+}
+
 # ---------------- Garde-fou espace ----------------
 FREE_MB=$(df -Pm /data | awk 'NR==2{print $4}')
 [ "$FREE_MB" -lt "$MIN_FREE_MB" ] && { echo "Espace /data insuffisant : ${FREE_MB} Mo"; exit 1; }
 
-# ---------------- 1) Miroir du repo (depuis GitHub) ----------------
-rm -rf "$STAGE"; mkdir -p "$STAGE"
-echo "→ git clone --mirror depuis GitHub…"
-git clone --quiet --mirror "$REPO_URL" "$STAGE/kwerk.git"
+# ---------------- 1) Miroir permanent, mis à jour de façon incrémentale ----------------
+MIRROR="$DEST/.mirror.git"
+if [ -d "$MIRROR" ]; then
+  echo "→ git remote update (incrémental)…"
+  git --git-dir="$MIRROR" remote update --prune
+else
+  echo "→ premier passage : git clone --mirror depuis GitHub…"
+  git clone --quiet --mirror "$REPO_URL" "$MIRROR"
+fi
 
-# branches présentes + sha preprod/prod (pour la note du manifest)
-echo "   branches :"; git --git-dir="$STAGE/kwerk.git" for-each-ref --format='     %(refname:short)' refs/heads
-SHA="$(git --git-dir="$STAGE/kwerk.git" rev-parse --short preprod)"
-SHA_PROD="$(git --git-dir="$STAGE/kwerk.git" rev-parse --short gh-pages 2>/dev/null || echo '-')"
+echo "   branches :"; git --git-dir="$MIRROR" for-each-ref --format='     %(refname:short)' refs/heads
+SHA="$(git --git-dir="$MIRROR" rev-parse --short preprod)"
+SHA_PROD="$(git --git-dir="$MIRROR" rev-parse --short gh-pages 2>/dev/null || echo '-')"
 echo "   preprod = $SHA   |   gh-pages (prod) = $SHA_PROD"
 
+# ---------------- 1bis) Le dépôt a-t-il bougé ? ----------------
+# Empreinte de TOUTES les références, pas seulement preprod/gh-pages : une branche ou un tag qui
+# bouge doit produire une archive, sinon le miroir sauvegardé serait en retard sur le miroir réel.
+STATE_FILE="$DEST/.last-refs"
+STATE="$(git --git-dir="$MIRROR" for-each-ref --format='%(objectname) %(refname)' | sort | sha256sum | cut -d' ' -f1)"
+PREV="$(cat "$STATE_FILE" 2>/dev/null || echo '')"
+NEWEST="$(ls -1t "$DEST"/kwerk-repo-mirror-*.tar.gz 2>/dev/null | head -1 || true)"
+
+if [ "$STATE" = "$PREV" ] && [ -n "$NEWEST" ]; then
+  echo "→ aucune référence modifiée depuis la dernière sauvegarde — rien à archiver."
+  echo "   dernière archive conservée : $(basename "$NEWEST") ($(du -h "$NEWEST" | cut -f1))"
+  echo "✅ Terminé — kwerk à jour, $(ls -1 "$DEST"/kwerk-*-*.tar.gz | wc -l) archives inchangées."
+  ping_worker            # le cron a tourné et le contrôle est bon : c'est CE signal qu'on surveille
+  exit 0
+fi
+[ -n "$PREV" ] && echo "→ le dépôt a bougé — production des archives." || echo "→ pas d'état précédent — production des archives."
+
+mkdir -p "$STAGE"
 echo "→ archive repo-mirror…"
-tar czf "$DEST/kwerk-repo-mirror-$STAMP.tar.gz" -C "$STAGE" kwerk.git
+# Le membre est renommé `kwerk.git` dans l'archive : la restauration documentée reste
+# `tar xzf … && git clone kwerk.git`, inchangée malgré le miroir caché.
+tar czf "$DEST/kwerk-repo-mirror-$STAMP.tar.gz" -C "$DEST" \
+  --transform='s|^\.mirror\.git|kwerk.git|' .mirror.git
 
 # ---------------- 2) Contenu preprod déployé ----------------
 # Dans un clone --mirror la branche est 'preprod' (pas 'origin/preprod').
 echo "→ archive contenu preprod déployé…"
-git --git-dir="$STAGE/kwerk.git" archive --format=tar.gz \
+git --git-dir="$MIRROR" archive --format=tar.gz \
   --prefix=kwerk-preprod/ preprod -o "$DEST/kwerk-preprod-content-$STAMP.tar.gz"
 
 # ---------------- 2bis) Contenu PROD (gh-pages) — version stable ----------------
@@ -77,7 +138,7 @@ git --git-dir="$STAGE/kwerk.git" archive --format=tar.gz \
 PROD_ARCHIVE=""
 if [ "$SHA_PROD" != "-" ]; then
   echo "→ archive contenu PROD (gh-pages) déployé…"
-  git --git-dir="$STAGE/kwerk.git" archive --format=tar.gz \
+  git --git-dir="$MIRROR" archive --format=tar.gz \
     --prefix=kwerk-prod/ gh-pages -o "$DEST/kwerk-prod-content-$STAMP.tar.gz"
   PROD_ARCHIVE="$DEST/kwerk-prod-content-$STAMP.tar.gz"
 else
@@ -104,31 +165,17 @@ prune_type "kwerk-repo-mirror"
 prune_type "kwerk-preprod-content"
 prune_type "kwerk-prod-content"
 
+# État retenu seulement maintenant : si une archive avait échoué, le prochain passage
+# doit refaire le travail, pas le considérer comme fait.
+echo "$STATE" > "$STATE_FILE"
+
 # ---------------- 3) MANIFEST (scanné par conso.lab39.dev) ----------------
 # >>> L'étape qui manquait quand le backup était fait à la main : conso à jour à tous les coups.
 python3 /data/backups/_lib/manifest.py write --project kwerk --dest "$DEST" \
-  --frequence "quotidien" --retention "prune-2" \
+  --frequence "quotidien (si changement)" --retention "prune-2" \
   --offsite "originaux images → My Cloud Home (.34) ; code/contenu = GitHub" \
   --note "repo-mirror (preprod+gh-pages+historique) + contenu preprod ($SHA) + contenu PROD gh-pages ($SHA_PROD, version stable). Backup via backup.sh." \
   >/dev/null || echo "   ⚠ manifest non mis à jour" >&2
 
 echo "✅ Terminé — total kwerk suivi : $(ls -1 "$DEST"/kwerk-*-*.tar.gz | wc -l) archives."
-
-# ---------------- 4) DEAD-MAN'S SWITCH ----------------
-# Le détecteur vit chez Cloudflare EXPRÈS : un cron absent n'échoue pas, il ne se passe RIEN — et un
-# garde-fou logé dans le crontab surveillé partirait avec lui. Deux règles : on ne ping QUE si le
-# backup est sain (sinon on se tait, et le silence alerte), et le ping ne doit JAMAIS faire échouer
-# le backup (`|| true`, timeout court). Seuil côté worker : 36 h.
-ping_worker() {
-  local sec code
-  sec=$(grep -m1 '^export SYNC_SECRET=' ~/.bashrc 2>/dev/null | cut -d= -f2- | tr -d "\"'") || true
-  if [ -z "$sec" ]; then echo "   ⚠ ping worker ignoré (SYNC_SECRET absent de ~/.bashrc)"; return 0; fi
-  code=$(curl -s -o /dev/null -w '%{http_code}' --max-time 20 \
-    -X POST 'https://mews-proxy.serge-leuranguer.workers.dev/backup-ping' \
-    -H "x-sync-secret: $sec" -H 'Content-Type: application/json' \
-    -d "{\"project\":\"kwerk\",\"snapshot\":\"$STAMP\",\"host\":\"$(hostname)\"}" 2>/dev/null) || true
-  if [ "$code" = "200" ]; then echo "   ✓ ping worker OK (backup_health à jour)"
-  else echo "   ⚠ ping worker KO (HTTP ${code:-timeout}) — backup conservé ; alerte possible demain 8h"; fi
-  return 0
-}
 ping_worker
