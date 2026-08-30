@@ -7,6 +7,14 @@
 #  REMOTE GitHub (= la vérité déployée), pas la copie de travail locale.
 #
 #  Lancement : /data/backups/kwerk/backup.sh   (cron quotidien 7h30)
+#
+#  🔴 CE FICHIER EXISTE EN DEUX EXEMPLAIRES — /data/backups/kwerk/backup.sh (celui que le CRON
+#     lance) et kwerk/ops/backup.sh (celui qui est VERSIONNÉ). Toucher l'un = recopier sur l'autre.
+#     Payé le 30/08/2026 : la copie de /data avait été migrée vers le helper de ping le 08/08, la
+#     copie versionnée était restée avec l'URL `mews-proxy.../backup-ping` EN DUR — un endpoint
+#     supprimé le 20/08. Rien ne cassait (le cron lance la bonne copie), mais la copie versionnée
+#     est justement celle qu'on restaurerait après un incident : elle aurait pingué un détecteur
+#     mort, et kwerk serait passé pour silencieux au pire moment.
 #  → INCRÉMENTAL : ne produit des archives QUE si le dépôt a bougé depuis la dernière fois.
 #
 #  Pourquoi : ce script a d'abord été écrit pour un usage ponctuel, où re-télécharger tout le dépôt
@@ -70,18 +78,10 @@ trap on_exit EXIT
 # garde-fou logé dans le crontab surveillé partirait avec lui. Deux règles : on ne ping QUE si le
 # backup est sain (sinon on se tait, et le silence alerte), et le ping ne doit JAMAIS faire échouer
 # le backup (`|| true`, timeout court). Seuil côté worker : 36 h.
-ping_worker() {
-  local sec code
-  sec=$(grep -m1 '^export SYNC_SECRET=' ~/.bashrc 2>/dev/null | cut -d= -f2- | tr -d "\"'") || true
-  if [ -z "$sec" ]; then echo "   ⚠ ping worker ignoré (SYNC_SECRET absent de ~/.bashrc)"; return 0; fi
-  code=$(curl -s -o /dev/null -w '%{http_code}' --max-time 20 \
-    -X POST 'https://mews-proxy.serge-leuranguer.workers.dev/backup-ping' \
-    -H "x-sync-secret: $sec" -H 'Content-Type: application/json' \
-    -d "{\"project\":\"kwerk\",\"snapshot\":\"$STAMP\",\"host\":\"$(hostname)\"}" 2>/dev/null) || true
-  if [ "$code" = "200" ]; then echo "   ✓ ping worker OK (backup_health à jour)"
-  else echo "   ⚠ ping worker KO (HTTP ${code:-timeout}) — backup conservé ; alerte possible demain 8h"; fi
-  return 0
-}
+# L'URL du/des détecteur(s) vit dans le helper, à UN SEUL endroit : elle était recopiée en dur
+# dans 14 scripts, et en oublier un lors d'une migration ne se voit pas (08/08/2026).
+source /data/backups/_lib/backup-ping.sh
+ping_worker() { backup_ping "kwerk" "$STAMP"; }
 
 # ---------------- Garde-fou espace ----------------
 FREE_MB=$(df -Pm /data | awk 'NR==2{print $4}')
